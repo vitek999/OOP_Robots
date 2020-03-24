@@ -1,6 +1,11 @@
 package ru.poas.robots;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Robot {
+
+    private static final int AMOUNT_OF_CHARGE_FOR_MOVE = 1;
+    private static final int AMOUNT_OF_CHARGE_FOR_SKIP_STEP = 2;
 
     private Cell position;
 
@@ -10,23 +15,25 @@ public class Robot {
         return position;
     }
 
-    void setPosition(Cell position) {
+    void setPosition(@NotNull Cell position) {
         throw new UnsupportedOperationException();
     }
 
-    public void move(Direction direction) {
+    public void move(@NotNull Direction direction) {
         throw new UnsupportedOperationException();
     }
 
     public void changeBattery() {
-        throw new UnsupportedOperationException();
+        if(position.getBattery() != null){
+            battery = position.getBattery();
+        }
     }
 
     public void skipStep() {
         throw new UnsupportedOperationException();
     }
 
-    public Boolean isAcitive() {
+    public boolean isAcitive() {
         throw new UnsupportedOperationException();
     }
 
@@ -34,27 +41,27 @@ public class Robot {
         this.battery = battery;
     }
 
-    public Integer getCharge() {
-        throw new UnsupportedOperationException();
+    public int getCharge() {
+        return battery.charge();
     }
 
     private Cell whereCanMove(Direction direction) {
         throw new UnsupportedOperationException();
     }
 
-    private Integer amountOfChargeForMove() {
+    private int amountOfChargeForMove() {
+        return AMOUNT_OF_CHARGE_FOR_MOVE;
+    }
+
+    private int amountOfChargeForSkipStep() {
+        return AMOUNT_OF_CHARGE_FOR_SKIP_STEP;
+    }
+
+    private boolean spendBatteryCharge(int amountOfCharge, boolean ignoreShortage) {
         throw new UnsupportedOperationException();
     }
 
-    private Integer amountOfChargeForSkipStep() {
-        throw new UnsupportedOperationException();
-    }
-
-    private Boolean spendBatteryCharge() {
-        throw new UnsupportedOperationException();
-    }
-
-    public static Boolean canStayAtPostion(Cell position) {
+    public static boolean canStayAtPostion(Cell position) {
         throw new UnsupportedOperationException();
     }
 }

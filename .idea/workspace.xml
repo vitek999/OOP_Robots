@@ -1,11 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80a1a1f3-d262-4a93-a050-fc696aab35ce" name="Default Changelist" comment="" />
+    <list default="true" id="80a1a1f3-d262-4a93-a050-fc696aab35ce" name="Default Changelist" comment="Implement battery release charge">
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/4/247a017f833dd9e9813ce53753e0b30fbb78b366" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/44c64334248c97282801e4e6043cd2a079d9a093" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/7/474c8d15c06123335d731ff50c6b5e3e972e915c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/7/47eaa2049cc0fdf0b5e5b29ef5a00371c0b07a4d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/6/560c6e41c53c4a9236324ce9c463b3de022951a4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/9/5996be98baf708aa8f2c392a27ab2c0f0cf57cfc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/f/6fa8c6851f585152b4112a7c8a0353944fd309b7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/3/a315368e3089747965fa9fe068869e445ff6cf36" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/a/aa0f3901446a6ad1efadb5f4e24ea38c5140d6ea" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/9/e9fd1abe2b7ccc57b556a61c303ebfa49475dbe6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/f/1f6271bd2672afca31b6804d76d37cf321f7d355" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/b/3b10c67fc024aa3b48844e0ee405880798f5c6c9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5e4498efa91bae2f5c245a298aab3f5f8ee3ea4e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/d/7d159e447c1b01c7c33e4d9bdd74117125a9dc22" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/e/8e3fe493d1375ffa4bccdf2f8b65431f01eb9b50" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f5aa1c2f819fc808ce43796e7f38a0896987380" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/9/a9f2cfd9ffe7fc12f6b9d5df9cf1c357d6008c7b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/1/b16244d8c72dd4b317f63b5565962641d673eafc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/a/ba0969cd1ec8f02a7073fcd7384d85edde313489" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Robots.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Robots.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/poas/robots/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/poas/robots/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/poas/robots/Wall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/WallPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/poas/robots/WallPosition.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -17,15 +61,23 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectId" id="1ZNdP7v4RUWQ171lShWF4iBynCQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -57,10 +109,58 @@
       <workItem from="1584683463685" duration="7805000" />
       <workItem from="1584901664695" duration="10000" />
       <workItem from="1585046788026" duration="783000" />
+      <workItem from="1585054569721" duration="4456000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1876" height="295" key="GridCell.Tab.0.bottom" timestamp="1585054548279">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585054548279" />
+    <state width="1876" height="295" key="GridCell.Tab.0.center" timestamp="1585054548278">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="295" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585054548278" />
+    <state width="1876" height="295" key="GridCell.Tab.0.left" timestamp="1585054548278">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="295" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585054548278" />
+    <state width="1876" height="295" key="GridCell.Tab.0.right" timestamp="1585054548279">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585054548279" />
+    <state x="461" y="182" key="SettingsEditor" timestamp="1585055964223">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="461" y="182" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585055964223" />
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1585061696067">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585061696067" />
+    <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585054627878">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="656" y="364" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585054627878" />
+    <state x="664" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1585056146030">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="664" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1080@0.0.1920.1080" timestamp="1585056146030" />
   </component>
 </project>

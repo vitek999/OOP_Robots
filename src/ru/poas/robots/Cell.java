@@ -1,5 +1,8 @@
 package ru.poas.robots;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.util.EnumMap;
 import java.util.Map;
 
 public class Cell {
@@ -14,11 +17,13 @@ public class Cell {
     }
 
     public Battery takeBatter() {
-        throw new UnsupportedOperationException();
+        var tmp = battery;
+        battery = null;
+        return tmp;
     }
 
     public void setBattery(Battery battery) {
-        throw new UnsupportedOperationException();
+        this.battery = battery;
     }
 
     /**
@@ -31,40 +36,45 @@ public class Cell {
     }
 
     public Robot takeRobot() {
-        throw new UnsupportedOperationException();
+        var tmp = robot;
+        robot = null;
+        return tmp;
     }
 
     public void setRobot(Robot robot) {
-        throw new UnsupportedOperationException();
+        this.robot = robot;
     }
 
     /**
      * Neighbor cells
      */
-    private Map<Direction, Cell> neighborCells;
+    private Map<Direction, Cell> neighborCells = new EnumMap<>(Direction.class);
 
-    public Cell neighborCell(Direction direction) {
+    public Cell neighborCell(@NotNull Direction direction) {
         return neighborCells.get(direction);
     }
 
-    void setNeighbor(Cell cell, Direction direction) {
+    void setNeighbor(@NotNull Cell cell, @NotNull Direction direction) {
         neighborCells.put(direction, cell);
     }
 
-    public Direction isNeighbor(Cell cell) {
-        throw new UnsupportedOperationException();
+    public Direction isNeighbor(@NotNull Cell cell) {
+        for(var i : neighborCells.entrySet()) {
+            if(i.getValue().equals(cell)) return i.getKey();
+        }
+        return null;
     }
 
     /**
      * Neighbor walls
      */
-    private Map<Direction, Wall> neighborWalls;
+    private Map<Direction, Wall> neighborWalls = new EnumMap<>(Direction.class);
 
-    public Wall neighborWall(Direction direction) {
+    public Wall neighborWall(@NotNull Direction direction) {
         return neighborWalls.get(direction);
     }
 
-    void setNeighbor(Wall wall, Direction direction) {
+    void setNeighbor(@NotNull Wall wall, @NotNull Direction direction) {
         neighborWalls.put(direction, wall);
     }
 
