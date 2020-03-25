@@ -24,7 +24,7 @@ public class Robot {
         if(newPosition != null && spendBatteryCharge(amountOfChargeForMove(), false)) {
             newPosition.takeRobot();
             newPosition.setRobot(this);
-            // send event that robot moved.
+            // TODO: send event that robot moved.
         }
     }
 
@@ -36,11 +36,13 @@ public class Robot {
 
     public void skipStep() {
         spendBatteryCharge(amountOfChargeForSkipStep(), true);
-        // send event that robot skip step
+        // TODO: send event that robot skip step
     }
 
     public boolean isAcitive() {
-        throw new UnsupportedOperationException();
+        boolean result = true;
+        // TODO: inplementation
+        return result;
     }
 
     public void setBattery(Battery battery) {
@@ -73,7 +75,7 @@ public class Robot {
     private boolean spendBatteryCharge(int amountOfCharge, boolean ignoreShortage) {
         boolean result = true;
 
-        if (getCharge() < amountOfCharge && !ignoreShortage) {
+        if (getCharge() < amountOfCharge && !ignoreShortage ) {
             result = false;
         } else {
             battery.releaseCharge(amountOfCharge);

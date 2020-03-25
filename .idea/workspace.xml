@@ -14,6 +14,11 @@
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/3/a315368e3089747965fa9fe068869e445ff6cf36" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/a/aa0f3901446a6ad1efadb5f4e24ea38c5140d6ea" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/9/e9fd1abe2b7ccc57b556a61c303ebfa49475dbe6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/poas/robots/ExitCell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/poas/robots/Field.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/poas/robots/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/poas/robots/Labirint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/poas/robots/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/f/1f6271bd2672afca31b6804d76d37cf321f7d355" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/b/3b10c67fc024aa3b48844e0ee405880798f5c6c9" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5e4498efa91bae2f5c245a298aab3f5f8ee3ea4e" beforeDir="false" />
@@ -25,8 +30,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/a/ba0969cd1ec8f02a7073fcd7384d85edde313489" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/Battery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/poas/robots/Battery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/poas/robots/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/poas/robots/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/poas/robots/Wall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/WallPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/poas/robots/WallPosition.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +101,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -108,7 +121,9 @@
       <workItem from="1584901664695" duration="10000" />
       <workItem from="1585046788026" duration="783000" />
       <workItem from="1585054569721" duration="6983000" />
-      <workItem from="1585130908964" duration="3393000" />
+      <workItem from="1585130908964" duration="5027000" />
+      <workItem from="1585137173527" duration="711000" />
+      <workItem from="1585140037945" duration="3893000" />
     </task>
     <task id="LOCAL-00001" summary="Some implementation">
       <created>1585061726677</created>
@@ -117,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585061726677</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Done implementation for Cell and Robot entities">
+      <created>1585134806810</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1585134806810</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,45 +160,58 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Some implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some implementation" />
+    <MESSAGE value="Done implementation for Cell and Robot entities" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done implementation for Cell and Robot entities" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="552" y="198" key="#Auto_Import" timestamp="1585144068651">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="552" y="198" key="#Auto_Import/0.0.1920.1080@0.0.1920.1080" timestamp="1585144068651" />
     <state x="703" y="343" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585132425763">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="703" y="343" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1585132425763" />
-    <state x="565" y="131" key="CommitChangelistDialog2" timestamp="1585061725547">
+    <state x="765" y="256" key="#com.intellij.ide.util.MemberChooser" timestamp="1585144968093">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="565" y="131" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585061725547" />
-    <state width="1876" height="295" key="GridCell.Tab.0.bottom" timestamp="1585054548279">
+    <state x="765" y="256" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1585144968093" />
+    <state x="565" y="131" key="CommitChangelistDialog2" timestamp="1585151316674">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585054548279" />
-    <state width="1876" height="295" key="GridCell.Tab.0.center" timestamp="1585054548278">
+    <state x="565" y="131" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585151316674" />
+    <state x="184" y="90" key="DiffContextDialog" timestamp="1585151315739">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="295" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585054548278" />
-    <state width="1876" height="295" key="GridCell.Tab.0.left" timestamp="1585054548278">
+    <state x="184" y="90" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585151315739" />
+    <state width="1876" height="295" key="GridCell.Tab.0.bottom" timestamp="1585140021368">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="295" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585054548278" />
-    <state width="1876" height="295" key="GridCell.Tab.0.right" timestamp="1585054548279">
+    <state width="1876" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585140021368" />
+    <state width="1876" height="295" key="GridCell.Tab.0.center" timestamp="1585140021368">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585054548279" />
+    <state width="1876" height="295" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585140021368" />
+    <state width="1876" height="295" key="GridCell.Tab.0.left" timestamp="1585140021368">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="295" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585140021368" />
+    <state width="1876" height="295" key="GridCell.Tab.0.right" timestamp="1585140021368">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585140021368" />
     <state x="461" y="182" key="SettingsEditor" timestamp="1585055964223">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="461" y="182" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585055964223" />
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1585061728528">
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1585134811287">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585061728528" />
-    <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585131323498">
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585134811287" />
+    <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585140084322">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="656" y="364" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585131323498" />
+    <state x="656" y="364" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585140084322" />
     <state x="664" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1585056146030">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

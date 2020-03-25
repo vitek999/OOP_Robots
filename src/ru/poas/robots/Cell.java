@@ -4,6 +4,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.EnumMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Cell {
 
@@ -58,6 +59,9 @@ public class Cell {
 
     void setNeighbor(@NotNull Cell cell, @NotNull Direction direction) {
         neighborCells.put(direction, cell);
+        if(!cell.neighborCell(direction.getOppositeDirection()).equals(this)) {
+            cell.setNeighbor(cell, direction.getOppositeDirection());
+        }
     }
 
     public Direction isNeighbor(@NotNull Cell cell) {
@@ -80,4 +84,29 @@ public class Cell {
         neighborWalls.put(direction, wall);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cell cell = (Cell) o;
+        return Objects.equals(battery, cell.battery) &&
+                Objects.equals(robot, cell.robot) &&
+                Objects.equals(neighborCells, cell.neighborCells) &&
+                Objects.equals(neighborWalls, cell.neighborWalls);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(battery, robot, neighborCells, neighborWalls);
+    }
+
+    @Override
+    public String toString() {
+        return "Cell{" +
+                "battery=" + battery +
+                ", robot=" + robot +
+                ", neighborCells=" + neighborCells +
+                ", neighborWalls=" + neighborWalls +
+                '}';
+    }
 }
