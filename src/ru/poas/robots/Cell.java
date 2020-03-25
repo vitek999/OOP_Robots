@@ -16,7 +16,7 @@ public class Cell {
         return battery;
     }
 
-    public Battery takeBatter() {
+    public Battery takeBattery() {
         var tmp = battery;
         battery = null;
         return tmp;
@@ -36,12 +36,14 @@ public class Cell {
     }
 
     public Robot takeRobot() {
+        robot.setPosition(null);
         var tmp = robot;
         robot = null;
         return tmp;
     }
 
     public void setRobot(Robot robot) {
+        robot.setPosition(this);
         this.robot = robot;
     }
 

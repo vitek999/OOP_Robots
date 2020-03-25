@@ -15,22 +15,28 @@ public class Robot {
         return position;
     }
 
-    void setPosition(@NotNull Cell position) {
-        throw new UnsupportedOperationException();
+    void setPosition(Cell position) {
+        this.position = position;
     }
 
     public void move(@NotNull Direction direction) {
-        throw new UnsupportedOperationException();
+        Cell newPosition = canMove(direction);
+        if(newPosition != null && spendBatteryCharge(amountOfChargeForMove(), false)) {
+            newPosition.takeRobot();
+            newPosition.setRobot(this);
+            // send event that robot moved.
+        }
     }
 
     public void changeBattery() {
         if(position.getBattery() != null){
-            battery = position.getBattery();
+            battery = position.takeBattery();
         }
     }
 
     public void skipStep() {
-        throw new UnsupportedOperationException();
+        spendBatteryCharge(amountOfChargeForSkipStep(), true);
+        // send event that robot skip step
     }
 
     public boolean isAcitive() {
@@ -45,8 +51,15 @@ public class Robot {
         return battery.charge();
     }
 
-    private Cell whereCanMove(Direction direction) {
-        throw new UnsupportedOperationException();
+    private Cell canMove(@NotNull Direction direction) {
+        Cell result = null;
+
+        Cell neighborCell = position.neighborCell(direction);
+        if(neighborCell != null && canStayAtPosition(neighborCell) && position.neighborWall(direction) == null) {
+            result = neighborCell;
+        }
+
+        return result;
     }
 
     private int amountOfChargeForMove() {
@@ -58,10 +71,18 @@ public class Robot {
     }
 
     private boolean spendBatteryCharge(int amountOfCharge, boolean ignoreShortage) {
-        throw new UnsupportedOperationException();
+        boolean result = true;
+
+        if (getCharge() < amountOfCharge && !ignoreShortage) {
+            result = false;
+        } else {
+            battery.releaseCharge(amountOfCharge);
+        }
+
+        return result;
     }
 
-    public static boolean canStayAtPostion(Cell position) {
-        throw new UnsupportedOperationException();
+    public static boolean canStayAtPosition(@NotNull Cell position) {
+        return position.getRobot() == null;
     }
 }

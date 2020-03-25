@@ -14,7 +14,6 @@
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/3/a315368e3089747965fa9fe068869e445ff6cf36" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/a/aa0f3901446a6ad1efadb5f4e24ea38c5140d6ea" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/9/e9fd1abe2b7ccc57b556a61c303ebfa49475dbe6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/f/1f6271bd2672afca31b6804d76d37cf321f7d355" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/b/3b10c67fc024aa3b48844e0ee405880798f5c6c9" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5e4498efa91bae2f5c245a298aab3f5f8ee3ea4e" beforeDir="false" />
@@ -26,11 +25,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/a/ba0969cd1ec8f02a7073fcd7384d85edde313489" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Robots.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Robots.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/poas/robots/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/poas/robots/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/poas/robots/Wall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/WallPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/poas/robots/WallPosition.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,8 +71,10 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="create.test.in.the.same.root" value="true" />
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
@@ -109,8 +107,17 @@
       <workItem from="1584683463685" duration="7805000" />
       <workItem from="1584901664695" duration="10000" />
       <workItem from="1585046788026" duration="783000" />
-      <workItem from="1585054569721" duration="4456000" />
+      <workItem from="1585054569721" duration="6983000" />
+      <workItem from="1585130908964" duration="3393000" />
     </task>
+    <task id="LOCAL-00001" summary="Some implementation">
+      <created>1585061726677</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585061726677</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,7 +136,19 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Some implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some implementation" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="703" y="343" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585132425763">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="703" y="343" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1585132425763" />
+    <state x="565" y="131" key="CommitChangelistDialog2" timestamp="1585061725547">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="565" y="131" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585061725547" />
     <state width="1876" height="295" key="GridCell.Tab.0.bottom" timestamp="1585054548279">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -150,17 +169,21 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="461" y="182" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585055964223" />
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1585061696067">
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1585061728528">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585061696067" />
-    <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585054627878">
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585061728528" />
+    <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585131323498">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="656" y="364" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585054627878" />
+    <state x="656" y="364" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585131323498" />
     <state x="664" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1585056146030">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="664" y="433" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1080@0.0.1920.1080" timestamp="1585056146030" />
+    <state x="731" y="243" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1585131435410">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="731" y="243" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585131435410" />
   </component>
 </project>
