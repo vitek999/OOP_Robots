@@ -28,7 +28,10 @@ class BatteryTest {
         assertEquals(DEFAULT_TEST_BATTERY_CHARGE - chargeAmount, battery.charge());
     }
 
-    @Test
+    // TODO: когда charge == amountCharge
+
+
+    @Test // TODO: исправить, если больше чем есть, то не тртатить, верунть 0
     public void test_releaseCharge_whenChargeAmountMoreThanCharge() {
         int chargeAmount = 11;
         assertEquals(DEFAULT_TEST_BATTERY_CHARGE, battery.releaseCharge(chargeAmount));

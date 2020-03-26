@@ -7,6 +7,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class WallPositionTest {
 
+    // TODO: порверка правильности возвращения направления и стены при уставноки стены (все 4 стороны), когда есть пары и когда нет пар.
+    // TODO: позиция теперь не проверяет наличие стены между ячейка.
+
     private final Direction direction = Direction.NORTH;
 
     private Cell cell;

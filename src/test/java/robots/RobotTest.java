@@ -7,6 +7,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RobotTest {
 
+    // TODO: cделать поле одно и ставить в разные места.
+    // TODO: подумать над тестовым API
+    // TODO: тесировать события через логический флаг.
+
     private final static int DEFAULT_TEST_BATTERY_CHARGE = 10;
     private static final int AMOUNT_OF_CHARGE_FOR_MOVE = 1;
     private static final int AMOUNT_OF_CHARGE_FOR_SKIP_STEP = 2;

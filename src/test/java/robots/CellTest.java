@@ -64,7 +64,7 @@ class CellTest {
     }
 
     @Test
-    public void test_getBattery(){
+    public void test_takeBattery(){
         Battery battery = new Battery(10);
 
         cell.setBattery(battery);
@@ -83,6 +83,9 @@ class CellTest {
         assertEquals(neighborCell, cell.neighborCell(direction));
         assertEquals(cell, neighborCell.neighborCell(direction.getOppositeDirection()));
     }
+
+    // TODO: Левый задаётся правому, а правый левому.
+    // TODO: Установка нового соседа в том же направлении, если уже есть.
 
     @Test
     public void test_isNeighbor_WhenNeighborCellExists() {
@@ -108,4 +111,6 @@ class CellTest {
         assertEquals(neighborWall, cell.neighborWall(direction));
         assertEquals(cell, neighborWall.getPosition().getNeighborCells().get(direction.getOppositeDirection()));
     }
+
+    // TODO: тест neighborWall, когда в направлении нет стены
 }

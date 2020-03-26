@@ -6,6 +6,7 @@ import java.util.EnumMap;
 import java.util.Map;
 import java.util.Objects;
 
+// TODO: Переименновать
 public class WallPosition {
 
     private Map<Direction, Cell> neighborCells = new EnumMap<>(Direction.class);

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Added test for Wall and fix recursions toString in Cell">
-      <change afterPath="$PROJECT_DIR$/src/test/java/robots/RobotTest.java" afterDir="false" />
+    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/WallPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/WallPosition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/BatteryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/BatteryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/CellTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/RobotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/RobotTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/WallPositionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/WallPositionTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="324" />
+    <option name="myElementSize" value="334" />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="testRunner" value="GRADLE" />
@@ -71,7 +74,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RobotTest">
+  <component name="RunManager" selected="JUnit.robots in OOP_Robots">
     <configuration name="RobotTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
@@ -135,7 +138,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RobotTest.test_skipStep_RobotActiveEnoughCharge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="robots in OOP_Robots" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
         <pattern>
@@ -144,20 +147,18 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.RobotTest" />
-      <option name="METHOD_NAME" value="test_skipStep_RobotActiveEnoughCharge" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.robots in OOP_Robots" />
         <item itemvalue="JUnit.RobotTest" />
         <item itemvalue="JUnit.RobotTest.test_changeBattery_robotIsActiveCellNotContainsBattery" />
         <item itemvalue="JUnit.RobotTest.test_changeBattery_robotIsNotActiveCellContainsBattery" />
         <item itemvalue="JUnit.RobotTest.test_changeBattery_robotIsActiveCellContainsBattery" />
-        <item itemvalue="JUnit.RobotTest.test_skipStep_RobotActiveEnoughCharge" />
       </list>
     </recent_temporary>
   </component>
@@ -176,7 +177,7 @@
       <workItem from="1585203309318" duration="85000" />
       <workItem from="1585203647318" duration="176000" />
       <workItem from="1585203960848" duration="51000" />
-      <workItem from="1585204064772" duration="10908000" />
+      <workItem from="1585204064772" duration="16985000" />
     </task>
     <task id="LOCAL-00001" summary="Added new tests for cell and fixed tests naming">
       <created>1585205121395</created>
@@ -213,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585209376705</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added tests for Robot and fix changeButtons and move methods">
+      <created>1585226705824</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1585226705824</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,7 +233,8 @@
     <MESSAGE value="Delete target from git" />
     <MESSAGE value="Added wall position test and fixed canWallSet method" />
     <MESSAGE value="Added test for Wall and fix recursions toString in Cell" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added test for Wall and fix recursions toString in Cell" />
+    <MESSAGE value="Added tests for Robot and fix changeButtons and move methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tests for Robot and fix changeButtons and move methods" />
   </component>
   <component name="WindowStateProjectService">
     <state x="557" y="195" key="#CellTest" timestamp="1585203692781">
@@ -252,30 +261,30 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="756" y="399" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1080@0.0.1920.1080" timestamp="1585200338172" />
-    <state x="754" y="4" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585222396472">
+    <state x="754" y="4" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585226705108">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="754" y="4" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585222396472" />
+    <state x="754" y="4" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585226705108" />
     <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1585203684299">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1585203684299" />
-    <state width="1876" height="485" key="GridCell.Tab.0.bottom" timestamp="1585226647313">
+    <state width="1876" height="735" key="GridCell.Tab.0.bottom" timestamp="1585233344524">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="485" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585226647313" />
-    <state width="1876" height="485" key="GridCell.Tab.0.center" timestamp="1585226647313">
+    <state width="1876" height="735" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585233344524" />
+    <state width="1876" height="735" key="GridCell.Tab.0.center" timestamp="1585233344524">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="485" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585226647313" />
-    <state width="1876" height="485" key="GridCell.Tab.0.left" timestamp="1585226647313">
+    <state width="1876" height="735" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585233344524" />
+    <state width="1876" height="735" key="GridCell.Tab.0.left" timestamp="1585233344524">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="485" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585226647313" />
-    <state width="1876" height="485" key="GridCell.Tab.0.right" timestamp="1585226647313">
+    <state width="1876" height="735" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585233344524" />
+    <state width="1876" height="735" key="GridCell.Tab.0.right" timestamp="1585233344524">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="485" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585226647313" />
+    <state width="1876" height="735" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585233344524" />
     <state width="1876" height="364" key="GridCell.Tab.1.bottom" timestamp="1585223929031">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -300,14 +309,14 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="490" y="195" key="Maven.ArtifactSearchDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585200387578" />
-    <state x="440" y="114" key="SettingsEditor" timestamp="1585203427153">
+    <state x="440" y="114" key="SettingsEditor" timestamp="1585232841599">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585203427153" />
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1585226653307">
+    <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585232841599" />
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1585226708317">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585226653307" />
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585226708317" />
     <state x="731" y="258" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1585222399918">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
