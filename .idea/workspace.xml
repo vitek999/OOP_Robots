@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Ad">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/a/aa1632cddc736811ae82a996547e72c4d2e1a563" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/a/aa1632cddc736811ae82a996547e72c4d2e1a563" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/5/c55d792f3208491d59da325ef0e93f54db4ef8c4" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/5/c55d792f3208491d59da325ef0e93f54db4ef8c4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/CellTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +53,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CellTest.test_takeRobotFromCell">
+  <component name="RunManager" selected="JUnit.CellTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="robots.Main" />
       <module name="3. Тесты" />
@@ -100,6 +101,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CellTest.test_setNeighbor_Wall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOP_Robots" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="robots.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="robots" />
+      <option name="MAIN_CLASS_NAME" value="robots.CellTest" />
+      <option name="METHOD_NAME" value="test_setNeighbor_Wall" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CellTest.test_takeRobotFromCell" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
@@ -116,27 +133,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="robots in robots-maven" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="robots-maven" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="robots.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="robots" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CellTest.test_takeRobotFromCell" />
         <item itemvalue="JUnit.CellTest" />
+        <item itemvalue="JUnit.CellTest.test_setNeighbor_Wall" />
+        <item itemvalue="JUnit.CellTest.test_takeRobotFromCell" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.CellTest.test_setNeighborCell" />
-        <item itemvalue="JUnit.robots in robots-maven" />
       </list>
     </recent_temporary>
   </component>
@@ -154,6 +157,8 @@
       <workItem from="1585203204060" duration="94000" />
       <workItem from="1585203309318" duration="85000" />
       <workItem from="1585203647318" duration="176000" />
+      <workItem from="1585203960848" duration="51000" />
+      <workItem from="1585204064772" duration="1036000" />
     </task>
     <servers />
   </component>
@@ -181,30 +186,30 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="756" y="399" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1080@0.0.1920.1080" timestamp="1585200338172" />
-    <state x="562" y="131" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585203912361">
+    <state x="562" y="131" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585205100339">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="562" y="131" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585203912361" />
+    <state x="562" y="131" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585205100339" />
     <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1585203684299">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1585203684299" />
-    <state width="1876" height="295" key="GridCell.Tab.0.bottom" timestamp="1585203846684">
+    <state width="1876" height="295" key="GridCell.Tab.0.bottom" timestamp="1585205035683">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585203846684" />
-    <state width="1876" height="295" key="GridCell.Tab.0.center" timestamp="1585203846684">
+    <state width="1876" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585205035683" />
+    <state width="1876" height="295" key="GridCell.Tab.0.center" timestamp="1585205035682">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="295" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585203846684" />
-    <state width="1876" height="295" key="GridCell.Tab.0.left" timestamp="1585203846684">
+    <state width="1876" height="295" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585205035682" />
+    <state width="1876" height="295" key="GridCell.Tab.0.left" timestamp="1585205035682">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="295" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585203846684" />
-    <state width="1876" height="295" key="GridCell.Tab.0.right" timestamp="1585203846684">
+    <state width="1876" height="295" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585205035682" />
+    <state width="1876" height="295" key="GridCell.Tab.0.right" timestamp="1585205035682">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585203846684" />
+    <state width="1876" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585205035682" />
     <state width="1876" height="364" key="GridCell.Tab.1.bottom" timestamp="1585203118842">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -237,5 +242,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="616" y="250" width="672" height="677" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1585201012045" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/OOP_Robots$CellTest.ic" NAME="CellTest Coverage Results" MODIFIED="1585205012605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>robots.*</FILTER>
+    </SUITE>
   </component>
 </project>

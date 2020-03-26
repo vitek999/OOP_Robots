@@ -15,11 +15,12 @@ class CellTest {
 
     @BeforeEach
     private void testSetup() {
+
         cell = new Cell();
     }
 
     @Test
-    public void test_setRobotInEmptyCell() {
+    public void test_setRobot_InEmptyCell() {
         Robot robot = new Robot();
 
         cell.setRobot(robot);
@@ -29,7 +30,7 @@ class CellTest {
     }
 
     @Test
-    public void test_takeRobotFromCell() {
+    public void test_takeRobot_FromCellWithRobot() {
         Robot robot = new Robot();
 
         cell.setRobot(robot);
@@ -41,7 +42,7 @@ class CellTest {
 
 
     @Test
-    public void test_setRobotToCellWithRobot() {
+    public void test_setRobot_ToCellWithRobot() {
         Robot robot = new Robot();
         Robot newRobot = new Robot();
 
@@ -63,6 +64,16 @@ class CellTest {
     }
 
     @Test
+    public void test_getBattery(){
+        Battery battery = new Battery(10);
+
+        cell.setBattery(battery);
+
+        assertEquals(battery, cell.takeBattery());
+        assertNull(cell.getBattery());
+    }
+
+    @Test
     public void test_setNeighborCell() {
         Cell neighborCell = new Cell();
         Direction direction = Direction.NORTH;
@@ -73,4 +84,28 @@ class CellTest {
         assertEquals(cell, neighborCell.neighborCell(direction.getOppositeDirection()));
     }
 
+    @Test
+    public void test_isNeighbor_WhenNeighborCellExists() {
+        Cell neighborCell = new Cell();
+        Direction direction = Direction.NORTH;
+
+        cell.setNeighbor(neighborCell, direction);
+        assertEquals(direction, cell.isNeighbor(neighborCell));
+    }
+
+    @Test
+    public void test_isNeighbor_WhenNeighborCellNotExists() {
+        Cell neighborCell = new Cell();
+
+        assertNull(cell.isNeighbor(neighborCell));
+    }
+
+    @Test
+    public void test_setNeighbor_Wall() {
+        Direction direction = Direction.NORTH;
+        Wall neighborWall = new Wall(new WallPosition(cell, direction));
+
+        assertEquals(neighborWall, cell.neighborWall(direction));
+        assertEquals(cell, neighborWall.getPosition().getNeighborCells().get(direction.getOppositeDirection()));
+    }
 }

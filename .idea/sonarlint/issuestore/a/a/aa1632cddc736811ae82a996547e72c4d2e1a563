@@ -1,29 +1,29 @@
 
-–
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(§òÕu
-œ
-java:S1186""€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(˜Ö² úÿÿÿÿ
-—
-java:S1186&"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Áƒ˜÷
 œ
 java:S1186*"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¡¢ô±ÿÿÿÿÿ
 œ
 java:S1186."€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ãªøÿÿÿÿ
-M
-java:S1135"2Complete the task associated to this TODO comment.(‘±ºİøÿÿÿÿ
-M
-java:S1135"2Complete the task associated to this TODO comment.(‘±ºİøÿÿÿÿ
 G
 java:S1172*",Remove this unused method parameter "robot".(¡¢ô±ÿÿÿÿÿ
-G
-java:S1172.",Remove this unused method parameter "robot".(Ãªøÿÿÿÿ
-J
-java:S1144"5Remove this unused private "passMoveNexRobot" method.(§òÕu
-T
-java:S1144""9Remove this unused private "determineOutcomeGame" method.(˜Ö² úÿÿÿÿ
 E
 java:S1144&"/Remove this unused private "buildField" method.(Áƒ˜÷
-I
-java:S1144*".Remove this unused private "setWinner" method.(¡¢ô±ÿÿÿÿÿ
+M
+java:S1135"2Complete the task associated to this TODO comment.(‘±ºİøÿÿÿÿ
 N
 java:S1144."3Remove this unused private "setActiveRobot" method.(Ãªøÿÿÿÿ
+J
+java:S1144"5Remove this unused private "passMoveNexRobot" method.(§òÕu
+G
+java:S1172.",Remove this unused method parameter "robot".(Ãªøÿÿÿÿ
+M
+java:S1135"2Complete the task associated to this TODO comment.(‘±ºİøÿÿÿÿ
+I
+java:S1144*".Remove this unused private "setWinner" method.(¡¢ô±ÿÿÿÿÿ
+—
+java:S1186&"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Áƒ˜÷
+œ
+java:S1186""€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(˜Ö² úÿÿÿÿ
+T
+java:S1144""9Remove this unused private "determineOutcomeGame" method.(˜Ö² úÿÿÿÿ
+–
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(§òÕu
