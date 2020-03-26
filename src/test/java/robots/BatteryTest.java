@@ -12,7 +12,7 @@ class BatteryTest {
     private Battery battery;
 
     @BeforeEach
-    private void testSetup() {
+    public void testSetup() {
         battery = new Battery(DEFAULT_TEST_BATTERY_CHARGE);
     }
 

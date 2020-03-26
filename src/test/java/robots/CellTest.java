@@ -14,7 +14,7 @@ class CellTest {
 
 
     @BeforeEach
-    private void testSetup() {
+    public void testSetup() {
 
         cell = new Cell();
     }

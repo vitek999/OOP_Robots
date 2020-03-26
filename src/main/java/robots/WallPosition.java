@@ -44,7 +44,8 @@ public class WallPosition {
 
     public static boolean canWallSet(@NotNull Cell cell, @NotNull Cell neighborCell) {
         Direction neighborDirection = cell.isNeighbor(neighborCell);
-        return  (cell.neighborWall(neighborDirection) == null) &&
+        return  (neighborDirection != null) &&
+                (cell.neighborWall(neighborDirection) == null) &&
                 (neighborCell.neighborWall(neighborDirection.getOppositeDirection()) == null);
     }
 
