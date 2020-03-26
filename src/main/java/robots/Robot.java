@@ -25,7 +25,7 @@ public class Robot {
         if(isActive) {
             Cell newPosition = canMove(direction);
             if (newPosition != null && spendBatteryCharge(amountOfChargeForMove(), false)) {
-                newPosition.takeRobot();
+                position.takeRobot();
                 newPosition.setRobot(this);
                 // TODO: send event that robot moved.
             }
@@ -33,14 +33,15 @@ public class Robot {
     }
 
     public void changeBattery() {
-        if(position.getBattery() != null){
+        if(isActive && position.getBattery() != null){
             battery = position.takeBattery();
         }
     }
 
     public void skipStep() {
         if(isActive) {
-            spendBatteryCharge(amountOfChargeForSkipStep(), true);// TODO: send event that robot skip step
+            spendBatteryCharge(amountOfChargeForSkipStep(), true);
+            // TODO: send event that robot skip step
         }
     }
 
@@ -48,7 +49,7 @@ public class Robot {
         isActive = value;
     }
 
-    public boolean isAcitive() {
+    public boolean isActive() {
         return isActive;
     }
 
@@ -94,4 +95,6 @@ public class Robot {
     public static boolean canStayAtPosition(@NotNull Cell position) {
         return position.getRobot() == null;
     }
+
+
 }
