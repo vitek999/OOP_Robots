@@ -107,8 +107,8 @@ public class Cell {
         return "Cell{" +
                 "battery=" + battery +
                 ", robot=" + robot +
-                ", neighborCells=" + neighborCells +
-                ", neighborWalls=" + neighborWalls +
+                ", neighborCells=" + neighborCells.size() +
+                ", neighborWalls=" + neighborWalls.size() +
                 '}';
     }
 }

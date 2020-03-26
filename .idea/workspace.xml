@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/robots/WallPositionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/robots/WallTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/WallPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/WallPosition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/robots/BatteryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/BatteryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/robots/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/CellTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Cell.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="271" />
+    <option name="myElementSize" value="294" />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="testRunner" value="GRADLE" />
@@ -73,7 +71,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.WallPositionTest">
+  <component name="RunManager" selected="JUnit.WallTest">
     <configuration name="WallPositionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
@@ -89,7 +87,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WallPositionTest.test_createAndGetNeighborCells_withCellAndDirectionOnTwoNeighborCellsWithoutWall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WallTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
         <pattern>
@@ -98,14 +96,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.WallPositionTest" />
-      <option name="METHOD_NAME" value="test_createAndGetNeighborCells_withCellAndDirectionOnTwoNeighborCellsWithoutWall" />
+      <option name="MAIN_CLASS_NAME" value="robots.WallTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WallTest.test_create_withCorrectWallPosition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOP_Robots" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="robots.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="robots" />
+      <option name="MAIN_CLASS_NAME" value="robots.WallTest" />
+      <option name="METHOD_NAME" value="test_create_withCorrectWallPosition" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WallPositionTest.test_createAndGetNeighborCells_withTwoNeighborsCellsWithoutWall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WallTest.test_create_withInCorrectWallPosition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
         <pattern>
@@ -114,24 +127,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.WallPositionTest" />
-      <option name="METHOD_NAME" value="test_createAndGetNeighborCells_withTwoNeighborsCellsWithoutWall" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WallPositionTest.test_create_withCellAndDirectionOnTwoNeighborCellsWithWall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OOP_Robots" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="robots.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.WallPositionTest" />
-      <option name="METHOD_NAME" value="test_create_withCellAndDirectionOnTwoNeighborCellsWithWall" />
+      <option name="MAIN_CLASS_NAME" value="robots.WallTest" />
+      <option name="METHOD_NAME" value="test_create_withInCorrectWallPosition" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -153,11 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.WallPositionTest" />
+        <item itemvalue="JUnit.WallTest" />
+        <item itemvalue="JUnit.WallTest.test_create_withInCorrectWallPosition" />
+        <item itemvalue="JUnit.WallTest.test_create_withCorrectWallPosition" />
         <item itemvalue="JUnit.robots in OOP_Robots" />
-        <item itemvalue="JUnit.WallPositionTest.test_createAndGetNeighborCells_withTwoNeighborsCellsWithoutWall" />
-        <item itemvalue="JUnit.WallPositionTest.test_createAndGetNeighborCells_withCellAndDirectionOnTwoNeighborCellsWithoutWall" />
-        <item itemvalue="JUnit.WallPositionTest.test_create_withCellAndDirectionOnTwoNeighborCellsWithWall" />
+        <item itemvalue="JUnit.WallPositionTest" />
       </list>
     </recent_temporary>
   </component>
@@ -176,7 +173,7 @@
       <workItem from="1585203309318" duration="85000" />
       <workItem from="1585203647318" duration="176000" />
       <workItem from="1585203960848" duration="51000" />
-      <workItem from="1585204064772" duration="3860000" />
+      <workItem from="1585204064772" duration="5226000" />
     </task>
     <task id="LOCAL-00001" summary="Added new tests for cell and fixed tests naming">
       <created>1585205121395</created>
@@ -199,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585205892916</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added wall position test and fixed canWallSet method">
+      <created>1585208161800</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1585208161800</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +213,8 @@
     <MESSAGE value="Added new tests for cell and fixed tests naming" />
     <MESSAGE value="Added tests for battery and fixed release charge method" />
     <MESSAGE value="Delete target from git" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete target from git" />
+    <MESSAGE value="Added wall position test and fixed canWallSet method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added wall position test and fixed canWallSet method" />
   </component>
   <component name="WindowStateProjectService">
     <state x="557" y="195" key="#CellTest" timestamp="1585203692781">
@@ -236,30 +241,30 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="756" y="399" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1080@0.0.1920.1080" timestamp="1585200338172" />
-    <state x="603" y="142" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585205892152">
+    <state x="754" y="4" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585208161069">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="603" y="142" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585205892152" />
+    <state x="754" y="4" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585208161069" />
     <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1585203684299">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1585203684299" />
-    <state width="1876" height="487" key="GridCell.Tab.0.bottom" timestamp="1585208049841">
+    <state width="1876" height="485" key="GridCell.Tab.0.bottom" timestamp="1585209349051">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="487" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585208049841" />
-    <state width="1876" height="487" key="GridCell.Tab.0.center" timestamp="1585208049840">
+    <state width="1876" height="485" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585209349051" />
+    <state width="1876" height="485" key="GridCell.Tab.0.center" timestamp="1585209349050">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="487" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585208049840" />
-    <state width="1876" height="487" key="GridCell.Tab.0.left" timestamp="1585208049840">
+    <state width="1876" height="485" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585209349050" />
+    <state width="1876" height="485" key="GridCell.Tab.0.left" timestamp="1585209349050">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="487" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585208049840" />
-    <state width="1876" height="487" key="GridCell.Tab.0.right" timestamp="1585208049840">
+    <state width="1876" height="485" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585209349050" />
+    <state width="1876" height="485" key="GridCell.Tab.0.right" timestamp="1585209349051">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="487" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585208049840" />
+    <state width="1876" height="485" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585209349051" />
     <state width="1876" height="364" key="GridCell.Tab.1.bottom" timestamp="1585203118842">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -288,14 +293,14 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585203427153" />
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1585205896759">
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1585208163349">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585205896759" />
-    <state x="731" y="258" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1585205948835">
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585208163349" />
+    <state x="731" y="258" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1585208516482">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="731" y="258" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585205948835" />
+    <state x="731" y="258" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585208516482" />
     <state x="616" y="250" width="672" height="677" key="run.anything.popup" timestamp="1585201012045">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -307,6 +312,9 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/OOP_Robots$CellTest.ic" NAME="CellTest Coverage Results" MODIFIED="1585205012605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>robots.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/OOP_Robots$WallTest.ic" NAME="WallTest Coverage Results" MODIFIED="1585209328596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>robots.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/OOP_Robots$WallPositionTest.ic" NAME="WallPositionTest Coverage Results" MODIFIED="1585208046511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
