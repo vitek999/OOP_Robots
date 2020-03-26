@@ -2,37 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/f/1f6271bd2672afca31b6804d76d37cf321f7d355" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/b/3b10c67fc024aa3b48844e0ee405880798f5c6c9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5e4498efa91bae2f5c245a298aab3f5f8ee3ea4e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/d/7d159e447c1b01c7c33e4d9bdd74117125a9dc22" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/e/8e3fe493d1375ffa4bccdf2f8b65431f01eb9b50" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f5aa1c2f819fc808ce43796e7f38a0896987380" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/9/a9f2cfd9ffe7fc12f6b9d5df9cf1c357d6008c7b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/1/b16244d8c72dd4b317f63b5565962641d673eafc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/a/ba0969cd1ec8f02a7073fcd7384d85edde313489" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Robots.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/Battery.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/Cell.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/Direction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/ExitCell.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/Field.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/GameStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/Labirint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/Point.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/Robot.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/Wall.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/WallOrientation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/poas/robots/WallPosition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +17,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1ZeWZA1wz4jfWW0NuhVYuY2RpAJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -73,7 +52,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.CellTest.test_takeRobotFromCell">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="robots.Main" />
       <module name="3. Тесты" />
@@ -88,7 +67,7 @@
       </method>
     </configuration>
     <configuration name="CellTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="3. Тесты" />
+      <module name="OOP_Robots" />
       <useClassPathOnly />
       <extension name="coverage">
         <pattern>
@@ -121,6 +100,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CellTest.test_takeRobotFromCell" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOP_Robots" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="robots.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="robots" />
+      <option name="MAIN_CLASS_NAME" value="robots.CellTest" />
+      <option name="METHOD_NAME" value="test_takeRobotFromCell" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="robots in robots-maven" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="robots-maven" />
       <extension name="coverage">
@@ -137,8 +132,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.CellTest.test_takeRobotFromCell" />
         <item itemvalue="JUnit.CellTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.CellTest.test_setNeighborCell" />
         <item itemvalue="JUnit.robots in robots-maven" />
       </list>
@@ -157,6 +153,7 @@
       <workItem from="1585200095523" duration="2449000" />
       <workItem from="1585203204060" duration="94000" />
       <workItem from="1585203309318" duration="85000" />
+      <workItem from="1585203647318" duration="176000" />
     </task>
     <servers />
   </component>
@@ -164,14 +161,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="557" y="195" key="#CellTest" timestamp="1585203473856">
+    <state x="557" y="195" key="#CellTest" timestamp="1585203692781">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="557" y="178" key="#CellTest.test_setNeighborCell" timestamp="1585203488179">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="557" y="178" key="#CellTest.test_setNeighborCell/0.0.1920.1080@0.0.1920.1080" timestamp="1585203488179" />
-    <state x="557" y="195" key="#CellTest/0.0.1920.1080@0.0.1920.1080" timestamp="1585203473856" />
+    <state x="557" y="195" key="#CellTest/0.0.1920.1080@0.0.1920.1080" timestamp="1585203692781" />
     <state x="92" y="92" width="1736" height="896" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1585203021041">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -184,30 +181,30 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="756" y="399" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1080@0.0.1920.1080" timestamp="1585200338172" />
-    <state x="562" y="131" key="CommitChangelistDialog2" timestamp="1585203513676">
+    <state x="562" y="131" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585203912361">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="562" y="131" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585203513676" />
-    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1585203200691">
+    <state x="562" y="131" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585203912361" />
+    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1585203684299">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1585203200691" />
-    <state width="1876" height="295" key="GridCell.Tab.0.bottom" timestamp="1585203494080">
+    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1585203684299" />
+    <state width="1876" height="295" key="GridCell.Tab.0.bottom" timestamp="1585203846684">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585203494080" />
-    <state width="1876" height="295" key="GridCell.Tab.0.center" timestamp="1585203494080">
+    <state width="1876" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585203846684" />
+    <state width="1876" height="295" key="GridCell.Tab.0.center" timestamp="1585203846684">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="295" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585203494080" />
-    <state width="1876" height="295" key="GridCell.Tab.0.left" timestamp="1585203494080">
+    <state width="1876" height="295" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585203846684" />
+    <state width="1876" height="295" key="GridCell.Tab.0.left" timestamp="1585203846684">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="295" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585203494080" />
-    <state width="1876" height="295" key="GridCell.Tab.0.right" timestamp="1585203494080">
+    <state width="1876" height="295" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585203846684" />
+    <state width="1876" height="295" key="GridCell.Tab.0.right" timestamp="1585203846684">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585203494080" />
+    <state width="1876" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585203846684" />
     <state width="1876" height="364" key="GridCell.Tab.1.bottom" timestamp="1585203118842">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

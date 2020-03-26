@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="3. Тесты" />
+        <module name="OOP_Robots" />
         <module name="robots-maven" />
+        <module name="3. Тесты" />
       </profile>
     </annotationProcessing>
   </component>
