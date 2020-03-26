@@ -11,7 +11,7 @@ public class Battery {
     }
 
     public Integer releaseCharge(int chargeAmount) {
-        var delta = (chargeAmount > charge) ? chargeAmount : charge;
+        var delta = (chargeAmount < charge) ? chargeAmount : charge;
         charge -= delta;
         return delta;
     }
