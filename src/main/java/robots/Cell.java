@@ -60,6 +60,8 @@ public class Cell {
     }
 
     void setNeighbor(@NotNull Cell cell, @NotNull Direction direction) {
+        if(neighborCells.containsKey(direction) && neighborCells.containsValue(cell)) return;
+        if(neighborCells.containsKey(direction)) throw new IllegalArgumentException();
         neighborCells.put(direction, cell);
         if(cell.neighborCell(direction.getOppositeDirection()) == null) {
             cell.setNeighbor(this, direction.getOppositeDirection());
