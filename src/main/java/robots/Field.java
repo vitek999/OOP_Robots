@@ -1,6 +1,10 @@
 package robots;
 
 import org.jetbrains.annotations.NotNull;
+import robots.event.ExitCellActionEvent;
+import robots.event.ExitCellActionListener;
+import robots.event.FieldActionEvent;
+import robots.event.FieldActionListener;
 
 import java.util.*;
 
@@ -19,6 +23,7 @@ public class Field {
         this.exitPoint = exitPoint;
 
         setupField();
+        ((ExitCell) getCell(exitPoint)).addExitCellActionListener(new ExitCellObserver());
     }
 
     private void setupField() {
@@ -66,5 +71,33 @@ public class Field {
                 ", height=" + height +
                 ", exitPoint=" + exitPoint +
                 '}';
+    }
+
+    // -------------------- События --------------------
+
+    class ExitCellObserver implements ExitCellActionListener {
+
+        @Override
+        public void robotIsTeleported(ExitCellActionEvent event) {
+            fireRobotIsTeleported(event.getRobot());
+        }
+    }
+
+    private ArrayList<FieldActionListener> fieldListListener = new ArrayList<>();
+
+    public void addExitCellActionListener(FieldActionListener listener) {
+        fieldListListener.add(listener);
+    }
+
+    public void removeExitCellActionListener(FieldActionListener listener) {
+        fieldListListener.remove(listener);
+    }
+
+    private void fireRobotIsTeleported(Robot robot) {
+        for(FieldActionListener listener: fieldListListener) {
+            FieldActionEvent event = new FieldActionEvent(listener);
+            event.setRobot(robot);
+            listener.robotIsTeleported(event);
+        }
     }
 }
