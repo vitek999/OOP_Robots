@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/robots/event/RobotActionEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/robots/event/RobotActionListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Robot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/robots/RobotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/RobotTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +24,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -89,6 +94,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RobotTest.test_move_emptyCellInDirectionAndRobotActiveAndEnoughCharge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOP_Robots" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="robots.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="robots" />
+      <option name="MAIN_CLASS_NAME" value="robots.RobotTest" />
+      <option name="METHOD_NAME" value="test_move_emptyCellInDirectionAndRobotActiveAndEnoughCharge" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RobotTest.test_move_noCellInDirectionAndRobotActiveAndEnoughCharge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
@@ -105,7 +126,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WallTest.test_create_onTwoCellsWithoutWallByDirection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RobotTest.test_skipStep_robotActiveEnoughCharge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
         <pattern>
@@ -114,24 +135,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.WallTest" />
-      <option name="METHOD_NAME" value="test_create_onTwoCellsWithoutWallByDirection" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WallTest.test_create_onTwpCellsWithWallByDirection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OOP_Robots" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="robots.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.WallTest" />
-      <option name="METHOD_NAME" value="test_create_onTwpCellsWithWallByDirection" />
+      <option name="MAIN_CLASS_NAME" value="robots.RobotTest" />
+      <option name="METHOD_NAME" value="test_skipStep_robotActiveEnoughCharge" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,10 +159,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.RobotTest" />
+        <item itemvalue="JUnit.RobotTest.test_skipStep_robotActiveEnoughCharge" />
         <item itemvalue="JUnit.RobotTest.test_move_noCellInDirectionAndRobotActiveAndEnoughCharge" />
+        <item itemvalue="JUnit.RobotTest.test_move_emptyCellInDirectionAndRobotActiveAndEnoughCharge" />
         <item itemvalue="JUnit.robots in OOP_Robots" />
-        <item itemvalue="JUnit.WallTest.test_create_onTwpCellsWithWallByDirection" />
-        <item itemvalue="JUnit.WallTest.test_create_onTwoCellsWithoutWallByDirection" />
       </list>
     </recent_temporary>
   </component>
@@ -180,7 +185,7 @@
       <workItem from="1585248212315" duration="569000" />
       <workItem from="1585370076903" duration="248000" />
       <workItem from="1585378932762" duration="1764000" />
-      <workItem from="1585458452379" duration="5035000" />
+      <workItem from="1585458452379" duration="8017000" />
     </task>
     <task id="LOCAL-00001" summary="Added new tests for cell and fixed tests naming">
       <created>1585205121395</created>
@@ -315,7 +320,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585462784492</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Update test setup for robot tests">
+      <created>1585463513616</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1585463513616</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,9 +353,14 @@
     <MESSAGE value="Added test for between cells position for each direction" />
     <MESSAGE value="Remove todo" />
     <MESSAGE value="Added wall tests and fix wall creation (added check on existing wall in position)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added wall tests and fix wall creation (added check on existing wall in position)" />
+    <MESSAGE value="Update test setup for robot tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update test setup for robot tests" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="552" y="198" key="#Auto_Import" timestamp="1585465326910">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="552" y="198" key="#Auto_Import/0.0.1920.1080@0.0.1920.1080" timestamp="1585465326910" />
     <state x="557" y="195" key="#CellTest" timestamp="1585203692781">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -356,6 +373,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="92" y="92" width="1736" height="896" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585459741852" />
+    <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser" timestamp="1585465873155">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1585465873155" />
     <state x="690" y="315" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1585205151181">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -372,10 +393,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="234" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585458557332" />
-    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585462783407">
+    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585463512495">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585462783407" />
+    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585463512495" />
     <state x="184" y="90" key="DiffContextDialog" timestamp="1585458487837">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -384,22 +405,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1585203684299" />
-    <state width="1876" height="335" key="GridCell.Tab.0.bottom" timestamp="1585463416484">
+    <state width="1876" height="335" key="GridCell.Tab.0.bottom" timestamp="1585466491037">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585463416484" />
-    <state width="1876" height="335" key="GridCell.Tab.0.center" timestamp="1585463416484">
+    <state width="1876" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585466491037" />
+    <state width="1876" height="335" key="GridCell.Tab.0.center" timestamp="1585466491036">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585463416484" />
-    <state width="1876" height="335" key="GridCell.Tab.0.left" timestamp="1585463416483">
+    <state width="1876" height="335" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585466491036" />
+    <state width="1876" height="335" key="GridCell.Tab.0.left" timestamp="1585466491036">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585463416483" />
-    <state width="1876" height="335" key="GridCell.Tab.0.right" timestamp="1585463416484">
+    <state width="1876" height="335" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585466491036" />
+    <state width="1876" height="335" key="GridCell.Tab.0.right" timestamp="1585466491036">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585463416484" />
+    <state width="1876" height="335" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585466491036" />
     <state width="1876" height="364" key="GridCell.Tab.1.bottom" timestamp="1585236518961">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

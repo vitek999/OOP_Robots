@@ -1,6 +1,10 @@
 package robots;
 
 import org.jetbrains.annotations.NotNull;
+import robots.event.RobotActionEvent;
+import robots.event.RobotActionListener;
+
+import java.util.ArrayList;
 
 public class Robot {
 
@@ -27,7 +31,7 @@ public class Robot {
             if (newPosition != null && spendBatteryCharge(amountOfChargeForMove(), false)) {
                 position.takeRobot();
                 newPosition.setRobot(this);
-                // TODO: send event that robot moved.
+                fireRobotIsMoved();
             }
         }
     }
@@ -41,7 +45,7 @@ public class Robot {
     public void skipStep() {
         if(isActive) {
             spendBatteryCharge(amountOfChargeForSkipStep(), true);
-            // TODO: send event that robot skip step
+            fireRobotIsSkipStep();
         }
     }
 
@@ -100,5 +104,30 @@ public class Robot {
         return position.getRobot() == null;
     }
 
+    // -------------------- События --------------------
+    private ArrayList<RobotActionListener> robotListListener = new ArrayList<>();
 
+    public void addRobotActionListener(RobotActionListener listener) {
+        robotListListener.add(listener);
+    }
+
+    public void removeRoborActionListener(RobotActionListener listener) {
+        robotListListener.remove(listener);
+    }
+
+    private void fireRobotIsMoved() {
+        for(RobotActionListener listener: robotListListener) {
+            RobotActionEvent event = new RobotActionEvent(listener);
+            event.setRobot(this);
+            listener.robotIsMoved(event);
+        }
+    }
+
+    private void fireRobotIsSkipStep() {
+        for(RobotActionListener listener: robotListListener) {
+            RobotActionEvent event = new RobotActionEvent(listener);
+            event.setRobot(this);
+            listener.robotIsSkipStep(event);
+        }
+    }
 }
