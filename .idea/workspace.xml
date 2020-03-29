@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Wall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/robots/BetweenCellsPositionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/BetweenCellsPositionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/robots/WallTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/WallTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/RobotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/RobotTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,8 +73,8 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.robots in OOP_Robots">
-    <configuration name="WallTest.test_create_onOneCellWithWallByDirection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.RobotTest">
+    <configuration name="RobotTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
         <pattern>
@@ -85,14 +83,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.WallTest" />
-      <option name="METHOD_NAME" value="test_create_onOneCellWithWallByDirection" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="robots.RobotTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WallTest.test_create_onOneCellWithoutWallByDirection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RobotTest.test_move_noCellInDirectionAndRobotActiveAndEnoughCharge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
         <pattern>
@@ -101,8 +98,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.WallTest" />
-      <option name="METHOD_NAME" value="test_create_onOneCellWithoutWallByDirection" />
+      <option name="MAIN_CLASS_NAME" value="robots.RobotTest" />
+      <option name="METHOD_NAME" value="test_move_noCellInDirectionAndRobotActiveAndEnoughCharge" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -156,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RobotTest" />
+        <item itemvalue="JUnit.RobotTest.test_move_noCellInDirectionAndRobotActiveAndEnoughCharge" />
         <item itemvalue="JUnit.robots in OOP_Robots" />
         <item itemvalue="JUnit.WallTest.test_create_onTwpCellsWithWallByDirection" />
         <item itemvalue="JUnit.WallTest.test_create_onTwoCellsWithoutWallByDirection" />
-        <item itemvalue="JUnit.WallTest.test_create_onOneCellWithWallByDirection" />
-        <item itemvalue="JUnit.WallTest.test_create_onOneCellWithoutWallByDirection" />
       </list>
     </recent_temporary>
   </component>
@@ -183,7 +180,7 @@
       <workItem from="1585248212315" duration="569000" />
       <workItem from="1585370076903" duration="248000" />
       <workItem from="1585378932762" duration="1764000" />
-      <workItem from="1585458452379" duration="4283000" />
+      <workItem from="1585458452379" duration="5035000" />
     </task>
     <task id="LOCAL-00001" summary="Added new tests for cell and fixed tests naming">
       <created>1585205121395</created>
@@ -311,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585461400840</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Added wall tests and fix wall creation (added check on existing wall in position)">
+      <created>1585462784492</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1585462784492</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,7 +340,8 @@
     <MESSAGE value="Fix between cells position. Now position not check existing wall on some side of cell" />
     <MESSAGE value="Added test for between cells position for each direction" />
     <MESSAGE value="Remove todo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove todo" />
+    <MESSAGE value="Added wall tests and fix wall creation (added check on existing wall in position)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added wall tests and fix wall creation (added check on existing wall in position)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="557" y="195" key="#CellTest" timestamp="1585203692781">
@@ -367,10 +372,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="234" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585458557332" />
-    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585461399403">
+    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585462783407">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585461399403" />
+    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585462783407" />
     <state x="184" y="90" key="DiffContextDialog" timestamp="1585458487837">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -379,22 +384,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1585203684299" />
-    <state width="1876" height="335" key="GridCell.Tab.0.bottom" timestamp="1585462690853">
+    <state width="1876" height="335" key="GridCell.Tab.0.bottom" timestamp="1585463416484">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585462690853" />
-    <state width="1876" height="335" key="GridCell.Tab.0.center" timestamp="1585462690852">
+    <state width="1876" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585463416484" />
+    <state width="1876" height="335" key="GridCell.Tab.0.center" timestamp="1585463416484">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585462690852" />
-    <state width="1876" height="335" key="GridCell.Tab.0.left" timestamp="1585462690852">
+    <state width="1876" height="335" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585463416484" />
+    <state width="1876" height="335" key="GridCell.Tab.0.left" timestamp="1585463416483">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585462690852" />
-    <state width="1876" height="335" key="GridCell.Tab.0.right" timestamp="1585462690853">
+    <state width="1876" height="335" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585463416483" />
+    <state width="1876" height="335" key="GridCell.Tab.0.right" timestamp="1585463416484">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585462690853" />
+    <state width="1876" height="335" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585463416484" />
     <state width="1876" height="364" key="GridCell.Tab.1.bottom" timestamp="1585236518961">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -427,10 +432,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585232841599" />
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1585461290336">
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1585462786472">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585461290336" />
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585462786472" />
     <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585458461246">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

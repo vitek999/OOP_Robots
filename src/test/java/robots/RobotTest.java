@@ -7,8 +7,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RobotTest {
 
-    // TODO: cделать поле одно и ставить в разные места.
-    // TODO: подумать над тестовым API
+    private Cell cell;
+    private Cell neighborCell;
+    private final Direction direction = Direction.NORTH;
+
     // TODO: тесировать события через логический флаг.
 
     private final static int DEFAULT_TEST_BATTERY_CHARGE = 10;
@@ -20,6 +22,11 @@ class RobotTest {
     @BeforeEach
     public void testSetup() {
         robot = new Robot();
+        robot.setActive(true);
+        robot.setBattery(new Battery(DEFAULT_TEST_BATTERY_CHARGE));
+        cell = new Cell();
+        neighborCell = new Cell();
+        cell.setNeighbor(neighborCell, direction);
     }
 
     @Test
@@ -30,14 +37,11 @@ class RobotTest {
 
     @Test
     public void test_canStayAtPosition_emptyCell() {
-        Cell cell = new Cell();
-
         assertTrue(Robot.canStayAtPosition(cell));
     }
 
     @Test
     public void test_canStayAtPosition_cellWithRobot() {
-        Cell cell = new Cell();
         cell.setRobot(robot);
 
         assertFalse(Robot.canStayAtPosition(cell));
@@ -45,7 +49,6 @@ class RobotTest {
 
     @Test
     public void test_canStayAtPosition_cellWithBattery() {
-        Cell cell = new Cell();
         cell.setBattery(new Battery(DEFAULT_TEST_BATTERY_CHARGE));
 
         assertTrue(Robot.canStayAtPosition(cell));
@@ -53,16 +56,9 @@ class RobotTest {
 
     @Test
     public void test_move_emptyCellInDirectionAndRobotActiveAndEnoughCharge() {
-        Direction direction = Direction.NORTH;
-        Cell cell = new Cell();
-        Cell neighborCell = new Cell();
-        cell.setNeighbor(neighborCell, direction);
         cell.setRobot(robot);
 
-        robot.setBattery(new Battery(DEFAULT_TEST_BATTERY_CHARGE));
-        robot.setActive(true);
         robot.move(direction);
-
 
         assertEquals(robot, neighborCell.getRobot());
         assertEquals(neighborCell, robot.getPosition());
@@ -72,29 +68,21 @@ class RobotTest {
 
     @Test
     public void test_move_noCellInDirectionAndRobotActiveAndEnoughCharge() {
-        Cell cell = new Cell();
-        cell.setRobot(robot);
+        neighborCell.setRobot(robot);
 
-        robot.setBattery(new Battery(DEFAULT_TEST_BATTERY_CHARGE));
-        robot.setActive(true);
         robot.move(Direction.NORTH);
 
         assertEquals(DEFAULT_TEST_BATTERY_CHARGE, robot.getCharge());
-        assertEquals(cell, robot.getPosition());
-        assertEquals(robot, cell.getRobot());
+        assertEquals(neighborCell, robot.getPosition());
+        assertEquals(robot, neighborCell.getRobot());
     }
 
     @Test
     public void test_move_emptyCellInDirectionWithWallAndRobotActiveAndEnoughCharge(){
-        Direction direction = Direction.NORTH;
-        Cell cell = new Cell();
-        Cell neighborCell = new Cell();
-        cell.setNeighbor(neighborCell, direction);
         cell.setRobot(robot);
         new Wall(new BetweenCellsPosition(cell, neighborCell));
 
         robot.setBattery(new Battery(DEFAULT_TEST_BATTERY_CHARGE));
-        robot.setActive(true);
         robot.move(direction);
 
 
@@ -106,16 +94,10 @@ class RobotTest {
 
     @Test
     public void test_move_emptyCellInDirectionAndRobotNotActiveAndEnoughCharge() {
-        Direction direction = Direction.NORTH;
-        Cell cell = new Cell();
-        Cell neighborCell = new Cell();
-        cell.setNeighbor(neighborCell, direction);
         cell.setRobot(robot);
 
-        robot.setBattery(new Battery(DEFAULT_TEST_BATTERY_CHARGE));
         robot.setActive(false);
         robot.move(direction);
-
 
         assertEquals(robot, cell.getRobot());
         assertEquals(cell, robot.getPosition());
@@ -125,16 +107,10 @@ class RobotTest {
 
     @Test
     public void test_move_emptyCellInDirectionAndRobotActiveAndNotEnoughCharge() {
-        Direction direction = Direction.NORTH;
-        Cell cell = new Cell();
-        Cell neighborCell = new Cell();
-        cell.setNeighbor(neighborCell, direction);
         cell.setRobot(robot);
 
         robot.setBattery(new Battery(0));
-        robot.setActive(true);
         robot.move(direction);
-
 
         assertEquals(robot, cell.getRobot());
         assertEquals(cell, robot.getPosition());
@@ -144,11 +120,7 @@ class RobotTest {
 
     @Test
     public void test_skipStep_robotActiveEnoughCharge() {
-        Cell cell = new Cell();
         cell.setRobot(robot);
-
-        robot.setBattery(new Battery(DEFAULT_TEST_BATTERY_CHARGE));
-        robot.setActive(true);
 
         robot.skipStep();
 
@@ -159,10 +131,8 @@ class RobotTest {
 
     @Test
     public void test_skipStep_robotNotActiveEnoughCharge() {
-        Cell cell = new Cell();
         cell.setRobot(robot);
 
-        robot.setBattery(new Battery(DEFAULT_TEST_BATTERY_CHARGE));
         robot.setActive(false);
 
         robot.skipStep();
@@ -174,11 +144,9 @@ class RobotTest {
 
     @Test
     public void test_skipStep_robotActiveNotEnoughCharge() {
-        Cell cell = new Cell();
         cell.setRobot(robot);
 
         robot.setBattery(new Battery(1));
-        robot.setActive(true);
 
         robot.skipStep();
 
@@ -189,14 +157,9 @@ class RobotTest {
 
     @Test
     public void test_changeBattery_robotIsActiveCellContainsBattery(){
-        Cell cell = new Cell();
         cell.setRobot(robot);
         Battery newBattery = new Battery(5);
         cell.setBattery(newBattery);
-
-        Battery robotBattery = new Battery(DEFAULT_TEST_BATTERY_CHARGE);
-        robot.setBattery(robotBattery);
-        robot.setActive(true);
 
         robot.changeBattery();
 
@@ -206,7 +169,6 @@ class RobotTest {
 
     @Test
     public void test_changeBattery_robotIsNotActiveCellContainsBattery(){
-        Cell cell = new Cell();
         cell.setRobot(robot);
         Battery newBattery = new Battery(5);
         cell.setBattery(newBattery);
@@ -223,12 +185,10 @@ class RobotTest {
 
     @Test
     public void test_changeBattery_robotIsActiveCellNotContainsBattery(){
-        Cell cell = new Cell();
         cell.setRobot(robot);
 
         Battery robotBattery = new Battery(DEFAULT_TEST_BATTERY_CHARGE);
         robot.setBattery(robotBattery);
-        robot.setActive(true);
 
         robot.changeBattery();
 
