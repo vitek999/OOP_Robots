@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="" />
+    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/BatteryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/BatteryTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +72,22 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BatteryTest.test_releaseCharge_whenChargeEqualsCharge">
+  <component name="RunManager" selected="JUnit.robots in OOP_Robots">
+    <configuration name="BatteryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOP_Robots" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="robots.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="robots" />
+      <option name="MAIN_CLASS_NAME" value="robots.BatteryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BatteryTest.test_releaseCharge_whenChargeEqualsCharge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
@@ -98,22 +115,6 @@
       <option name="PACKAGE_NAME" value="robots" />
       <option name="MAIN_CLASS_NAME" value="robots.CellTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CellTest.test_setNeighborCell_doubleSided" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OOP_Robots" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="robots.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.CellTest" />
-      <option name="METHOD_NAME" value="test_setNeighborCell_doubleSided" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -150,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BatteryTest.test_releaseCharge_whenChargeEqualsCharge" />
         <item itemvalue="JUnit.robots in OOP_Robots" />
+        <item itemvalue="JUnit.BatteryTest" />
+        <item itemvalue="JUnit.BatteryTest.test_releaseCharge_whenChargeEqualsCharge" />
         <item itemvalue="JUnit.CellTest" />
         <item itemvalue="JUnit.CellTest.test_setNeighborCell_twoTimesInOneDirection" />
-        <item itemvalue="JUnit.CellTest.test_setNeighborCell_doubleSided" />
       </list>
     </recent_temporary>
   </component>
@@ -177,7 +178,7 @@
       <workItem from="1585248212315" duration="569000" />
       <workItem from="1585370076903" duration="248000" />
       <workItem from="1585378932762" duration="1764000" />
-      <workItem from="1585458452379" duration="963000" />
+      <workItem from="1585458452379" duration="1126000" />
     </task>
     <task id="LOCAL-00001" summary="Added new tests for cell and fixed tests naming">
       <created>1585205121395</created>
@@ -263,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585459420010</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added battery release charge test when amount charge equals battery charge">
+      <created>1585459568404</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1585459568404</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +290,8 @@
     <MESSAGE value="Added double Sided set neighbors cells test, two times set neighbors  in one direction" />
     <MESSAGE value="Fix setNeighbor method in cell" />
     <MESSAGE value="test cell neighbor wall get method when wall not exists in direction" />
-    <option name="LAST_COMMIT_MESSAGE" value="test cell neighbor wall get method when wall not exists in direction" />
+    <MESSAGE value="Added battery release charge test when amount charge equals battery charge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added battery release charge test when amount charge equals battery charge" />
   </component>
   <component name="WindowStateProjectService">
     <state x="557" y="195" key="#CellTest" timestamp="1585203692781">
@@ -293,10 +302,10 @@
     </state>
     <state x="557" y="178" key="#CellTest.test_setNeighborCell/0.0.1920.1080@0.0.1920.1080" timestamp="1585203488179" />
     <state x="557" y="195" key="#CellTest/0.0.1920.1080@0.0.1920.1080" timestamp="1585203692781" />
-    <state x="92" y="92" width="1736" height="896" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1585203021041">
+    <state x="92" y="92" width="1736" height="896" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1585459741852">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="92" y="92" width="1736" height="896" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585203021041" />
+    <state x="92" y="92" width="1736" height="896" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585459741852" />
     <state x="690" y="315" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1585205151181">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -313,10 +322,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="234" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585458557332" />
-    <state x="754" y="4" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585459536665">
+    <state x="925" y="29" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585459693714">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="754" y="4" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585459536665" />
+    <state x="925" y="29" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585459693714" />
     <state x="184" y="90" key="DiffContextDialog" timestamp="1585458487837">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -325,22 +334,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1585203684299" />
-    <state width="1876" height="335" key="GridCell.Tab.0.bottom" timestamp="1585459523105">
+    <state width="1876" height="335" key="GridCell.Tab.0.bottom" timestamp="1585459728827">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585459523105" />
-    <state width="1876" height="335" key="GridCell.Tab.0.center" timestamp="1585459523104">
+    <state width="1876" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585459728827" />
+    <state width="1876" height="335" key="GridCell.Tab.0.center" timestamp="1585459728826">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585459523104" />
-    <state width="1876" height="335" key="GridCell.Tab.0.left" timestamp="1585459523104">
+    <state width="1876" height="335" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585459728826" />
+    <state width="1876" height="335" key="GridCell.Tab.0.left" timestamp="1585459728826">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585459523104" />
-    <state width="1876" height="335" key="GridCell.Tab.0.right" timestamp="1585459523104">
+    <state width="1876" height="335" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585459728826" />
+    <state width="1876" height="335" key="GridCell.Tab.0.right" timestamp="1585459728827">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585459523104" />
+    <state width="1876" height="335" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585459728827" />
     <state width="1876" height="364" key="GridCell.Tab.1.bottom" timestamp="1585236518961">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
