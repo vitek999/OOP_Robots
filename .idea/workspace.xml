@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/BetweenCellsPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/BetweenCellsPosition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/BetweenCellsPositionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/BetweenCellsPositionTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +75,7 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.robots in OOP_Robots">
-    <configuration name="BatteryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BetweenCellsPositionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
         <pattern>
@@ -82,13 +84,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.BatteryTest" />
+      <option name="MAIN_CLASS_NAME" value="robots.BetweenCellsPositionTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BatteryTest.test_releaseCharge_whenChargeEqualsCharge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BetweenCellsPositionTest.test_canWallSet_withTwoNeighborsCellsWithWall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
         <pattern>
@@ -97,14 +99,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.BatteryTest" />
-      <option name="METHOD_NAME" value="test_releaseCharge_whenChargeEqualsCharge" />
+      <option name="MAIN_CLASS_NAME" value="robots.BetweenCellsPositionTest" />
+      <option name="METHOD_NAME" value="test_canWallSet_withTwoNeighborsCellsWithWall" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CellTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BetweenCellsPositionTest.test_canWallSet_withTwoNotNeighborsCells" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
         <pattern>
@@ -113,13 +115,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.CellTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="robots.BetweenCellsPositionTest" />
+      <option name="METHOD_NAME" value="test_canWallSet_withTwoNotNeighborsCells" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CellTest.test_setNeighborCell_twoTimesInOneDirection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BetweenCellsPositionTest.test_createAndGetNeighborCells_toNorthOnTwoNeighborCells" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
         <pattern>
@@ -128,8 +131,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.CellTest" />
-      <option name="METHOD_NAME" value="test_setNeighborCell_twoTimesInOneDirection" />
+      <option name="MAIN_CLASS_NAME" value="robots.BetweenCellsPositionTest" />
+      <option name="METHOD_NAME" value="test_createAndGetNeighborCells_toNorthOnTwoNeighborCells" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,10 +155,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.robots in OOP_Robots" />
-        <item itemvalue="JUnit.BatteryTest" />
-        <item itemvalue="JUnit.BatteryTest.test_releaseCharge_whenChargeEqualsCharge" />
-        <item itemvalue="JUnit.CellTest" />
-        <item itemvalue="JUnit.CellTest.test_setNeighborCell_twoTimesInOneDirection" />
+        <item itemvalue="JUnit.BetweenCellsPositionTest" />
+        <item itemvalue="JUnit.BetweenCellsPositionTest.test_createAndGetNeighborCells_toNorthOnTwoNeighborCells" />
+        <item itemvalue="JUnit.BetweenCellsPositionTest.test_canWallSet_withTwoNotNeighborsCells" />
+        <item itemvalue="JUnit.BetweenCellsPositionTest.test_canWallSet_withTwoNeighborsCellsWithWall" />
       </list>
     </recent_temporary>
   </component>
@@ -178,7 +181,7 @@
       <workItem from="1585248212315" duration="569000" />
       <workItem from="1585370076903" duration="248000" />
       <workItem from="1585378932762" duration="1764000" />
-      <workItem from="1585458452379" duration="1443000" />
+      <workItem from="1585458452379" duration="2674000" />
     </task>
     <task id="LOCAL-00001" summary="Added new tests for cell and fixed tests naming">
       <created>1585205121395</created>
@@ -278,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585459784879</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Fixed spend battery charge method in robot">
+      <created>1585459965649</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1585459965649</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,7 +309,8 @@
     <MESSAGE value="test cell neighbor wall get method when wall not exists in direction" />
     <MESSAGE value="Added battery release charge test when amount charge equals battery charge" />
     <MESSAGE value="Fix release charge battery test when amount charge more than battery charge and fix Battery release charge method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix release charge battery test when amount charge more than battery charge and fix Battery release charge method" />
+    <MESSAGE value="Fixed spend battery charge method in robot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed spend battery charge method in robot" />
   </component>
   <component name="WindowStateProjectService">
     <state x="557" y="195" key="#CellTest" timestamp="1585203692781">
@@ -330,10 +341,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="234" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585458557332" />
-    <state x="925" y="29" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585459784057">
+    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585459964457">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="925" y="29" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585459784057" />
+    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585459964457" />
     <state x="184" y="90" key="DiffContextDialog" timestamp="1585458487837">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -342,22 +353,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1585203684299" />
-    <state width="1876" height="335" key="GridCell.Tab.0.bottom" timestamp="1585459929483">
+    <state width="1876" height="335" key="GridCell.Tab.0.bottom" timestamp="1585461151848">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585459929483" />
-    <state width="1876" height="335" key="GridCell.Tab.0.center" timestamp="1585459929483">
+    <state width="1876" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585461151848" />
+    <state width="1876" height="335" key="GridCell.Tab.0.center" timestamp="1585461151847">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585459929483" />
-    <state width="1876" height="335" key="GridCell.Tab.0.left" timestamp="1585459929483">
+    <state width="1876" height="335" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585461151847" />
+    <state width="1876" height="335" key="GridCell.Tab.0.left" timestamp="1585461151847">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585459929483" />
-    <state width="1876" height="335" key="GridCell.Tab.0.right" timestamp="1585459929483">
+    <state width="1876" height="335" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585461151847" />
+    <state width="1876" height="335" key="GridCell.Tab.0.right" timestamp="1585461151848">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585459929483" />
+    <state width="1876" height="335" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585461151848" />
     <state width="1876" height="364" key="GridCell.Tab.1.bottom" timestamp="1585236518961">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -390,10 +401,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585232841599" />
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1585248773369">
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1585459967024">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585248773369" />
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585459967024" />
     <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585458461246">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -414,17 +425,6 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1585206994290" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/robots/Robot.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/OOP_Robots$RobotTest.ic" NAME="RobotTest Coverage Results" MODIFIED="1585226612734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
