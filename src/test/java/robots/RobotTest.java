@@ -91,7 +91,7 @@ class RobotTest {
         Cell neighborCell = new Cell();
         cell.setNeighbor(neighborCell, direction);
         cell.setRobot(robot);
-        new Wall(new WallPosition(cell, neighborCell));
+        new Wall(new BetweenCellsPosition(cell, neighborCell));
 
         robot.setBattery(new Battery(DEFAULT_TEST_BATTERY_CHARGE));
         robot.setActive(true);

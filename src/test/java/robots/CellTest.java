@@ -106,7 +106,7 @@ class CellTest {
     @Test
     public void test_setNeighbor_Wall() {
         Direction direction = Direction.NORTH;
-        Wall neighborWall = new Wall(new WallPosition(cell, direction));
+        Wall neighborWall = new Wall(new BetweenCellsPosition(cell, direction));
 
         assertEquals(neighborWall, cell.neighborWall(direction));
         assertEquals(cell, neighborWall.getPosition().getNeighborCells().get(direction.getOppositeDirection()));

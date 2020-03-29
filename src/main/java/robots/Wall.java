@@ -7,9 +7,9 @@ import java.util.Objects;
 
 public class Wall {
 
-    private WallPosition position;
+    private BetweenCellsPosition position;
 
-    public Wall(@NotNull WallPosition position)
+    public Wall(@NotNull BetweenCellsPosition position)
     {
         this.position = position;
 
@@ -20,7 +20,7 @@ public class Wall {
         }
     }
 
-    public WallPosition getPosition() {
+    public BetweenCellsPosition getPosition() {
         return position;
     }
 

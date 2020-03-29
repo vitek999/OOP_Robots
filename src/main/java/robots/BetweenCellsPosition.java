@@ -6,12 +6,11 @@ import java.util.EnumMap;
 import java.util.Map;
 import java.util.Objects;
 
-// TODO: Переименновать
-public class WallPosition {
+public class BetweenCellsPosition {
 
     private Map<Direction, Cell> neighborCells = new EnumMap<>(Direction.class);
 
-    public WallPosition(@NotNull Cell cell, @NotNull Cell neighborCell) {
+    public BetweenCellsPosition(@NotNull Cell cell, @NotNull Cell neighborCell) {
         if(!canWallSet(cell, neighborCell)) throw new IllegalArgumentException();
 
         Direction neighborDirection = cell.isNeighbor(neighborCell);
@@ -19,7 +18,7 @@ public class WallPosition {
         neighborCells.put(neighborDirection.getOppositeDirection(), cell);
     }
 
-    public WallPosition(@NotNull Cell cell, @NotNull Direction direction) {
+    public BetweenCellsPosition(@NotNull Cell cell, @NotNull Direction direction) {
         if(!canWallSet(cell, direction)) throw new IllegalArgumentException();
 
         neighborCells.put(direction.getOppositeDirection(), cell);
@@ -54,7 +53,7 @@ public class WallPosition {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        WallPosition that = (WallPosition) o;
+        BetweenCellsPosition that = (BetweenCellsPosition) o;
         return Objects.equals(neighborCells, that.neighborCells);
     }
 
