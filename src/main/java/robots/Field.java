@@ -18,16 +18,31 @@ public class Field {
     private Point exitPoint;
 
     public Field(int weight, int height, @NotNull Point exitPoint) {
+        if(weight <= 0) throw new IllegalArgumentException("Field weight must be more than 0");
+        if(height <= 0) throw new IllegalArgumentException("Field height must be more than 0");
+        if(exitPoint.getX() >= weight || exitPoint.getY() >= height)
+            throw new IllegalArgumentException("exit point coordinates must be in range from 0 to weight or height");
+
         this.weight = weight;
         this.height = height;
         this.exitPoint = exitPoint;
 
         setupField();
+
+        // Subscribe on exit cell
         ((ExitCell) getCell(exitPoint)).addExitCellActionListener(new ExitCellObserver());
     }
 
     private void setupField() {
-        // TODO: implement
+        for(int y = 0; y < height; ++y) {
+            for(int x = 0; x < weight; ++x) {
+                Point p = new Point(x, y);
+                Cell cell = p.equals(exitPoint)? new ExitCell() : new Cell();
+                if(x > 0) getCell(new Point(p.getX() - 1, p.getY())).setNeighbor(cell, Direction.EAST);
+                if(y > 0) getCell(new Point(p.getX(), p.getY() - 1)).setNeighbor(cell, Direction.SOUTH);
+                cells.put(p, cell);
+            }
+        }
     }
 
     public Cell getCell(@NotNull Point point) {

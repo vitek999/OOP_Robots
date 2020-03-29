@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/robots/event/FieldActionEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/robots/event/FieldActionListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/robots/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +76,20 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.robots in OOP_Robots">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="robots.Main" />
+      <module name="OOP_Robots" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="robots.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ExitCellTest.test_setRobot_oneRobot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
@@ -126,21 +138,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RobotTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OOP_Robots" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="robots.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.RobotTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="robots in OOP_Robots" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
@@ -157,11 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.robots in OOP_Robots" />
         <item itemvalue="JUnit.ExitCellTest.test_setRobot_setSeveralRobots" />
         <item itemvalue="JUnit.ExitCellTest.test_setRobot_setRobotAgain" />
         <item itemvalue="JUnit.ExitCellTest.test_setRobot_oneRobot" />
-        <item itemvalue="JUnit.RobotTest" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +181,7 @@
       <workItem from="1585248212315" duration="569000" />
       <workItem from="1585370076903" duration="248000" />
       <workItem from="1585378932762" duration="1764000" />
-      <workItem from="1585458452379" duration="10876000" />
+      <workItem from="1585458452379" duration="12149000" />
     </task>
     <task id="LOCAL-00001" summary="Added new tests for cell and fixed tests naming">
       <created>1585205121395</created>
@@ -361,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585471086644</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Add events to Field">
+      <created>1585471751997</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1585471751997</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,7 +383,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added new tests for cell and fixed tests naming" />
     <MESSAGE value="Added tests for battery and fixed release charge method" />
     <MESSAGE value="Delete target from git" />
     <MESSAGE value="Added wall position test and fixed canWallSet method" />
@@ -404,7 +407,8 @@
     <MESSAGE value="implement exit cell" />
     <MESSAGE value="added events that robot is teleported" />
     <MESSAGE value="Added test for exit cell and fix set robot method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added test for exit cell and fix set robot method" />
+    <MESSAGE value="Add events to Field" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add events to Field" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="198" key="#Auto_Import" timestamp="1585465326910">
@@ -443,10 +447,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="234" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585458557332" />
-    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585471085455">
+    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585471750889">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585471085455" />
+    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585471750889" />
     <state x="184" y="90" key="DiffContextDialog" timestamp="1585458487837">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -455,38 +459,38 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1585203684299" />
-    <state width="1876" height="180" key="GridCell.Tab.0.bottom" timestamp="1585471089155">
+    <state width="1876" height="585" key="GridCell.Tab.0.bottom" timestamp="1585474861912">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="180" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585471089155" />
-    <state width="1876" height="180" key="GridCell.Tab.0.center" timestamp="1585471089154">
+    <state width="1876" height="585" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585474861912" />
+    <state width="1876" height="585" key="GridCell.Tab.0.center" timestamp="1585474861912">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="180" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585471089154" />
-    <state width="1876" height="180" key="GridCell.Tab.0.left" timestamp="1585471089154">
+    <state width="1876" height="585" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585474861912" />
+    <state width="1876" height="585" key="GridCell.Tab.0.left" timestamp="1585474861912">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="180" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585471089154" />
-    <state width="1876" height="180" key="GridCell.Tab.0.right" timestamp="1585471089155">
+    <state width="1876" height="585" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585474861912" />
+    <state width="1876" height="585" key="GridCell.Tab.0.right" timestamp="1585474861912">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="180" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585471089155" />
-    <state width="1876" height="364" key="GridCell.Tab.1.bottom" timestamp="1585236518961">
+    <state width="1876" height="585" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585474861912" />
+    <state width="1876" height="585" key="GridCell.Tab.1.bottom" timestamp="1585474861912">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="364" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585236518961" />
-    <state width="1876" height="364" key="GridCell.Tab.1.center" timestamp="1585236518961">
+    <state width="1876" height="585" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585474861912" />
+    <state width="1876" height="585" key="GridCell.Tab.1.center" timestamp="1585474861912">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="364" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585236518961" />
-    <state width="1876" height="364" key="GridCell.Tab.1.left" timestamp="1585236518961">
+    <state width="1876" height="585" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585474861912" />
+    <state width="1876" height="585" key="GridCell.Tab.1.left" timestamp="1585474861912">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="364" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585236518961" />
-    <state width="1876" height="364" key="GridCell.Tab.1.right" timestamp="1585236518961">
+    <state width="1876" height="585" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585474861912" />
+    <state width="1876" height="585" key="GridCell.Tab.1.right" timestamp="1585474861912">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="364" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585236518961" />
+    <state width="1876" height="585" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585474861912" />
     <state x="540" y="283" key="IDE.errors.dialog" timestamp="1585203502875">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -503,10 +507,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585232841599" />
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1585471344244">
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1585471753188">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585471344244" />
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585471753188" />
     <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585458461246">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -519,10 +523,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="342" y="242" key="new project wizard/0.0.1920.1080@0.0.1920.1080" timestamp="1585370471345" />
-    <state x="616" y="250" width="672" height="677" key="run.anything.popup" timestamp="1585248656551">
+    <state x="616" y="250" width="672" height="677" key="run.anything.popup" timestamp="1585474902029">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="616" y="250" width="672" height="677" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1585248656551" />
+    <state x="616" y="250" width="672" height="677" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1585474902029" />
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1585206994290">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
