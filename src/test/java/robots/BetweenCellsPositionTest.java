@@ -7,8 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BetweenCellsPositionTest {
 
-    // TODO: порверка правильности возвращения направления и стены при уставноки стены (все 4 стороны), когда есть пары и когда нет пар.
-
     private final Direction direction = Direction.NORTH;
 
     private Cell cell;

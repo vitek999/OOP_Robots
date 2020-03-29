@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/BetweenCellsPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/BetweenCellsPosition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/robots/BetweenCellsPositionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/BetweenCellsPositionTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -181,7 +179,7 @@
       <workItem from="1585248212315" duration="569000" />
       <workItem from="1585370076903" duration="248000" />
       <workItem from="1585378932762" duration="1764000" />
-      <workItem from="1585458452379" duration="2674000" />
+      <workItem from="1585458452379" duration="2927000" />
     </task>
     <task id="LOCAL-00001" summary="Added new tests for cell and fixed tests naming">
       <created>1585205121395</created>
@@ -288,7 +286,21 @@
       <option name="project" value="LOCAL" />
       <updated>1585459965649</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Fix between cells position. Now position not check existing wall on some side of cell">
+      <created>1585461256090</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1585461256090</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added test for between cells position for each direction">
+      <created>1585461289273</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1585461289273</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,7 +322,9 @@
     <MESSAGE value="Added battery release charge test when amount charge equals battery charge" />
     <MESSAGE value="Fix release charge battery test when amount charge more than battery charge and fix Battery release charge method" />
     <MESSAGE value="Fixed spend battery charge method in robot" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed spend battery charge method in robot" />
+    <MESSAGE value="Fix between cells position. Now position not check existing wall on some side of cell" />
+    <MESSAGE value="Added test for between cells position for each direction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added test for between cells position for each direction" />
   </component>
   <component name="WindowStateProjectService">
     <state x="557" y="195" key="#CellTest" timestamp="1585203692781">
@@ -341,10 +355,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="234" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585458557332" />
-    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585461255081">
+    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585461288296">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585461255081" />
+    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585461288296" />
     <state x="184" y="90" key="DiffContextDialog" timestamp="1585458487837">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -401,10 +415,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585232841599" />
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1585459967024">
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1585461290336">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585459967024" />
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585461290336" />
     <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585458461246">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
