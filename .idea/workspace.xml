@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Wall.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/robots/BetweenCellsPositionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/BetweenCellsPositionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/WallTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/WallTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +76,7 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.robots in OOP_Robots">
-    <configuration name="BetweenCellsPositionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WallTest.test_create_onOneCellWithWallByDirection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
         <pattern>
@@ -82,29 +85,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.BetweenCellsPositionTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BetweenCellsPositionTest.test_canWallSet_withTwoNeighborsCellsWithWall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OOP_Robots" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="robots.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.BetweenCellsPositionTest" />
-      <option name="METHOD_NAME" value="test_canWallSet_withTwoNeighborsCellsWithWall" />
+      <option name="MAIN_CLASS_NAME" value="robots.WallTest" />
+      <option name="METHOD_NAME" value="test_create_onOneCellWithWallByDirection" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BetweenCellsPositionTest.test_canWallSet_withTwoNotNeighborsCells" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WallTest.test_create_onOneCellWithoutWallByDirection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
         <pattern>
@@ -113,14 +101,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.BetweenCellsPositionTest" />
-      <option name="METHOD_NAME" value="test_canWallSet_withTwoNotNeighborsCells" />
+      <option name="MAIN_CLASS_NAME" value="robots.WallTest" />
+      <option name="METHOD_NAME" value="test_create_onOneCellWithoutWallByDirection" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BetweenCellsPositionTest.test_createAndGetNeighborCells_toNorthOnTwoNeighborCells" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WallTest.test_create_onTwoCellsWithoutWallByDirection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
         <pattern>
@@ -129,8 +117,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.BetweenCellsPositionTest" />
-      <option name="METHOD_NAME" value="test_createAndGetNeighborCells_toNorthOnTwoNeighborCells" />
+      <option name="MAIN_CLASS_NAME" value="robots.WallTest" />
+      <option name="METHOD_NAME" value="test_create_onTwoCellsWithoutWallByDirection" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WallTest.test_create_onTwpCellsWithWallByDirection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOP_Robots" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="robots.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="robots" />
+      <option name="MAIN_CLASS_NAME" value="robots.WallTest" />
+      <option name="METHOD_NAME" value="test_create_onTwpCellsWithWallByDirection" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -153,10 +157,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.robots in OOP_Robots" />
-        <item itemvalue="JUnit.BetweenCellsPositionTest" />
-        <item itemvalue="JUnit.BetweenCellsPositionTest.test_createAndGetNeighborCells_toNorthOnTwoNeighborCells" />
-        <item itemvalue="JUnit.BetweenCellsPositionTest.test_canWallSet_withTwoNotNeighborsCells" />
-        <item itemvalue="JUnit.BetweenCellsPositionTest.test_canWallSet_withTwoNeighborsCellsWithWall" />
+        <item itemvalue="JUnit.WallTest.test_create_onTwpCellsWithWallByDirection" />
+        <item itemvalue="JUnit.WallTest.test_create_onTwoCellsWithoutWallByDirection" />
+        <item itemvalue="JUnit.WallTest.test_create_onOneCellWithWallByDirection" />
+        <item itemvalue="JUnit.WallTest.test_create_onOneCellWithoutWallByDirection" />
       </list>
     </recent_temporary>
   </component>
@@ -179,7 +183,7 @@
       <workItem from="1585248212315" duration="569000" />
       <workItem from="1585370076903" duration="248000" />
       <workItem from="1585378932762" duration="1764000" />
-      <workItem from="1585458452379" duration="2927000" />
+      <workItem from="1585458452379" duration="4283000" />
     </task>
     <task id="LOCAL-00001" summary="Added new tests for cell and fixed tests naming">
       <created>1585205121395</created>
@@ -300,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585461289273</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Remove todo">
+      <created>1585461400840</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1585461400840</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,7 +335,8 @@
     <MESSAGE value="Fixed spend battery charge method in robot" />
     <MESSAGE value="Fix between cells position. Now position not check existing wall on some side of cell" />
     <MESSAGE value="Added test for between cells position for each direction" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added test for between cells position for each direction" />
+    <MESSAGE value="Remove todo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove todo" />
   </component>
   <component name="WindowStateProjectService">
     <state x="557" y="195" key="#CellTest" timestamp="1585203692781">
@@ -355,10 +367,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="234" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585458557332" />
-    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585461288296">
+    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585461399403">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585461288296" />
+    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585461399403" />
     <state x="184" y="90" key="DiffContextDialog" timestamp="1585458487837">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -367,22 +379,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1585203684299" />
-    <state width="1876" height="335" key="GridCell.Tab.0.bottom" timestamp="1585461151848">
+    <state width="1876" height="335" key="GridCell.Tab.0.bottom" timestamp="1585462690853">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585461151848" />
-    <state width="1876" height="335" key="GridCell.Tab.0.center" timestamp="1585461151847">
+    <state width="1876" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585462690853" />
+    <state width="1876" height="335" key="GridCell.Tab.0.center" timestamp="1585462690852">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585461151847" />
-    <state width="1876" height="335" key="GridCell.Tab.0.left" timestamp="1585461151847">
+    <state width="1876" height="335" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585462690852" />
+    <state width="1876" height="335" key="GridCell.Tab.0.left" timestamp="1585462690852">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585461151847" />
-    <state width="1876" height="335" key="GridCell.Tab.0.right" timestamp="1585461151848">
+    <state width="1876" height="335" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585462690852" />
+    <state width="1876" height="335" key="GridCell.Tab.0.right" timestamp="1585462690853">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585461151848" />
+    <state width="1876" height="335" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585462690853" />
     <state width="1876" height="364" key="GridCell.Tab.1.bottom" timestamp="1585236518961">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

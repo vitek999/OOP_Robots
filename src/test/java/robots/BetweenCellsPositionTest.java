@@ -18,34 +18,6 @@ class BetweenCellsPositionTest {
         neighborCell = new Cell();
     }
 
-//    @Test
-//    public void test_canWallSet_withCellAndDirectionOnSingleCellWithoutWall() {
-//        assertTrue(BetweenCellsPosition.canWallSet(cell, Direction.NORTH));
-//    }
-//
-//    @Test
-//    public void test_canWallSet_withCellAndDirectionOnSingleCellWithWall() {
-//        new Wall(new BetweenCellsPosition(cell, direction));
-//
-//        assertFalse(BetweenCellsPosition.canWallSet(cell, direction));
-//    }
-//
-//    @Test
-//    public void test_canWallSet_withCellAndDirectionTwoNeighborCellsWithoutWall() {
-//        cell.setNeighbor(neighborCell, direction);
-//
-//        assertTrue(BetweenCellsPosition.canWallSet(cell, direction));
-//    }
-//
-//    @Test
-//    public void test_canWallSet_withCellAndDirectionTwoNeighborCellsWithWall() {
-//        cell.setNeighbor(neighborCell, direction);
-//
-//        new Wall(new BetweenCellsPosition(cell, direction));
-//
-//        assertFalse(BetweenCellsPosition.canWallSet(cell, direction));
-//    }
-
     @Test
     public void test_canWallSet_withTwoNeighborsCells() {
         cell.setNeighbor(neighborCell, direction);
@@ -53,36 +25,10 @@ class BetweenCellsPositionTest {
         assertTrue(BetweenCellsPosition.canWallSet(cell, neighborCell));
     }
 
-//    @Test
-//    public void test_canWallSet_withTwoNeighborsCellsWithWall() {
-//        cell.setNeighbor(neighborCell, direction);
-//
-//        new Wall(new BetweenCellsPosition(cell, neighborCell));
-//
-//        assertFalse(BetweenCellsPosition.canWallSet(cell, neighborCell));
-//    }
-
     @Test
     public void test_canWallSet_withTwoNotNeighborsCells() {
         assertFalse(BetweenCellsPosition.canWallSet(cell, neighborCell));
     }
-
-//    @Test
-//    public void test_create_withCellAndDirectionOnSingleCellWithWall() {
-//        BetweenCellsPosition betweenCellsPosition = new BetweenCellsPosition(cell, direction);
-//        new Wall(betweenCellsPosition);
-//
-//        assertThrows(IllegalArgumentException.class, () -> new BetweenCellsPosition(cell, direction));
-//    }
-
-//    @Test
-//    public void test_create_withCellAndDirectionOnTwoNeighborCellsWithWall() {
-//        cell.setNeighbor(neighborCell, direction);
-//        BetweenCellsPosition betweenCellsPosition = new BetweenCellsPosition(cell, neighborCell);
-//        new Wall(betweenCellsPosition);
-//
-//        assertThrows(IllegalArgumentException.class, () -> new BetweenCellsPosition(cell, neighborCell));
-//    }
 
     @Test
     public void test_createAndGetNeighborCells_withCellAndDirectionOnSingleCell() {
