@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/robots/FieldTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/robots/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Field.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,21 +76,16 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="robots.Main" />
+  <component name="RunManager" selected="JUnit.robots in OOP_Robots">
+    <configuration name="All in OOP_Robots" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="robots.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExitCellTest.test_setRobot_oneRobot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FieldTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
         <pattern>
@@ -99,14 +94,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.ExitCellTest" />
-      <option name="METHOD_NAME" value="test_setRobot_oneRobot" />
+      <option name="MAIN_CLASS_NAME" value="robots.FieldTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FieldTest.test_create_withIncorrectExitPoint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOP_Robots" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="robots.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="robots" />
+      <option name="MAIN_CLASS_NAME" value="robots.FieldTest" />
+      <option name="METHOD_NAME" value="test_create_withIncorrectExitPoint" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExitCellTest.test_setRobot_setRobotAgain" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FieldTest.test_create_withZeroWidth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
         <pattern>
@@ -115,24 +125,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.ExitCellTest" />
-      <option name="METHOD_NAME" value="test_setRobot_setRobotAgain" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ExitCellTest.test_setRobot_setSeveralRobots" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OOP_Robots" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="robots.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.ExitCellTest" />
-      <option name="METHOD_NAME" value="test_setRobot_setSeveralRobots" />
+      <option name="MAIN_CLASS_NAME" value="robots.FieldTest" />
+      <option name="METHOD_NAME" value="test_create_withZeroWidth" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,11 +148,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.robots in OOP_Robots" />
-        <item itemvalue="JUnit.ExitCellTest.test_setRobot_setSeveralRobots" />
-        <item itemvalue="JUnit.ExitCellTest.test_setRobot_setRobotAgain" />
-        <item itemvalue="JUnit.ExitCellTest.test_setRobot_oneRobot" />
+        <item itemvalue="JUnit.FieldTest" />
+        <item itemvalue="JUnit.All in OOP_Robots" />
+        <item itemvalue="JUnit.FieldTest.test_create_withIncorrectExitPoint" />
+        <item itemvalue="JUnit.FieldTest.test_create_withZeroWidth" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +175,7 @@
       <workItem from="1585248212315" duration="569000" />
       <workItem from="1585370076903" duration="248000" />
       <workItem from="1585378932762" duration="1764000" />
-      <workItem from="1585458452379" duration="12149000" />
+      <workItem from="1585458452379" duration="14059000" />
     </task>
     <task id="LOCAL-00001" summary="Added new tests for cell and fixed tests naming">
       <created>1585205121395</created>
@@ -365,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585471751997</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Implement setup fiels">
+      <created>1585475070240</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1585475070240</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,7 +384,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added tests for battery and fixed release charge method" />
     <MESSAGE value="Delete target from git" />
     <MESSAGE value="Added wall position test and fixed canWallSet method" />
     <MESSAGE value="Added test for Wall and fix recursions toString in Cell" />
@@ -408,7 +408,8 @@
     <MESSAGE value="added events that robot is teleported" />
     <MESSAGE value="Added test for exit cell and fix set robot method" />
     <MESSAGE value="Add events to Field" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add events to Field" />
+    <MESSAGE value="Implement setup fiels" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement setup fiels" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="198" key="#Auto_Import" timestamp="1585465326910">
@@ -427,10 +428,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="92" y="92" width="1736" height="896" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585459741852" />
-    <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser" timestamp="1585471626756">
+    <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser" timestamp="1585476683810">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1585471626756" />
+    <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1585476683810" />
     <state x="690" y="315" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1585205151181">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -447,10 +448,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="234" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585458557332" />
-    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585471750889">
+    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585475069255">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585471750889" />
+    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585475069255" />
     <state x="184" y="90" key="DiffContextDialog" timestamp="1585458487837">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -459,22 +460,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1585203684299" />
-    <state width="1876" height="585" key="GridCell.Tab.0.bottom" timestamp="1585474861912">
+    <state width="1876" height="771" key="GridCell.Tab.0.bottom" timestamp="1585476913174">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="585" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585474861912" />
-    <state width="1876" height="585" key="GridCell.Tab.0.center" timestamp="1585474861912">
+    <state width="1876" height="771" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585476913174" />
+    <state width="1876" height="771" key="GridCell.Tab.0.center" timestamp="1585476913173">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="585" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585474861912" />
-    <state width="1876" height="585" key="GridCell.Tab.0.left" timestamp="1585474861912">
+    <state width="1876" height="771" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585476913173" />
+    <state width="1876" height="771" key="GridCell.Tab.0.left" timestamp="1585476913173">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="585" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585474861912" />
-    <state width="1876" height="585" key="GridCell.Tab.0.right" timestamp="1585474861912">
+    <state width="1876" height="771" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585476913173" />
+    <state width="1876" height="771" key="GridCell.Tab.0.right" timestamp="1585476913173">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="585" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585474861912" />
+    <state width="1876" height="771" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585476913173" />
     <state width="1876" height="585" key="GridCell.Tab.1.bottom" timestamp="1585474861912">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -527,10 +528,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="616" y="250" width="672" height="677" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1585474902029" />
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1585206994290">
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1585475986961">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1585206994290" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1585475986961" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/OOP_Robots$RobotTest.ic" NAME="RobotTest Coverage Results" MODIFIED="1585226612734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

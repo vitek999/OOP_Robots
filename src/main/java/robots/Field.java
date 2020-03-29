@@ -12,18 +12,18 @@ public class Field {
 
     private Map<Point, Cell> cells = new HashMap<>();
 
-    private int weight;
+    private int width;
     private int height;
 
     private Point exitPoint;
 
-    public Field(int weight, int height, @NotNull Point exitPoint) {
-        if(weight <= 0) throw new IllegalArgumentException("Field weight must be more than 0");
+    public Field(int width, int height, @NotNull Point exitPoint) {
+        if(width <= 0) throw new IllegalArgumentException("Field width must be more than 0");
         if(height <= 0) throw new IllegalArgumentException("Field height must be more than 0");
-        if(exitPoint.getX() >= weight || exitPoint.getY() >= height)
+        if(exitPoint.getX() >= width || exitPoint.getY() >= height)
             throw new IllegalArgumentException("exit point coordinates must be in range from 0 to weight or height");
 
-        this.weight = weight;
+        this.width = width;
         this.height = height;
         this.exitPoint = exitPoint;
 
@@ -35,7 +35,7 @@ public class Field {
 
     private void setupField() {
         for(int y = 0; y < height; ++y) {
-            for(int x = 0; x < weight; ++x) {
+            for(int x = 0; x < width; ++x) {
                 Point p = new Point(x, y);
                 Cell cell = p.equals(exitPoint)? new ExitCell() : new Cell();
                 if(x > 0) getCell(new Point(p.getX() - 1, p.getY())).setNeighbor(cell, Direction.EAST);
@@ -67,7 +67,7 @@ public class Field {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Field field = (Field) o;
-        return weight == field.weight &&
+        return width == field.width &&
                 height == field.height &&
                 Objects.equals(cells, field.cells) &&
                 Objects.equals(exitPoint, field.exitPoint);
@@ -75,14 +75,14 @@ public class Field {
 
     @Override
     public int hashCode() {
-        return Objects.hash(cells, weight, height, exitPoint);
+        return Objects.hash(cells, width, height, exitPoint);
     }
 
     @Override
     public String toString() {
         return "Field{" +
                 "cells=" + cells +
-                ", weight=" + weight +
+                ", width=" + width +
                 ", height=" + height +
                 ", exitPoint=" + exitPoint +
                 '}';
@@ -100,11 +100,11 @@ public class Field {
 
     private ArrayList<FieldActionListener> fieldListListener = new ArrayList<>();
 
-    public void addExitCellActionListener(FieldActionListener listener) {
+    public void addFieldlActionListener(FieldActionListener listener) {
         fieldListListener.add(listener);
     }
 
-    public void removeExitCellActionListener(FieldActionListener listener) {
+    public void removeFieldCellActionListener(FieldActionListener listener) {
         fieldListListener.remove(listener);
     }
 
