@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/robots/BatteryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/BatteryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Robot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +178,7 @@
       <workItem from="1585248212315" duration="569000" />
       <workItem from="1585370076903" duration="248000" />
       <workItem from="1585378932762" duration="1764000" />
-      <workItem from="1585458452379" duration="1126000" />
+      <workItem from="1585458452379" duration="1443000" />
     </task>
     <task id="LOCAL-00001" summary="Added new tests for cell and fixed tests naming">
       <created>1585205121395</created>
@@ -271,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585459568404</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fix release charge battery test when amount charge more than battery charge and fix Battery release charge method">
+      <created>1585459784879</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1585459784879</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +298,8 @@
     <MESSAGE value="Fix setNeighbor method in cell" />
     <MESSAGE value="test cell neighbor wall get method when wall not exists in direction" />
     <MESSAGE value="Added battery release charge test when amount charge equals battery charge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added battery release charge test when amount charge equals battery charge" />
+    <MESSAGE value="Fix release charge battery test when amount charge more than battery charge and fix Battery release charge method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix release charge battery test when amount charge more than battery charge and fix Battery release charge method" />
   </component>
   <component name="WindowStateProjectService">
     <state x="557" y="195" key="#CellTest" timestamp="1585203692781">
@@ -322,10 +330,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="234" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585458557332" />
-    <state x="925" y="29" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585459693714">
+    <state x="925" y="29" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585459784057">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="925" y="29" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585459693714" />
+    <state x="925" y="29" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585459784057" />
     <state x="184" y="90" key="DiffContextDialog" timestamp="1585458487837">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -334,22 +342,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1585203684299" />
-    <state width="1876" height="335" key="GridCell.Tab.0.bottom" timestamp="1585459728827">
+    <state width="1876" height="335" key="GridCell.Tab.0.bottom" timestamp="1585459929483">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585459728827" />
-    <state width="1876" height="335" key="GridCell.Tab.0.center" timestamp="1585459728826">
+    <state width="1876" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585459929483" />
+    <state width="1876" height="335" key="GridCell.Tab.0.center" timestamp="1585459929483">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585459728826" />
-    <state width="1876" height="335" key="GridCell.Tab.0.left" timestamp="1585459728826">
+    <state width="1876" height="335" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585459929483" />
+    <state width="1876" height="335" key="GridCell.Tab.0.left" timestamp="1585459929483">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585459728826" />
-    <state width="1876" height="335" key="GridCell.Tab.0.right" timestamp="1585459728827">
+    <state width="1876" height="335" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585459929483" />
+    <state width="1876" height="335" key="GridCell.Tab.0.right" timestamp="1585459929483">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585459728827" />
+    <state width="1876" height="335" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585459929483" />
     <state width="1876" height="364" key="GridCell.Tab.1.bottom" timestamp="1585236518961">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

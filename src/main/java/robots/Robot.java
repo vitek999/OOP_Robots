@@ -83,8 +83,12 @@ public class Robot {
     private boolean spendBatteryCharge(int amountOfCharge, boolean ignoreShortage) {
         boolean result = true;
 
-        if (getCharge() < amountOfCharge && !ignoreShortage ) {
-            result = false;
+        if (getCharge() < amountOfCharge) {
+            if(ignoreShortage) {
+                battery.releaseCharge(battery.charge());
+            } else {
+                result = false;
+            }
         } else {
             battery.releaseCharge(amountOfCharge);
         }
