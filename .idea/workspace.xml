@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Rename WallPosition to BetweenCellsPosition">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/robots/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/CellTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,11 +70,19 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.robots in OOP_Robots">
-    <configuration name="All in OOP_Robots" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BatteryTest.test_releaseCharge_whenChargeEqualsCharge">
+    <configuration name="BatteryTest.test_releaseCharge_whenChargeEqualsCharge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="robots.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="robots" />
+      <option name="MAIN_CLASS_NAME" value="robots.BatteryTest" />
+      <option name="METHOD_NAME" value="test_releaseCharge_whenChargeEqualsCharge" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -146,11 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BatteryTest.test_releaseCharge_whenChargeEqualsCharge" />
         <item itemvalue="JUnit.robots in OOP_Robots" />
         <item itemvalue="JUnit.CellTest" />
         <item itemvalue="JUnit.CellTest.test_setNeighborCell_twoTimesInOneDirection" />
         <item itemvalue="JUnit.CellTest.test_setNeighborCell_doubleSided" />
-        <item itemvalue="JUnit.All in OOP_Robots" />
       </list>
     </recent_temporary>
   </component>
@@ -173,7 +177,7 @@
       <workItem from="1585248212315" duration="569000" />
       <workItem from="1585370076903" duration="248000" />
       <workItem from="1585378932762" duration="1764000" />
-      <workItem from="1585458452379" duration="701000" />
+      <workItem from="1585458452379" duration="963000" />
     </task>
     <task id="LOCAL-00001" summary="Added new tests for cell and fixed tests naming">
       <created>1585205121395</created>
@@ -238,7 +242,28 @@
       <option name="project" value="LOCAL" />
       <updated>1585458611723</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added double Sided set neighbors cells test, two times set neighbors  in one direction">
+      <created>1585459259898</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1585459259898</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Fix setNeighbor method in cell">
+      <created>1585459282029</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1585459282029</updated>
+    </task>
+    <task id="LOCAL-00012" summary="test cell neighbor wall get method when wall not exists in direction">
+      <created>1585459420010</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1585459420010</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,7 +279,10 @@
     <MESSAGE value="Added todos" />
     <MESSAGE value="Added plugin for building executable jar" />
     <MESSAGE value="Rename WallPosition to BetweenCellsPosition" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename WallPosition to BetweenCellsPosition" />
+    <MESSAGE value="Added double Sided set neighbors cells test, two times set neighbors  in one direction" />
+    <MESSAGE value="Fix setNeighbor method in cell" />
+    <MESSAGE value="test cell neighbor wall get method when wall not exists in direction" />
+    <option name="LAST_COMMIT_MESSAGE" value="test cell neighbor wall get method when wall not exists in direction" />
   </component>
   <component name="WindowStateProjectService">
     <state x="557" y="195" key="#CellTest" timestamp="1585203692781">
@@ -285,10 +313,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="234" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585458557332" />
-    <state x="754" y="4" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585459280833">
+    <state x="754" y="4" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585459536665">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="754" y="4" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585459280833" />
+    <state x="754" y="4" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585459536665" />
     <state x="184" y="90" key="DiffContextDialog" timestamp="1585458487837">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -297,22 +325,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1585203684299" />
-    <state width="1876" height="335" key="GridCell.Tab.0.bottom" timestamp="1585459387092">
+    <state width="1876" height="335" key="GridCell.Tab.0.bottom" timestamp="1585459523105">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585459387092" />
-    <state width="1876" height="335" key="GridCell.Tab.0.center" timestamp="1585459387091">
+    <state width="1876" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585459523105" />
+    <state width="1876" height="335" key="GridCell.Tab.0.center" timestamp="1585459523104">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585459387091" />
-    <state width="1876" height="335" key="GridCell.Tab.0.left" timestamp="1585459387091">
+    <state width="1876" height="335" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585459523104" />
+    <state width="1876" height="335" key="GridCell.Tab.0.left" timestamp="1585459523104">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585459387091" />
-    <state width="1876" height="335" key="GridCell.Tab.0.right" timestamp="1585459387091">
+    <state width="1876" height="335" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585459523104" />
+    <state width="1876" height="335" key="GridCell.Tab.0.right" timestamp="1585459523104">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="335" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585459387091" />
+    <state width="1876" height="335" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585459523104" />
     <state width="1876" height="364" key="GridCell.Tab.1.bottom" timestamp="1585236518961">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

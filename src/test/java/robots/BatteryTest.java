@@ -22,13 +22,18 @@ class BatteryTest {
     }
 
     @Test
-    public void test_releaseCharge_whenChargeAmountLessOrEqualCharge() {
+    public void test_releaseCharge_whenChargeAmountLessCharge() {
         int chargeAmount = 5;
         assertEquals(chargeAmount, battery.releaseCharge(chargeAmount));
         assertEquals(DEFAULT_TEST_BATTERY_CHARGE - chargeAmount, battery.charge());
     }
 
-    // TODO: когда charge == amountCharge
+    @Test
+    public void test_releaseCharge_whenChargeEqualsCharge() {
+        int chargeAmount = DEFAULT_TEST_BATTERY_CHARGE;
+        assertEquals(chargeAmount, battery.releaseCharge(chargeAmount));
+        assertEquals(0, battery.charge());
+    }
 
 
     @Test // TODO: исправить, если больше чем есть, то не тртатить, верунть 0
