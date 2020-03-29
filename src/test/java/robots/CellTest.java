@@ -133,5 +133,10 @@ class CellTest {
         assertEquals(cell, neighborWall.getPosition().getNeighborCells().get(direction.getOppositeDirection()));
     }
 
-    // TODO: тест neighborWall, когда в направлении нет стены
+    @Test
+    public void test_neighborWall_wallNotExists() {
+        Direction direction = Direction.NORTH;
+
+        assertNull(cell.neighborWall(direction));
+    }
 }
