@@ -136,7 +136,7 @@ public class Game {
     private class RobotObserver implements RobotActionListener {
 
         @Override
-        public void robotIsMoved(RobotActionEvent event) {
+        public void robotIsMoved(@NotNull RobotActionEvent event) {
             gameStatus = determineOutcomeGame();
 
             fireRobotIsMoved(event.getRobot());
@@ -147,7 +147,7 @@ public class Game {
         }
 
         @Override
-        public void robotIsSkipStep(RobotActionEvent event) {
+        public void robotIsSkipStep(@NotNull RobotActionEvent event) {
             gameStatus = determineOutcomeGame();
 
             fireRobotIsSkipStep(event.getRobot());
@@ -159,7 +159,7 @@ public class Game {
     private class FieldObserver implements FieldActionListener {
 
         @Override
-        public void robotIsTeleported(FieldActionEvent event) {
+        public void robotIsTeleported(@NotNull FieldActionEvent event) {
             gameStatus = determineOutcomeGame();
 
             fireRobotIsTeleported(event.getRobot());

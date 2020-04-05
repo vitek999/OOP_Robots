@@ -1,5 +1,6 @@
 package robots;
 
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import robots.event.RobotActionEvent;
@@ -20,12 +21,12 @@ class RobotTest {
     private class EventsListener implements RobotActionListener {
 
         @Override
-        public void robotIsMoved(RobotActionEvent event) {
+        public void robotIsMoved(@NotNull RobotActionEvent event) {
             events.add(EVENT.ROBOT_MOVED);
         }
 
         @Override
-        public void robotIsSkipStep(RobotActionEvent event) {
+        public void robotIsSkipStep(@NotNull RobotActionEvent event) {
             events.add(EVENT.ROBOT_SKIP_STEP);
         }
     }

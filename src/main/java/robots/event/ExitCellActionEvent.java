@@ -1,5 +1,6 @@
 package robots.event;
 
+import org.jetbrains.annotations.NotNull;
 import robots.Robot;
 
 import java.util.EventObject;
@@ -8,7 +9,7 @@ public class ExitCellActionEvent extends EventObject {
 
     private Robot robot;
 
-    public void setRobot(Robot robot) {
+    public void setRobot(@NotNull Robot robot) {
         this.robot = robot;
     }
 

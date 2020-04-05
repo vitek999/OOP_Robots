@@ -93,7 +93,7 @@ public class Field {
     class ExitCellObserver implements ExitCellActionListener {
 
         @Override
-        public void robotIsTeleported(ExitCellActionEvent event) {
+        public void robotIsTeleported(@NotNull ExitCellActionEvent event) {
             fireRobotIsTeleported(event.getRobot());
         }
     }

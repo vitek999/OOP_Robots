@@ -1,7 +1,9 @@
 package robots.event;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.EventListener;
 
 public interface FieldActionListener extends EventListener {
-    void robotIsTeleported(FieldActionEvent event);
+    void robotIsTeleported(@NotNull FieldActionEvent event);
 }

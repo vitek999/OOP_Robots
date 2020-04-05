@@ -1,5 +1,6 @@
 package robots;
 
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import robots.event.FieldActionEvent;
@@ -16,7 +17,7 @@ public class FieldTest {
     class FieldObserver implements FieldActionListener {
 
         @Override
-        public void robotIsTeleported(FieldActionEvent event) {
+        public void robotIsTeleported(@NotNull FieldActionEvent event) {
             eventCount += 1;
         }
     }

@@ -1,5 +1,6 @@
 package robots;
 
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import robots.event.ExitCellActionEvent;
@@ -19,7 +20,7 @@ public class ExitCellTest {
     private class EventListener implements ExitCellActionListener {
 
         @Override
-        public void robotIsTeleported(ExitCellActionEvent event) {
+        public void robotIsTeleported(@NotNull ExitCellActionEvent event) {
             countEvents += 1;
         }
     }
