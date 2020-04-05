@@ -1,13 +1,13 @@
-package robots.labirints;
+package robots.labirint;
 
 import robots.*;
+import robots.labirints.Labirint;
 
-public class SmallLabirint extends Labirint {
+public class TestLabirint extends Labirint {
 
     private static final int FIELD_HEIGHT = 3;
     private static final int FIELD_WIDTH = 3;
     private static final int DEFAULT_BATTERY_CHARGE = 10;
-
 
     @Override
     protected int fieldHeight() {
@@ -27,9 +27,9 @@ public class SmallLabirint extends Labirint {
     @Override
     protected void addRobots() {
         Robot firstRobot = new Robot();
-        firstRobot.setBattery(new Battery(DEFAULT_BATTERY_CHARGE));
+        firstRobot.setBattery(new Battery(10));
         Robot secondRobot = new Robot();
-        secondRobot.setBattery(new Battery(DEFAULT_BATTERY_CHARGE));
+        secondRobot.setBattery(new Battery(10));
 
         field.getCell(new Point(0,2)).setRobot(firstRobot);
         field.getCell(new Point(2,0)).setRobot(secondRobot);

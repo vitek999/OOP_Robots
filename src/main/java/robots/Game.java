@@ -104,25 +104,6 @@ public class Game {
     }
 
     private void buildField() {
-//        // TODO: why it's constants? may be make as method params
-//        gameField = new Field(10, 10, new Point(8, 8));
-//
-//        // Set robots
-//        Robot firstRobot = new Robot();
-//        firstRobot.setBattery(new Battery(10));
-//        gameField.getCell(new Point(5,5)).setRobot(firstRobot);
-//
-//        Robot secondRobot = new Robot();
-//        secondRobot.setBattery(new Battery(5));
-//        gameField.getCell(new Point(7,7)).setRobot(secondRobot);
-//
-//        // set wall
-//        new Wall(new BetweenCellsPosition(
-//                gameField.getCell(new Point(8,8)),
-//                gameField.getCell(new Point(8,7))));
-//
-//        // set battery
-//        gameField.getCell(new Point(6,6)).setBattery(new Battery(7));
         gameField = labirint.buildField();
     }
 
@@ -150,7 +131,7 @@ public class Game {
         public void robotIsMoved(RobotActionEvent event) {
             gameStatus = determineOutcomeGame();
 
-            if(!(event.getRobot().getPosition() instanceof ExitCell) && gameStatus == GameStatus.GAME_IS_ON){
+            if(!(event.getRobot().getPosition() instanceof ExitCell)){
                 passMoveNextRobot();
             }
         }
@@ -159,8 +140,7 @@ public class Game {
         public void robotIsSkipStep(RobotActionEvent event) {
             gameStatus = determineOutcomeGame();
 
-            if(gameStatus == GameStatus.GAME_IS_ON)
-                passMoveNextRobot();
+            passMoveNextRobot();
         }
     }
 
@@ -170,8 +150,7 @@ public class Game {
         public void robotIsTeleported(FieldActionEvent event) {
             gameStatus = determineOutcomeGame();
 
-            if(gameStatus == GameStatus.GAME_IS_ON)
-                passMoveNextRobot();
+            passMoveNextRobot();
         }
     }
 }
