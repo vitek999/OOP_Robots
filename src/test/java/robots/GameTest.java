@@ -49,6 +49,13 @@ public class GameTest {
     }
 
     @Test
+    public void test_finishGame() {
+        game.finish();
+
+        assertEquals(GameStatus.GAME_FINISHED_AHEAD_OF_SCHEDULE, game.status());
+    }
+
+    @Test
     public void test_robotMoved_success() {
         Robot robot = game.activeRobot();
         expectedEvents.add(new Pare<>(Event.ROBOT_MOVED, robot));
@@ -83,5 +90,61 @@ public class GameTest {
         assertFalse(robot.isActive());
         assertEquals(expectedEvents, events);
         assertEquals(GameStatus.GAME_IS_ON, game.status());
+    }
+
+    @Test
+    public void test_robotTeleported() {
+        Robot robot = game.activeRobot();
+
+        game.activeRobot().move(Direction.EAST);
+        expectedEvents.add(new Pare<>(Event.ROBOT_MOVED, robot));
+
+        Robot secondRobot = game.activeRobot();
+        game.activeRobot().move(Direction.WEST);
+        expectedEvents.add(new Pare<>(Event.ROBOT_MOVED, secondRobot));
+
+        game.activeRobot().move(Direction.EAST);
+        expectedEvents.add(new Pare<>(Event.ROBOT_MOVED, robot));
+
+        expectedEvents.add(new Pare<>(Event.ROBOT_TELEPORTED, robot));
+
+        assertNotEquals(robot, game.activeRobot());
+        assertEquals(expectedEvents, events);
+        assertFalse(robot.isActive());
+        assertEquals(GameStatus.GAME_IS_ON, game.status());
+    }
+
+    @Test
+    public void test_allRobotTeleported() {
+        Robot robot = game.activeRobot();
+
+        game.activeRobot().move(Direction.EAST);
+        expectedEvents.add(new Pare<>(Event.ROBOT_MOVED, robot));
+
+        Robot secondRobot = game.activeRobot();
+        game.activeRobot().move(Direction.WEST);
+        expectedEvents.add(new Pare<>(Event.ROBOT_MOVED, secondRobot));
+
+        game.activeRobot().move(Direction.EAST);
+        expectedEvents.add(new Pare<>(Event.ROBOT_MOVED, robot));
+
+        expectedEvents.add(new Pare<>(Event.ROBOT_TELEPORTED, robot));
+
+        game.activeRobot().move(Direction.SOUTH);
+        expectedEvents.add(new Pare<>(Event.ROBOT_MOVED, secondRobot));
+
+        game.activeRobot().move(Direction.SOUTH);
+        expectedEvents.add(new Pare<>(Event.ROBOT_MOVED, secondRobot));
+
+        game.activeRobot().move(Direction.EAST);
+        expectedEvents.add(new Pare<>(Event.ROBOT_MOVED, secondRobot));
+
+        expectedEvents.add(new Pare<>(Event.ROBOT_TELEPORTED, secondRobot));
+
+        assertNull(game.activeRobot());
+        assertEquals(expectedEvents, events);
+        assertFalse(robot.isActive());
+        assertFalse(secondRobot.isActive());
+        assertEquals(GameStatus.ALL_ROBOTS_OUT, game.status());
     }
 }

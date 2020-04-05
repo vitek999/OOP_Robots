@@ -29,9 +29,9 @@ public class Robot {
         if(isActive) {
             Cell newPosition = canMove(direction);
             if (newPosition != null && spendBatteryCharge(amountOfChargeForMove(), false)) {
+                fireRobotIsMoved();
                 position.takeRobot();
                 newPosition.setRobot(this);
-                fireRobotIsMoved();
             }
         }
     }

@@ -62,6 +62,11 @@ public class Game {
     }
 
     private void passMoveNextRobot() {
+        if(gameStatus != GameStatus.GAME_IS_ON) {
+            setActiveRobot(null);
+            return;
+        }
+
         List<Robot> robotsOnField = gameField.getRobotsOnField();
 
         if(robotsOnField.size() == 1 ) {
@@ -137,21 +142,18 @@ public class Game {
 
         @Override
         public void robotIsMoved(@NotNull RobotActionEvent event) {
-            gameStatus = determineOutcomeGame();
-
             fireRobotIsMoved(event.getRobot());
 
             if(!(event.getRobot().getPosition() instanceof ExitCell)){
+                gameStatus = determineOutcomeGame();
                 passMoveNextRobot();
             }
         }
 
         @Override
         public void robotIsSkipStep(@NotNull RobotActionEvent event) {
-            gameStatus = determineOutcomeGame();
-
             fireRobotIsSkipStep(event.getRobot());
-
+            gameStatus = determineOutcomeGame();
             passMoveNextRobot();
         }
     }
@@ -160,10 +162,8 @@ public class Game {
 
         @Override
         public void robotIsTeleported(@NotNull FieldActionEvent event) {
-            gameStatus = determineOutcomeGame();
-
             fireRobotIsTeleported(event.getRobot());
-
+            gameStatus = determineOutcomeGame();
             passMoveNextRobot();
         }
     }
