@@ -31,8 +31,8 @@ public class Game {
     }
 
     public void finish() {
-        if (gameStatus != GameStatus.GAME_IS_ON) throw new RuntimeException("Game not is on");
         gameStatus = GameStatus.GAME_FINISHED_AHEAD_OF_SCHEDULE;
+        setActiveRobot(null);
     }
 
     public GameStatus gameStatus() {
@@ -48,7 +48,6 @@ public class Game {
     }
 
     private void passMoveNextRobot() {
-        if (gameStatus != GameStatus.GAME_IS_ON) throw new RuntimeException("Game not is on");
         List<Robot> robotsOnField = gameField.getRobotsOnField();
 
         if(robotsOnField.size() == 1 ) {
@@ -119,21 +118,21 @@ public class Game {
     }
 
     private void setWinner(@NotNull Robot robot) {
-        if (gameStatus != GameStatus.GAME_IS_ON) throw new RuntimeException("Game not is on");
+
         winner = robot;
+
         gameStatus = GameStatus.WINNER_FOUND;
 
-        // Deactivate all robots?
-        activeRobot = null;
-        robot.setActive(false);
+        setActiveRobot(null);
     }
 
-    private void setActiveRobot(@NotNull Robot robot) {
-        if (gameStatus != GameStatus.GAME_IS_ON) throw new RuntimeException("Game not is on");
+    private void setActiveRobot(Robot robot) {
 
         if (activeRobot != null) activeRobot.setActive(false);
+
         activeRobot = robot;
-        robot.setActive(true);
+
+        if(robot != null ) robot.setActive(true);
     }
 
     private class RobotObserver implements RobotActionListener {
