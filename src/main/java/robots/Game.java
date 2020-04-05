@@ -41,7 +41,7 @@ public class Game {
         setActiveRobot(null);
     }
 
-    public GameStatus gameStatus() {
+    public GameStatus status() {
         return gameStatus;
     }
 
