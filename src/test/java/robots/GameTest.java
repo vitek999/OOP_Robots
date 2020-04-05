@@ -147,4 +147,60 @@ public class GameTest {
         assertFalse(secondRobot.isActive());
         assertEquals(GameStatus.ALL_ROBOTS_OUT, game.status());
     }
+
+    @Test
+    public void test_allRobotsHasLowBattery() {
+        Robot robot = game.activeRobot();
+
+        game.activeRobot().skipStep();
+        expectedEvents.add(new Pare<>(Event.ROBOT_SKIP_STEP, robot));
+
+        Robot secondRobot = game.activeRobot();
+        game.activeRobot().skipStep();
+        expectedEvents.add(new Pare<>(Event.ROBOT_SKIP_STEP, secondRobot));
+
+        for(int i = 0; i < 4; i++) {
+            game.activeRobot().skipStep();
+            expectedEvents.add(new Pare<>(Event.ROBOT_SKIP_STEP, robot));
+
+            game.activeRobot().skipStep();
+            expectedEvents.add(new Pare<>(Event.ROBOT_SKIP_STEP, secondRobot));
+        }
+
+        assertNull(game.activeRobot());
+        assertEquals(expectedEvents, events);
+        assertFalse(robot.isActive());
+        assertFalse(secondRobot.isActive());
+        assertEquals(GameStatus.ALL_ROBOTS_HAVE_LOW_BATTERIES, game.status());
+    }
+
+    @Test
+    public void test_winnerFound() {
+        Robot robot = game.activeRobot();
+
+        game.activeRobot().move(Direction.EAST);
+        expectedEvents.add(new Pare<>(Event.ROBOT_MOVED, robot));
+
+        Robot secondRobot = game.activeRobot();
+        game.activeRobot().skipStep();
+        expectedEvents.add(new Pare<>(Event.ROBOT_SKIP_STEP, secondRobot));
+
+        game.activeRobot().move(Direction.EAST);
+        expectedEvents.add(new Pare<>(Event.ROBOT_MOVED, robot));
+
+        expectedEvents.add(new Pare<>(Event.ROBOT_TELEPORTED, robot));
+
+        for(int i = 0; i < 4; i++) {
+            game.activeRobot().skipStep();
+            expectedEvents.add(new Pare<>(Event.ROBOT_SKIP_STEP, secondRobot));
+        }
+
+
+        assertNull(game.activeRobot());
+        assertEquals(expectedEvents, events);
+        assertFalse(robot.isActive());
+        assertFalse(secondRobot.isActive());
+        assertEquals(robot, game.winner());
+        assertEquals(GameStatus.WINNER_FOUND, game.status());
+    }
 }

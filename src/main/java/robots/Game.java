@@ -99,6 +99,7 @@ public class Game {
 
         if(teleportedRobots.size() == 1 && robotsHasLowBattery(robotsOnField)) {
             setWinner(teleportedRobots.get(0));
+            result = GameStatus.WINNER_FOUND;
         }
 
         return result;
@@ -121,8 +122,6 @@ public class Game {
     private void setWinner(@NotNull Robot robot) {
 
         winner = robot;
-
-        gameStatus = GameStatus.WINNER_FOUND;
 
         setActiveRobot(null);
     }
