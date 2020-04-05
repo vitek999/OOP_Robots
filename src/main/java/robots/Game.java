@@ -80,8 +80,7 @@ public class Game {
         }
 
         if(teleportedRobots.size() == 1 && robotsHasLowBattery(robotsOnField)) {
-            result = GameStatus.WINNER_FOUND;
-            winner = teleportedRobots.get(0);
+            setWinner(teleportedRobots.get(0));
         }
 
         return result;
