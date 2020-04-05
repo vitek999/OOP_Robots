@@ -1,10 +1,7 @@
 package robots;
 
 import org.jetbrains.annotations.NotNull;
-import robots.event.FieldActionEvent;
-import robots.event.FieldActionListener;
-import robots.event.RobotActionEvent;
-import robots.event.RobotActionListener;
+import robots.event.*;
 import robots.labirints.Labirint;
 
 import java.util.ArrayList;
@@ -102,7 +99,7 @@ public class Game {
         return result;
     }
 
-    private boolean robotsHasLowBattery(List<Robot> robots) {
+    private boolean robotsHasLowBattery(@NotNull List<Robot> robots) {
         boolean result = true;
 
         for(int i = 0; i < robots.size() && result; ++i) {
@@ -134,11 +131,15 @@ public class Game {
         if(robot != null ) robot.setActive(true);
     }
 
+    /** Events */
+
     private class RobotObserver implements RobotActionListener {
 
         @Override
         public void robotIsMoved(RobotActionEvent event) {
             gameStatus = determineOutcomeGame();
+
+            fireRobotIsMoved(event.getRobot());
 
             if(!(event.getRobot().getPosition() instanceof ExitCell)){
                 passMoveNextRobot();
@@ -148,6 +149,8 @@ public class Game {
         @Override
         public void robotIsSkipStep(RobotActionEvent event) {
             gameStatus = determineOutcomeGame();
+
+            fireRobotIsSkipStep(event.getRobot());
 
             passMoveNextRobot();
         }
@@ -159,7 +162,43 @@ public class Game {
         public void robotIsTeleported(FieldActionEvent event) {
             gameStatus = determineOutcomeGame();
 
+            fireRobotIsTeleported(event.getRobot());
+
             passMoveNextRobot();
+        }
+    }
+
+    private ArrayList<GameActionListener> gameActionListeners = new ArrayList<>();
+
+    public void addGameActionListener(@NotNull GameActionListener listener) {
+        gameActionListeners.add(listener);
+    }
+
+    public void removeGameActionListener(@NotNull GameActionListener listener) {
+        gameActionListeners.remove(listener);
+    }
+
+    private void fireRobotIsMoved(@NotNull Robot robot) {
+        for(GameActionListener listener: gameActionListeners) {
+            GameActionEvent event = new GameActionEvent(listener);
+            event.setRobot(robot);
+            listener.robotIsMoved(event);
+        }
+    }
+
+    private void fireRobotIsSkipStep(@NotNull Robot robot) {
+        for(GameActionListener listener: gameActionListeners) {
+            GameActionEvent event = new GameActionEvent(listener);
+            event.setRobot(robot);
+            listener.robotIsSkipStep(event);
+        }
+    }
+
+    private void fireRobotIsTeleported(@NotNull Robot robot) {
+        for(GameActionListener listener: gameActionListeners) {
+            GameActionEvent event = new GameActionEvent(listener);
+            event.setRobot(robot);
+            listener.robotIsTeleported(event);
         }
     }
 }

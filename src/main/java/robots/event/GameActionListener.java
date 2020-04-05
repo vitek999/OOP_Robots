@@ -2,7 +2,7 @@ package robots.event;
 
 import java.util.EventListener;
 
-public interface GameActionListemer extends EventListener {
+public interface GameActionListener extends EventListener {
 
     void robotIsMoved(GameActionEvent event);
 
