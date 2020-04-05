@@ -7,6 +7,7 @@ import robots.event.RobotActionEvent;
 import robots.event.RobotActionListener;
 import robots.labirints.Labirint;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
@@ -53,6 +54,14 @@ public class Game {
 
     public Robot activeRobot() {
         return activeRobot;
+    }
+
+    public List<Robot> getRobotsOnField() {
+        return new ArrayList<>(gameField.getRobotsOnField());
+    }
+
+    public List<Robot> getTeleportedRobots() {
+        return new ArrayList<>(gameField.getTeleportedRobots());
     }
 
     private void passMoveNextRobot() {
