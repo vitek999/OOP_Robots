@@ -5,6 +5,7 @@ import robots.event.FieldActionEvent;
 import robots.event.FieldActionListener;
 import robots.event.RobotActionEvent;
 import robots.event.RobotActionListener;
+import robots.labirints.Labirint;
 
 import java.util.List;
 
@@ -14,8 +15,15 @@ public class Game {
     private Robot activeRobot;
     private Robot winner;
     private Field gameField;
+    private Labirint labirint;
 
-    public Game() {
+    public Game(Labirint labirint) {
+        this.labirint = labirint;
+
+        initGame();
+    }
+
+    private void initGame() {
         gameStatus = GameStatus.GAME_IS_ON;
 
         buildField();
@@ -96,25 +104,26 @@ public class Game {
     }
 
     private void buildField() {
-        // TODO: why it's constants? may be make as method params
-        gameField = new Field(10, 10, new Point(8, 8));
-
-        // Set robots
-        Robot firstRobot = new Robot();
-        firstRobot.setBattery(new Battery(10));
-        gameField.getCell(new Point(5,5)).setRobot(firstRobot);
-
-        Robot secondRobot = new Robot();
-        secondRobot.setBattery(new Battery(5));
-        gameField.getCell(new Point(7,7)).setRobot(secondRobot);
-
-        // set wall
-        new Wall(new BetweenCellsPosition(
-                gameField.getCell(new Point(8,8)),
-                gameField.getCell(new Point(8,7))));
-
-        // set battery
-        gameField.getCell(new Point(6,6)).setBattery(new Battery(7));
+//        // TODO: why it's constants? may be make as method params
+//        gameField = new Field(10, 10, new Point(8, 8));
+//
+//        // Set robots
+//        Robot firstRobot = new Robot();
+//        firstRobot.setBattery(new Battery(10));
+//        gameField.getCell(new Point(5,5)).setRobot(firstRobot);
+//
+//        Robot secondRobot = new Robot();
+//        secondRobot.setBattery(new Battery(5));
+//        gameField.getCell(new Point(7,7)).setRobot(secondRobot);
+//
+//        // set wall
+//        new Wall(new BetweenCellsPosition(
+//                gameField.getCell(new Point(8,8)),
+//                gameField.getCell(new Point(8,7))));
+//
+//        // set battery
+//        gameField.getCell(new Point(6,6)).setBattery(new Battery(7));
+        gameField = labirint.buildField();
     }
 
     private void setWinner(@NotNull Robot robot) {
