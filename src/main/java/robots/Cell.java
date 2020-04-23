@@ -101,7 +101,7 @@ public class Cell {
 
     @Override
     public int hashCode() {
-        return Objects.hash(battery, robot, neighborCells, neighborWalls);
+        return Objects.hash(battery, robot, neighborCells.size(), neighborWalls.size());
     }
 
     @Override

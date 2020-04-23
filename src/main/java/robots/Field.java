@@ -10,12 +10,12 @@ import java.util.*;
 
 public class Field {
 
-    private Map<Point, Cell> cells = new HashMap<>();
+    private final Map<Point, Cell> cells = new HashMap<>();
 
-    private int width;
-    private int height;
+    private final int width;
+    private final int height;
 
-    private Point exitPoint;
+    private final Point exitPoint;
 
     public Field(int width, int height, @NotNull Point exitPoint) {
         if(width <= 0) throw new IllegalArgumentException("Field width must be more than 0");
@@ -43,6 +43,14 @@ public class Field {
                 cells.put(p, cell);
             }
         }
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
     }
 
     public Cell getCell(@NotNull Point point) {

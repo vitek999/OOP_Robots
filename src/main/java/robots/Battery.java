@@ -4,6 +4,8 @@ import java.util.Objects;
 
 public class Battery {
 
+    private static final int MAX_CHARGE = 10;
+
     private Integer charge;
 
     public Battery(Integer charge) {
@@ -18,6 +20,10 @@ public class Battery {
 
     public Integer charge() {
         return charge;
+    }
+
+    public Integer maxCharge() {
+        return MAX_CHARGE;
     }
 
     @Override

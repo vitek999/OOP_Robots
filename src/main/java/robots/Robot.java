@@ -61,8 +61,12 @@ public class Robot {
         this.battery = battery;
     }
 
-    public int getCharge() {
+    public Integer getCharge() {
         return battery.charge();
+    }
+
+    public Integer getMaxCharge() {
+        return battery.maxCharge();
     }
 
     private Cell canMove(@NotNull Direction direction) {

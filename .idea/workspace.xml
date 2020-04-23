@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/robots/GameTest.java" afterDir="false" />
+    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Added tests for field">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/robots/ui/FieldWidget.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/robots/ui/WidgetFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/robots/ui/cell/BatteryWidget.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/robots/ui/cell/CellItemWidget.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/robots/ui/cell/CellWidget.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/robots/ui/cell/ExitWidget.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/robots/ui/cell/RobotWidget.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/robots/ui/utils/ChargeUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/robots/ui/utils/ImageUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/7/8741f7f37776ce060872d1ed6e37fcfbb31c583f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/7/8741f7f37776ce060872d1ed6e37fcfbb31c583f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/a/9a616ed0ebe678f343dba544509880cca489d22c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Battery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Battery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Field.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/robots/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Robot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,14 +44,12 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
@@ -44,11 +57,11 @@
   <component name="ProjectId" id="1ZeWZA1wz4jfWW0NuhVYuY2RpAJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -147,10 +160,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in OOP_Robots" />
         <item itemvalue="JUnit.GameTest.test_passMoveNextRobot" />
         <item itemvalue="JUnit.robots in OOP_Robots" />
         <item itemvalue="JUnit.FieldTest" />
-        <item itemvalue="JUnit.All in OOP_Robots" />
       </list>
     </recent_temporary>
   </component>
@@ -174,6 +187,13 @@
       <workItem from="1585370076903" duration="248000" />
       <workItem from="1585378932762" duration="1764000" />
       <workItem from="1585458452379" duration="20721000" />
+      <workItem from="1587312000216" duration="1620000" />
+      <workItem from="1587360597221" duration="5950000" />
+      <workItem from="1587370137440" duration="3406000" />
+      <workItem from="1587538759009" duration="1998000" />
+      <workItem from="1587547345122" duration="4277000" />
+      <workItem from="1587614603981" duration="10827000" />
+      <workItem from="1587641306186" duration="6948000" />
     </task>
     <task id="LOCAL-00001" summary="Added new tests for cell and fixed tests naming">
       <created>1585205121395</created>
@@ -375,7 +395,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -387,6 +407,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added wall position test and fixed canWallSet method" />
@@ -433,9 +454,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="92" y="92" width="1736" height="896" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585459741852" />
-    <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser" timestamp="1585484364409">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1587645088841">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1587645088841" />
     <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1585484364409" />
     <state x="690" y="315" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1585205151181">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -453,9 +475,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="234" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585458557332" />
-    <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2" timestamp="1585476930268">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="985" y="136" width="852" height="938" key="CommitChangelistDialog2" timestamp="1587312920802">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="985" y="136" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587312920802" />
     <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585476930268" />
     <state x="184" y="90" key="DiffContextDialog" timestamp="1585458487837">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -465,37 +488,45 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1585203684299" />
-    <state width="1876" height="514" key="GridCell.Tab.0.bottom" timestamp="1585484166512">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1877" height="263" key="GridCell.Tab.0.bottom" timestamp="1587656957872">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587656957872" />
     <state width="1876" height="514" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1876" height="514" key="GridCell.Tab.0.center" timestamp="1585484166512">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1877" height="263" key="GridCell.Tab.0.center" timestamp="1587656957871">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="263" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587656957871" />
     <state width="1876" height="514" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1876" height="514" key="GridCell.Tab.0.left" timestamp="1585484166512">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1877" height="263" key="GridCell.Tab.0.left" timestamp="1587656957871">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="263" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587656957871" />
     <state width="1876" height="514" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1876" height="514" key="GridCell.Tab.0.right" timestamp="1585484166512">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1877" height="263" key="GridCell.Tab.0.right" timestamp="1587656957872">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="263" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587656957872" />
     <state width="1876" height="514" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1876" height="582" key="GridCell.Tab.1.bottom" timestamp="1585484147965">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1877" height="371" key="GridCell.Tab.1.bottom" timestamp="1587632168660">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="371" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587632168660" />
     <state width="1876" height="582" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585484147965" />
-    <state width="1876" height="582" key="GridCell.Tab.1.center" timestamp="1585484147965">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1877" height="371" key="GridCell.Tab.1.center" timestamp="1587632168660">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="371" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587632168660" />
     <state width="1876" height="582" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585484147965" />
-    <state width="1876" height="582" key="GridCell.Tab.1.left" timestamp="1585484147965">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1877" height="371" key="GridCell.Tab.1.left" timestamp="1587632168659">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="371" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587632168659" />
     <state width="1876" height="582" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585484147965" />
-    <state width="1876" height="582" key="GridCell.Tab.1.right" timestamp="1585484147965">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1877" height="371" key="GridCell.Tab.1.right" timestamp="1587632168660">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="371" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587632168660" />
     <state width="1876" height="582" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585484147965" />
     <state x="540" y="283" key="IDE.errors.dialog" timestamp="1585203502875">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -513,9 +544,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585232841599" />
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1585476932505">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1587312923596">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587312923596" />
     <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585476932505" />
     <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585458461246">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -525,6 +557,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="731" y="258" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585222399918" />
+    <state x="690" y="274" key="extract.method.dialog" timestamp="1587364377135">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="274" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587364377135" />
     <state x="342" y="242" key="new project wizard" timestamp="1585370471345">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -533,9 +569,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="616" y="250" width="672" height="677" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1585480226178" />
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1585475986961">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="623" y="226" width="672" height="653" key="search.everywhere.popup" timestamp="1587647632221">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="623" y="226" width="672" height="653" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1587647632221" />
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1585475986961" />
   </component>
   <component name="XDebuggerManager">
@@ -546,28 +583,23 @@
           <line>15</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/robots/Main.java</url>
-          <line>7</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/OOP_Robots$WallPositionTest.ic" NAME="WallPositionTest Coverage Results" MODIFIED="1585208046511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>robots.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/OOP_Robots$RobotTest.ic" NAME="RobotTest Coverage Results" MODIFIED="1585226612734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>robots.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/OOP_Robots$CellTest.ic" NAME="CellTest Coverage Results" MODIFIED="1585205012605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/OOP_Robots$robots_in_OOP_Robots.ic" NAME="robots in OOP_Robots Coverage Results" MODIFIED="1585476945546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>robots.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/OOP_Robots$WallTest.ic" NAME="WallTest Coverage Results" MODIFIED="1585209328596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>robots.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/OOP_Robots$WallPositionTest.ic" NAME="WallPositionTest Coverage Results" MODIFIED="1585208046511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>robots.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/OOP_Robots$robots_in_OOP_Robots.ic" NAME="robots in OOP_Robots Coverage Results" MODIFIED="1585476945546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/OOP_Robots$CellTest.ic" NAME="CellTest Coverage Results" MODIFIED="1585205012605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>robots.*</FILTER>
     </SUITE>
   </component>
