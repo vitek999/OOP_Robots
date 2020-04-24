@@ -23,7 +23,7 @@ public class RobotWidget extends CellItemWidget {
         super();
         this.robot = robot;
         this.color = color;
-        //setFocusable(true);
+        setFocusable(true);
         addKeyListener(new KeyController());
     }
 
@@ -47,6 +47,7 @@ public class RobotWidget extends CellItemWidget {
 
     public void setActive(boolean state) {
         setFocusable(state);
+        requestFocus();
         repaint();
     }
 
