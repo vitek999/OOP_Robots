@@ -25,7 +25,7 @@ public class RobotWidget extends CellItemWidget {
         super();
         this.robot = robot;
         this.color = color;
-        setFocusable(true);
+        //setFocusable(true);
         addKeyListener(new KeyController());
     }
 
@@ -33,7 +33,7 @@ public class RobotWidget extends CellItemWidget {
     protected BufferedImage getImage() {
         BufferedImage image = null;
         try {
-            image = ImageIO.read(getRobotFileByColor(color));
+            image = ImageIO.read(getRobotFileByColorAndActive(color, robot.isActive()));
             image = ImageUtils.resizeImage(image, 60, 96);
             image = robotImageWithChargeText(image);
         } catch (IOException e) {
@@ -45,6 +45,11 @@ public class RobotWidget extends CellItemWidget {
     @Override
     CellWidget.Layer getLayer() {
         return CellWidget.Layer.BOTTOM;
+    }
+
+    public void setActive(boolean state) {
+        setFocusable(state);
+        repaint();
     }
 
     @Override
@@ -74,10 +79,14 @@ public class RobotWidget extends CellItemWidget {
         return ChargeUtils.chargeTextColor(robot.getCharge(), robot.getMaxCharge());
     }
 
-    private static File getRobotFileByColor(Color robotColor) {
+    private static File getRobotFileByColorAndActive(Color robotColor, boolean active) {
         File file = null;
-        if (robotColor == Color.RED) file = new File("RRB.png");
-        if (robotColor == Color.BLUE) file = new File("RBB.png");
+        if (robotColor == Color.RED)  {
+            file = active ? new File("RRBA.png") : new File("RRB.png");
+        }
+        if (robotColor == Color.BLUE) {
+            file = active ? new File("RBBA.png") : new File("RBB.png");
+        }
         return file;
     }
 

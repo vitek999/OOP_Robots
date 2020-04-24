@@ -40,6 +40,7 @@ public class CellWidget extends JPanel {
 
         items.put(item.getLayer(), item);
         add(item, index);
+        repaint();
     }
 
     public void removeItem(CellItemWidget item) {
@@ -61,6 +62,7 @@ public class CellWidget extends JPanel {
 
             remove(index);
             items.remove(item.getLayer());
+            repaint();
         }
     }
 }

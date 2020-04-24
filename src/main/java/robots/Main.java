@@ -25,9 +25,16 @@ public class Main {
             JPanel content = (JPanel) this.getContentPane();
             content.add(new FieldWidget(field, widgetFactory));
 
+            //Game
+//            Game game = new Game(new SmallLabirint());
+//            game.activeRobot().move(Direction.EAST);
+
             pack();
             setResizable(false);
             setDefaultCloseOperation(EXIT_ON_CLOSE);
+            Robot robot = field.getRobotsOnField().get(0);
+            robot.setActive(true);
+            robot.move(Direction.EAST);
         }
     }
 }

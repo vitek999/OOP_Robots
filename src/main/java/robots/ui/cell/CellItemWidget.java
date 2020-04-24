@@ -24,6 +24,7 @@ public abstract class CellItemWidget extends JPanel {
         cellItemState = state;
         setPreferredSize(getDimension());
         repaint();
+        revalidate();
     }
 
     protected abstract BufferedImage getImage();

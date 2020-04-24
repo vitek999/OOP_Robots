@@ -29,6 +29,11 @@ class RobotTest {
         public void robotIsSkipStep(@NotNull RobotActionEvent event) {
             events.add(EVENT.ROBOT_SKIP_STEP);
         }
+
+        @Override
+        public void robotChangeActive(@NotNull RobotActionEvent event) {
+
+        }
     }
 
     private Cell cell;

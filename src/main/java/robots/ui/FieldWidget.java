@@ -3,11 +3,17 @@ package robots.ui;
 import org.jetbrains.annotations.NotNull;
 import robots.*;
 import robots.Point;
+import robots.Robot;
+import robots.event.RobotActionEvent;
+import robots.event.RobotActionListener;
 import robots.ui.block.BetweenCellsWidget;
 import robots.ui.block.WallWidget;
 import robots.ui.cell.CellWidget;
+import robots.ui.cell.RobotWidget;
 
 import javax.swing.*;
+import java.awt.*;
+import java.util.List;
 
 public class FieldWidget extends JPanel {
 
@@ -19,6 +25,7 @@ public class FieldWidget extends JPanel {
         this.widgetFactory = widgetFactory;
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         fillField();
+        subscribeOnRobots();
     }
 
     private void fillField() {
@@ -80,6 +87,39 @@ public class FieldWidget extends JPanel {
             if(i == 0) add(startRowWalls);
             add(row);
             add(rowWalls);
+        }
+    }
+
+    private void subscribeOnRobots() {
+        List<Robot> robots = field.getRobotsOnField();
+        for(Robot robot : robots) {
+            robot.addRobotActionListener(new RobotController());
+        }
+    }
+
+    private class RobotController implements RobotActionListener {
+
+        @Override
+        public void robotIsMoved(@NotNull RobotActionEvent event) {
+            RobotWidget robotWidget = widgetFactory.getWidget(event.getRobot());
+            CellWidget from = widgetFactory.getWidget(event.getFromCell());
+            CellWidget to = widgetFactory.getWidget(event.getToCell());
+            from.removeItem(robotWidget);
+            to.addItem(robotWidget);
+            //TODO: kostyl!
+            robotWidget.requestFocus();
+        }
+
+        @Override
+        public void robotIsSkipStep(@NotNull RobotActionEvent event) {
+
+        }
+
+        @Override
+        public void robotChangeActive(@NotNull RobotActionEvent event) {
+            Robot robot = event.getRobot();
+            RobotWidget robotWidget = widgetFactory.getWidget(robot);
+            robotWidget.setActive(robot.isActive());
         }
     }
 }

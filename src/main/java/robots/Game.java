@@ -53,6 +53,10 @@ public class Game {
         return activeRobot;
     }
 
+    public Field getGameField() {
+        return gameField;
+    }
+
     public List<Robot> getRobotsOnField() {
         return new ArrayList<>(gameField.getRobotsOnField());
     }
@@ -120,9 +124,7 @@ public class Game {
     }
 
     private void setWinner(@NotNull Robot robot) {
-
         winner = robot;
-
         setActiveRobot(null);
     }
 
@@ -142,7 +144,6 @@ public class Game {
         @Override
         public void robotIsMoved(@NotNull RobotActionEvent event) {
             fireRobotIsMoved(event.getRobot());
-
             if(!(event.getRobot().getPosition() instanceof ExitCell)){
                 gameStatus = determineOutcomeGame();
                 passMoveNextRobot();
@@ -154,6 +155,11 @@ public class Game {
             fireRobotIsSkipStep(event.getRobot());
             gameStatus = determineOutcomeGame();
             passMoveNextRobot();
+        }
+
+        @Override
+        public void robotChangeActive(@NotNull RobotActionEvent event) {
+
         }
     }
 

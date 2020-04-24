@@ -27,9 +27,10 @@ public class Robot {
 
     public void move(@NotNull Direction direction) {
         if(isActive) {
+            Cell oldPosition = position;
             Cell newPosition = canMove(direction);
             if (newPosition != null && spendBatteryCharge(amountOfChargeForMove(), false)) {
-                fireRobotIsMoved();
+                fireRobotIsMoved(oldPosition, newPosition);
                 position.takeRobot();
                 newPosition.setRobot(this);
             }
@@ -51,6 +52,7 @@ public class Robot {
 
     void setActive(boolean value) {
         isActive = value;
+        fireRobotChangeActive();
     }
 
     public boolean isActive() {
@@ -119,10 +121,12 @@ public class Robot {
         robotListListener.remove(listener);
     }
 
-    private void fireRobotIsMoved() {
+    private void fireRobotIsMoved(@NotNull Cell oldPosition,@NotNull Cell newPosition) {
         for(RobotActionListener listener: robotListListener) {
             RobotActionEvent event = new RobotActionEvent(listener);
             event.setRobot(this);
+            event.setFromCell(oldPosition);
+            event.setToCell(newPosition);
             listener.robotIsMoved(event);
         }
     }
@@ -132,6 +136,14 @@ public class Robot {
             RobotActionEvent event = new RobotActionEvent(listener);
             event.setRobot(this);
             listener.robotIsSkipStep(event);
+        }
+    }
+
+    private void fireRobotChangeActive() {
+        for(RobotActionListener listener: robotListListener) {
+            RobotActionEvent event = new RobotActionEvent(listener);
+            event.setRobot(this);
+            listener.robotChangeActive(event);
         }
     }
 }
