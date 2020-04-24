@@ -75,6 +75,10 @@ public class WidgetFactory {
         return batteries.get(battery);
     }
 
+    public void remove(Battery battery) {
+        batteries.remove(battery);
+    }
+
     public WallWidget create(@NotNull Wall wall, Orientation orientation) {
         if(walls.containsKey(wall)) return walls.get(wall);
 

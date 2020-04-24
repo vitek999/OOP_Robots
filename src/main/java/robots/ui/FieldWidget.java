@@ -130,6 +130,7 @@ public class FieldWidget extends JPanel {
             CellWidget cellWidget = widgetFactory.getWidget(robot.getPosition());
             BatteryWidget batteryWidget = widgetFactory.getWidget(event.getBattery());
             cellWidget.removeItem(batteryWidget);
+            widgetFactory.remove(event.getBattery());
             //TODO: kostyl!
             robotWidget.requestFocus();
         }
