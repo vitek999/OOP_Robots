@@ -113,7 +113,11 @@ public class FieldWidget extends JPanel {
 
         @Override
         public void robotIsSkipStep(@NotNull RobotActionEvent event) {
-
+            Robot robot = event.getRobot();
+            RobotWidget robotWidget = widgetFactory.getWidget(robot);
+            robotWidget.repaint();
+            //TODO: kostyl!
+            robotWidget.requestFocus();
         }
 
         @Override
