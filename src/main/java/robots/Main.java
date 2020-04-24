@@ -34,7 +34,7 @@ public class Main {
             setDefaultCloseOperation(EXIT_ON_CLOSE);
             Robot robot = field.getRobotsOnField().get(0);
             robot.setActive(true);
-            robot.move(Direction.EAST);
+            //robot.move(Direction.EAST);
         }
     }
 }

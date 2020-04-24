@@ -10,4 +10,6 @@ public interface RobotActionListener extends EventListener {
     void robotIsSkipStep(@NotNull RobotActionEvent event);
 
     void robotChangeActive(@NotNull RobotActionEvent event);
+
+    void robotChangeBattery(@NotNull RobotActionEvent event);
 }

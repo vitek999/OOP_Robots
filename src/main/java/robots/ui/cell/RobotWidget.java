@@ -7,9 +7,7 @@ import robots.ui.utils.ChargeUtils;
 import robots.ui.utils.ImageUtils;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
@@ -99,18 +97,30 @@ public class RobotWidget extends CellItemWidget {
 
         @Override
         public void keyPressed(KeyEvent ke) {
+            int keyCode = ke.getKeyCode();
 
-            Direction direction = directionByKeyCode(ke.getKeyCode());
-            System.out.println(color + " go to " + direction);
-            if(direction != null && robot.isActive()) {
-                robot.move(direction);
-            }
+            move(keyCode);
+            changeBattery(keyCode);
 
             repaint();
         }
 
         @Override
         public void keyReleased(KeyEvent arg0) {
+        }
+
+        private void changeBattery(@NotNull int keyCode) {
+            if(keyCode == KeyEvent.VK_G) {
+                robot.changeBattery();
+            }
+        }
+
+        private void move(@NotNull int keyCode){
+            Direction direction = directionByKeyCode(keyCode);
+            System.out.println(color + " go to " + direction);
+            if(direction != null && robot.isActive()) {
+                robot.move(direction);
+            }
         }
 
         private Direction directionByKeyCode(@NotNull int keyCode) {

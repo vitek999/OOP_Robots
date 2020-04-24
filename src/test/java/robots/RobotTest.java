@@ -32,7 +32,12 @@ class RobotTest {
 
         @Override
         public void robotChangeActive(@NotNull RobotActionEvent event) {
+            // Not implemented yet
+        }
 
+        @Override
+        public void robotChangeBattery(@NotNull RobotActionEvent event) {
+            // Not implemented yet
         }
     }
 

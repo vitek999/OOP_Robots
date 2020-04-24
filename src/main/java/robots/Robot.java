@@ -40,6 +40,7 @@ public class Robot {
     public void changeBattery() {
         if(isActive && position.getBattery() != null){
             battery = position.takeBattery();
+            fireRobotChangeBattery(battery);
         }
     }
 
@@ -144,6 +145,15 @@ public class Robot {
             RobotActionEvent event = new RobotActionEvent(listener);
             event.setRobot(this);
             listener.robotChangeActive(event);
+        }
+    }
+
+    private void fireRobotChangeBattery(Battery changedBattery) {
+        for(RobotActionListener listener: robotListListener) {
+            RobotActionEvent event = new RobotActionEvent(listener);
+            event.setRobot(this);
+            event.setBattery(changedBattery);
+            listener.robotChangeBattery(event);
         }
     }
 }

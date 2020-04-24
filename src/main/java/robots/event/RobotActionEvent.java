@@ -1,6 +1,7 @@
 package robots.event;
 
 import org.jetbrains.annotations.NotNull;
+import robots.Battery;
 import robots.Cell;
 import robots.Robot;
 
@@ -11,6 +12,7 @@ public class RobotActionEvent extends EventObject {
     private Robot robot;
     private Cell fromCell;
     private Cell toCell;
+    private Battery battery;
 
     public void setFromCell(Cell fromCell) {
         this.fromCell = fromCell;
@@ -26,6 +28,14 @@ public class RobotActionEvent extends EventObject {
 
     public Cell getToCell() {
         return toCell;
+    }
+
+    public void setBattery(Battery battery) {
+        this.battery = battery;
+    }
+
+    public Battery getBattery() {
+        return battery;
     }
 
     public void setRobot(@NotNull Robot robot) {

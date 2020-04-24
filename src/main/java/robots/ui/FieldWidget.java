@@ -8,6 +8,7 @@ import robots.event.RobotActionEvent;
 import robots.event.RobotActionListener;
 import robots.ui.block.BetweenCellsWidget;
 import robots.ui.block.WallWidget;
+import robots.ui.cell.BatteryWidget;
 import robots.ui.cell.CellWidget;
 import robots.ui.cell.RobotWidget;
 
@@ -120,6 +121,17 @@ public class FieldWidget extends JPanel {
             Robot robot = event.getRobot();
             RobotWidget robotWidget = widgetFactory.getWidget(robot);
             robotWidget.setActive(robot.isActive());
+        }
+
+        @Override
+        public void robotChangeBattery(@NotNull RobotActionEvent event) {
+            Robot robot = event.getRobot();
+            RobotWidget robotWidget = widgetFactory.getWidget(robot);
+            CellWidget cellWidget = widgetFactory.getWidget(robot.getPosition());
+            BatteryWidget batteryWidget = widgetFactory.getWidget(event.getBattery());
+            cellWidget.removeItem(batteryWidget);
+            //TODO: kostyl!
+            robotWidget.requestFocus();
         }
     }
 }
