@@ -1,10 +1,9 @@
 package robots.ui;
 
 import org.jetbrains.annotations.NotNull;
-import robots.Battery;
-import robots.Cell;
-import robots.ExitCell;
+import robots.*;
 import robots.Robot;
+import robots.ui.block.WallWidget;
 import robots.ui.cell.BatteryWidget;
 import robots.ui.cell.CellWidget;
 import robots.ui.cell.ExitWidget;
@@ -21,6 +20,7 @@ public class WidgetFactory {
     private final Map<Cell, CellWidget> cells = new HashMap<>();
     private final Map<Robot, RobotWidget> robots = new HashMap<>();
     private final Map<Battery, BatteryWidget> batteries = new HashMap<>();
+    private final Map<Wall, WallWidget> walls = new HashMap<>();
     private final List<Color> usedColors = new ArrayList<>();
 
     public CellWidget create(@NotNull Cell cell) {
@@ -73,5 +73,17 @@ public class WidgetFactory {
 
     public BatteryWidget getWidget(@NotNull Battery battery) {
         return batteries.get(battery);
+    }
+
+    public WallWidget create(@NotNull Wall wall, Orientation orientation) {
+        if(walls.containsKey(wall)) return walls.get(wall);
+
+        WallWidget item = new WallWidget(orientation);
+        walls.put(wall, item);
+        return item;
+    }
+
+    public WallWidget getWidget(@NotNull Wall wall) {
+        return walls.get(wall);
     }
 }

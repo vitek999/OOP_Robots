@@ -36,6 +36,5 @@ public abstract class CellItemWidget extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(getImage(), 0, 0, null);
-        repaint();
     }
 }

@@ -3,10 +3,6 @@ package robots;
 import robots.labirints.SmallLabirint;
 import robots.ui.FieldWidget;
 import robots.ui.WidgetFactory;
-import robots.ui.cell.BatteryWidget;
-import robots.ui.cell.CellWidget;
-import robots.ui.cell.RobotWidget;
-
 import javax.swing.*;
 import java.awt.*;
 

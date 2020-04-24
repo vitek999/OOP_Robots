@@ -16,6 +16,7 @@ public class RobotWidget extends CellItemWidget {
     private final Color color;
 
     public RobotWidget(Robot robot, Color color) {
+        super();
         this.robot = robot;
         this.color = color;
     }
