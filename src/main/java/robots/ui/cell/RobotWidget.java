@@ -1,11 +1,17 @@
 package robots.ui.cell;
 
+import org.jetbrains.annotations.NotNull;
+import robots.Direction;
 import robots.Robot;
 import robots.ui.utils.ChargeUtils;
 import robots.ui.utils.ImageUtils;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -19,6 +25,8 @@ public class RobotWidget extends CellItemWidget {
         super();
         this.robot = robot;
         this.color = color;
+        setFocusable(true);
+        addKeyListener(new KeyController());
     }
 
     @Override
@@ -71,5 +79,48 @@ public class RobotWidget extends CellItemWidget {
         if (robotColor == Color.RED) file = new File("RRB.png");
         if (robotColor == Color.BLUE) file = new File("RBB.png");
         return file;
+    }
+
+    // Внутренний класс-обработчик событий. Придает специфицеское поведение виджету
+    private class KeyController implements KeyListener {
+
+        @Override
+        public void keyTyped(KeyEvent arg0) {
+        }
+
+        @Override
+        public void keyPressed(KeyEvent ke) {
+
+            Direction direction = directionByKeyCode(ke.getKeyCode());
+            System.out.println(color + " go to " + direction);
+            if(direction != null && robot.isActive()) {
+                robot.move(direction);
+            }
+
+            repaint();
+        }
+
+        @Override
+        public void keyReleased(KeyEvent arg0) {
+        }
+
+        private Direction directionByKeyCode(@NotNull int keyCode) {
+            Direction direction = null;
+            switch (keyCode) {
+                case KeyEvent.VK_W:
+                    direction = Direction.NORTH;
+                    break;
+                case KeyEvent.VK_S:
+                    direction = Direction.SOUTH;
+                    break;
+                case KeyEvent.VK_A:
+                    direction = Direction.WEST;
+                    break;
+                case KeyEvent.VK_D:
+                    direction = Direction.EAST;
+                    break;
+            }
+            return direction;
+        }
     }
 }
