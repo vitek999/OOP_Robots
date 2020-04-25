@@ -56,6 +56,7 @@ public class ExitCell extends Cell {
         for(ExitCellActionListener listener: exitCellListListener) {
             ExitCellActionEvent event = new ExitCellActionEvent(listener);
             event.setRobot(robot);
+            event.setTeleport(this);
             listener.robotIsTeleported(event);
         }
     }

@@ -4,6 +4,8 @@ import org.jetbrains.annotations.NotNull;
 import robots.*;
 import robots.Point;
 import robots.Robot;
+import robots.event.FieldActionEvent;
+import robots.event.FieldActionListener;
 import robots.event.RobotActionEvent;
 import robots.event.RobotActionListener;
 import robots.ui.block.BetweenCellsWidget;
@@ -13,7 +15,6 @@ import robots.ui.cell.CellWidget;
 import robots.ui.cell.RobotWidget;
 
 import javax.swing.*;
-import java.awt.*;
 import java.util.List;
 
 public class FieldWidget extends JPanel {
@@ -27,6 +28,7 @@ public class FieldWidget extends JPanel {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         fillField();
         subscribeOnRobots();
+        field.addFieldlActionListener(new FieldController());
     }
 
     private void fillField() {
@@ -137,6 +139,18 @@ public class FieldWidget extends JPanel {
             widgetFactory.remove(event.getBattery());
             //TODO: kostyl!
             robotWidget.requestFocus();
+        }
+    }
+
+    private class FieldController implements FieldActionListener {
+
+        @Override
+        public void robotIsTeleported(@NotNull FieldActionEvent event) {
+            Robot robot = event.getRobot();
+            Cell teleport = event.getTeleport();
+            CellWidget teleportWidget = widgetFactory.getWidget(teleport);
+            RobotWidget robotWidget = widgetFactory.getWidget(robot);
+            teleportWidget.removeItem(robotWidget);
         }
     }
 }

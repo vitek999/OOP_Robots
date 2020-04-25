@@ -102,7 +102,7 @@ public class Field {
 
         @Override
         public void robotIsTeleported(@NotNull ExitCellActionEvent event) {
-            fireRobotIsTeleported(event.getRobot());
+            fireRobotIsTeleported(event.getRobot(), event.getTeleport());
         }
     }
 
@@ -116,10 +116,11 @@ public class Field {
         fieldListListener.remove(listener);
     }
 
-    private void fireRobotIsTeleported(Robot robot) {
+    private void fireRobotIsTeleported(@NotNull Robot robot, @NotNull Cell teleport) {
         for(FieldActionListener listener: fieldListListener) {
             FieldActionEvent event = new FieldActionEvent(listener);
             event.setRobot(robot);
+            event.setTeleport(teleport);
             listener.robotIsTeleported(event);
         }
     }

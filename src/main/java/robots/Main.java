@@ -38,7 +38,7 @@ public class Main {
             setDefaultCloseOperation(EXIT_ON_CLOSE);
         }
 
-        class GameController implements GameActionListener {
+        private final class GameController implements GameActionListener {
 
             @Override
             public void robotIsMoved(@NotNull GameActionEvent event) {
