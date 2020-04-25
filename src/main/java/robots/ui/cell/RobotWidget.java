@@ -3,7 +3,7 @@ package robots.ui.cell;
 import org.jetbrains.annotations.NotNull;
 import robots.Direction;
 import robots.Robot;
-import robots.ui.utils.ChargeUtils;
+import robots.ui.utils.GameUtils;
 import robots.ui.utils.ImageUtils;
 
 import javax.imageio.ImageIO;
@@ -56,6 +56,10 @@ public class RobotWidget extends CellItemWidget {
         return new Dimension(60, 120);
     }
 
+    public Color getColor() {
+        return color;
+    }
+
     private BufferedImage robotImageWithChargeText(BufferedImage robotImage) {
         BufferedImage img = new BufferedImage(robotImage.getWidth(), 120, BufferedImage.TYPE_INT_ARGB);
         Graphics g = img.getGraphics();
@@ -75,7 +79,7 @@ public class RobotWidget extends CellItemWidget {
     }
 
     private Color robotChargeTextColor() {
-        return ChargeUtils.chargeTextColor(robot.getCharge(), robot.getMaxCharge());
+        return GameUtils.chargeTextColor(robot.getCharge(), robot.getMaxCharge());
     }
 
     private static File getRobotFileByColorAndActive(Color robotColor, boolean active) {

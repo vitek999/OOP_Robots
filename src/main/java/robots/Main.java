@@ -6,6 +6,9 @@ import robots.event.GameActionListener;
 import robots.labirints.SmallLabirint;
 import robots.ui.FieldWidget;
 import robots.ui.WidgetFactory;
+import robots.ui.block.WallWidget;
+import robots.ui.utils.GameUtils;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -19,13 +22,14 @@ public class Main {
     static class GamePanel extends JFrame {
 
         private Game game;
+        private WidgetFactory widgetFactory;
 
         public GamePanel() throws HeadlessException {
             setVisible(true);
 
-            WidgetFactory widgetFactory = new WidgetFactory();
-
+            widgetFactory = new WidgetFactory();
             game = new robots.Game(new SmallLabirint());
+
             game.addGameActionListener(new GameController());
 
             JPanel content = (JPanel) this.getContentPane();
@@ -60,7 +64,8 @@ public class Main {
                 GameStatus status = event.getStatus();
                 switch (status) {
                     case WINNER_FOUND:
-                        JOptionPane.showMessageDialog(null, "Выйграл робот: " + game.winner());
+                        JOptionPane.showMessageDialog(null, "Выйграл робот: " +
+                                GameUtils.colorName(widgetFactory.getWidget(game.winner()).getColor()));
                         break;
                     case GAME_FINISHED_AHEAD_OF_SCHEDULE:
                         JOptionPane.showMessageDialog(null, "Игра завершена досрочно");

@@ -2,7 +2,7 @@ package robots.ui.utils;
 
 import java.awt.*;
 
-public class ChargeUtils {
+public class GameUtils {
 
     private final static double MEDIUM_CHARGE_COEFFICIENT = 0.7;
     private final static double LOW_CHARGE_COEFFICIENT = 0.3;
@@ -19,5 +19,14 @@ public class ChargeUtils {
         if (charge >= EMPTY_CHARGE_VALUE && charge < lowCharge) chargeTextColor = Color.RED;
 
         return chargeTextColor;
+    }
+
+    public static String colorName(Color color) {
+        if (Color.RED.equals(color)) {
+            return "Красный";
+        } else if(Color.BLUE.equals(color)) {
+            return "Синий";
+        }
+        return "";
     }
 }

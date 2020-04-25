@@ -1,7 +1,7 @@
 package robots.ui.cell;
 
 import robots.Battery;
-import robots.ui.utils.ChargeUtils;
+import robots.ui.utils.GameUtils;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -66,7 +66,7 @@ public class BatteryWidget extends CellItemWidget{
     }
 
     private Color batteryChargeTextColor() {
-        return ChargeUtils.chargeTextColor(battery.charge(), battery.maxCharge());
+        return GameUtils.chargeTextColor(battery.charge(), battery.maxCharge());
     }
 
     private File getBatteryImageFile() {
