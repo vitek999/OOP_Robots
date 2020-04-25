@@ -64,17 +64,17 @@ public class Main {
                 GameStatus status = event.getStatus();
                 switch (status) {
                     case WINNER_FOUND:
-                        JOptionPane.showMessageDialog(null, "Выйграл робот: " +
+                        JOptionPane.showMessageDialog(GamePanel.this, "Выйграл робот: " +
                                 GameUtils.colorName(widgetFactory.getWidget(game.winner()).getColor()));
                         break;
                     case GAME_FINISHED_AHEAD_OF_SCHEDULE:
-                        JOptionPane.showMessageDialog(null, "Игра завершена досрочно");
+                        JOptionPane.showMessageDialog(GamePanel.this, "Игра завершена досрочно");
                         break;
                     case ALL_ROBOTS_HAVE_LOW_BATTERIES:
-                        JOptionPane.showMessageDialog(null, "Все роботы имеют нулевой заряд");
+                        JOptionPane.showMessageDialog(GamePanel.this, "Все роботы имеют нулевой заряд");
                         break;
                     case ALL_ROBOTS_OUT:
-                        JOptionPane.showMessageDialog(null, "Все роботы вышли");
+                        JOptionPane.showMessageDialog(GamePanel.this, "Все роботы вышли");
                         break;
                 }
             }
