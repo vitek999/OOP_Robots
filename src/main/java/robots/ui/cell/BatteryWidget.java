@@ -15,6 +15,7 @@ public class BatteryWidget extends CellItemWidget{
 
     public BatteryWidget(Battery battery) {
         this.battery = battery;
+        setToolTipText("Заряд: " + battery.charge() + "/" + battery.maxCharge());
     }
 
     @Override
