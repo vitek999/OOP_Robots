@@ -21,12 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ExitCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ExitCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Field.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/event/ExitCellActionEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/event/ExitCellActionEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/event/FieldActionEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/event/FieldActionEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/FieldWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/FieldWidget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/cell/CellItemWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/cell/CellItemWidget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/cell/ExitWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/cell/ExitWidget.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +200,7 @@
       <workItem from="1587700601806" duration="22553000" />
       <workItem from="1587733468745" duration="687000" />
       <workItem from="1587795197872" duration="2187000" />
-      <workItem from="1587813784951" duration="4166000" />
+      <workItem from="1587813784951" duration="5206000" />
     </task>
     <task id="LOCAL-00001" summary="Added new tests for cell and fixed tests naming">
       <created>1585205121395</created>
@@ -472,7 +468,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587816663124</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Added remove robot from teleport cell">
+      <created>1587818092898</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1587818092898</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +494,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix release charge battery test when amount charge more than battery charge and fix Battery release charge method" />
     <MESSAGE value="Fixed spend battery charge method in robot" />
     <MESSAGE value="Fix between cells position. Now position not check existing wall on some side of cell" />
     <MESSAGE value="Added test for between cells position for each direction" />
@@ -516,7 +518,8 @@
     <MESSAGE value="Added skip step action to view" />
     <MESSAGE value="Make two robots are movable" />
     <MESSAGE value="MessageBox with game status" />
-    <option name="LAST_COMMIT_MESSAGE" value="MessageBox with game status" />
+    <MESSAGE value="Added remove robot from teleport cell" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added remove robot from teleport cell" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="198" key="#Auto_Import" timestamp="1585465326910">
@@ -535,10 +538,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="92" y="92" width="1736" height="896" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585459741852" />
-    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1587817313287">
+    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1587818350676">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1587817313287" />
+    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1587818350676" />
     <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1585484364409" />
     <state x="690" y="315" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1585205151181">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -557,10 +560,10 @@
     </state>
     <state x="234" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587815297675" />
     <state x="234" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585458557332" />
-    <state x="985" y="136" width="852" height="938" key="CommitChangelistDialog2" timestamp="1587816662402">
+    <state x="985" y="136" width="852" height="938" key="CommitChangelistDialog2" timestamp="1587818092292">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="985" y="136" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587816662402" />
+    <state x="985" y="136" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587818092292" />
     <state x="985" y="142" width="852" height="938" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585476930268" />
     <state x="184" y="90" key="DiffContextDialog" timestamp="1585458487837">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -574,25 +577,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="784" y="440" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587711907021" />
-    <state width="1877" height="263" key="GridCell.Tab.0.bottom" timestamp="1587817909460">
+    <state width="1877" height="263" key="GridCell.Tab.0.bottom" timestamp="1587818696866">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587817909460" />
+    <state width="1877" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587818696866" />
     <state width="1876" height="514" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="263" key="GridCell.Tab.0.center" timestamp="1587817909460">
+    <state width="1877" height="263" key="GridCell.Tab.0.center" timestamp="1587818696866">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="263" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587817909460" />
+    <state width="1877" height="263" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587818696866" />
     <state width="1876" height="514" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="263" key="GridCell.Tab.0.left" timestamp="1587817909459">
+    <state width="1877" height="263" key="GridCell.Tab.0.left" timestamp="1587818696866">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="263" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587817909459" />
+    <state width="1877" height="263" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587818696866" />
     <state width="1876" height="514" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="263" key="GridCell.Tab.0.right" timestamp="1587817909460">
+    <state width="1877" height="263" key="GridCell.Tab.0.right" timestamp="1587818696866">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="263" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587817909460" />
+    <state width="1877" height="263" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587818696866" />
     <state width="1876" height="514" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
     <state width="1877" height="454" key="GridCell.Tab.1.bottom" timestamp="1587816535461">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -631,10 +634,10 @@
     </state>
     <state x="440" y="110" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587795608567" />
     <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585232841599" />
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1587816931710">
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1587818094506">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587816931710" />
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587818094506" />
     <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585476932505" />
     <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585458461246">
       <screen x="0" y="0" width="1920" height="1080" />

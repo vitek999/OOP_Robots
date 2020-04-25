@@ -1,7 +1,5 @@
 package robots.ui.cell;
 
-import robots.ui.utils.ImageUtils;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -10,7 +8,7 @@ public abstract class CellItemWidget extends JPanel {
 
     public CellItemWidget() {
         setState(State.DEFAULT);
-        setBackground(ImageUtils.BACKGROUND_COLOR);
+        setOpaque(false);
     }
 
     enum State {
