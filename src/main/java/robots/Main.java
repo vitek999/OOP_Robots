@@ -1,5 +1,8 @@
 package robots;
 
+import org.jetbrains.annotations.NotNull;
+import robots.event.GameActionEvent;
+import robots.event.GameActionListener;
 import robots.labirints.SmallLabirint;
 import robots.ui.FieldWidget;
 import robots.ui.WidgetFactory;
@@ -10,34 +13,66 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        SwingUtilities.invokeLater(Wind::new);
+        SwingUtilities.invokeLater(GamePanel::new);
     }
 
-    static class Wind extends JFrame {
+    static class GamePanel extends JFrame {
 
-        public Wind() throws HeadlessException {
+        private Game game;
+
+        public GamePanel() throws HeadlessException {
             setVisible(true);
 
-//            SmallLabirint smallLabirint = new SmallLabirint();
-//            Field field = smallLabirint.buildField();
             WidgetFactory widgetFactory = new WidgetFactory();
 
-            //Game
-            Game game = new Game(new SmallLabirint());
-//            game.activeRobot().move(Direction.EAST);
+            game = new robots.Game(new SmallLabirint());
+            game.addGameActionListener(new GameController());
 
             JPanel content = (JPanel) this.getContentPane();
             content.add(new FieldWidget(game.getGameField(), widgetFactory));
 
             widgetFactory.getWidget(game.activeRobot()).requestFocus();
 
-
             pack();
             setResizable(false);
             setDefaultCloseOperation(EXIT_ON_CLOSE);
-//            Robot robot = field.getRobotsOnField().get(0);
-//            robot.setActive(true);
-            //robot.move(Direction.EAST);
+        }
+
+        class GameController implements GameActionListener {
+
+            @Override
+            public void robotIsMoved(@NotNull GameActionEvent event) {
+
+            }
+
+            @Override
+            public void robotIsSkipStep(@NotNull GameActionEvent event) {
+
+            }
+
+            @Override
+            public void robotIsTeleported(@NotNull GameActionEvent event) {
+
+            }
+
+            @Override
+            public void gameStatusChanged(@NotNull GameActionEvent event) {
+                GameStatus status = event.getStatus();
+                switch (status) {
+                    case WINNER_FOUND:
+                        JOptionPane.showMessageDialog(null, "Выйграл робот: " + game.winner());
+                        break;
+                    case GAME_FINISHED_AHEAD_OF_SCHEDULE:
+                        JOptionPane.showMessageDialog(null, "Игра завершена досрочно");
+                        break;
+                    case ALL_ROBOTS_HAVE_LOW_BATTERIES:
+                        JOptionPane.showMessageDialog(null, "Все роботы имеют нулевой заряд");
+                        break;
+                    case ALL_ROBOTS_OUT:
+                        JOptionPane.showMessageDialog(null, "Все роботы вышли");
+                        break;
+                }
+            }
         }
     }
 }

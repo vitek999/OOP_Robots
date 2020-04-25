@@ -37,6 +37,11 @@ public class GameTest {
         public void robotIsTeleported(@NotNull GameActionEvent event) {
             events.add(new Pare<>(Event.ROBOT_TELEPORTED, event.getRobot()));
         }
+
+        @Override
+        public void gameStatusChanged(@NotNull GameActionEvent event) {
+
+        }
     }
 
     @BeforeEach

@@ -72,7 +72,7 @@ public class ExitCell extends Cell {
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), teleportedRobots, exitCellListListener);
+        return Objects.hash(super.hashCode());
     }
 
     @Override

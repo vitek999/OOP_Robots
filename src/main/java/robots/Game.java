@@ -22,7 +22,7 @@ public class Game {
     }
 
     private void initGame() {
-        gameStatus = GameStatus.GAME_IS_ON;
+        setStatus(GameStatus.GAME_IS_ON);
 
         buildField();
 
@@ -37,12 +37,19 @@ public class Game {
     }
 
     public void finish() {
-        gameStatus = GameStatus.GAME_FINISHED_AHEAD_OF_SCHEDULE;
+        setStatus(GameStatus.GAME_FINISHED_AHEAD_OF_SCHEDULE);
         setActiveRobot(null);
     }
 
     public GameStatus status() {
         return gameStatus;
+    }
+
+    private void setStatus(GameStatus status) {
+        if(gameStatus != status) {
+            gameStatus = status;
+            fireGameStatusIsChanged(gameStatus);
+        }
     }
 
     public Robot winner() {
@@ -145,7 +152,7 @@ public class Game {
         public void robotIsMoved(@NotNull RobotActionEvent event) {
             fireRobotIsMoved(event.getRobot());
             if(!(event.getRobot().getPosition() instanceof ExitCell)){
-                gameStatus = determineOutcomeGame();
+                setStatus(determineOutcomeGame());
                 passMoveNextRobot();
             }
         }
@@ -153,7 +160,7 @@ public class Game {
         @Override
         public void robotIsSkipStep(@NotNull RobotActionEvent event) {
             fireRobotIsSkipStep(event.getRobot());
-            gameStatus = determineOutcomeGame();
+            setStatus(determineOutcomeGame());
             passMoveNextRobot();
         }
 
@@ -173,7 +180,8 @@ public class Game {
         @Override
         public void robotIsTeleported(@NotNull FieldActionEvent event) {
             fireRobotIsTeleported(event.getRobot());
-            gameStatus = determineOutcomeGame();
+            GameStatus status = determineOutcomeGame();
+            setStatus(status);
             passMoveNextRobot();
         }
     }
@@ -209,6 +217,14 @@ public class Game {
             GameActionEvent event = new GameActionEvent(listener);
             event.setRobot(robot);
             listener.robotIsTeleported(event);
+        }
+    }
+
+    private void fireGameStatusIsChanged(@NotNull GameStatus status) {
+        for(GameActionListener listener: gameActionListeners) {
+            GameActionEvent event = new GameActionEvent(listener);
+            event.setStatus(status);
+            listener.gameStatusChanged(event);
         }
     }
 }

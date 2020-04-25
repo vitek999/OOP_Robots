@@ -11,4 +11,6 @@ public interface GameActionListener extends EventListener {
     void robotIsSkipStep(@NotNull GameActionEvent event);
 
     void robotIsTeleported(@NotNull GameActionEvent event);
+
+    void gameStatusChanged(@NotNull GameActionEvent event);
 }
