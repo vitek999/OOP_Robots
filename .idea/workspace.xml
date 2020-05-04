@@ -19,7 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="added tool tip text" />
+    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Message box in JFrame">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ExitCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ExitCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/FieldWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/FieldWidget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/FieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/FieldTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +54,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KonanWorkspace">
+    <executables />
   </component>
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
@@ -89,7 +98,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.FieldTest.test_teleportEvent_oneRobot">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="robots.Main" />
       <module name="OOP_Robots" />
@@ -111,7 +120,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FieldTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FieldTest.test_teleportEvent_oneRobot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
         <pattern>
@@ -121,7 +130,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="robots" />
       <option name="MAIN_CLASS_NAME" value="robots.FieldTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="test_teleportEvent_oneRobot" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -158,11 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FieldTest.test_teleportEvent_oneRobot" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in OOP_Robots" />
         <item itemvalue="JUnit.GameTest.test_passMoveNextRobot" />
         <item itemvalue="JUnit.robots in OOP_Robots" />
-        <item itemvalue="JUnit.FieldTest" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +206,12 @@
       <workItem from="1587700601806" duration="22553000" />
       <workItem from="1587733468745" duration="687000" />
       <workItem from="1587795197872" duration="2187000" />
-      <workItem from="1587813784951" duration="8153000" />
+      <workItem from="1587813784951" duration="8282000" />
+      <workItem from="1587841547627" duration="653000" />
+      <workItem from="1588227534381" duration="5736000" />
+      <workItem from="1588323245796" duration="17000" />
+      <workItem from="1588323338131" duration="16000" />
+      <workItem from="1588418349595" duration="505000" />
     </task>
     <task id="LOCAL-00001" summary="Added new tests for cell and fixed tests naming">
       <created>1585205121395</created>
@@ -492,7 +507,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587822737112</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Message box in JFrame">
+      <created>1587822981767</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1587822981767</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +533,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove todo" />
     <MESSAGE value="Added wall tests and fix wall creation (added check on existing wall in position)" />
     <MESSAGE value="Update test setup for robot tests" />
     <MESSAGE value="Added events to Robot" />
@@ -536,7 +557,8 @@
     <MESSAGE value="Painting background on exit cell widget" />
     <MESSAGE value="Fix winner message" />
     <MESSAGE value="added tool tip text" />
-    <option name="LAST_COMMIT_MESSAGE" value="added tool tip text" />
+    <MESSAGE value="Message box in JFrame" />
+    <option name="LAST_COMMIT_MESSAGE" value="Message box in JFrame" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="198" key="#Auto_Import" timestamp="1585465326910">
@@ -594,45 +616,45 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="784" y="440" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587711907021" />
-    <state width="1877" height="263" key="GridCell.Tab.0.bottom" timestamp="1587822762862">
+    <state width="1877" height="406" key="GridCell.Tab.0.bottom" timestamp="1588418854114">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587822762862" />
+    <state width="1877" height="406" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588418854114" />
     <state width="1876" height="514" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="263" key="GridCell.Tab.0.center" timestamp="1587822762861">
+    <state width="1877" height="406" key="GridCell.Tab.0.center" timestamp="1588418854114">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="263" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587822762861" />
+    <state width="1877" height="406" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588418854114" />
     <state width="1876" height="514" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="263" key="GridCell.Tab.0.left" timestamp="1587822762861">
+    <state width="1877" height="406" key="GridCell.Tab.0.left" timestamp="1588418854114">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="263" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587822762861" />
+    <state width="1877" height="406" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588418854114" />
     <state width="1876" height="514" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="263" key="GridCell.Tab.0.right" timestamp="1587822762862">
+    <state width="1877" height="406" key="GridCell.Tab.0.right" timestamp="1588418854114">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="263" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587822762862" />
+    <state width="1877" height="406" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588418854114" />
     <state width="1876" height="514" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="454" key="GridCell.Tab.1.bottom" timestamp="1587816535461">
+    <state width="1877" height="454" key="GridCell.Tab.1.bottom" timestamp="1588243963974">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="454" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587816535461" />
+    <state width="1877" height="454" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588243963974" />
     <state width="1876" height="582" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585484147965" />
-    <state width="1877" height="454" key="GridCell.Tab.1.center" timestamp="1587816535461">
+    <state width="1877" height="454" key="GridCell.Tab.1.center" timestamp="1588243963974">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="454" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587816535461" />
+    <state width="1877" height="454" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588243963974" />
     <state width="1876" height="582" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585484147965" />
-    <state width="1877" height="454" key="GridCell.Tab.1.left" timestamp="1587816535461">
+    <state width="1877" height="454" key="GridCell.Tab.1.left" timestamp="1588243963974">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="454" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587816535461" />
+    <state width="1877" height="454" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588243963974" />
     <state width="1876" height="582" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585484147965" />
-    <state width="1877" height="454" key="GridCell.Tab.1.right" timestamp="1587816535461">
+    <state width="1877" height="454" key="GridCell.Tab.1.right" timestamp="1588243963974">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="454" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587816535461" />
+    <state width="1877" height="454" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588243963974" />
     <state width="1876" height="582" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585484147965" />
     <state x="540" y="283" key="IDE.errors.dialog" timestamp="1585203502875">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -651,10 +673,10 @@
     </state>
     <state x="440" y="110" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587795608567" />
     <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585232841599" />
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1587822739868">
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1587822984071">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587822739868" />
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587822984071" />
     <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585476932505" />
     <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585458461246">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -683,15 +705,6 @@
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1585475986961" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/robots/Game.java</url>
-          <line>183</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo typeName="robots.ui.cell.CellWidget" fieldName="component" />

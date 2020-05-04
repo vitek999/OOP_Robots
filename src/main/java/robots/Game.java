@@ -151,9 +151,11 @@ public class Game {
         @Override
         public void robotIsMoved(@NotNull RobotActionEvent event) {
             fireRobotIsMoved(event.getRobot());
-            if(!(event.getRobot().getPosition() instanceof ExitCell)){
+            if(!(event.getToCell() instanceof ExitCell)){
                 setStatus(determineOutcomeGame());
                 passMoveNextRobot();
+            } else {
+                event.getRobot().setActive(false);
             }
         }
 

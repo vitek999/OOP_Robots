@@ -109,8 +109,6 @@ public class FieldWidget extends JPanel {
             CellWidget to = widgetFactory.getWidget(event.getToCell());
             from.removeItem(robotWidget);
             to.addItem(robotWidget);
-            //TODO: kostyl!
-            robotWidget.requestFocus();
         }
 
         @Override
@@ -118,8 +116,6 @@ public class FieldWidget extends JPanel {
             Robot robot = event.getRobot();
             RobotWidget robotWidget = widgetFactory.getWidget(robot);
             robotWidget.repaint();
-            //TODO: kostyl!
-            robotWidget.requestFocus();
         }
 
         @Override
@@ -132,13 +128,10 @@ public class FieldWidget extends JPanel {
         @Override
         public void robotChangeBattery(@NotNull RobotActionEvent event) {
             Robot robot = event.getRobot();
-            RobotWidget robotWidget = widgetFactory.getWidget(robot);
             CellWidget cellWidget = widgetFactory.getWidget(robot.getPosition());
             BatteryWidget batteryWidget = widgetFactory.getWidget(event.getBattery());
             cellWidget.removeItem(batteryWidget);
             widgetFactory.remove(event.getBattery());
-            //TODO: kostyl!
-            robotWidget.requestFocus();
         }
     }
 

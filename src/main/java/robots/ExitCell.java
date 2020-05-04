@@ -5,6 +5,7 @@ import robots.event.ExitCellActionListener;
 import robots.event.RobotActionEvent;
 import robots.event.RobotActionListener;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -23,8 +24,11 @@ public class ExitCell extends Cell {
     public void setRobot(Robot robot) {
         if(teleportedRobots.contains(robot)) throw new IllegalArgumentException();
         super.setRobot(robot);
-        waitTeleportation();
-        teleportRobot();
+        //waitTeleportation();
+        Timer timer = new Timer(1000, e -> teleportRobot());
+        timer.setRepeats(false);
+        timer.start();
+        //teleportRobot();
     }
 
     private void teleportRobot() {
