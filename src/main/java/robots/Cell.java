@@ -23,7 +23,7 @@ public class Cell {
         return tmp;
     }
 
-    public void setBattery(Battery battery) {
+    public void setBattery(Battery battery) { // !!! А как же проверка, что это возможно
         this.battery = battery;
     }
 
@@ -43,7 +43,8 @@ public class Cell {
         return tmp;
     }
 
-    public void setRobot(Robot robot) {
+    public void setRobot(Robot robot) { // !!! Кто решает, что робот может находиться в ячейке?? - не соответсвует диаграмме 01_Расстановка на поле
+        // !!! Что будет, если переданный робот уже находится в некоторой ячейке??
         if(getRobot() != null) throw new IllegalArgumentException("In cell already set robot");
 
         robot.setPosition(this);
@@ -59,8 +60,8 @@ public class Cell {
         return neighborCells.get(direction);
     }
 
-    void setNeighbor(@NotNull Cell cell, @NotNull Direction direction) {
-        if(neighborCells.containsKey(direction) && neighborCells.containsValue(cell)) return;
+    void setNeighbor(@NotNull Cell cell, @NotNull Direction direction) { // !!! Название аргумента ячейки малоинформативно
+        if(neighborCells.containsKey(direction) && neighborCells.containsValue(cell)) return; // !!! Здесь что-то малопонятное: учесть случаи добавления той же ячейки, задание новой ячейки, если уже есть сосед и т.д.
         if(neighborCells.containsKey(direction)) throw new IllegalArgumentException();
         neighborCells.put(direction, cell);
         if(cell.neighborCell(direction.getOppositeDirection()) == null) {
@@ -68,8 +69,8 @@ public class Cell {
         }
     }
 
-    public Direction isNeighbor(@NotNull Cell cell) {
-        for(var i : neighborCells.entrySet()) {
+    public Direction isNeighbor(@NotNull Cell cell) { // !!! Название аргумента малоинформативно
+        for(var i : neighborCells.entrySet()) { // !!! Может реализовать итератор соседей???
             if(i.getValue().equals(cell)) return i.getKey();
         }
         return null;

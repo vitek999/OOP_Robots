@@ -13,7 +13,7 @@ public class Robot {
 
     private Cell position;
 
-    private Battery battery;
+    private Battery battery; // !!! Не понятно, о какой, батарейке идет речь, робот взаимодействует с многими батарейками
 
     private boolean isActive;
 
@@ -21,7 +21,7 @@ public class Robot {
         return position;
     }
 
-    void setPosition(Cell position) {
+    void setPosition(Cell position) { // !!! Не соответсвует диаграмме
         this.position = position;
     }
 
@@ -29,7 +29,7 @@ public class Robot {
         if(isActive) {
             Cell oldPosition = position;
             Cell newPosition = canMove(direction);
-            if (newPosition != null && spendBatteryCharge(amountOfChargeForMove(), false)) {
+            if (newPosition != null && spendBatteryCharge(amountOfChargeForMove(), false)) { // !!! Запах кода - использование операции с побочным эффектом в условии
                 fireRobotIsMoved(oldPosition, newPosition);
                 position.takeRobot();
                 newPosition.setRobot(this);
@@ -38,7 +38,7 @@ public class Robot {
     }
 
     public void changeBattery() {
-        if(isActive && position.getBattery() != null){
+        if(isActive && position.getBattery() != null){ // !!! Не соответствует диаграмме - ранее активность робота запрашивали у игры
             battery = position.takeBattery();
             fireRobotChangeBattery(battery);
         }
@@ -51,7 +51,7 @@ public class Robot {
         }
     }
 
-    void setActive(boolean value) {
+    void setActive(boolean value) { // !!! Не соответствует диаграмме - ранее активность робота запрашивали у игры
         isActive = value;
         fireRobotChangeActive();
     }
@@ -60,15 +60,15 @@ public class Robot {
         return isActive;
     }
 
-    public void setBattery(Battery battery) {
+    public void setBattery(Battery battery) { // !!! А как же проверка, что это возможно
         this.battery = battery;
     }
 
-    public Integer getCharge() {
+    public Integer getCharge() { // !!! Если батарейки нет??
         return battery.charge();
     }
 
-    public Integer getMaxCharge() {
+    public Integer getMaxCharge() { // !!! Если батарейки нет??
         return battery.maxCharge();
     }
 
@@ -83,18 +83,18 @@ public class Robot {
         return result;
     }
 
-    private int amountOfChargeForMove() {
+    private int amountOfChargeForMove() { // !!! Зачем нужен метод???
         return AMOUNT_OF_CHARGE_FOR_MOVE;
     }
 
-    private int amountOfChargeForSkipStep() {
+    private int amountOfChargeForSkipStep() { // !!! Зачем нужен метод???
         return AMOUNT_OF_CHARGE_FOR_SKIP_STEP;
     }
 
     private boolean spendBatteryCharge(int amountOfCharge, boolean ignoreShortage) {
         boolean result = true;
 
-        if (getCharge() < amountOfCharge) {
+        if (getCharge() < amountOfCharge) { // !!! Не соответствует диаграмме - 02_сделать шаг. (Робот думает за батарейку)
             if(ignoreShortage) {
                 battery.releaseCharge(battery.charge());
             } else {
@@ -107,7 +107,7 @@ public class Robot {
         return result;
     }
 
-    public static boolean canStayAtPosition(@NotNull Cell position) {
+    public static boolean canStayAtPosition(@NotNull Cell position) { // !!! Странное название - почему "могу оставаться"?
         return position.getRobot() == null;
     }
 

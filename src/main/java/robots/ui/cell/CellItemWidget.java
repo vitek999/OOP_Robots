@@ -11,14 +11,14 @@ public abstract class CellItemWidget extends JPanel {
         setOpaque(false);
     }
 
-    enum State {
+    enum State { // !!! Какой уровень доступа хотели?
         DEFAULT,
         SMALL
     }
 
     protected State cellItemState = State.DEFAULT;
 
-    void setState(State state) {
+    void setState(State state) { // !!! Какой уровень доступа хотели?
         cellItemState = state;
         setPreferredSize(getDimension());
         repaint();
@@ -27,7 +27,7 @@ public abstract class CellItemWidget extends JPanel {
 
     protected abstract BufferedImage getImage();
 
-    abstract CellWidget.Layer getLayer();
+    abstract CellWidget.Layer getLayer(); // !!! Какой уровень доступа хотели?
 
     protected abstract Dimension getDimension();
 

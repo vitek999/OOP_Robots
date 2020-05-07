@@ -2,7 +2,7 @@ package robots.ui.utils;
 
 import java.awt.*;
 
-public class GameUtils {
+public class GameUtils { // !!! Странное название + странное назначение
 
     private final static double MEDIUM_CHARGE_COEFFICIENT = 0.7;
     private final static double LOW_CHARGE_COEFFICIENT = 0.3;

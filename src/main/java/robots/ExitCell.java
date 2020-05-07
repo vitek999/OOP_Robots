@@ -17,12 +17,12 @@ public class ExitCell extends Cell {
     private List<Robot> teleportedRobots = new ArrayList<>();
 
     public List<Robot> getTeleportedRobots() {
-        return new ArrayList<>(teleportedRobots);
+        return new ArrayList<>(teleportedRobots); // !!! Можно использовать неизменяемый контейнер
     }
 
     @Override
     public void setRobot(Robot robot) {
-        if(teleportedRobots.contains(robot)) throw new IllegalArgumentException();
+        if(teleportedRobots.contains(robot)) throw new IllegalArgumentException(); // !!! Кто решает, что робот может находиться в ячейке??
         super.setRobot(robot);
         //waitTeleportation();
         Timer timer = new Timer(1000, e -> teleportRobot());
@@ -37,7 +37,7 @@ public class ExitCell extends Cell {
         fireRobotIsTeleported(robot);
     }
 
-    private void waitTeleportation() {
+    private void waitTeleportation() { // !!! Это где-то используется?
         try {
             Thread.sleep(SLEEP_TIME);
         } catch (InterruptedException e) {

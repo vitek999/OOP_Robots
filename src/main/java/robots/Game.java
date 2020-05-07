@@ -13,7 +13,7 @@ public class Game {
     private Robot activeRobot;
     private Robot winner;
     private Field gameField;
-    private Labirint labirint;
+    private Labirint labirint; // !!! Зачем сильная связь???
 
     public Game(Labirint labirint) {
         this.labirint = labirint;
@@ -36,7 +36,7 @@ public class Game {
         passMoveNextRobot();
     }
 
-    public void finish() {
+    public void finish() { // !!! Не корректное название - она не завершилась, она прервалась
         setStatus(GameStatus.GAME_FINISHED_AHEAD_OF_SCHEDULE);
         setActiveRobot(null);
     }
@@ -60,20 +60,20 @@ public class Game {
         return activeRobot;
     }
 
-    public Field getGameField() {
+    public Field getGameField() { // !!! либо везде get, либо везде без get
         return gameField;
     }
 
     public List<Robot> getRobotsOnField() {
-        return new ArrayList<>(gameField.getRobotsOnField());
+        return new ArrayList<>(gameField.getRobotsOnField()); // !!! Можно возвращать неизменяемый контейнер
     }
 
     public List<Robot> getTeleportedRobots() {
-        return new ArrayList<>(gameField.getTeleportedRobots());
+        return new ArrayList<>(gameField.getTeleportedRobots()); // !!! Можно возвращать неизменяемый контейнер
     }
 
     private void passMoveNextRobot() {
-        if(gameStatus != GameStatus.GAME_IS_ON) {
+        if(gameStatus != GameStatus.GAME_IS_ON) { // !!! Не ясное условие
             setActiveRobot(null);
             return;
         }
@@ -82,7 +82,7 @@ public class Game {
 
         if(robotsOnField.size() == 1 ) {
             Robot robot = robotsOnField.get(0);
-            if(robot.getCharge() > 0) setActiveRobot(robot);
+            if(robot.getCharge() > 0) setActiveRobot(robot); // !!! Хорошо ли, что игра думает за робота??
         } else if (robotsOnField.size() == 2) {
             Robot firstRobot = robotsOnField.get(0);
             Robot secondRobot = robotsOnField.get(1);
@@ -116,7 +116,7 @@ public class Game {
         return result;
     }
 
-    private boolean robotsHasLowBattery(@NotNull List<Robot> robots) {
+    private boolean robotsHasLowBattery(@NotNull List<Robot> robots) { // !!! Про батарейку знает только робот - см. название метода
         boolean result = true;
 
         for(int i = 0; i < robots.size() && result; ++i) {
@@ -132,7 +132,7 @@ public class Game {
 
     private void setWinner(@NotNull Robot robot) {
         winner = robot;
-        setActiveRobot(null);
+        setActiveRobot(null); // !!! Непонятная для текущего контекста деятельность
     }
 
     private void setActiveRobot(Robot robot) {
@@ -151,11 +151,11 @@ public class Game {
         @Override
         public void robotIsMoved(@NotNull RobotActionEvent event) {
             fireRobotIsMoved(event.getRobot());
-            if(!(event.getToCell() instanceof ExitCell)){
+            if(!(event.getToCell() instanceof ExitCell)){ // !!! Повтор кода, см. обработчик ниже
                 setStatus(determineOutcomeGame());
                 passMoveNextRobot();
             } else {
-                event.getRobot().setActive(false);
+                event.getRobot().setActive(false); // !!! Почему не метод passMoveNextRobot()?
             }
         }
 
@@ -181,7 +181,7 @@ public class Game {
 
         @Override
         public void robotIsTeleported(@NotNull FieldActionEvent event) {
-            fireRobotIsTeleported(event.getRobot());
+            fireRobotIsTeleported(event.getRobot()); // !!! Странный порядок генерации события - обработчики этого события не увидят изменения состояния игры.
             GameStatus status = determineOutcomeGame();
             setStatus(status);
             passMoveNextRobot();

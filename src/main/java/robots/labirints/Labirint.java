@@ -3,9 +3,9 @@ package robots.labirints;
 import robots.Field;
 import robots.Point;
 
-public abstract class Labirint {
+public abstract class Labirint { // !!! Предполагалось, что лабиринт будет помогать строить протяженные стены
 
-    protected Field field;
+    protected Field field; // !!! Зачем нужно постоянное знание о создаваемом поле???
 
     public Field buildField() {
 

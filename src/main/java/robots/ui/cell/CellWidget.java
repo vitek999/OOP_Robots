@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class CellWidget extends JPanel {
 
-    enum Layer {
+    enum Layer { // !!! Какой уровень доступа хотели?
         TOP,
         BOTTOM
     }
@@ -23,7 +23,7 @@ public class CellWidget extends JPanel {
         setBackground(ImageUtils.BACKGROUND_COLOR);
     }
 
-    public void addItem(CellItemWidget item) {
+    public void addItem(CellItemWidget item) { // !!! Какой-то контроль за количеством элементов должен вестись??
         int index = -1;
 
         if (items.containsKey(Layer.BOTTOM)) {
@@ -40,7 +40,7 @@ public class CellWidget extends JPanel {
 
         items.put(item.getLayer(), item);
         add(item, index);
-        repaint();
+        repaint(); // !!! В Swing добавление элемента приводит к перерисовке?
     }
 
     public void removeItem(CellItemWidget item) {

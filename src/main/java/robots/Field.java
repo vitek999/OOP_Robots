@@ -15,7 +15,7 @@ public class Field {
     private final int width;
     private final int height;
 
-    private final Point exitPoint;
+    private final Point exitPoint; // !!! Нужна позиция, а не сама ячейка??
 
     public Field(int width, int height, @NotNull Point exitPoint) {
         if(width <= 0) throw new IllegalArgumentException("Field width must be more than 0");
@@ -33,13 +33,13 @@ public class Field {
         ((ExitCell) getCell(exitPoint)).addExitCellActionListener(new ExitCellObserver());
     }
 
-    private void setupField() {
+    private void setupField() { // !!! Непонятное название метода
         for(int y = 0; y < height; ++y) {
             for(int x = 0; x < width; ++x) {
                 Point p = new Point(x, y);
                 Cell cell = p.equals(exitPoint)? new ExitCell() : new Cell();
-                if(x > 0) getCell(new Point(p.getX() - 1, p.getY())).setNeighbor(cell, Direction.EAST);
-                if(y > 0) getCell(new Point(p.getX(), p.getY() - 1)).setNeighbor(cell, Direction.SOUTH);
+                if(x > 0) getCell(new Point(p.getX() - 1, p.getY())).setNeighbor(cell, Direction.EAST); // !!! Так сложно, потому что Point ничего не умеет
+                if(y > 0) getCell(new Point(p.getX(), p.getY() - 1)).setNeighbor(cell, Direction.SOUTH); // !!! Почему соседей устанавливает не созданная ячейка, а её сосдеи?
                 cells.put(p, cell);
             }
         }
@@ -59,7 +59,7 @@ public class Field {
 
     public List<Robot> getRobotsOnField() {
         List<Robot> robots = new ArrayList<>();
-        for(var i : cells.entrySet()) {
+        for(var i : cells.entrySet()) { // !!! Не лучше ли организовать итератор ячеек
             Robot robot = i.getValue().getRobot();
             if(robot != null) robots.add(robot);
         }
@@ -82,7 +82,7 @@ public class Field {
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode() { // !!! Метод нужен???
         return Objects.hash(cells, width, height, exitPoint);
     }
 

@@ -31,9 +31,9 @@ public class FieldWidget extends JPanel {
         field.addFieldlActionListener(new FieldController());
     }
 
-    private void fillField() {
+    private void fillField() { // !!! Сделать процедурную декомпозицию
         for (int i = 0; i < field.getHeight(); ++i) {
-            JPanel row = new JPanel();
+            JPanel row = new JPanel(); // !!! Не могу понять назначение трех панелей
             JPanel rowWalls = new JPanel();
             JPanel startRowWalls = new JPanel();
             row.setLayout(new BoxLayout(row, BoxLayout.X_AXIS));
@@ -41,9 +41,9 @@ public class FieldWidget extends JPanel {
             startRowWalls.setLayout(new BoxLayout(startRowWalls, BoxLayout.X_AXIS));
 
             for (int j = 0; j < field.getWidth(); ++j) {
-                robots.Point point = new Point(j, i);
+                robots.Point point = new Point(j, i); // !!! Зачем упоминание пакета?
                 Cell cell = field.getCell(point);
-                CellWidget widget = widgetFactory.create(cell);
+                CellWidget widget = widgetFactory.create(cell); // !!! В этом методе много разных виджетов, такое название мало что говорит
 
                 if(j == 0)  {
                     BetweenCellsWidget westCellWidget = new BetweenCellsWidget(Orientation.VERTICAL);

@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Map;
 import java.util.Objects;
 
-public class Wall {
+public class Wall { // !!! Все-таки не стена, а ее часть
 
     private BetweenCellsPosition position;
 
@@ -15,8 +15,8 @@ public class Wall {
         this.position = position;
 
         Map<Direction, Cell> neighborCells = position.getNeighborCells();
-
-        for (var i : neighborCells.entrySet()) {
+        // !!! Ниже - это ответственность стены??
+        for (var i : neighborCells.entrySet()) { // !!! Может добавить итератор?
             i.getValue().setNeighbor(this, i.getKey().getOppositeDirection());
         }
     }
@@ -25,7 +25,7 @@ public class Wall {
         return position;
     }
 
-    private static boolean canCreateWall(@NotNull BetweenCellsPosition position) {
+    private static boolean canCreateWall(@NotNull BetweenCellsPosition position) { // !!! Идею реализации метода не понял
         boolean result = true;
         Map<Direction, Cell> neighborCells = position.getNeighborCells();
 
