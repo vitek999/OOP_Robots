@@ -28,7 +28,7 @@ public class FieldTest {
     public void testSetup() {
         eventCount = 0;
         field = new Field(2, 2, new Point(1, 1));
-        //field.addFieldlActionListener(new FieldObserver());
+        field.addFieldlActionListener(new FieldObserver());
     }
 
     @Test
@@ -138,9 +138,9 @@ public class FieldTest {
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
-        field.addFieldlActionListener(event -> assertTrue(false));
+//        field.addFieldlActionListener(event -> assertTrue(false));
 
-       // assertEquals(expectedEventCount, eventCount);
+        assertEquals(expectedEventCount, eventCount);
     }
 
     @Test

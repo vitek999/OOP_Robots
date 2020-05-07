@@ -19,24 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Some changes">
+    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Замечания преподавателя">
+      <change afterPath="$PROJECT_DIR$/src/main/java/robots/Utils/BuildConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/BetweenCellsPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/BetweenCellsPosition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/robots/ExitCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ExitCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Field.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/GameStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/GameStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Wall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/event/RobotActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/event/RobotActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/labirints/Labirint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/labirints/Labirint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/FieldWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/FieldWidget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/block/BetweenCellsWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/block/BetweenCellsWidget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/block/WallWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/block/WallWidget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/cell/CellItemWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/cell/CellItemWidget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/cell/CellWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/cell/CellWidget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/utils/GameUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/utils/GameUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/FieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/FieldTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +97,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.All in OOP_Robots">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="robots.Main" />
       <module name="OOP_Robots" />
@@ -180,9 +167,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in OOP_Robots" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.FieldTest.test_teleportEvent_oneRobot" />
-        <item itemvalue="JUnit.All in OOP_Robots" />
         <item itemvalue="JUnit.GameTest.test_passMoveNextRobot" />
         <item itemvalue="JUnit.robots in OOP_Robots" />
       </list>
@@ -226,7 +213,7 @@
       <workItem from="1588418349595" duration="505000" />
       <workItem from="1588587589714" duration="688000" />
       <workItem from="1588689270445" duration="23000" />
-      <workItem from="1588861313847" duration="4368000" />
+      <workItem from="1588861313847" duration="5235000" />
     </task>
     <task id="LOCAL-00001" summary="Added new tests for cell and fixed tests naming">
       <created>1585205121395</created>
@@ -536,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588587684668</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Замечания преподавателя">
+      <created>1588868263825</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1588868263825</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -555,7 +549,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update test setup for robot tests" />
     <MESSAGE value="Added events to Robot" />
     <MESSAGE value="Test robot evetns" />
     <MESSAGE value="implement exit cell" />
@@ -580,7 +573,8 @@
     <MESSAGE value="added tool tip text" />
     <MESSAGE value="Message box in JFrame" />
     <MESSAGE value="Some changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some changes" />
+    <MESSAGE value="Замечания преподавателя" />
+    <option name="LAST_COMMIT_MESSAGE" value="Замечания преподавателя" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="198" key="#Auto_Import" timestamp="1585465326910">
@@ -595,10 +589,15 @@
     </state>
     <state x="557" y="178" key="#CellTest.test_setNeighborCell/0.0.1920.1080@0.0.1920.1080" timestamp="1585203488179" />
     <state x="557" y="195" key="#CellTest/0.0.1920.1080@0.0.1920.1080" timestamp="1585203692781" />
-    <state x="92" y="92" width="1736" height="896" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1585459741852">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="92" y="89" width="1736" height="863" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1588869012498">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="92" y="89" width="1736" height="863" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588869012498" />
     <state x="92" y="92" width="1736" height="896" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585459741852" />
+    <state x="734" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588868773518">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="734" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588868773518" />
     <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1587818350676">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -638,25 +637,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="784" y="440" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587711907021" />
-    <state width="1877" height="406" key="GridCell.Tab.0.bottom" timestamp="1588868144278">
+    <state width="1877" height="406" key="GridCell.Tab.0.bottom" timestamp="1588868747925">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588868144278" />
+    <state width="1877" height="406" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588868747925" />
     <state width="1876" height="514" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.center" timestamp="1588868144277">
+    <state width="1877" height="406" key="GridCell.Tab.0.center" timestamp="1588868747923">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588868144277" />
+    <state width="1877" height="406" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588868747923" />
     <state width="1876" height="514" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.left" timestamp="1588868144276">
+    <state width="1877" height="406" key="GridCell.Tab.0.left" timestamp="1588868747922">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588868144276" />
+    <state width="1877" height="406" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588868747922" />
     <state width="1876" height="514" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.right" timestamp="1588868144277">
+    <state width="1877" height="406" key="GridCell.Tab.0.right" timestamp="1588868747924">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588868144277" />
+    <state width="1877" height="406" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588868747924" />
     <state width="1876" height="514" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
     <state width="1877" height="454" key="GridCell.Tab.1.bottom" timestamp="1588243963974">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -695,10 +694,10 @@
     </state>
     <state x="440" y="110" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587795608567" />
     <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585232841599" />
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1588587688950">
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1588868272574">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588587688950" />
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588868272574" />
     <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585476932505" />
     <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585458461246">
       <screen x="0" y="0" width="1920" height="1080" />

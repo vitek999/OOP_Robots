@@ -1,9 +1,8 @@
 package robots;
 
+import robots.Utils.BuildConfig;
 import robots.event.ExitCellActionEvent;
 import robots.event.ExitCellActionListener;
-import robots.event.RobotActionEvent;
-import robots.event.RobotActionListener;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -22,13 +21,15 @@ public class ExitCell extends Cell {
 
     @Override
     public void setRobot(Robot robot) {
-        if(teleportedRobots.contains(robot)) throw new IllegalArgumentException(); // !!! Кто решает, что робот может находиться в ячейке??
+        if (teleportedRobots.contains(robot)) throw new IllegalArgumentException(); // !!! Кто решает, что робот может находиться в ячейке??
         super.setRobot(robot);
-        //waitTeleportation();
-        Timer timer = new Timer(1000, e -> teleportRobot());
-        timer.setRepeats(false);
-        timer.start();
-        //teleportRobot();
+        if (BuildConfig.buildType == BuildConfig.BuildType.RELEASE) {
+            Timer timer = new Timer(1000, e -> teleportRobot());
+            timer.setRepeats(false);
+            timer.start();
+        } else {
+            teleportRobot();
+        }
     }
 
     private void teleportRobot() {
@@ -37,13 +38,8 @@ public class ExitCell extends Cell {
         fireRobotIsTeleported(robot);
     }
 
-    private void waitTeleportation() { // !!! Это где-то используется?
-        try {
-            Thread.sleep(SLEEP_TIME);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
+    // !!! Это где-то используется?
+    // Done: Уадлил метод waitTeleportation, необходимый для проходждения тестов, добавил BuildConfig и рзвилку в setRobot
 
     // -------------------- События --------------------
     private ArrayList<ExitCellActionListener> exitCellListListener = new ArrayList<>();
@@ -57,7 +53,7 @@ public class ExitCell extends Cell {
     }
 
     private void fireRobotIsTeleported(Robot robot) {
-        for(ExitCellActionListener listener: exitCellListListener) {
+        for (ExitCellActionListener listener : exitCellListListener) {
             ExitCellActionEvent event = new ExitCellActionEvent(listener);
             event.setRobot(robot);
             event.setTeleport(this);
