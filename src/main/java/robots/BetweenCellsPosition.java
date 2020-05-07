@@ -11,9 +11,12 @@ public class BetweenCellsPosition {
     private Map<Direction, Cell> neighborCells = new EnumMap<>(Direction.class);
 
     public BetweenCellsPosition(@NotNull Cell cell, @NotNull Cell neighborCell) {
-        if(!canWallSet(cell, neighborCell)) throw new IllegalArgumentException();
+        Direction neighborDirection = cell.isNeighbor(neighborCell);
 
-        Direction neighborDirection = cell.isNeighbor(neighborCell); // !!! Снова определяем соседство - см canWallSet
+        if(neighborDirection == null) throw new IllegalArgumentException();
+
+        // !!! Снова определяем соседство - см canWallSet
+        // DONE: Вынес повторяющуюся логику в cellWallSet перед проверкой на действительное соседство между ячейками
         neighborCells.put(neighborDirection, neighborCell);
         neighborCells.put(neighborDirection.getOppositeDirection(), cell);
     }
@@ -32,10 +35,8 @@ public class BetweenCellsPosition {
         return new EnumMap<>(neighborCells); // !!! Можно возвращать неизменяемый контейнер
     }
 
-    public static boolean canWallSet(@NotNull Cell cell, @NotNull Cell neighborCell) { // !!! Позиция НИКАК не может знать про стену
-        Direction neighborDirection = cell.isNeighbor(neighborCell);
-        return  (neighborDirection != null);
-    }
+    // !!! Позиция НИКАК не может знать про стену
+    // DONE: Перенёс логику canWallSet в конструктор BetweenCellsPosition
 
     @Override
     public boolean equals(Object o) {

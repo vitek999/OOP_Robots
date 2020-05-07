@@ -19,18 +19,6 @@ class BetweenCellsPositionTest {
     }
 
     @Test
-    public void test_canWallSet_withTwoNeighborsCells() {
-        cell.setNeighbor(neighborCell, direction);
-
-        assertTrue(BetweenCellsPosition.canWallSet(cell, neighborCell));
-    }
-
-    @Test
-    public void test_canWallSet_withTwoNotNeighborsCells() {
-        assertFalse(BetweenCellsPosition.canWallSet(cell, neighborCell));
-    }
-
-    @Test
     public void test_createAndGetNeighborCells_withCellAndDirectionOnSingleCell() {
         BetweenCellsPosition betweenCellsPosition = new BetweenCellsPosition(cell, direction);
 
