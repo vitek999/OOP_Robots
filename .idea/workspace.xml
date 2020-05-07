@@ -19,13 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Исправил замечание о наличии метода waitTeleportation в классе ExitCell">
+    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Добавил пояснение о несовпадении назначения класса Labirint при проектировании и реализации">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/event/RobotActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/event/RobotActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/FieldWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/FieldWidget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/robots/RobotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/RobotTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/labirints/Labirint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/labirints/Labirint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/labirints/SmallLabirint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/labirints/SmallLabirint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/labirint/TestLabirint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/labirint/TestLabirint.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +213,7 @@
       <workItem from="1588418349595" duration="505000" />
       <workItem from="1588587589714" duration="688000" />
       <workItem from="1588689270445" duration="23000" />
-      <workItem from="1588861313847" duration="7023000" />
+      <workItem from="1588861313847" duration="8779000" />
     </task>
     <task id="LOCAL-00001" summary="Added new tests for cell and fixed tests naming">
       <created>1585205121395</created>
@@ -539,7 +537,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588869087997</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Исправил замечания в именовани методов интерфейса RobotActionListener">
+      <created>1588871702218</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1588871702218</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Добавил пояснение о несовпадении назначения класса Labirint при проектировании и реализации">
+      <created>1588871840714</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1588871840714</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -558,8 +570,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test robot evetns" />
-    <MESSAGE value="implement exit cell" />
     <MESSAGE value="added events that robot is teleported" />
     <MESSAGE value="Added test for exit cell and fix set robot method" />
     <MESSAGE value="Add events to Field" />
@@ -583,7 +593,9 @@
     <MESSAGE value="Some changes" />
     <MESSAGE value="Замечания преподавателя" />
     <MESSAGE value="Исправил замечание о наличии метода waitTeleportation в классе ExitCell" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправил замечание о наличии метода waitTeleportation в классе ExitCell" />
+    <MESSAGE value="Исправил замечания в именовани методов интерфейса RobotActionListener" />
+    <MESSAGE value="Добавил пояснение о несовпадении назначения класса Labirint при проектировании и реализации" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил пояснение о несовпадении назначения класса Labirint при проектировании и реализации" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="198" key="#Auto_Import" timestamp="1585465326910">
@@ -646,25 +658,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="784" y="440" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587711907021" />
-    <state width="1877" height="406" key="GridCell.Tab.0.bottom" timestamp="1588869031214">
+    <state width="1877" height="406" key="GridCell.Tab.0.bottom" timestamp="1588872768769">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588869031214" />
+    <state width="1877" height="406" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588872768769" />
     <state width="1876" height="514" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.center" timestamp="1588869031213">
+    <state width="1877" height="406" key="GridCell.Tab.0.center" timestamp="1588872768768">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588869031213" />
+    <state width="1877" height="406" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588872768768" />
     <state width="1876" height="514" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.left" timestamp="1588869031213">
+    <state width="1877" height="406" key="GridCell.Tab.0.left" timestamp="1588872768768">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588869031213" />
+    <state width="1877" height="406" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588872768768" />
     <state width="1876" height="514" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.right" timestamp="1588869031214">
+    <state width="1877" height="406" key="GridCell.Tab.0.right" timestamp="1588872768768">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588869031214" />
+    <state width="1877" height="406" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588872768768" />
     <state width="1876" height="514" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
     <state width="1877" height="454" key="GridCell.Tab.1.bottom" timestamp="1588243963974">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -703,10 +715,10 @@
     </state>
     <state x="440" y="110" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587795608567" />
     <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585232841599" />
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1588868272574">
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1588871711114">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588868272574" />
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588871711114" />
     <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585476932505" />
     <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585458461246">
       <screen x="0" y="0" width="1920" height="1080" />

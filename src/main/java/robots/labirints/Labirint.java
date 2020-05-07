@@ -1,20 +1,22 @@
 package robots.labirints;
 
+import org.jetbrains.annotations.NotNull;
 import robots.Field;
 import robots.Point;
 
 public abstract class Labirint { // !!! Предполагалось, что лабиринт будет помогать строить протяженные стены
                                  // DONE: Данный класс "лабиринт" теперь отвечает за построение поля.
 
-    protected Field field; // !!! Зачем нужно постоянное знание о создаваемом поле???
+    // !!! Зачем нужно постоянное знание о создаваемом поле???
+    // DONE (требует обсуждения): Теперь поле передаётся как изменяемый параметр в методах addRobots, addBatteries, addWalls
 
     public Field buildField() {
 
-        field = new Field(fieldWidth(), fieldHeight(), exitPoint());
+        Field field = new Field(fieldWidth(), fieldHeight(), exitPoint());
 
-        addRobots();
-        addBatteries();
-        addWalls();
+        addRobots(field);
+        addBatteries(field);
+        addWalls(field);
 
         return field;
     }
@@ -25,10 +27,10 @@ public abstract class Labirint { // !!! Предполагалось, что л�
 
     protected abstract Point exitPoint();
 
-    protected abstract void addRobots();
+    protected abstract void addRobots(@NotNull Field field);
 
-    protected abstract void addBatteries();
+    protected abstract void addBatteries(@NotNull Field field);
 
-    protected abstract void addWalls();
+    protected abstract void addWalls(@NotNull Field field);
 
 }

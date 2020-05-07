@@ -1,5 +1,6 @@
 package robots.labirints;
 
+import org.jetbrains.annotations.NotNull;
 import robots.*;
 
 public class SmallLabirint extends Labirint {
@@ -25,7 +26,7 @@ public class SmallLabirint extends Labirint {
     }
 
     @Override
-    protected void addRobots() {
+    protected void addRobots(@NotNull Field field) {
         Robot firstRobot = new Robot();
         firstRobot.setBattery(new Battery(DEFAULT_BATTERY_CHARGE));
         Robot secondRobot = new Robot();
@@ -36,14 +37,14 @@ public class SmallLabirint extends Labirint {
     }
 
     @Override
-    protected void addBatteries() {
+    protected void addBatteries(@NotNull Field field) {
         Battery battery = new Battery(DEFAULT_BATTERY_CHARGE);
 
         field.getCell(new Point(1, 2)).setBattery(battery);
     }
 
     @Override
-    protected void addWalls() {
+    protected void addWalls(@NotNull Field field) {
         BetweenCellsPosition betweenCellsPosition = new BetweenCellsPosition(
                 field.getCell(new Point(2, 0)),
                 field.getCell(new Point(2, 1))
