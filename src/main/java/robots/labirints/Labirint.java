@@ -4,6 +4,7 @@ import robots.Field;
 import robots.Point;
 
 public abstract class Labirint { // !!! Предполагалось, что лабиринт будет помогать строить протяженные стены
+                                 // DONE: Данный класс "лабиринт" теперь отвечает за построение поля.
 
     protected Field field; // !!! Зачем нужно постоянное знание о создаваемом поле???
 
