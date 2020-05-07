@@ -19,11 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Замечания преподавателя">
-      <change afterPath="$PROJECT_DIR$/src/main/java/robots/Utils/BuildConfig.java" afterDir="false" />
+    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Исправил замечание о наличии метода waitTeleportation в классе ExitCell">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ExitCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ExitCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/robots/FieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/FieldTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/event/RobotActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/event/RobotActionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/FieldWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/FieldWidget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/RobotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/RobotTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +99,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in OOP_Robots">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="robots.Main" />
       <module name="OOP_Robots" />
@@ -167,8 +169,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in OOP_Robots" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in OOP_Robots" />
         <item itemvalue="JUnit.FieldTest.test_teleportEvent_oneRobot" />
         <item itemvalue="JUnit.GameTest.test_passMoveNextRobot" />
         <item itemvalue="JUnit.robots in OOP_Robots" />
@@ -213,7 +215,7 @@
       <workItem from="1588418349595" duration="505000" />
       <workItem from="1588587589714" duration="688000" />
       <workItem from="1588689270445" duration="23000" />
-      <workItem from="1588861313847" duration="5235000" />
+      <workItem from="1588861313847" duration="7023000" />
     </task>
     <task id="LOCAL-00001" summary="Added new tests for cell and fixed tests naming">
       <created>1585205121395</created>
@@ -530,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588868263825</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Исправил замечание о наличии метода waitTeleportation в классе ExitCell">
+      <created>1588869087997</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1588869087997</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,7 +558,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added events to Robot" />
     <MESSAGE value="Test robot evetns" />
     <MESSAGE value="implement exit cell" />
     <MESSAGE value="added events that robot is teleported" />
@@ -574,7 +582,8 @@
     <MESSAGE value="Message box in JFrame" />
     <MESSAGE value="Some changes" />
     <MESSAGE value="Замечания преподавателя" />
-    <option name="LAST_COMMIT_MESSAGE" value="Замечания преподавателя" />
+    <MESSAGE value="Исправил замечание о наличии метода waitTeleportation в классе ExitCell" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправил замечание о наличии метода waitTeleportation в классе ExitCell" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="198" key="#Auto_Import" timestamp="1585465326910">
@@ -637,25 +646,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="784" y="440" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587711907021" />
-    <state width="1877" height="406" key="GridCell.Tab.0.bottom" timestamp="1588868747925">
+    <state width="1877" height="406" key="GridCell.Tab.0.bottom" timestamp="1588869031214">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588868747925" />
+    <state width="1877" height="406" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588869031214" />
     <state width="1876" height="514" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.center" timestamp="1588868747923">
+    <state width="1877" height="406" key="GridCell.Tab.0.center" timestamp="1588869031213">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588868747923" />
+    <state width="1877" height="406" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588869031213" />
     <state width="1876" height="514" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.left" timestamp="1588868747922">
+    <state width="1877" height="406" key="GridCell.Tab.0.left" timestamp="1588869031213">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588868747922" />
+    <state width="1877" height="406" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588869031213" />
     <state width="1876" height="514" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.right" timestamp="1588868747924">
+    <state width="1877" height="406" key="GridCell.Tab.0.right" timestamp="1588869031214">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588868747924" />
+    <state width="1877" height="406" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588869031214" />
     <state width="1876" height="514" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
     <state width="1877" height="454" key="GridCell.Tab.1.bottom" timestamp="1588243963974">
       <screen x="0" y="0" width="1920" height="1040" />

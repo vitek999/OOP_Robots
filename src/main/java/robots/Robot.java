@@ -136,7 +136,7 @@ public class Robot {
         for(RobotActionListener listener: robotListListener) {
             RobotActionEvent event = new RobotActionEvent(listener);
             event.setRobot(this);
-            listener.robotIsSkipStep(event);
+            listener.robotSkippedStep(event);
         }
     }
 
@@ -144,7 +144,7 @@ public class Robot {
         for(RobotActionListener listener: robotListListener) {
             RobotActionEvent event = new RobotActionEvent(listener);
             event.setRobot(this);
-            listener.robotChangeActive(event);
+            listener.robotActivityChanged(event);
         }
     }
 
@@ -153,7 +153,7 @@ public class Robot {
             RobotActionEvent event = new RobotActionEvent(listener);
             event.setRobot(this);
             event.setBattery(changedBattery);
-            listener.robotChangeBattery(event);
+            listener.robotChangedBattery(event);
         }
     }
 }

@@ -7,9 +7,12 @@ import java.util.EventListener;
 public interface RobotActionListener extends EventListener {
     void robotIsMoved(@NotNull RobotActionEvent event);
 
-    void robotIsSkipStep(@NotNull RobotActionEvent event); // !!! Должна быть утвердительная форма
+    void robotSkippedStep(@NotNull RobotActionEvent event); // !!! Должна быть утвердительная форма
+                                                            // DONE: переименовал robotSkipStep в robotSkippedStep
 
-    void robotChangeActive(@NotNull RobotActionEvent event); // !!! Не понял назначение события
+    void robotActivityChanged(@NotNull RobotActionEvent event); // !!! Не понял назначение события
+                                                                // DONE: переименовал robotChangeActive в robotActivityChanged
 
-    void robotChangeBattery(@NotNull RobotActionEvent event); // !!! Должна быть утвердительная форма
+    void robotChangedBattery(@NotNull RobotActionEvent event);  // !!! Должна быть утвердительная форма
+                                                                // DONE: переименовал robotChangeBattery в robotChangedBattery
 }

@@ -26,17 +26,17 @@ class RobotTest {
         }
 
         @Override
-        public void robotIsSkipStep(@NotNull RobotActionEvent event) {
+        public void robotSkippedStep(@NotNull RobotActionEvent event) {
             events.add(EVENT.ROBOT_SKIP_STEP);
         }
 
         @Override
-        public void robotChangeActive(@NotNull RobotActionEvent event) {
+        public void robotActivityChanged(@NotNull RobotActionEvent event) {
             // Not implemented yet
         }
 
         @Override
-        public void robotChangeBattery(@NotNull RobotActionEvent event) {
+        public void robotChangedBattery(@NotNull RobotActionEvent event) {
             // Not implemented yet
         }
     }
