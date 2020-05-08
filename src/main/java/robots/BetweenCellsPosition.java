@@ -2,6 +2,7 @@ package robots;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collections;
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.Objects;
@@ -32,7 +33,8 @@ public class BetweenCellsPosition {
     }
 
     public Map<Direction, Cell> getNeighborCells () {
-        return new EnumMap<>(neighborCells); // !!! Можно возвращать неизменяемый контейнер
+        return Collections.unmodifiableMap(neighborCells); // !!! Можно возвращать неизменяемый контейнер
+                                                           // DONE: Возвращаю неизменяемый контейнер unmodifiableMap
     }
 
     // !!! Позиция НИКАК не может знать про стену
