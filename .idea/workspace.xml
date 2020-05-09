@@ -19,10 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Исправил наименования аргумента ячейки в методах setNeighbor и isNeighbor">
+    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Обновил создание элементов в диаграмме 01_Расстановка_на_поле">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/robots/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/CellTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,21 +215,7 @@
       <workItem from="1588587589714" duration="688000" />
       <workItem from="1588689270445" duration="23000" />
       <workItem from="1588861313847" duration="9193000" />
-      <workItem from="1589009537531" duration="2051000" />
-    </task>
-    <task id="LOCAL-00003" summary="Delete target from git">
-      <created>1585205892916</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1585205892916</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Added wall position test and fixed canWallSet method">
-      <created>1585208161800</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1585208161800</updated>
+      <workItem from="1589009537531" duration="2850000" />
     </task>
     <task id="LOCAL-00005" summary="Added test for Wall and fix recursions toString in Cell">
       <created>1585209376705</created>
@@ -562,7 +546,21 @@
       <option name="project" value="LOCAL" />
       <updated>1589009729017</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Добавил проверки и тесты в метод setNeighbor класса Cell">
+      <created>1589011935987</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1589011935987</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Обновил создание элементов в диаграмме 01_Расстановка_на_поле">
+      <created>1589012247274</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1589012247274</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,8 +579,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implement setup fiels" />
-    <MESSAGE value="Added tests for field" />
     <MESSAGE value="Start UI" />
     <MESSAGE value="Change FieldWidget: added walls" />
     <MESSAGE value="Added key listener to RobotWidget" />
@@ -606,7 +602,9 @@
     <MESSAGE value="Убрал из Labirint постоянное знание о создаваемом поле" />
     <MESSAGE value="Возвращаю неизменяемый контейнер в getNeighborCells" />
     <MESSAGE value="Исправил наименования аргумента ячейки в методах setNeighbor и isNeighbor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправил наименования аргумента ячейки в методах setNeighbor и isNeighbor" />
+    <MESSAGE value="Добавил проверки и тесты в метод setNeighbor класса Cell" />
+    <MESSAGE value="Обновил создание элементов в диаграмме 01_Расстановка_на_поле" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновил создание элементов в диаграмме 01_Расстановка_на_поле" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="198" key="#Auto_Import" timestamp="1585465326910">
@@ -726,10 +724,10 @@
     </state>
     <state x="440" y="110" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587795608567" />
     <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585232841599" />
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1588917749180">
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1589012254225">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588917749180" />
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589012254225" />
     <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585476932505" />
     <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585458461246">
       <screen x="0" y="0" width="1920" height="1080" />

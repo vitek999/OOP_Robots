@@ -6,6 +6,7 @@ import robots.event.ExitCellActionListener;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -16,7 +17,8 @@ public class ExitCell extends Cell {
     private List<Robot> teleportedRobots = new ArrayList<>();
 
     public List<Robot> getTeleportedRobots() {
-        return new ArrayList<>(teleportedRobots); // !!! Можно использовать неизменяемый контейнер
+        return Collections.unmodifiableList(teleportedRobots); // !!! Можно использовать неизменяемый контейнер
+                                                               // DONE: Возвращаю неизменяемый контейнер
     }
 
     @Override
