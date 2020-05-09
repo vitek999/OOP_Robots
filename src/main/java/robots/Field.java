@@ -81,10 +81,8 @@ public class Field {
                 Objects.equals(exitPoint, field.exitPoint);
     }
 
-    @Override
-    public int hashCode() { // !!! Метод нужен???
-        return Objects.hash(cells, width, height, exitPoint);
-    }
+    // !!! Метод нужен???
+    // DONE: Нет, удалил hashCode
 
     @Override
     public String toString() {
