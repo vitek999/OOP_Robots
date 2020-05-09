@@ -42,7 +42,7 @@ public class Game {
         setActiveRobot(null);
     }
 
-    public GameStatus status() {
+    public GameStatus getStatus() {
         return gameStatus;
     }
 
@@ -53,15 +53,16 @@ public class Game {
         }
     }
 
-    public Robot winner() {
+    public Robot getWinner() {
         return winner;
     }
 
-    public Robot activeRobot() {
+    public Robot getActiveRobot() {
         return activeRobot;
     }
 
     public Field getGameField() { // !!! либо везде get, либо везде без get
+                                  // DONE: Переименовал, добавил к остальным методам префикс get
         return gameField;
     }
 

@@ -34,7 +34,7 @@ public class Main {
             JPanel content = (JPanel) this.getContentPane();
             content.add(new FieldWidget(game.getGameField(), widgetFactory));
 
-            widgetFactory.getWidget(game.activeRobot()).requestFocus();
+            widgetFactory.getWidget(game.getActiveRobot()).requestFocus();
 
             pack();
             setResizable(false);
@@ -64,7 +64,7 @@ public class Main {
                 switch (status) {
                     case WINNER_FOUND:
                         JOptionPane.showMessageDialog(GamePanel.this, "Выйграл робот: " +
-                                GameUtils.colorName(widgetFactory.getWidget(game.winner()).getColor()));
+                                GameUtils.colorName(widgetFactory.getWidget(game.getWinner()).getColor()));
                         break;
                     case GAME_ABORTED:
                         JOptionPane.showMessageDialog(GamePanel.this, "Игра завершена досрочно");
