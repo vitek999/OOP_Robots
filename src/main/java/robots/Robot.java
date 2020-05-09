@@ -13,7 +13,8 @@ public class Robot {
 
     private Cell position;
 
-    private Battery battery; // !!! Не понятно, о какой, батарейке идет речь, робот взаимодействует с многими батарейками
+    private Battery innerBattery; // !!! Не понятно, о какой, батарейке идет речь, робот взаимодействует с многими батарейками
+                                  // DONE: Переименовал battery -> innerBattery
 
     private boolean isActive;
 
@@ -39,8 +40,8 @@ public class Robot {
 
     public void changeBattery() {
         if(isActive && position.getBattery() != null){ // !!! Не соответствует диаграмме - ранее активность робота запрашивали у игры
-            battery = position.takeBattery();
-            fireRobotChangeBattery(battery);
+            innerBattery = position.takeBattery();
+            fireRobotChangeBattery(innerBattery);
         }
     }
 
@@ -61,15 +62,15 @@ public class Robot {
     }
 
     public void setBattery(Battery battery) { // !!! А как же проверка, что это возможно
-        this.battery = battery;
+        this.innerBattery = battery;
     }
 
     public Integer getCharge() { // !!! Если батарейки нет??
-        return battery.charge();
+        return innerBattery.charge();
     }
 
     public Integer getMaxCharge() { // !!! Если батарейки нет??
-        return battery.maxCharge();
+        return innerBattery.maxCharge();
     }
 
     private Cell canMove(@NotNull Direction direction) {
@@ -96,12 +97,12 @@ public class Robot {
 
         if (getCharge() < amountOfCharge) { // !!! Не соответствует диаграмме - 02_сделать шаг. (Робот думает за батарейку)
             if(ignoreShortage) {
-                battery.releaseCharge(battery.charge());
+                innerBattery.releaseCharge(innerBattery.charge());
             } else {
                 result = false;
             }
         } else {
-            battery.releaseCharge(amountOfCharge);
+            innerBattery.releaseCharge(amountOfCharge);
         }
 
         return result;
