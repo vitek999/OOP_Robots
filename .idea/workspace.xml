@@ -19,9 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Возвращаю неизменяемый контейнер в getNeighborCells">
+    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Исправил наименования аргумента ячейки в методах setNeighbor и isNeighbor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/robots/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/CellTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +76,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -118,6 +120,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CellTest.test_setNeighborCell_alreadyNeighborWithAnotherDirection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOP_Robots" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="robots.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="robots" />
+      <option name="MAIN_CLASS_NAME" value="robots.CellTest" />
+      <option name="METHOD_NAME" value="test_setNeighborCell_alreadyNeighborWithAnotherDirection" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CellTest.test_setNeighborCell_setSelfAsNeighbor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OOP_Robots" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="robots.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="robots" />
+      <option name="MAIN_CLASS_NAME" value="robots.CellTest" />
+      <option name="METHOD_NAME" value="test_setNeighborCell_setSelfAsNeighbor" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FieldTest.test_teleportEvent_oneRobot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
@@ -134,43 +168,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameTest.test_passMoveNextRobot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OOP_Robots" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="robots.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.GameTest" />
-      <option name="METHOD_NAME" value="test_passMoveNextRobot" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="robots in OOP_Robots" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OOP_Robots" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="robots.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="robots" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in OOP_Robots" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.CellTest.test_setNeighborCell_setSelfAsNeighbor" />
+        <item itemvalue="JUnit.CellTest.test_setNeighborCell_alreadyNeighborWithAnotherDirection" />
         <item itemvalue="JUnit.FieldTest.test_teleportEvent_oneRobot" />
-        <item itemvalue="JUnit.GameTest.test_passMoveNextRobot" />
-        <item itemvalue="JUnit.robots in OOP_Robots" />
       </list>
     </recent_temporary>
   </component>
@@ -213,14 +217,7 @@
       <workItem from="1588587589714" duration="688000" />
       <workItem from="1588689270445" duration="23000" />
       <workItem from="1588861313847" duration="9193000" />
-      <workItem from="1589009537531" duration="153000" />
-    </task>
-    <task id="LOCAL-00002" summary="Added tests for battery and fixed release charge method">
-      <created>1585205827569</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1585205827569</updated>
+      <workItem from="1589009537531" duration="2051000" />
     </task>
     <task id="LOCAL-00003" summary="Delete target from git">
       <created>1585205892916</created>
@@ -558,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588917746603</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Исправил наименования аргумента ячейки в методах setNeighbor и isNeighbor">
+      <created>1589009729016</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1589009729017</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -577,7 +581,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add events to Field" />
     <MESSAGE value="Implement setup fiels" />
     <MESSAGE value="Added tests for field" />
     <MESSAGE value="Start UI" />
@@ -602,7 +605,8 @@
     <MESSAGE value="Добавил пояснение о несовпадении назначения класса Labirint при проектировании и реализации" />
     <MESSAGE value="Убрал из Labirint постоянное знание о создаваемом поле" />
     <MESSAGE value="Возвращаю неизменяемый контейнер в getNeighborCells" />
-    <option name="LAST_COMMIT_MESSAGE" value="Возвращаю неизменяемый контейнер в getNeighborCells" />
+    <MESSAGE value="Исправил наименования аргумента ячейки в методах setNeighbor и isNeighbor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправил наименования аргумента ячейки в методах setNeighbor и isNeighbor" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="198" key="#Auto_Import" timestamp="1585465326910">
@@ -665,25 +669,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="784" y="440" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587711907021" />
-    <state width="1877" height="406" key="GridCell.Tab.0.bottom" timestamp="1588917851495">
+    <state width="1877" height="406" key="GridCell.Tab.0.bottom" timestamp="1589011805883">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588917851495" />
+    <state width="1877" height="406" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589011805883" />
     <state width="1876" height="514" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.center" timestamp="1588917851495">
+    <state width="1877" height="406" key="GridCell.Tab.0.center" timestamp="1589011805882">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588917851495" />
+    <state width="1877" height="406" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589011805882" />
     <state width="1876" height="514" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.left" timestamp="1588917851495">
+    <state width="1877" height="406" key="GridCell.Tab.0.left" timestamp="1589011805882">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588917851495" />
+    <state width="1877" height="406" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589011805882" />
     <state width="1876" height="514" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.right" timestamp="1588917851495">
+    <state width="1877" height="406" key="GridCell.Tab.0.right" timestamp="1589011805883">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588917851495" />
+    <state width="1877" height="406" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589011805883" />
     <state width="1876" height="514" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
     <state width="1877" height="454" key="GridCell.Tab.1.bottom" timestamp="1588243963974">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -743,9 +747,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="342" y="242" key="new project wizard/0.0.1920.1080@0.0.1920.1080" timestamp="1585370471345" />
-    <state x="616" y="250" width="672" height="677" key="run.anything.popup" timestamp="1585480226178">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="616" y="241" width="672" height="652" key="run.anything.popup" timestamp="1589011579202">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="616" y="241" width="672" height="652" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1589011579202" />
     <state x="616" y="250" width="672" height="677" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1585480226178" />
     <state x="623" y="226" width="672" height="653" key="search.everywhere.popup" timestamp="1587795471155">
       <screen x="0" y="0" width="1920" height="1040" />

@@ -91,7 +91,7 @@ class CellTest {
         Direction direction = Direction.NORTH;
 
         cell.setNeighbor(neighborCell, direction);
-        neighborCell.setNeighbor(cell, direction.getOppositeDirection());
+        assertThrows(IllegalArgumentException.class, () -> neighborCell.setNeighbor(cell, direction.getOppositeDirection()));
         assertEquals(neighborCell, cell.neighborCell(direction));
         assertEquals(cell, neighborCell.neighborCell(direction.getOppositeDirection()));
     }
@@ -106,6 +106,26 @@ class CellTest {
         assertThrows(IllegalArgumentException.class, () -> cell.setNeighbor(anotherCell, direction));
         assertEquals(neighborCell, cell.neighborCell(direction));
         assertEquals(cell, neighborCell.neighborCell(direction.getOppositeDirection()));
+    }
+
+    @Test
+    public void test_setNeighborCell_alreadyNeighborWithAnotherDirection() {
+        Cell neighborCell = new Cell();
+        Direction direction = Direction.NORTH;
+        Direction anotherDirection = Direction.SOUTH;
+
+        cell.setNeighbor(neighborCell, direction);
+        assertThrows(IllegalArgumentException.class, () -> cell.setNeighbor(neighborCell, anotherDirection));
+        assertEquals(neighborCell, cell.neighborCell(direction));
+        assertEquals(cell, neighborCell.neighborCell(direction.getOppositeDirection()));
+    }
+
+    @Test
+    public void test_setNeighborCell_setSelfAsNeighbor() {
+        Direction direction = Direction.NORTH;
+
+        assertThrows(IllegalArgumentException.class, () -> cell.setNeighbor(cell, direction));
+        assertNull(cell.neighborCell(direction));
     }
 
     @Test

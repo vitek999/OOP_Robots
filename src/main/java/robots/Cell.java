@@ -62,8 +62,9 @@ public class Cell {
 
     void setNeighbor(@NotNull Cell neighborCell, @NotNull Direction direction) { // !!! Название аргумента ячейки малоинформативно
                                                                                  // DONE: переименовал аргумент ячейки cell -> neighborCell
-        if(neighborCells.containsKey(direction) && neighborCells.containsValue(neighborCell)) return; // !!! Здесь что-то малопонятное: учесть случаи добавления той же ячейки, задание новой ячейки, если уже есть сосед и т.д.
-        if(neighborCells.containsKey(direction)) throw new IllegalArgumentException();
+        // !!! Здесь что-то малопонятное: учесть случаи добавления той же ячейки, задание новой ячейки, если уже есть сосед и т.д.
+        // DONE: Добавил проверки и тесты: добавляется ячейка, которая уже является соседом; установка соседа самого на сеья; d заданном направлении уже есть сосед.
+        if(neighborCell == this || neighborCells.containsKey(direction) || neighborCells.containsValue(neighborCell)) throw new IllegalArgumentException();
         neighborCells.put(direction, neighborCell);
         if(neighborCell.neighborCell(direction.getOppositeDirection()) == null) {
             neighborCell.setNeighbor(this, direction.getOppositeDirection());
