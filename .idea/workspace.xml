@@ -19,8 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Обновил создание элементов в диаграмме 01_Расстановка_на_поле">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Удалил неиспользуемый hashCode из класса Field">
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +96,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in OOP_Robots">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="robots.Main" />
       <module name="OOP_Robots" />
@@ -168,8 +168,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in OOP_Robots" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in OOP_Robots" />
         <item itemvalue="JUnit.CellTest.test_setNeighborCell_setSelfAsNeighbor" />
         <item itemvalue="JUnit.CellTest.test_setNeighborCell_alreadyNeighborWithAnotherDirection" />
         <item itemvalue="JUnit.FieldTest.test_teleportEvent_oneRobot" />
@@ -215,21 +215,7 @@
       <workItem from="1588587589714" duration="688000" />
       <workItem from="1588689270445" duration="23000" />
       <workItem from="1588861313847" duration="9193000" />
-      <workItem from="1589009537531" duration="2850000" />
-    </task>
-    <task id="LOCAL-00005" summary="Added test for Wall and fix recursions toString in Cell">
-      <created>1585209376705</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1585209376705</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Added tests for Robot and fix changeButtons and move methods">
-      <created>1585226705824</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1585226705824</updated>
+      <workItem from="1589009537531" duration="3228000" />
     </task>
     <task id="LOCAL-00007" summary="Added todos">
       <created>1585236502220</created>
@@ -560,7 +546,21 @@
       <option name="project" value="LOCAL" />
       <updated>1589012247274</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Возвращаю неизменяемый контейнер в методе getTeleportedRobots">
+      <created>1589012861998</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1589012861998</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Удалил неиспользуемый hashCode из класса Field">
+      <created>1589012948745</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1589012948745</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -579,8 +579,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Start UI" />
-    <MESSAGE value="Change FieldWidget: added walls" />
     <MESSAGE value="Added key listener to RobotWidget" />
     <MESSAGE value="Added movable robot" />
     <MESSAGE value="Added change battery" />
@@ -604,7 +602,9 @@
     <MESSAGE value="Исправил наименования аргумента ячейки в методах setNeighbor и isNeighbor" />
     <MESSAGE value="Добавил проверки и тесты в метод setNeighbor класса Cell" />
     <MESSAGE value="Обновил создание элементов в диаграмме 01_Расстановка_на_поле" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обновил создание элементов в диаграмме 01_Расстановка_на_поле" />
+    <MESSAGE value="Возвращаю неизменяемый контейнер в методе getTeleportedRobots" />
+    <MESSAGE value="Удалил неиспользуемый hashCode из класса Field" />
+    <option name="LAST_COMMIT_MESSAGE" value="Удалил неиспользуемый hashCode из класса Field" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="198" key="#Auto_Import" timestamp="1585465326910">
@@ -667,25 +667,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="784" y="440" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587711907021" />
-    <state width="1877" height="406" key="GridCell.Tab.0.bottom" timestamp="1589011805883">
+    <state width="1877" height="406" key="GridCell.Tab.0.bottom" timestamp="1589012894459">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589011805883" />
+    <state width="1877" height="406" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589012894459" />
     <state width="1876" height="514" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.center" timestamp="1589011805882">
+    <state width="1877" height="406" key="GridCell.Tab.0.center" timestamp="1589012894459">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589011805882" />
+    <state width="1877" height="406" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589012894459" />
     <state width="1876" height="514" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.left" timestamp="1589011805882">
+    <state width="1877" height="406" key="GridCell.Tab.0.left" timestamp="1589012894458">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589011805882" />
+    <state width="1877" height="406" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589012894458" />
     <state width="1876" height="514" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.right" timestamp="1589011805883">
+    <state width="1877" height="406" key="GridCell.Tab.0.right" timestamp="1589012894459">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589011805883" />
+    <state width="1877" height="406" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589012894459" />
     <state width="1876" height="514" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
     <state width="1877" height="454" key="GridCell.Tab.1.bottom" timestamp="1588243963974">
       <screen x="0" y="0" width="1920" height="1040" />
