@@ -6,7 +6,6 @@ import robots.event.GameActionListener;
 import robots.labirints.SmallLabirint;
 import robots.ui.FieldWidget;
 import robots.ui.WidgetFactory;
-import robots.ui.block.WallWidget;
 import robots.ui.utils.GameUtils;
 
 import javax.swing.*;
@@ -67,10 +66,10 @@ public class Main {
                         JOptionPane.showMessageDialog(GamePanel.this, "Выйграл робот: " +
                                 GameUtils.colorName(widgetFactory.getWidget(game.winner()).getColor()));
                         break;
-                    case GAME_FINISHED_AHEAD_OF_SCHEDULE:
+                    case GAME_ABORTED:
                         JOptionPane.showMessageDialog(GamePanel.this, "Игра завершена досрочно");
                         break;
-                    case ALL_ROBOTS_HAVE_LOW_BATTERIES:
+                    case ALL_ROBOTS_HAVE_LOW_CHARGE:
                         JOptionPane.showMessageDialog(GamePanel.this, "Все роботы имеют нулевой заряд");
                         break;
                     case ALL_ROBOTS_OUT:

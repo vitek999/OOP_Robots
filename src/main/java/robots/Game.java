@@ -38,7 +38,7 @@ public class Game {
 
     public void abort() { // !!! Не корректное название - она не завершилась, она прервалась
                           // DONE: Переименовал метод finish -> abort
-        setStatus(GameStatus.GAME_FINISHED_AHEAD_OF_SCHEDULE);
+        setStatus(GameStatus.GAME_ABORTED);
         setActiveRobot(null);
     }
 
@@ -108,7 +108,7 @@ public class Game {
         }
 
         if(!robotsOnField.isEmpty() && teleportedRobots.isEmpty() && robotsHasLowCharge(robotsOnField)) {
-            result = GameStatus.ALL_ROBOTS_HAVE_LOW_BATTERIES;
+            result = GameStatus.ALL_ROBOTS_HAVE_LOW_CHARGE;
         }
 
         if(teleportedRobots.size() == 1 && robotsHasLowCharge(robotsOnField)) {

@@ -57,7 +57,7 @@ public class GameTest {
     public void test_finishGame() {
         game.abort();
 
-        assertEquals(GameStatus.GAME_FINISHED_AHEAD_OF_SCHEDULE, game.status());
+        assertEquals(GameStatus.GAME_ABORTED, game.status());
     }
 
     @Test
@@ -176,7 +176,7 @@ public class GameTest {
         assertEquals(expectedEvents, events);
         assertFalse(robot.isActive());
         assertFalse(secondRobot.isActive());
-        assertEquals(GameStatus.ALL_ROBOTS_HAVE_LOW_BATTERIES, game.status());
+        assertEquals(GameStatus.ALL_ROBOTS_HAVE_LOW_CHARGE, game.status());
     }
 
     @Test
