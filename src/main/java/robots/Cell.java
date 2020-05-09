@@ -60,18 +60,20 @@ public class Cell {
         return neighborCells.get(direction);
     }
 
-    void setNeighbor(@NotNull Cell cell, @NotNull Direction direction) { // !!! Название аргумента ячейки малоинформативно
-        if(neighborCells.containsKey(direction) && neighborCells.containsValue(cell)) return; // !!! Здесь что-то малопонятное: учесть случаи добавления той же ячейки, задание новой ячейки, если уже есть сосед и т.д.
+    void setNeighbor(@NotNull Cell neighborCell, @NotNull Direction direction) { // !!! Название аргумента ячейки малоинформативно
+                                                                                 // DONE: переименовал аргумент ячейки cell -> neighborCell
+        if(neighborCells.containsKey(direction) && neighborCells.containsValue(neighborCell)) return; // !!! Здесь что-то малопонятное: учесть случаи добавления той же ячейки, задание новой ячейки, если уже есть сосед и т.д.
         if(neighborCells.containsKey(direction)) throw new IllegalArgumentException();
-        neighborCells.put(direction, cell);
-        if(cell.neighborCell(direction.getOppositeDirection()) == null) {
-            cell.setNeighbor(this, direction.getOppositeDirection());
+        neighborCells.put(direction, neighborCell);
+        if(neighborCell.neighborCell(direction.getOppositeDirection()) == null) {
+            neighborCell.setNeighbor(this, direction.getOppositeDirection());
         }
     }
 
-    public Direction isNeighbor(@NotNull Cell cell) { // !!! Название аргумента малоинформативно
+    public Direction isNeighbor(@NotNull Cell other) { // !!! Название аргумента малоинформативно
+                                                       // DONE: Переименовал аргумент cell -> other
         for(var i : neighborCells.entrySet()) { // !!! Может реализовать итератор соседей???
-            if(i.getValue().equals(cell)) return i.getKey();
+            if(i.getValue().equals(other)) return i.getKey();
         }
         return null;
     }
