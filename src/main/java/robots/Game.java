@@ -107,11 +107,11 @@ public class Game {
             result = GameStatus.ALL_ROBOTS_OUT;
         }
 
-        if(!robotsOnField.isEmpty() && teleportedRobots.isEmpty() && robotsHasLowBattery(robotsOnField)) {
+        if(!robotsOnField.isEmpty() && teleportedRobots.isEmpty() && robotsHasLowCharge(robotsOnField)) {
             result = GameStatus.ALL_ROBOTS_HAVE_LOW_BATTERIES;
         }
 
-        if(teleportedRobots.size() == 1 && robotsHasLowBattery(robotsOnField)) {
+        if(teleportedRobots.size() == 1 && robotsHasLowCharge(robotsOnField)) {
             setWinner(teleportedRobots.get(0));
             result = GameStatus.WINNER_FOUND;
         }
@@ -119,7 +119,8 @@ public class Game {
         return result;
     }
 
-    private boolean robotsHasLowBattery(@NotNull List<Robot> robots) { // !!! Про батарейку знает только робот - см. название метода
+    private boolean robotsHasLowCharge(@NotNull List<Robot> robots) { // !!! Про батарейку знает только робот - см. название метода
+                                                                      // DONE: переменовал метод robotsHasLowBattery -> robotsHasLowCharge
         boolean result = true;
 
         for(int i = 0; i < robots.size() && result; ++i) {
