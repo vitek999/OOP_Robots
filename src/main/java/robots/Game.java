@@ -36,7 +36,8 @@ public class Game {
         passMoveNextRobot();
     }
 
-    public void finish() { // !!! Не корректное название - она не завершилась, она прервалась
+    public void abort() { // !!! Не корректное название - она не завершилась, она прервалась
+                          // DONE: Переименовал метод finish -> abort
         setStatus(GameStatus.GAME_FINISHED_AHEAD_OF_SCHEDULE);
         setActiveRobot(null);
     }

@@ -55,7 +55,7 @@ public class GameTest {
 
     @Test
     public void test_finishGame() {
-        game.finish();
+        game.abort();
 
         assertEquals(GameStatus.GAME_FINISHED_AHEAD_OF_SCHEDULE, game.status());
     }
