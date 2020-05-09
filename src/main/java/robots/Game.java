@@ -5,6 +5,7 @@ import robots.event.*;
 import robots.labirints.Labirint;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Game {
@@ -65,11 +66,13 @@ public class Game {
     }
 
     public List<Robot> getRobotsOnField() {
-        return new ArrayList<>(gameField.getRobotsOnField()); // !!! Можно возвращать неизменяемый контейнер
+        return Collections.unmodifiableList(gameField.getRobotsOnField()); // !!! Можно возвращать неизменяемый контейнер
+                                                                           // DONE: Возвращаю неизменяемый контейнер
     }
 
     public List<Robot> getTeleportedRobots() {
-        return new ArrayList<>(gameField.getTeleportedRobots()); // !!! Можно возвращать неизменяемый контейнер
+        return Collections.unmodifiableList(gameField.getTeleportedRobots()); // !!! Можно возвращать неизменяемый контейнер
+                                                                              // DONE: Возвращаю неизменяемый контейнер
     }
 
     private void passMoveNextRobot() {
