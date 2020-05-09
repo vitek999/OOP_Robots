@@ -156,11 +156,11 @@ public class Game {
         public void robotIsMoved(@NotNull RobotActionEvent event) {
             fireRobotIsMoved(event.getRobot());
             if(!(event.getToCell() instanceof ExitCell)){ // !!! Повтор кода, см. обработчик ниже
+                                                          // DONE: Так как исправил замечание ниже, повтора нет, так как здесь статус определяется толькл при выполнению условия
                 setStatus(determineOutcomeGame());
-                passMoveNextRobot();
-            } else {
-                event.getRobot().setActive(false); // !!! Почему не метод passMoveNextRobot()?
             }
+            passMoveNextRobot(); // !!! Почему не метод passMoveNextRobot()?
+                                 // DONE: Использую passMoveNextRobot
         }
 
         @Override
