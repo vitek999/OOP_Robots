@@ -14,18 +14,17 @@ public class Game {
     private Robot activeRobot;
     private Robot winner;
     private Field gameField;
-    private Labirint labirint; // !!! Зачем сильная связь???
+    // !!! Зачем сильная связь???
+    // DONE: Пробрасываю лабиринт через конструктор, не сохраняя в поле класса
 
     public Game(Labirint labirint) {
-        this.labirint = labirint;
-
-        initGame();
+        initGame(labirint);
     }
 
-    private void initGame() {
+    private void initGame(@NotNull Labirint labirint) {
         setStatus(GameStatus.GAME_IS_ON);
 
-        buildField();
+        buildField(labirint);
 
         gameField.addFieldlActionListener(new FieldObserver());
 
@@ -129,7 +128,7 @@ public class Game {
         return result;
     }
 
-    private void buildField() {
+    private void buildField(@NotNull Labirint labirint) {
         gameField = labirint.buildField();
     }
 
