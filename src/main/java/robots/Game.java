@@ -137,7 +137,8 @@ public class Game {
 
     private void setWinner(@NotNull Robot robot) {
         winner = robot;
-        setActiveRobot(null); // !!! Непонятная для текущего контекста деятельность
+        // !!! Непонятная для текущего контекста деятельность
+        // DONE: убрал вызов setActiveRobot(null), т.к. он был не нужен, ибо эту деятельность выпоняет passMoveNextRobot
     }
 
     private void setActiveRobot(Robot robot) {
