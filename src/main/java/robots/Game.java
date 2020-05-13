@@ -86,7 +86,8 @@ public class Game {
 
         if(robotsOnField.size() == 1 ) {
             Robot robot = robotsOnField.get(0);
-            if(robot.getCharge() > 0) setActiveRobot(robot); // !!! Хорошо ли, что игра думает за робота??
+            setActiveRobot(robot); // !!! Хорошо ли, что игра думает за робота??
+                                   // DONE: Убрал проверку на заряд робота, теперь робот сам решает (см Robot.setActive)
         } else if (robotsOnField.size() == 2) {
             Robot firstRobot = robotsOnField.get(0);
             Robot secondRobot = robotsOnField.get(1);

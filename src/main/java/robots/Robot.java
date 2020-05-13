@@ -66,8 +66,10 @@ public class Robot {
 
     void setActive(boolean value) { // !!! Не соответствует диаграмме - ранее активность робота запрашивали у игры
         // DONE: Добавил метод на диаграммуы.
-        isActive = value;
-        fireRobotChangeActive();
+        if(getCharge() > 0 || !value) {
+            isActive = value;
+            fireRobotChangeActive();
+        }
     }
 
     public boolean isActive() {
