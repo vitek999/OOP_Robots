@@ -24,6 +24,8 @@ public class CellWidget extends JPanel {
     }
 
     public void addItem(CellItemWidget item) { // !!! Какой-то контроль за количеством элементов должен вестись??
+                                               // DONE: Добавлен контроль за кол-вом элеменов
+        if(items.size() > 2) throw new IllegalArgumentException();
         int index = -1;
 
         if (items.containsKey(Layer.BOTTOM)) {
