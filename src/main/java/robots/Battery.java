@@ -1,5 +1,7 @@
 package robots;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Objects;
 
 public class Battery {
@@ -24,6 +26,10 @@ public class Battery {
 
     public Integer maxCharge() {
         return MAX_CHARGE;
+    }
+
+    public static boolean canLocateAtPosition(@NotNull Cell position) {
+        return position.getBattery() == null;
     }
 
     @Override
