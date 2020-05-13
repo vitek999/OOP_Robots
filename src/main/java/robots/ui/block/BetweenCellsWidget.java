@@ -18,8 +18,9 @@ public class BetweenCellsWidget extends JPanel { // !!! До конца пред
     }
 
     public void addItem(@NotNull BlockWidget blockWidget) { // !!! Плохое название - могу много элементов добавить?
+        if(blockWidget.getOrientation() != orientation) throw new IllegalArgumentException();
         add(blockWidget);                                   // !!! Что будет, если ориентация BetweenCellsWidget и BlockWidget не совпадают??
-        repaint();
+                                                            // DONE: Добавил проверку на несовпадение ориентаций.
     }
 
     private Dimension getDimensionByOrientation() {
