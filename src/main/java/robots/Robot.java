@@ -95,14 +95,15 @@ public class Robot {
     private boolean spendBatteryCharge(int amountOfCharge, boolean ignoreShortage) {
         boolean result = true;
 
-        if (getCharge() < amountOfCharge) { // !!! Не соответствует диаграмме - 02_сделать шаг. (Робот думает за батарейку)
-            if(ignoreShortage) {
+        int released = innerBattery.releaseCharge(amountOfCharge);
+        if(released != amountOfCharge) { // !!! Не соответствует диаграмме - 02_сделать шаг. (Робот думает за батарейку)
+                                         // DONE: Теперь батарейка возвращает сколько было потрачено при releaseCharge
+                                         // и если оно не совпадает с запросом то робот может потратить весь заряд, если требуется.
+            if (ignoreShortage) {
                 innerBattery.releaseCharge(innerBattery.charge());
             } else {
                 result = false;
             }
-        } else {
-            innerBattery.releaseCharge(amountOfCharge);
         }
 
         return result;

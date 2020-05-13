@@ -19,8 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Удалил неиспользуемый hashCode из класса Field">
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Game.java" afterDir="false" />
+    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Исправил setWinner в классе Game">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Robot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +79,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -96,7 +97,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.All in OOP_Robots">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="robots.Main" />
       <module name="OOP_Robots" />
@@ -168,8 +169,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in OOP_Robots" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.CellTest.test_setNeighborCell_setSelfAsNeighbor" />
         <item itemvalue="JUnit.CellTest.test_setNeighborCell_alreadyNeighborWithAnotherDirection" />
         <item itemvalue="JUnit.FieldTest.test_teleportEvent_oneRobot" />
@@ -215,77 +216,9 @@
       <workItem from="1588587589714" duration="688000" />
       <workItem from="1588689270445" duration="23000" />
       <workItem from="1588861313847" duration="9193000" />
-      <workItem from="1589009537531" duration="3228000" />
-    </task>
-    <task id="LOCAL-00007" summary="Added todos">
-      <created>1585236502220</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1585236502220</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Added plugin for building executable jar">
-      <created>1585248770503</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1585248770504</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Rename WallPosition to BetweenCellsPosition">
-      <created>1585458611723</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1585458611723</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Added double Sided set neighbors cells test, two times set neighbors  in one direction">
-      <created>1585459259898</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1585459259898</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Fix setNeighbor method in cell">
-      <created>1585459282029</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1585459282029</updated>
-    </task>
-    <task id="LOCAL-00012" summary="test cell neighbor wall get method when wall not exists in direction">
-      <created>1585459420010</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1585459420010</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Added battery release charge test when amount charge equals battery charge">
-      <created>1585459568404</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1585459568404</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Fix release charge battery test when amount charge more than battery charge and fix Battery release charge method">
-      <created>1585459784879</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1585459784879</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Fixed spend battery charge method in robot">
-      <created>1585459965649</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1585459965649</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Fix between cells position. Now position not check existing wall on some side of cell">
-      <created>1585461256090</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1585461256090</updated>
+      <workItem from="1589009537531" duration="5936000" />
+      <workItem from="1589113901094" duration="72000" />
+      <workItem from="1589374354053" duration="2534000" />
     </task>
     <task id="LOCAL-00017" summary="Added test for between cells position for each direction">
       <created>1585461289273</created>
@@ -560,7 +493,77 @@
       <option name="project" value="LOCAL" />
       <updated>1589012948745</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Исправлен порядок генерации события robotIsTeleported класса Game">
+      <created>1589013263299</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1589013263299</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Возвращаю неизменяемый контейнерв в методах getRobotsOnField getTeleportedRobots класса Game">
+      <created>1589013432899</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1589013432899</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Удалено поле labirint из класса Game">
+      <created>1589013610625</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1589013610625</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Переименовал метод finish -&gt; abort класса Game">
+      <created>1589013789015</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1589013789015</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Переименовал метод robotsHasLowBattery -&gt; robotsHasLowCharge в классе Game">
+      <created>1589013981546</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1589013981546</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Исправил замечания события robotIsMoved в классе Game">
+      <created>1589014306087</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1589014306087</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Исправил названия статусов игры">
+      <created>1589014650467</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1589014650467</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Переименовал поле с батарейков робота">
+      <created>1589014777695</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1589014777695</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Переименовал меоды получения полей класса Game">
+      <created>1589014961887</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1589014961887</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Исправил setWinner в классе Game">
+      <created>1589015299693</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1589015299693</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -579,16 +582,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added key listener to RobotWidget" />
-    <MESSAGE value="Added movable robot" />
-    <MESSAGE value="Added change battery" />
-    <MESSAGE value="Remove battery from batteries in WidgetFactory" />
-    <MESSAGE value="Added sonarlint to .gitignore" />
-    <MESSAGE value="Added skip step action to view" />
-    <MESSAGE value="Make two robots are movable" />
-    <MESSAGE value="MessageBox with game status" />
-    <MESSAGE value="Added remove robot from teleport cell" />
-    <MESSAGE value="Painting background on exit cell widget" />
     <MESSAGE value="Fix winner message" />
     <MESSAGE value="added tool tip text" />
     <MESSAGE value="Message box in JFrame" />
@@ -604,7 +597,17 @@
     <MESSAGE value="Обновил создание элементов в диаграмме 01_Расстановка_на_поле" />
     <MESSAGE value="Возвращаю неизменяемый контейнер в методе getTeleportedRobots" />
     <MESSAGE value="Удалил неиспользуемый hashCode из класса Field" />
-    <option name="LAST_COMMIT_MESSAGE" value="Удалил неиспользуемый hashCode из класса Field" />
+    <MESSAGE value="Исправлен порядок генерации события robotIsTeleported класса Game" />
+    <MESSAGE value="Возвращаю неизменяемый контейнерв в методах getRobotsOnField getTeleportedRobots класса Game" />
+    <MESSAGE value="Удалено поле labirint из класса Game" />
+    <MESSAGE value="Переименовал метод finish -&gt; abort класса Game" />
+    <MESSAGE value="Переименовал метод robotsHasLowBattery -&gt; robotsHasLowCharge в классе Game" />
+    <MESSAGE value="Исправил замечания события robotIsMoved в классе Game" />
+    <MESSAGE value="Исправил названия статусов игры" />
+    <MESSAGE value="Переименовал поле с батарейков робота" />
+    <MESSAGE value="Переименовал меоды получения полей класса Game" />
+    <MESSAGE value="Исправил setWinner в классе Game" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправил setWinner в классе Game" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="198" key="#Auto_Import" timestamp="1585465326910">
@@ -667,25 +670,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="784" y="440" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587711907021" />
-    <state width="1877" height="406" key="GridCell.Tab.0.bottom" timestamp="1589012894459">
+    <state width="1877" height="406" key="GridCell.Tab.0.bottom" timestamp="1589031268578">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589012894459" />
+    <state width="1877" height="406" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589031268578" />
     <state width="1876" height="514" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.center" timestamp="1589012894459">
+    <state width="1877" height="406" key="GridCell.Tab.0.center" timestamp="1589031268578">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589012894459" />
+    <state width="1877" height="406" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589031268578" />
     <state width="1876" height="514" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.left" timestamp="1589012894458">
+    <state width="1877" height="406" key="GridCell.Tab.0.left" timestamp="1589031268578">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589012894458" />
+    <state width="1877" height="406" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589031268578" />
     <state width="1876" height="514" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.right" timestamp="1589012894459">
+    <state width="1877" height="406" key="GridCell.Tab.0.right" timestamp="1589031268578">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589012894459" />
+    <state width="1877" height="406" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589031268578" />
     <state width="1876" height="514" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
     <state width="1877" height="454" key="GridCell.Tab.1.bottom" timestamp="1588243963974">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -719,15 +722,15 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="673" y="251" key="RollbackChangesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585458489079" />
-    <state x="440" y="110" key="SettingsEditor" timestamp="1587795608567">
+    <state x="440" y="110" key="SettingsEditor" timestamp="1589113947696">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="110" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587795608567" />
+    <state x="440" y="110" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589113947696" />
     <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585232841599" />
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1589012254225">
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1589031267814">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589012254225" />
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589031267814" />
     <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585476932505" />
     <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585458461246">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -741,6 +744,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587364377135" />
+    <state x="667" y="119" width="585" height="801" key="find.popup" timestamp="1589014814321">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="119" width="585" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1589014814321" />
     <state x="342" y="242" key="new project wizard" timestamp="1585370471345">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
