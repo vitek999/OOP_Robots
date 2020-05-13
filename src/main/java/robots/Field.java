@@ -27,13 +27,14 @@ public class Field {
         this.height = height;
         this.exitPoint = exitPoint;
 
-        setupField();
+        buildField();
 
         // Subscribe on exit cell
         ((ExitCell) getCell(exitPoint)).addExitCellActionListener(new ExitCellObserver());
     }
 
-    private void setupField() { // !!! Непонятное название метода
+    private void buildField() { // !!! Непонятное название метода
+                                // DONE: Переименовал метод setupField -> buildField
         for(int y = 0; y < height; ++y) {
             for(int x = 0; x < width; ++x) {
                 Point p = new Point(x, y);
