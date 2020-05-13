@@ -19,8 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Исправил Запах кода - использование операции с побочным эффектом в условии в методе move класса Robot">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Исправил метод Move">
       <change beforePath="$PROJECT_DIR$/src/main/java/robots/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Robot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +46,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="4508ae66b2143fedd624afe935ba6f1b8442204e" />
+        <entry key="$PROJECT_DIR$" value="7e7229a12409cc57fa453881c45b0749647fe538" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -218,14 +217,7 @@
       <workItem from="1588861313847" duration="9193000" />
       <workItem from="1589009537531" duration="5936000" />
       <workItem from="1589113901094" duration="72000" />
-      <workItem from="1589374354053" duration="3783000" />
-    </task>
-    <task id="LOCAL-00020" summary="Update test setup for robot tests">
-      <created>1585463513616</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1585463513616</updated>
+      <workItem from="1589374354053" duration="4023000" />
     </task>
     <task id="LOCAL-00021" summary="Added events to Robot">
       <created>1585466517251</created>
@@ -563,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589389250111</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Исправил метод Move">
+      <created>1589389824527</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1589389824527</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +581,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Some changes" />
     <MESSAGE value="Замечания преподавателя" />
     <MESSAGE value="Исправил замечание о наличии метода waitTeleportation в классе ExitCell" />
     <MESSAGE value="Исправил замечания в именовани методов интерфейса RobotActionListener" />
@@ -607,7 +605,8 @@
     <MESSAGE value="Исправил spendBatteryCharge в классе Robot" />
     <MESSAGE value="Исправил название метода, проверяющего возможность расположения робота в ячейке" />
     <MESSAGE value="Исправил Запах кода - использование операции с побочным эффектом в условии в методе move класса Robot" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправил Запах кода - использование операции с побочным эффектом в условии в методе move класса Robot" />
+    <MESSAGE value="Исправил метод Move" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправил метод Move" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="198" key="#Auto_Import" timestamp="1585465326910">
@@ -671,25 +670,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="784" y="440" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587711907021" />
-    <state width="1877" height="406" key="GridCell.Tab.0.bottom" timestamp="1589389773370">
+    <state width="1877" height="406" key="GridCell.Tab.0.bottom" timestamp="1589389820285">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589389773370" />
+    <state width="1877" height="406" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589389820285" />
     <state width="1876" height="514" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.center" timestamp="1589389773370">
+    <state width="1877" height="406" key="GridCell.Tab.0.center" timestamp="1589389820284">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589389773370" />
+    <state width="1877" height="406" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589389820284" />
     <state width="1876" height="514" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.left" timestamp="1589389773370">
+    <state width="1877" height="406" key="GridCell.Tab.0.left" timestamp="1589389820284">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589389773370" />
+    <state width="1877" height="406" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589389820284" />
     <state width="1876" height="514" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.right" timestamp="1589389773370">
+    <state width="1877" height="406" key="GridCell.Tab.0.right" timestamp="1589389820284">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589389773370" />
+    <state width="1877" height="406" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589389820284" />
     <state width="1876" height="514" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
     <state width="1877" height="454" key="GridCell.Tab.1.bottom" timestamp="1588243963974">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -738,6 +737,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="656" y="364" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585458461246" />
+    <state x="435" y="104" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1589390644302">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="435" y="104" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1589390644302" />
     <state x="731" y="258" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1585222399918">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

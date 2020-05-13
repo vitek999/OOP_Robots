@@ -32,7 +32,7 @@ public class Robot {
             Cell newPosition = canMove(direction);
             if (newPosition != null) { // !!! Запах кода - использование операции с побочным эффектом в условии
                                        // DONE: Вынес вызов spendBatteryCharge из условия и сохрняю резуьтат вызова в переменную isSpendChargeSuccess
-                boolean isSpendChargeSuccess = spendBatteryCharge(amountOfChargeForMove(), false);
+                boolean isSpendChargeSuccess = spendBatteryCharge(AMOUNT_OF_CHARGE_FOR_MOVE, false);
                 if(isSpendChargeSuccess) {
                     fireRobotIsMoved(oldPosition, newPosition);
                     position.takeRobot();
@@ -51,7 +51,7 @@ public class Robot {
 
     public void skipStep() {
         if(isActive) {
-            spendBatteryCharge(amountOfChargeForSkipStep(), true);
+            spendBatteryCharge(AMOUNT_OF_CHARGE_FOR_SKIP_STEP, true);
             fireRobotIsSkipStep();
         }
     }
@@ -88,13 +88,11 @@ public class Robot {
         return result;
     }
 
-    private int amountOfChargeForMove() { // !!! Зачем нужен метод???
-        return AMOUNT_OF_CHARGE_FOR_MOVE;
-    }
+    // !!! Зачем нужен метод???
+    // DONE: Удалил метод amountOfChargeForMove. Вместо него использую константу AMOUNT_OF_CHARGE_FOR_MOVE
 
-    private int amountOfChargeForSkipStep() { // !!! Зачем нужен метод???
-        return AMOUNT_OF_CHARGE_FOR_SKIP_STEP;
-    }
+    // !!! Зачем нужен метод???
+    // DONE: Удалил метод amountOfChargeForSkipStep. Вместо него использую константу AMOUNT_OF_CHARGE_FOR_SKIP_STEP
 
     private boolean spendBatteryCharge(int amountOfCharge, boolean ignoreShortage) {
         boolean result = true;
