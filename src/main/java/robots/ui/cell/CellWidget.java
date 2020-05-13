@@ -40,7 +40,8 @@ public class CellWidget extends JPanel {
 
         items.put(item.getLayer(), item);
         add(item, index);
-        repaint(); // !!! В Swing добавление элемента приводит к перерисовке?
+        // !!! В Swing добавление элемента приводит к перерисовке?
+        // DONE: Убрал лишний repaint.
     }
 
     public void removeItem(CellItemWidget item) {
