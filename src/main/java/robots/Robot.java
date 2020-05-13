@@ -14,7 +14,7 @@ public class Robot {
     private Cell position;
 
     private Battery innerBattery; // !!! Не понятно, о какой, батарейке идет речь, робот взаимодействует с многими батарейками
-                                  // DONE: Переименовал battery -> innerBattery
+    // DONE: Переименовал battery -> innerBattery
     private boolean isActive;
 
     public Robot(@NotNull Battery innerBattery) {
@@ -25,18 +25,21 @@ public class Robot {
         return position;
     }
 
-    void setPosition(Cell position) { // !!! Не соответсвует диаграмме
+    boolean setPosition(Cell position) { // !!! Не соответсвует диаграмме
+                                         // DONE: Добавил проверку на возможность нахождения робота в ячейкеии
+        if (position != null && !canLocateAtPosition(position)) return false;
         this.position = position;
+        return true;
     }
 
     public void move(@NotNull Direction direction) {
-        if(isActive) {
+        if (isActive) {
             Cell oldPosition = position;
             Cell newPosition = canMove(direction);
             if (newPosition != null) { // !!! Запах кода - использование операции с побочным эффектом в условии
-                                       // DONE: Вынес вызов spendBatteryCharge из условия и сохрняю резуьтат вызова в переменную isSpendChargeSuccess
+                // DONE: Вынес вызов spendBatteryCharge из условия и сохрняю резуьтат вызова в переменную isSpendChargeSuccess
                 boolean isSpendChargeSuccess = spendBatteryCharge(AMOUNT_OF_CHARGE_FOR_MOVE, false);
-                if(isSpendChargeSuccess) {
+                if (isSpendChargeSuccess) {
                     fireRobotIsMoved(oldPosition, newPosition);
                     position.takeRobot();
                     newPosition.setRobot(this);
@@ -46,22 +49,22 @@ public class Robot {
     }
 
     public void changeBattery() {
-        if(isActive && position.getBattery() != null){ // !!! Не соответствует диаграмме - ранее активность робота запрашивали у игры
-                                                       // DONE: Исправил диаграмму смены батарейки, теперь робот не узнаёт свою актиыность у игры.
+        if (isActive && position.getBattery() != null) { // !!! Не соответствует диаграмме - ранее активность робота запрашивали у игры
+            // DONE: Исправил диаграмму смены батарейки, теперь робот не узнаёт свою актиыность у игры.
             innerBattery = position.takeBattery();
             fireRobotChangeBattery(innerBattery);
         }
     }
 
     public void skipStep() {
-        if(isActive) {
+        if (isActive) {
             spendBatteryCharge(AMOUNT_OF_CHARGE_FOR_SKIP_STEP, true);
             fireRobotIsSkipStep();
         }
     }
 
     void setActive(boolean value) { // !!! Не соответствует диаграмме - ранее активность робота запрашивали у игры
-                                    // DONE: Добавил метод на диаграммуы.
+        // DONE: Добавил метод на диаграммуы.
         isActive = value;
         fireRobotChangeActive();
     }
@@ -71,17 +74,17 @@ public class Robot {
     }
 
     public void setBattery(@NotNull Battery battery) { // !!! А как же проверка, что это возможно
-                                                       // DONE: Добавил not-null проверку, все остальные варианты аргментна допустимы
+        // DONE: Добавил not-null проверку, все остальные варианты аргментна допустимы
         this.innerBattery = battery;
     }
 
     public Integer getCharge() { // !!! Если батарейки нет??
-                                 // DONE: Батрейка теперь есть всегда, добавил параметр в конструктор и @NotNull в setBattery
+        // DONE: Батрейка теперь есть всегда, добавил параметр в конструктор и @NotNull в setBattery
         return innerBattery.charge();
     }
 
     public Integer getMaxCharge() { // !!! Если батарейки нет??
-                                    // DONE: Батрейка теперь есть всегда, добавил параметр в конструктор и @NotNull в setBattery
+        // DONE: Батрейка теперь есть всегда, добавил параметр в конструктор и @NotNull в setBattery
         return innerBattery.maxCharge();
     }
 
@@ -89,7 +92,7 @@ public class Robot {
         Cell result = null;
 
         Cell neighborCell = position.neighborCell(direction);
-        if(neighborCell != null && canLocateAtPosition(neighborCell) && position.neighborWall(direction) == null) {
+        if (neighborCell != null && canLocateAtPosition(neighborCell) && position.neighborWall(direction) == null) {
             result = neighborCell;
         }
 
@@ -106,9 +109,9 @@ public class Robot {
         boolean result = true;
 
         int released = innerBattery.releaseCharge(amountOfCharge);
-        if(released != amountOfCharge) { // !!! Не соответствует диаграмме - 02_сделать шаг. (Робот думает за батарейку)
-                                         // DONE: Теперь батарейка возвращает сколько было потрачено при releaseCharge
-                                         // и если оно не совпадает с запросом то робот может потратить весь заряд, если требуется.
+        if (released != amountOfCharge) { // !!! Не соответствует диаграмме - 02_сделать шаг. (Робот думает за батарейку)
+            // DONE: Теперь батарейка возвращает сколько было потрачено при releaseCharge
+            // и если оно не совпадает с запросом то робот может потратить весь заряд, если требуется.
             if (ignoreShortage) {
                 innerBattery.releaseCharge(innerBattery.charge());
             } else {
@@ -120,7 +123,7 @@ public class Robot {
     }
 
     public static boolean canLocateAtPosition(@NotNull Cell position) { // !!! Странное название - почему "могу оставаться"?
-                                                                        // DONE Переименовал метод canStayAtPosition -> canLocateAtPosition
+        // DONE Переименовал метод canStayAtPosition -> canLocateAtPosition
         return position.getRobot() == null;
     }
 
@@ -135,8 +138,8 @@ public class Robot {
         robotListListener.remove(listener);
     }
 
-    private void fireRobotIsMoved(@NotNull Cell oldPosition,@NotNull Cell newPosition) {
-        for(RobotActionListener listener: robotListListener) {
+    private void fireRobotIsMoved(@NotNull Cell oldPosition, @NotNull Cell newPosition) {
+        for (RobotActionListener listener : robotListListener) {
             RobotActionEvent event = new RobotActionEvent(listener);
             event.setRobot(this);
             event.setFromCell(oldPosition);
@@ -146,7 +149,7 @@ public class Robot {
     }
 
     private void fireRobotIsSkipStep() {
-        for(RobotActionListener listener: robotListListener) {
+        for (RobotActionListener listener : robotListListener) {
             RobotActionEvent event = new RobotActionEvent(listener);
             event.setRobot(this);
             listener.robotSkippedStep(event);
@@ -154,7 +157,7 @@ public class Robot {
     }
 
     private void fireRobotChangeActive() {
-        for(RobotActionListener listener: robotListListener) {
+        for (RobotActionListener listener : robotListListener) {
             RobotActionEvent event = new RobotActionEvent(listener);
             event.setRobot(this);
             listener.robotActivityChanged(event);
@@ -162,7 +165,7 @@ public class Robot {
     }
 
     private void fireRobotChangeBattery(Battery changedBattery) {
-        for(RobotActionListener listener: robotListListener) {
+        for (RobotActionListener listener : robotListListener) {
             RobotActionEvent event = new RobotActionEvent(listener);
             event.setRobot(this);
             event.setBattery(changedBattery);

@@ -55,6 +55,17 @@ class CellTest {
     }
 
     @Test
+    public void test_setRobot_ToCellAgain() {
+        Robot robot = new Robot(new Battery(10));
+
+        cell.setRobot(robot);
+
+        assertThrows(IllegalArgumentException.class, () -> cell.setRobot(robot));
+        assertEquals(robot, cell.getRobot());
+        assertEquals(cell, robot.getPosition());
+    }
+
+    @Test
     public void test_setBattery() {
         Battery battery = new Battery(10);
 

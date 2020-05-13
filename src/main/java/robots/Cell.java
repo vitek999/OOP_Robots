@@ -43,11 +43,13 @@ public class Cell {
         return tmp;
     }
 
-    public void setRobot(Robot robot) { // !!! Кто решает, что робот может находиться в ячейке?? - не соответсвует диаграмме 01_Расстановка на поле
+    public void setRobot(Robot robot) {
+        // !!! Кто решает, что робот может находиться в ячейке?? - не соответсвует диаграмме 01_Расстановка на поле
+        // DONE: робот решает, может ли он находиться в ячейке (см. метод Robot.setPosition)
         // !!! Что будет, если переданный робот уже находится в некоторой ячейке??
-        if(getRobot() != null) throw new IllegalArgumentException("In cell already set robot");
-
-        robot.setPosition(this);
+        // DONE: Будет выкинуто исключение IllegalArgumentException
+        boolean isPositionSetSuccess = robot.setPosition(this);
+        if(!isPositionSetSuccess) throw new IllegalArgumentException("In cell already set robot");
         this.robot = robot;
     }
 
