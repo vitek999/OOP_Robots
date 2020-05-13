@@ -28,6 +28,7 @@ public class Robot {
     boolean setPosition(Cell position) { // !!! Не соответсвует диаграмме
                                          // DONE: Добавил проверку на возможность нахождения робота в ячейкеии
         if (position != null && !canLocateAtPosition(position)) return false;
+        if ((position instanceof ExitCell) && ((ExitCell) position).getTeleportedRobots().contains(this) ) return false;
         this.position = position;
         return true;
     }

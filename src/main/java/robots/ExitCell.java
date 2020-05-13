@@ -23,7 +23,8 @@ public class ExitCell extends Cell {
 
     @Override
     public void setRobot(Robot robot) {
-        if (teleportedRobots.contains(robot)) throw new IllegalArgumentException(); // !!! Кто решает, что робот может находиться в ячейке??
+        // !!! Кто решает, что робот может находиться в ячейке??
+        // DONE: Решает робот (см. метод Robot.setPosition()).
         super.setRobot(robot);
         if (BuildConfig.buildType == BuildConfig.BuildType.RELEASE) {
             Timer timer = new Timer(1000, e -> teleportRobot());
