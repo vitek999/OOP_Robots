@@ -15,7 +15,8 @@ public class Field {
     private final int width;
     private final int height;
 
-    private final Point exitPoint; // !!! Нужна позиция, а не сама ячейка??
+    private final Cell exitCell; // !!! Нужна позиция, а не сама ячейка??
+                                 // DONE: Вместо позиции выхода храню ячейку
 
     public Field(int width, int height, @NotNull Point exitPoint) {
         if(width <= 0) throw new IllegalArgumentException("Field width must be more than 0");
@@ -25,15 +26,15 @@ public class Field {
 
         this.width = width;
         this.height = height;
-        this.exitPoint = exitPoint;
 
-        buildField();
+        buildField(exitPoint);
+        this.exitCell = getCell(exitPoint);
 
         // Subscribe on exit cell
         ((ExitCell) getCell(exitPoint)).addExitCellActionListener(new ExitCellObserver());
     }
 
-    private void buildField() { // !!! Непонятное название метода
+    private void buildField(Point exitPoint) { // !!! Непонятное название метода
                                 // DONE: Переименовал метод setupField -> buildField
         for(int y = 0; y < height; ++y) {
             for(int x = 0; x < width; ++x) {
@@ -68,7 +69,7 @@ public class Field {
     }
 
     public List<Robot> getTeleportedRobots() {
-        return ((ExitCell) getCell(exitPoint)).getTeleportedRobots();
+        return ((ExitCell) exitCell).getTeleportedRobots();
     }
 
     @Override
@@ -79,7 +80,7 @@ public class Field {
         return width == field.width &&
                 height == field.height &&
                 Objects.equals(cells, field.cells) &&
-                Objects.equals(exitPoint, field.exitPoint);
+                Objects.equals(exitCell, field.exitCell);
     }
 
     // !!! Метод нужен???
@@ -91,7 +92,7 @@ public class Field {
                 "cells=" + cells +
                 ", width=" + width +
                 ", height=" + height +
-                ", exitPoint=" + exitPoint +
+                ", exitPoint=" + exitCell +
                 '}';
     }
 
