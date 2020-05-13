@@ -30,7 +30,9 @@ public class Robot {
         if(isActive) {
             Cell oldPosition = position;
             Cell newPosition = canMove(direction);
-            if (newPosition != null && spendBatteryCharge(amountOfChargeForMove(), false)) { // !!! Запах кода - использование операции с побочным эффектом в условии
+            boolean isSpendChargeSuccess = spendBatteryCharge(amountOfChargeForMove(), false);
+            if (newPosition != null && isSpendChargeSuccess) { // !!! Запах кода - использование операции с побочным эффектом в условии
+                                                               // DONE: Вынес вызов spendBatteryCharge из условия и сохрняю резуьтат вызова в переменную isSpendChargeSuccess
                 fireRobotIsMoved(oldPosition, newPosition);
                 position.takeRobot();
                 newPosition.setRobot(this);
