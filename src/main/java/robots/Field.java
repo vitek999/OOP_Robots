@@ -40,8 +40,12 @@ public class Field {
             for(int x = 0; x < width; ++x) {
                 Point p = new Point(x, y);
                 Cell cell = p.equals(exitPoint)? new ExitCell() : new Cell();
-                if(x > 0) getCell(new Point(p.getX() - 1, p.getY())).setNeighbor(cell, Direction.EAST); // !!! Так сложно, потому что Point ничего не умеет
-                if(y > 0) getCell(new Point(p.getX(), p.getY() - 1)).setNeighbor(cell, Direction.SOUTH); // !!! Почему соседей устанавливает не созданная ячейка, а её сосдеи?
+                // !!! Так сложно, потому что Point ничего не умеет
+                // DONE: Упрости, добавив метод to в класс Point.
+                // !!! Почему соседей устанавливает не созданная ячейка, а её сосдеи?
+                // DONE: Теперь соседей устанавливает созданная ячейка.
+                if(x > 0) cell.setNeighbor(getCell(p.to(Direction.WEST, 1)), Direction.WEST);
+                if(y > 0) cell.setNeighbor(getCell(p.to(Direction.NORTH, 1)), Direction.NORTH);
                 cells.put(p, cell);
             }
         }

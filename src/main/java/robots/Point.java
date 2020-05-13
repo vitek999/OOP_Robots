@@ -1,5 +1,7 @@
 package robots;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Objects;
 
 public class Point {
@@ -17,6 +19,26 @@ public class Point {
 
     public int getY() {
         return y;
+    }
+
+    public Point to(@NotNull Direction direction, int delta) {
+        int newX = x;
+        int newY = y;
+        switch (direction) {
+            case NORTH:
+                newY -= delta;
+                break;
+            case SOUTH:
+                newY += delta;
+                break;
+            case EAST:
+                newX += delta;
+                break;
+            case WEST:
+                newX -= delta;
+                break;
+        }
+        return new Point(newX, newY);
     }
 
     @Override
