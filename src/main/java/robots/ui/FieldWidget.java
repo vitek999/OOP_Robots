@@ -41,7 +41,8 @@ public class FieldWidget extends JPanel {
             startRowWalls.setLayout(new BoxLayout(startRowWalls, BoxLayout.X_AXIS));
 
             for (int j = 0; j < field.getWidth(); ++j) {
-                robots.Point point = new Point(j, i); // !!! Зачем упоминание пакета?
+                Point point = new Point(j, i); // !!! Зачем упоминание пакета?
+                                                // DONE: Убрал упоминание пакета.
                 Cell cell = field.getCell(point);
                 CellWidget widget = widgetFactory.create(cell); // !!! В этом методе много разных виджетов, такое название мало что говорит
 
