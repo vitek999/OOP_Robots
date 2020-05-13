@@ -27,10 +27,8 @@ public class SmallLabirint extends Labirint {
 
     @Override
     protected void addRobots(@NotNull Field field) {
-        Robot firstRobot = new Robot();
-        firstRobot.setBattery(new Battery(DEFAULT_BATTERY_CHARGE));
-        Robot secondRobot = new Robot();
-        secondRobot.setBattery(new Battery(DEFAULT_BATTERY_CHARGE));
+        Robot firstRobot = new Robot(new Battery(DEFAULT_BATTERY_CHARGE));
+        Robot secondRobot = new Robot(new Battery(DEFAULT_BATTERY_CHARGE));
 
         field.getCell(new Point(0,2)).setRobot(firstRobot);
         field.getCell(new Point(2,0)).setRobot(secondRobot);

@@ -58,9 +58,8 @@ class RobotTest {
         expectedEvents.clear();
 
         // create robot
-        robot = new Robot();
+        robot = new Robot(new Battery(DEFAULT_TEST_BATTERY_CHARGE));
         robot.setActive(true);
-        robot.setBattery(new Battery(DEFAULT_TEST_BATTERY_CHARGE));
         robot.addRobotActionListener(new EventsListener());
 
         // create field

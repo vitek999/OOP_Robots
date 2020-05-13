@@ -81,7 +81,7 @@ public class FieldTest {
 
     @Test
     public void test_getRobotsOnField_oneRobot() {
-        Robot robot = new Robot();
+        Robot robot = new Robot(new Battery(10));
         field.getCell(new Point(0, 0)).setRobot(robot);
 
         assertTrue(field.getRobotsOnField().contains(robot));
@@ -90,8 +90,8 @@ public class FieldTest {
 
     @Test
     public void test_getRobotsOnField_severalRobots() {
-        Robot robot = new Robot();
-        Robot anotherRobot = new Robot();
+        Robot robot = new Robot(new Battery(10));
+        Robot anotherRobot = new Robot(new Battery(10));
         field.getCell(new Point(0, 0)).setRobot(robot);
         field.getCell(new Point(1, 0)).setRobot(anotherRobot);
 
@@ -106,7 +106,7 @@ public class FieldTest {
 
     @Test
     public void test_TeleportedRobots_oneRobot() {
-        Robot robot = new Robot();
+        Robot robot = new Robot(new Battery(10));
         field.getCell(new Point(1, 1)).setRobot(robot);
 
         assertTrue(field.getTeleportedRobots().contains(robot));
@@ -115,8 +115,8 @@ public class FieldTest {
 
     @Test
     public void test_TeleportedRobots_severalRobots() {
-        Robot robot = new Robot();
-        Robot anotherRobot = new Robot();
+        Robot robot = new Robot(new Battery(10));
+        Robot anotherRobot = new Robot(new Battery(10));
         Cell exitCell =  field.getCell(new Point(1, 1));
 
         exitCell.setRobot(robot);
@@ -129,16 +129,9 @@ public class FieldTest {
     @Test
     public void test_teleportEvent_oneRobot() {
         int expectedEventCount = 1;
-        Robot robot = new Robot();
+        Robot robot = new Robot(new Battery(10));
 
         field.getCell(new Point(1, 1)).setRobot(robot);
-
-//        try {
-//            Thread.sleep(1500L);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        field.addFieldlActionListener(event -> assertTrue(false));
 
         assertEquals(expectedEventCount, eventCount);
     }
@@ -146,8 +139,8 @@ public class FieldTest {
     @Test
     public void test_teleportEvent_TwoRobots() {
         int expectedEventCount = 2;
-        Robot robot = new Robot();
-        Robot anotherRobot = new Robot();
+        Robot robot = new Robot(new Battery(10));
+        Robot anotherRobot = new Robot(new Battery(10));
 
         field.getCell(new Point(1, 1)).setRobot(robot);
         field.getCell(new Point(1, 1)).setRobot(anotherRobot);

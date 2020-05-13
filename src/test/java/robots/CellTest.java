@@ -21,7 +21,7 @@ class CellTest {
 
     @Test
     public void test_setRobot_InEmptyCell() {
-        Robot robot = new Robot();
+        Robot robot = new Robot(new Battery(10));
 
         cell.setRobot(robot);
 
@@ -31,7 +31,7 @@ class CellTest {
 
     @Test
     public void test_takeRobot_FromCellWithRobot() {
-        Robot robot = new Robot();
+        Robot robot = new Robot(new Battery(10));
 
         cell.setRobot(robot);
 
@@ -43,8 +43,8 @@ class CellTest {
 
     @Test
     public void test_setRobot_ToCellWithRobot() {
-        Robot robot = new Robot();
-        Robot newRobot = new Robot();
+        Robot robot = new Robot(new Battery(10));
+        Robot newRobot = new Robot(new Battery(10));
 
         cell.setRobot(robot);
 

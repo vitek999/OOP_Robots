@@ -31,7 +31,7 @@ public class ExitCellTest {
         countEvents = 0;
 
         // setting up robot
-        robot = new Robot();
+        robot = new Robot(new Battery(10));
 
         exitCell = new ExitCell();
         exitCell.addExitCellActionListener(new EventListener());
@@ -64,7 +64,7 @@ public class ExitCellTest {
 
     @Test
     public void test_setRobot_setSeveralRobots() {
-        Robot anotherRobot = new Robot();
+        Robot anotherRobot = new Robot(new Battery(10));
 
         exitCell.setRobot(robot);
         exitCell.setRobot(anotherRobot);

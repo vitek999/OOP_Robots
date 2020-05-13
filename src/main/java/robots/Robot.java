@@ -15,8 +15,11 @@ public class Robot {
 
     private Battery innerBattery; // !!! Не понятно, о какой, батарейке идет речь, робот взаимодействует с многими батарейками
                                   // DONE: Переименовал battery -> innerBattery
-
     private boolean isActive;
+
+    public Robot(@NotNull Battery innerBattery) {
+        this.innerBattery = innerBattery;
+    }
 
     public Cell getPosition() {
         return position;
@@ -44,6 +47,7 @@ public class Robot {
 
     public void changeBattery() {
         if(isActive && position.getBattery() != null){ // !!! Не соответствует диаграмме - ранее активность робота запрашивали у игры
+                                                       // DONE: Исправил диаграмму смены батарейки, теперь робот не узнаёт свою актиыность у игры.
             innerBattery = position.takeBattery();
             fireRobotChangeBattery(innerBattery);
         }
@@ -57,6 +61,7 @@ public class Robot {
     }
 
     void setActive(boolean value) { // !!! Не соответствует диаграмме - ранее активность робота запрашивали у игры
+                                    // DONE: Добавил метод на диаграммуы.
         isActive = value;
         fireRobotChangeActive();
     }
@@ -65,15 +70,18 @@ public class Robot {
         return isActive;
     }
 
-    public void setBattery(Battery battery) { // !!! А как же проверка, что это возможно
+    public void setBattery(@NotNull Battery battery) { // !!! А как же проверка, что это возможно
+                                                       // DONE: Добавил not-null проверку, все остальные варианты аргментна допустимы
         this.innerBattery = battery;
     }
 
     public Integer getCharge() { // !!! Если батарейки нет??
+                                 // DONE: Батрейка теперь есть всегда, добавил параметр в конструктор и @NotNull в setBattery
         return innerBattery.charge();
     }
 
     public Integer getMaxCharge() { // !!! Если батарейки нет??
+                                    // DONE: Батрейка теперь есть всегда, добавил параметр в конструктор и @NotNull в setBattery
         return innerBattery.maxCharge();
     }
 
@@ -112,7 +120,7 @@ public class Robot {
     }
 
     public static boolean canLocateAtPosition(@NotNull Cell position) { // !!! Странное название - почему "могу оставаться"?
-                                                                        // !!! Переименовал метод canStayAtPosition -> canLocateAtPosition
+                                                                        // DONE Переименовал метод canStayAtPosition -> canLocateAtPosition
         return position.getRobot() == null;
     }
 
