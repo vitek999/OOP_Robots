@@ -77,7 +77,7 @@ public class Robot {
         Cell result = null;
 
         Cell neighborCell = position.neighborCell(direction);
-        if(neighborCell != null && canStayAtPosition(neighborCell) && position.neighborWall(direction) == null) {
+        if(neighborCell != null && canLocateAtPosition(neighborCell) && position.neighborWall(direction) == null) {
             result = neighborCell;
         }
 
@@ -109,7 +109,8 @@ public class Robot {
         return result;
     }
 
-    public static boolean canStayAtPosition(@NotNull Cell position) { // !!! Странное название - почему "могу оставаться"?
+    public static boolean canLocateAtPosition(@NotNull Cell position) { // !!! Странное название - почему "могу оставаться"?
+                                                                        // !!! Переименовал метод canStayAtPosition -> canLocateAtPosition
         return position.getRobot() == null;
     }
 

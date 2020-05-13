@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Исправил setWinner в классе Game">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Robot.java" afterDir="false" />
-    </list>
+    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Исправил spendBatteryCharge в классе Robot" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -218,14 +215,7 @@
       <workItem from="1588861313847" duration="9193000" />
       <workItem from="1589009537531" duration="5936000" />
       <workItem from="1589113901094" duration="72000" />
-      <workItem from="1589374354053" duration="2534000" />
-    </task>
-    <task id="LOCAL-00017" summary="Added test for between cells position for each direction">
-      <created>1585461289273</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1585461289273</updated>
+      <workItem from="1589374354053" duration="2961000" />
     </task>
     <task id="LOCAL-00018" summary="Remove todo">
       <created>1585461400840</created>
@@ -563,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589015299693</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Исправил spendBatteryCharge в классе Robot">
+      <created>1589388543136</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1589388543137</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +579,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix winner message" />
     <MESSAGE value="added tool tip text" />
     <MESSAGE value="Message box in JFrame" />
     <MESSAGE value="Some changes" />
@@ -607,7 +603,8 @@
     <MESSAGE value="Переименовал поле с батарейков робота" />
     <MESSAGE value="Переименовал меоды получения полей класса Game" />
     <MESSAGE value="Исправил setWinner в классе Game" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправил setWinner в классе Game" />
+    <MESSAGE value="Исправил spendBatteryCharge в классе Robot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправил spendBatteryCharge в классе Robot" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="198" key="#Auto_Import" timestamp="1585465326910">
@@ -670,25 +667,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="784" y="440" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587711907021" />
-    <state width="1877" height="406" key="GridCell.Tab.0.bottom" timestamp="1589031268578">
+    <state width="1877" height="406" key="GridCell.Tab.0.bottom" timestamp="1589388349124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589031268578" />
+    <state width="1877" height="406" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589388349124" />
     <state width="1876" height="514" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.center" timestamp="1589031268578">
+    <state width="1877" height="406" key="GridCell.Tab.0.center" timestamp="1589388349124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589031268578" />
+    <state width="1877" height="406" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589388349124" />
     <state width="1876" height="514" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.left" timestamp="1589031268578">
+    <state width="1877" height="406" key="GridCell.Tab.0.left" timestamp="1589388349124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589031268578" />
+    <state width="1877" height="406" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589388349124" />
     <state width="1876" height="514" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.right" timestamp="1589031268578">
+    <state width="1877" height="406" key="GridCell.Tab.0.right" timestamp="1589388349124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589031268578" />
+    <state width="1877" height="406" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589388349124" />
     <state width="1876" height="514" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
     <state width="1877" height="454" key="GridCell.Tab.1.bottom" timestamp="1588243963974">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -727,10 +724,10 @@
     </state>
     <state x="440" y="110" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589113947696" />
     <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585232841599" />
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1589031267814">
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1589388546675">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589031267814" />
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589388546675" />
     <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585476932505" />
     <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585458461246">
       <screen x="0" y="0" width="1920" height="1080" />
