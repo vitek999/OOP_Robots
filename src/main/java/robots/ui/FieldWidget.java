@@ -31,9 +31,9 @@ public class FieldWidget extends JPanel {
         field.addFieldlActionListener(new FieldController());
     }
 
-    private void fillField() { // !!! Сделать процедурную декомпозицию
+    private void fillField() { // !!! Сделать процедурную декомпозицию TODO
         for (int i = 0; i < field.getHeight(); ++i) {
-            JPanel row = new JPanel(); // !!! Не могу понять назначение трех панелей
+            JPanel row = new JPanel(); // !!! Не могу понять назначение трех панелей TODO
             JPanel rowWalls = new JPanel();
             JPanel startRowWalls = new JPanel();
             row.setLayout(new BoxLayout(row, BoxLayout.X_AXIS));
@@ -44,45 +44,46 @@ public class FieldWidget extends JPanel {
                 Point point = new Point(j, i); // !!! Зачем упоминание пакета?
                                                 // DONE: Убрал упоминание пакета.
                 Cell cell = field.getCell(point);
-                CellWidget widget = widgetFactory.create(cell); // !!! В этом методе много разных виджетов, такое название мало что говорит
+                CellWidget cellWidget = widgetFactory.create(cell); // !!! В этом методе много разных виджетов, такое название мало что говорит
+                                                                    // DONE: переименовал widget -> cellWidget.
 
                 if(j == 0)  {
                     BetweenCellsWidget westCellWidget = new BetweenCellsWidget(Orientation.VERTICAL);
-                    Wall wall = cell.neighborWall(Direction.WEST);
-                    if( wall != null) {
-                        WallWidget wallWidget = widgetFactory.create(wall, Orientation.VERTICAL);
-                        westCellWidget.addItem(wallWidget);
+                    WallSegment wallSegment = cell.neighborWall(Direction.WEST);
+                    if( wallSegment != null) {
+                        WallWidget wallWidget = widgetFactory.create(wallSegment, Orientation.VERTICAL);
+                        westCellWidget.setItem(wallWidget);
                     }
                     row.add(westCellWidget);
                 }
 
                 if(i == 0) {
                     BetweenCellsWidget northCellWidget = new BetweenCellsWidget(Orientation.HORIZONTAL);
-                    Wall wall = cell.neighborWall(Direction.NORTH);
-                    if( wall != null) {
-                        WallWidget wallWidget = widgetFactory.create(wall, Orientation.HORIZONTAL);
-                        northCellWidget.addItem(wallWidget);
+                    WallSegment wallSegment = cell.neighborWall(Direction.NORTH);
+                    if( wallSegment != null) {
+                        WallWidget wallWidget = widgetFactory.create(wallSegment, Orientation.HORIZONTAL);
+                        northCellWidget.setItem(wallWidget);
                     }
                     startRowWalls.add(northCellWidget);
                 }
 
                 BetweenCellsWidget southCellWidget = new BetweenCellsWidget(Orientation.HORIZONTAL);
-                Wall southWall = cell.neighborWall(Direction.SOUTH);
+                WallSegment southWallSegment = cell.neighborWall(Direction.SOUTH);
 
-                if(southWall != null) {
-                    WallWidget wallWidget = widgetFactory.create(southWall, Orientation.HORIZONTAL);
-                    southCellWidget.addItem(wallWidget);
+                if(southWallSegment != null) {
+                    WallWidget wallWidget = widgetFactory.create(southWallSegment, Orientation.HORIZONTAL);
+                    southCellWidget.setItem(wallWidget);
                 }
 
                 rowWalls.add(southCellWidget);
 
-                row.add(widget);
+                row.add(cellWidget);
 
                 BetweenCellsWidget eastCellWidget = new BetweenCellsWidget(Orientation.VERTICAL);
-                Wall eastWall = cell.neighborWall(Direction.EAST);
-                if(eastWall != null) {
-                    WallWidget wallWidget = widgetFactory.create(eastWall, Orientation.VERTICAL);
-                    eastCellWidget.addItem(wallWidget);
+                WallSegment eastWallSegment = cell.neighborWall(Direction.EAST);
+                if(eastWallSegment != null) {
+                    WallWidget wallWidget = widgetFactory.create(eastWallSegment, Orientation.VERTICAL);
+                    eastCellWidget.setItem(wallWidget);
                 }
 
                 row.add(eastCellWidget);

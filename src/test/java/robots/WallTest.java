@@ -21,7 +21,7 @@ class WallTest {
     public void test_create_onOneCellWithoutWallByDirection() {
 
         BetweenCellsPosition betweenCellsPosition = new BetweenCellsPosition(cell, direction);
-        Wall wal = new Wall(betweenCellsPosition);
+        WallSegment wal = new WallSegment(betweenCellsPosition);
 
         assertEquals(betweenCellsPosition, wal.getPosition());
         assertEquals(wal, cell.neighborWall(direction));
@@ -31,9 +31,9 @@ class WallTest {
     public void test_create_onOneCellWithWallByDirection() {
 
         BetweenCellsPosition betweenCellsPosition = new BetweenCellsPosition(cell, direction);
-        Wall wal = new Wall(betweenCellsPosition);
+        WallSegment wal = new WallSegment(betweenCellsPosition);
 
-        assertThrows(IllegalArgumentException.class, () -> new Wall(betweenCellsPosition));
+        assertThrows(IllegalArgumentException.class, () -> new WallSegment(betweenCellsPosition));
         assertEquals(betweenCellsPosition, wal.getPosition());
         assertEquals(wal, cell.neighborWall(direction));
     }
@@ -43,7 +43,7 @@ class WallTest {
         cell.setNeighbor(neighborCell, direction);
 
         BetweenCellsPosition betweenCellsPosition = new BetweenCellsPosition(cell, direction);
-        Wall wal = new Wall(betweenCellsPosition);
+        WallSegment wal = new WallSegment(betweenCellsPosition);
 
         assertEquals(betweenCellsPosition, wal.getPosition());
         assertEquals(wal, cell.neighborWall(direction));
@@ -55,9 +55,9 @@ class WallTest {
         cell.setNeighbor(neighborCell, direction);
 
         BetweenCellsPosition betweenCellsPosition = new BetweenCellsPosition(cell, direction);
-        Wall wal = new Wall(betweenCellsPosition);
+        WallSegment wal = new WallSegment(betweenCellsPosition);
 
-        assertThrows(IllegalArgumentException.class, () -> new Wall(betweenCellsPosition));
+        assertThrows(IllegalArgumentException.class, () -> new WallSegment(betweenCellsPosition));
         assertEquals(betweenCellsPosition, wal.getPosition());
         assertEquals(wal, cell.neighborWall(direction));
         assertEquals(wal, neighborCell.neighborWall(direction.getOppositeDirection()));
@@ -68,7 +68,7 @@ class WallTest {
         cell.setNeighbor(neighborCell, direction);
 
         BetweenCellsPosition betweenCellsPosition = new BetweenCellsPosition(cell, neighborCell);
-        Wall wal = new Wall(betweenCellsPosition);
+        WallSegment wal = new WallSegment(betweenCellsPosition);
 
         assertEquals(betweenCellsPosition, wal.getPosition());
         assertEquals(wal, cell.neighborWall(direction));
@@ -80,9 +80,9 @@ class WallTest {
         cell.setNeighbor(neighborCell, direction);
 
         BetweenCellsPosition betweenCellsPosition = new BetweenCellsPosition(cell, neighborCell);
-        Wall wal = new Wall(betweenCellsPosition);
+        WallSegment wal = new WallSegment(betweenCellsPosition);
 
-        assertThrows(IllegalArgumentException.class, () -> new Wall(betweenCellsPosition));
+        assertThrows(IllegalArgumentException.class, () -> new WallSegment(betweenCellsPosition));
         assertEquals(betweenCellsPosition, wal.getPosition());
         assertEquals(wal, cell.neighborWall(direction));
         assertEquals(wal, neighborCell.neighborWall(direction.getOppositeDirection()));
@@ -91,7 +91,7 @@ class WallTest {
     @Test
     public void test_create_withInCorrectWallPosition() {
 
-        assertThrows(IllegalArgumentException.class, () -> new Wall(new BetweenCellsPosition(cell, neighborCell)));
+        assertThrows(IllegalArgumentException.class, () -> new WallSegment(new BetweenCellsPosition(cell, neighborCell)));
         assertNull(cell.neighborWall(direction));
         assertNull(neighborCell.neighborWall(direction.getOppositeDirection()));
     }

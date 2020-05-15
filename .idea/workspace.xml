@@ -19,10 +19,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Исправил методы установки робота в соответстивии с диаграммами">
+    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Добавил проервку в addItem у BetweenCellsWidget">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ExitCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ExitCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/WallSegment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/labirints/SmallLabirint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/labirints/SmallLabirint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/FieldWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/FieldWidget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/WidgetFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/WidgetFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/block/BetweenCellsWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/block/BetweenCellsWidget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/block/WallWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/block/WallWidget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/cell/BatteryWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/cell/BatteryWidget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/cell/CellItemWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/cell/CellItemWidget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/cell/CellWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/cell/CellWidget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/cell/RobotWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/cell/RobotWidget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/utils/GameUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/utils/GameUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/CellTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/RobotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/RobotTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/WallTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/WallTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/labirint/TestLabirint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/labirint/TestLabirint.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +95,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -98,7 +113,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.All in OOP_Robots">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="robots.Main" />
       <module name="OOP_Robots" />
@@ -170,8 +185,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in OOP_Robots" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.FieldTest.test_teleportEvent_oneRobot" />
         <item itemvalue="JUnit.CellTest.test_setNeighborCell_setSelfAsNeighbor" />
         <item itemvalue="JUnit.CellTest.test_setNeighborCell_alreadyNeighborWithAnotherDirection" />
@@ -219,56 +234,12 @@
       <workItem from="1588861313847" duration="9193000" />
       <workItem from="1589009537531" duration="5936000" />
       <workItem from="1589113901094" duration="72000" />
-      <workItem from="1589374354053" duration="8762000" />
-    </task>
-    <task id="LOCAL-00027" summary="Implement setup fiels">
-      <created>1585475070240</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1585475070240</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Added tests for field">
-      <created>1585476931242</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1585476931242</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Start UI">
-      <created>1587657188598</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1587657188598</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Change FieldWidget: added walls">
-      <created>1587707974351</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1587707974351</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Added key listener to RobotWidget">
-      <created>1587713224505</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1587713224505</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Added movable robot">
-      <created>1587729527139</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1587729527139</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Added change battery">
-      <created>1587731981503</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1587731981503</updated>
+      <workItem from="1589374354053" duration="10996000" />
+      <workItem from="1589443756954" duration="3057000" />
+      <workItem from="1589455378407" duration="1230000" />
+      <workItem from="1589546038100" duration="494000" />
+      <workItem from="1589546671541" duration="96000" />
+      <workItem from="1589546783900" duration="2031000" />
     </task>
     <task id="LOCAL-00034" summary="Remove battery from batteries in WidgetFactory">
       <created>1587732754680</created>
@@ -564,7 +535,56 @@
       <option name="project" value="LOCAL" />
       <updated>1589395082349</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Исправлен setRobot в классе ExitCell. Теперь робот сам решает, может ли он находиться в ячейке.">
+      <created>1589395505960</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1589395505960</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Исправил метод setBattery класса Cell">
+      <created>1589395767503</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1589395767503</updated>
+    </task>
+    <task id="LOCAL-00078" summary="Теперь метод passMoveNextRobot не решает за робота может ли он быть активен">
+      <created>1589396169653</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1589396169653</updated>
+    </task>
+    <task id="LOCAL-00079" summary="Убрал упоминание пакета robots с метода fillField">
+      <created>1589396584232</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1589396584232</updated>
+    </task>
+    <task id="LOCAL-00080" summary="Убрал лишний repaint в методе addItem класса CellWidget">
+      <created>1589396766608</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1589396766608</updated>
+    </task>
+    <task id="LOCAL-00081" summary="Добавлен контроль за количеством элементов в CellWidget">
+      <created>1589397082662</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1589397082662</updated>
+    </task>
+    <task id="LOCAL-00082" summary="Добавил проервку в addItem у BetweenCellsWidget">
+      <created>1589397512405</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1589397512405</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,13 +603,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Исправил наименования аргумента ячейки в методах setNeighbor и isNeighbor" />
-    <MESSAGE value="Добавил проверки и тесты в метод setNeighbor класса Cell" />
-    <MESSAGE value="Обновил создание элементов в диаграмме 01_Расстановка_на_поле" />
-    <MESSAGE value="Возвращаю неизменяемый контейнер в методе getTeleportedRobots" />
-    <MESSAGE value="Удалил неиспользуемый hashCode из класса Field" />
-    <MESSAGE value="Исправлен порядок генерации события robotIsTeleported класса Game" />
-    <MESSAGE value="Возвращаю неизменяемый контейнерв в методах getRobotsOnField getTeleportedRobots класса Game" />
     <MESSAGE value="Удалено поле labirint из класса Game" />
     <MESSAGE value="Переименовал метод finish -&gt; abort класса Game" />
     <MESSAGE value="Переименовал метод robotsHasLowBattery -&gt; robotsHasLowCharge в классе Game" />
@@ -608,7 +621,14 @@
     <MESSAGE value="В классе Field вместо позиции выхода храню ячейку" />
     <MESSAGE value="Исправил замечания в методе buildField класса Field" />
     <MESSAGE value="Исправил методы установки робота в соответстивии с диаграммами" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправил методы установки робота в соответстивии с диаграммами" />
+    <MESSAGE value="Исправлен setRobot в классе ExitCell. Теперь робот сам решает, может ли он находиться в ячейке." />
+    <MESSAGE value="Исправил метод setBattery класса Cell" />
+    <MESSAGE value="Теперь метод passMoveNextRobot не решает за робота может ли он быть активен" />
+    <MESSAGE value="Убрал упоминание пакета robots с метода fillField" />
+    <MESSAGE value="Убрал лишний repaint в методе addItem класса CellWidget" />
+    <MESSAGE value="Добавлен контроль за количеством элементов в CellWidget" />
+    <MESSAGE value="Добавил проервку в addItem у BetweenCellsWidget" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил проервку в addItem у BetweenCellsWidget" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="198" key="#Auto_Import" timestamp="1585465326910">
@@ -623,19 +643,19 @@
     </state>
     <state x="557" y="178" key="#CellTest.test_setNeighborCell/0.0.1920.1080@0.0.1920.1080" timestamp="1585203488179" />
     <state x="557" y="195" key="#CellTest/0.0.1920.1080@0.0.1920.1080" timestamp="1585203692781" />
-    <state x="92" y="89" width="1736" height="863" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1588869012498">
+    <state x="92" y="89" width="1736" height="863" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1589548088373">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="89" width="1736" height="863" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588869012498" />
+    <state x="92" y="89" width="1736" height="863" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589548088373" />
     <state x="92" y="92" width="1736" height="896" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585459741852" />
     <state x="734" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588868773518">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="734" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588868773518" />
-    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1589391308787">
+    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1589397464693">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1589391308787" />
+    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1589397464693" />
     <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1585484364409" />
     <state x="690" y="315" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1585205151181">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -649,10 +669,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="756" y="399" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1080@0.0.1920.1080" timestamp="1585200338172" />
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1589392209740">
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1589546212844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589392209740" />
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589546212844" />
     <state x="234" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585458557332" />
     <state x="697" y="33" width="864" height="963" key="CommitChangelistDialog2" timestamp="1587822648932">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -672,45 +692,45 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="784" y="440" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587711907021" />
-    <state width="1877" height="406" key="GridCell.Tab.0.bottom" timestamp="1589395276501">
+    <state width="1877" height="339" key="GridCell.Tab.0.bottom" timestamp="1589548763455">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589395276501" />
+    <state width="1877" height="339" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589548763455" />
     <state width="1876" height="514" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.center" timestamp="1589395276500">
+    <state width="1877" height="339" key="GridCell.Tab.0.center" timestamp="1589548763454">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589395276500" />
+    <state width="1877" height="339" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589548763454" />
     <state width="1876" height="514" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.left" timestamp="1589395276500">
+    <state width="1877" height="339" key="GridCell.Tab.0.left" timestamp="1589548763453">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589395276500" />
+    <state width="1877" height="339" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589548763453" />
     <state width="1876" height="514" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="406" key="GridCell.Tab.0.right" timestamp="1589395276501">
+    <state width="1877" height="339" key="GridCell.Tab.0.right" timestamp="1589548763454">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="406" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589395276501" />
+    <state width="1877" height="339" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589548763454" />
     <state width="1876" height="514" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="454" key="GridCell.Tab.1.bottom" timestamp="1588243963974">
+    <state width="1877" height="454" key="GridCell.Tab.1.bottom" timestamp="1589397640032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="454" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588243963974" />
+    <state width="1877" height="454" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589397640032" />
     <state width="1876" height="582" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585484147965" />
-    <state width="1877" height="454" key="GridCell.Tab.1.center" timestamp="1588243963974">
+    <state width="1877" height="454" key="GridCell.Tab.1.center" timestamp="1589397640032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="454" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588243963974" />
+    <state width="1877" height="454" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589397640032" />
     <state width="1876" height="582" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585484147965" />
-    <state width="1877" height="454" key="GridCell.Tab.1.left" timestamp="1588243963974">
+    <state width="1877" height="454" key="GridCell.Tab.1.left" timestamp="1589397640032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="454" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588243963974" />
+    <state width="1877" height="454" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589397640032" />
     <state width="1876" height="582" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585484147965" />
-    <state width="1877" height="454" key="GridCell.Tab.1.right" timestamp="1588243963974">
+    <state width="1877" height="454" key="GridCell.Tab.1.right" timestamp="1589397640032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="454" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588243963974" />
+    <state width="1877" height="454" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589397640032" />
     <state width="1876" height="582" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585484147965" />
     <state x="540" y="283" key="IDE.errors.dialog" timestamp="1585203502875">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -725,15 +745,15 @@
     </state>
     <state x="673" y="242" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589389464568" />
     <state x="673" y="251" key="RollbackChangesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585458489079" />
-    <state x="440" y="110" key="SettingsEditor" timestamp="1589113947696">
+    <state x="440" y="110" key="SettingsEditor" timestamp="1589546533497">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="110" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589113947696" />
+    <state x="440" y="110" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589546533497" />
     <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585232841599" />
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1589392386083">
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1589397530309">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589392386083" />
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589397530309" />
     <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585476932505" />
     <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585458461246">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -751,10 +771,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587364377135" />
-    <state x="667" y="119" width="585" height="801" key="find.popup" timestamp="1589014814321">
+    <state x="667" y="119" width="585" height="801" key="find.popup" timestamp="1589443805988">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="119" width="585" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1589014814321" />
+    <state x="667" y="119" width="585" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1589443805988" />
     <state x="342" y="242" key="new project wizard" timestamp="1585370471345">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

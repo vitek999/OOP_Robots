@@ -48,6 +48,6 @@ public class TestLabirint extends Labirint {
                 field.getCell(new Point(2, 1))
         );
 
-        new Wall(betweenCellsPosition);
+        new WallSegment(betweenCellsPosition);
     }
 }

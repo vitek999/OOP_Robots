@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BetweenCellsWidget extends JPanel { // !!! До конца предназначение виджета не понял
+                                                 // DONE: Контейнер для расположения элементов между ячейками.
 
     private final Orientation orientation;
 
@@ -17,7 +18,8 @@ public class BetweenCellsWidget extends JPanel { // !!! До конца пред
         setBackground(Color.BLACK);
     }
 
-    public void addItem(@NotNull BlockWidget blockWidget) { // !!! Плохое название - могу много элементов добавить?
+    public void setItem(@NotNull BlockWidget blockWidget) { // !!! Плохое название - add обозначает множественное добавление, а здесь предполагается задание одного элемента
+                                                            // DONE: Переименовал addItem -> setItem.
         if(blockWidget.getOrientation() != orientation) throw new IllegalArgumentException();
         add(blockWidget);                                   // !!! Что будет, если ориентация BetweenCellsWidget и BlockWidget не совпадают??
                                                             // DONE: Добавил проверку на несовпадение ориентаций.

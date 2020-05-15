@@ -5,18 +5,19 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Map;
 import java.util.Objects;
 
-public class Wall { // !!! Все-таки не стена, а ее часть
+public class WallSegment { // !!! Все-таки не стена, а ее часть
+                           // DONE: Переименовал класс Wall -> WallSegment
 
     private BetweenCellsPosition position;
 
-    public Wall(@NotNull BetweenCellsPosition position) {
+    public WallSegment(@NotNull BetweenCellsPosition position) {
         if(!canCreateWall(position)) throw new IllegalArgumentException();
 
         this.position = position;
 
         Map<Direction, Cell> neighborCells = position.getNeighborCells();
-        // !!! Ниже - это ответственность стены??
-        for (var i : neighborCells.entrySet()) { // !!! Может добавить итератор?
+        // !!! Ниже - это ответственность стены?? TODO
+        for (var i : neighborCells.entrySet()) { // !!! Может добавить итератор? TODO
             i.getValue().setNeighbor(this, i.getKey().getOppositeDirection());
         }
     }
@@ -25,7 +26,7 @@ public class Wall { // !!! Все-таки не стена, а ее часть
         return position;
     }
 
-    private static boolean canCreateWall(@NotNull BetweenCellsPosition position) { // !!! Идею реализации метода не понял
+    private static boolean canCreateWall(@NotNull BetweenCellsPosition position) { // !!! Идею реализации метода не понял TODO
         boolean result = true;
         Map<Direction, Cell> neighborCells = position.getNeighborCells();
 
@@ -43,8 +44,8 @@ public class Wall { // !!! Все-таки не стена, а ее часть
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Wall wall = (Wall) o;
-        return Objects.equals(position, wall.position);
+        WallSegment wallSegment = (WallSegment) o;
+        return Objects.equals(position, wallSegment.position);
     }
 
     @Override

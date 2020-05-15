@@ -6,7 +6,7 @@ import robots.event.GameActionListener;
 import robots.labirints.SmallLabirint;
 import robots.ui.FieldWidget;
 import robots.ui.WidgetFactory;
-import robots.ui.utils.GameUtils;
+import robots.ui.utils.GameWidgetsUtils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -64,7 +64,7 @@ public class Main {
                 switch (status) {
                     case WINNER_FOUND:
                         JOptionPane.showMessageDialog(GamePanel.this, "Выйграл робот: " +
-                                GameUtils.colorName(widgetFactory.getWidget(game.getWinner()).getColor()));
+                                GameWidgetsUtils.colorName(widgetFactory.getWidget(game.getWinner()).getColor()));
                         break;
                     case GAME_ABORTED:
                         JOptionPane.showMessageDialog(GamePanel.this, "Игра завершена досрочно");

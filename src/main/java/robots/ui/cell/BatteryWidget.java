@@ -1,7 +1,8 @@
 package robots.ui.cell;
 
 import robots.Battery;
-import robots.ui.utils.GameUtils;
+import robots.ui.utils.GameWidgetsUtils;
+import robots.ui.cell.CellWidget.Layer;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -31,7 +32,7 @@ public class BatteryWidget extends CellItemWidget{
     }
 
     @Override
-    CellWidget.Layer getLayer() {
+    public Layer getLayer() {
         return CellWidget.Layer.TOP;
     }
 
@@ -67,7 +68,7 @@ public class BatteryWidget extends CellItemWidget{
     }
 
     private Color batteryChargeTextColor() {
-        return GameUtils.chargeTextColor(battery.charge(), battery.maxCharge());
+        return GameWidgetsUtils.chargeTextColor(battery.charge(), battery.maxCharge());
     }
 
     private File getBatteryImageFile() {

@@ -76,11 +76,20 @@ public class Game {
                                                                               // DONE: Возвращаю неизменяемый контейнер
     }
 
-    private void passMoveNextRobot() {
-        if(gameStatus != GameStatus.GAME_IS_ON) { // !!! Не ясное условие
+    // TODO не нравится название
+    private void updateGameState() {
+        GameStatus status = determineOutcomeGame();
+        setStatus(status);
+        if(status == GameStatus.GAME_IS_ON) {
+            passMoveNextRobot();
+        } else {
             setActiveRobot(null);
-            return;
         }
+    }
+
+    private void passMoveNextRobot() {
+        // !!! Не ясное условие
+        // DONE: Вынес проверку на состояние игры в метод updateGameState
 
         List<Robot> robotsOnField = gameField.getRobotsOnField();
 
@@ -160,17 +169,15 @@ public class Game {
             fireRobotIsMoved(event.getRobot());
             if(!(event.getToCell() instanceof ExitCell)){ // !!! Повтор кода, см. обработчик ниже
                                                           // DONE: Так как исправил замечание ниже, повтора нет, так как здесь статус определяется толькл при выполнению условия
-                setStatus(determineOutcomeGame());
-            }
-            passMoveNextRobot(); // !!! Почему не метод passMoveNextRobot()?
+                updateGameState();
+            }                    // !!! Почему не метод passMoveNextRobot()?
                                  // DONE: Использую passMoveNextRobot
         }
 
         @Override
         public void robotSkippedStep(@NotNull RobotActionEvent event) {
             fireRobotIsSkipStep(event.getRobot());
-            setStatus(determineOutcomeGame());
-            passMoveNextRobot();
+            updateGameState();
         }
 
         @Override
@@ -188,9 +195,7 @@ public class Game {
 
         @Override
         public void robotIsTeleported(@NotNull FieldActionEvent event) {
-            GameStatus status = determineOutcomeGame();
-            setStatus(status);
-            passMoveNextRobot();
+            updateGameState();
             fireRobotIsTeleported(event.getRobot()); // !!! Странный порядок генерации события - обработчики этого события не увидят изменения состояния игры.
                                                      // DONE: Исправил порядок генерации события: сначала изменяется обстановка игры, а потом пробрасывается событие о телеортации робота.
         }

@@ -2,7 +2,9 @@ package robots.ui.utils;
 
 import java.awt.*;
 
-public class GameUtils { // !!! Странное название + странное назначение
+public class GameWidgetsUtils { // !!! Странное название + странное назначение
+                                // DONE: Переименовал GameUtils -> GameWidgetsUtils
+                                // DONE: КЛасс содержит статичнские методы, для избегания повтора кода в виджетах.
 
     private final static double MEDIUM_CHARGE_COEFFICIENT = 0.7;
     private final static double LOW_CHARGE_COEFFICIENT = 0.3;

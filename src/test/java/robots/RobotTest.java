@@ -128,7 +128,7 @@ class RobotTest {
     @Test
     public void test_move_emptyCellInDirectionWithWallAndRobotActiveAndEnoughCharge() {
         cell.setRobot(robot);
-        new Wall(new BetweenCellsPosition(cell, neighborCell));
+        new WallSegment(new BetweenCellsPosition(cell, neighborCell));
 
         robot.setBattery(new Battery(DEFAULT_TEST_BATTERY_CHARGE));
         robot.move(direction);

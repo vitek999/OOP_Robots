@@ -3,6 +3,7 @@ package robots.ui.cell;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import robots.ui.cell.CellWidget.Layer;
 
 public abstract class CellItemWidget extends JPanel {
 
@@ -11,7 +12,8 @@ public abstract class CellItemWidget extends JPanel {
         setOpaque(false);
     }
 
-    enum State { // !!! Какой уровень доступа хотели?
+    public enum State { // !!! Какой уровень доступа хотели?
+                        // DONE: Сделал енам общедоступным, чтобы можно было использовать общедоступный getState
         DEFAULT,
         SMALL
     }
@@ -19,15 +21,21 @@ public abstract class CellItemWidget extends JPanel {
     protected State cellItemState = State.DEFAULT;
 
     void setState(State state) { // !!! Какой уровень доступа хотели?
+                                 // DONE: Уровень доступа отсаётся пакетным, так как изменения состояния может происходить только внутри пакета
         cellItemState = state;
         setPreferredSize(getDimension());
         repaint();
         revalidate();
     }
 
+    public State getState() {
+        return cellItemState;
+    }
+
     protected abstract BufferedImage getImage();
 
-    abstract CellWidget.Layer getLayer(); // !!! Какой уровень доступа хотели?
+    public abstract Layer getLayer(); // !!! Какой уровень доступа хотели?
+                                      // DONE: Заменил package-private на public.
 
     protected abstract Dimension getDimension();
 

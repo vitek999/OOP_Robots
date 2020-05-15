@@ -9,7 +9,8 @@ import java.util.Map;
 
 public class CellWidget extends JPanel {
 
-    enum Layer { // !!! Какой уровень доступа хотели?
+    public enum Layer { // !!! Какой уровень доступа хотели?
+                        // DONE: Изменил уровень доступа package-private на public.
         TOP,
         BOTTOM
     }

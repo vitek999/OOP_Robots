@@ -20,7 +20,7 @@ public class WidgetFactory {
     private final Map<Cell, CellWidget> cells = new HashMap<>();
     private final Map<Robot, RobotWidget> robots = new HashMap<>();
     private final Map<Battery, BatteryWidget> batteries = new HashMap<>();
-    private final Map<Wall, WallWidget> walls = new HashMap<>();
+    private final Map<WallSegment, WallWidget> walls = new HashMap<>();
     private final List<Color> usedColors = new ArrayList<>();
 
     public CellWidget create(@NotNull Cell cell) {
@@ -79,15 +79,15 @@ public class WidgetFactory {
         batteries.remove(battery);
     }
 
-    public WallWidget create(@NotNull Wall wall, Orientation orientation) {
-        if(walls.containsKey(wall)) return walls.get(wall);
+    public WallWidget create(@NotNull WallSegment wallSegment, Orientation orientation) {
+        if(walls.containsKey(wallSegment)) return walls.get(wallSegment);
 
         WallWidget item = new WallWidget(orientation);
-        walls.put(wall, item);
+        walls.put(wallSegment, item);
         return item;
     }
 
-    public WallWidget getWidget(@NotNull Wall wall) {
-        return walls.get(wall);
+    public WallWidget getWidget(@NotNull WallSegment wallSegment) {
+        return walls.get(wallSegment);
     }
 }

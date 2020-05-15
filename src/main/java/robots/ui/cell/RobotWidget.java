@@ -3,8 +3,9 @@ package robots.ui.cell;
 import org.jetbrains.annotations.NotNull;
 import robots.Direction;
 import robots.Robot;
-import robots.ui.utils.GameUtils;
+import robots.ui.utils.GameWidgetsUtils;
 import robots.ui.utils.ImageUtils;
+import robots.ui.cell.CellWidget.Layer;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -41,7 +42,7 @@ public class RobotWidget extends CellItemWidget {
     }
 
     @Override
-    CellWidget.Layer getLayer() {
+    public Layer getLayer() {
         return CellWidget.Layer.BOTTOM;
     }
 
@@ -79,7 +80,7 @@ public class RobotWidget extends CellItemWidget {
     }
 
     private Color robotChargeTextColor() {
-        return GameUtils.chargeTextColor(robot.getCharge(), robot.getMaxCharge());
+        return GameWidgetsUtils.chargeTextColor(robot.getCharge(), robot.getMaxCharge());
     }
 
     private static File getRobotFileByColorAndActive(Color robotColor, boolean active) {

@@ -77,7 +77,8 @@ public class Cell {
 
     public Direction isNeighbor(@NotNull Cell other) { // !!! Название аргумента малоинформативно
                                                        // DONE: Переименовал аргумент cell -> other
-        for(var i : neighborCells.entrySet()) { // !!! Может реализовать итератор соседей???
+        for(var i : neighborCells.entrySet()) { // !!! Может реализовать итератор соседей??? TODO
+
             if(i.getValue().equals(other)) return i.getKey();
         }
         return null;
@@ -86,14 +87,14 @@ public class Cell {
     /**
      * Neighbor walls
      */
-    private Map<Direction, Wall> neighborWalls = new EnumMap<>(Direction.class);
+    private Map<Direction, WallSegment> neighborWalls = new EnumMap<>(Direction.class);
 
-    public Wall neighborWall(@NotNull Direction direction) {
+    public WallSegment neighborWall(@NotNull Direction direction) {
         return neighborWalls.get(direction);
     }
 
-    void setNeighbor(@NotNull Wall wall, @NotNull Direction direction) {
-        neighborWalls.put(direction, wall);
+    void setNeighbor(@NotNull WallSegment wallSegment, @NotNull Direction direction) {
+        neighborWalls.put(direction, wallSegment);
     }
 
     @Override
