@@ -5,6 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.UUID;
 
 public class Cell {
 
@@ -12,6 +13,8 @@ public class Cell {
      * Battery
      */
     private Battery battery;
+
+    private UUID uuid = UUID.randomUUID();
 
     public Battery getBattery() {
         return battery;
@@ -103,6 +106,7 @@ public class Cell {
         if (o == null || getClass() != o.getClass()) return false;
         Cell cell = (Cell) o;
         return Objects.equals(battery, cell.battery) &&
+                Objects.equals(uuid, cell.uuid) &&
                 Objects.equals(robot, cell.robot) &&
                 Objects.equals(neighborCells, cell.neighborCells) &&
                 Objects.equals(neighborWalls, cell.neighborWalls);
@@ -110,7 +114,7 @@ public class Cell {
 
     @Override
     public int hashCode() {
-        return Objects.hash(neighborCells.size(), neighborWalls.size());
+        return Objects.hash(uuid, neighborCells.size(), neighborWalls.size());
     }
 
     @Override
