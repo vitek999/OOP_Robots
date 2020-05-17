@@ -19,25 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Добавил проервку в addItem у BetweenCellsWidget">
+    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Исправлены некоторые замечания">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/WallSegment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/labirints/SmallLabirint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/labirints/SmallLabirint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/FieldWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/FieldWidget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/WidgetFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/WidgetFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/block/BetweenCellsWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/block/BetweenCellsWidget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/block/WallWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/block/WallWidget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/cell/BatteryWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/cell/BatteryWidget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/cell/CellItemWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/cell/CellItemWidget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/cell/CellWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/cell/CellWidget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/cell/RobotWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/cell/RobotWidget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/utils/GameUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/utils/GameUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/robots/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/CellTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/robots/RobotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/RobotTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/robots/WallTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/WallTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/robots/labirint/TestLabirint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/labirint/TestLabirint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/WallSegment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/WallSegment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,14 +223,10 @@
       <workItem from="1589455378407" duration="1230000" />
       <workItem from="1589546038100" duration="494000" />
       <workItem from="1589546671541" duration="96000" />
-      <workItem from="1589546783900" duration="2031000" />
-    </task>
-    <task id="LOCAL-00034" summary="Remove battery from batteries in WidgetFactory">
-      <created>1587732754680</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1587732754680</updated>
+      <workItem from="1589546783900" duration="3066000" />
+      <workItem from="1589611242493" duration="56000" />
+      <workItem from="1589708319594" duration="181000" />
+      <workItem from="1589712309400" duration="366000" />
     </task>
     <task id="LOCAL-00035" summary="Added sonarlint to .gitignore">
       <created>1587732851521</created>
@@ -584,7 +564,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589397512405</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Исправлены некоторые замечания">
+      <created>1589549075063</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1589549075063</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,7 +590,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Удалено поле labirint из класса Game" />
     <MESSAGE value="Переименовал метод finish -&gt; abort класса Game" />
     <MESSAGE value="Переименовал метод robotsHasLowBattery -&gt; robotsHasLowCharge в классе Game" />
     <MESSAGE value="Исправил замечания события robotIsMoved в классе Game" />
@@ -628,7 +614,8 @@
     <MESSAGE value="Убрал лишний repaint в методе addItem класса CellWidget" />
     <MESSAGE value="Добавлен контроль за количеством элементов в CellWidget" />
     <MESSAGE value="Добавил проервку в addItem у BetweenCellsWidget" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил проервку в addItem у BetweenCellsWidget" />
+    <MESSAGE value="Исправлены некоторые замечания" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлены некоторые замечания" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="198" key="#Auto_Import" timestamp="1585465326910">
@@ -652,10 +639,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="734" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588868773518" />
-    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1589397464693">
+    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1589549566663">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1589397464693" />
+    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1589549566663" />
     <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1585484364409" />
     <state x="690" y="315" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1585205151181">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -692,25 +679,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="784" y="440" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587711907021" />
-    <state width="1877" height="339" key="GridCell.Tab.0.bottom" timestamp="1589548763455">
+    <state width="1877" height="338" key="GridCell.Tab.0.bottom" timestamp="1589712354503">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="339" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589548763455" />
+    <state width="1877" height="338" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589712354503" />
     <state width="1876" height="514" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="339" key="GridCell.Tab.0.center" timestamp="1589548763454">
+    <state width="1877" height="338" key="GridCell.Tab.0.center" timestamp="1589712354503">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="339" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589548763454" />
+    <state width="1877" height="338" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589712354503" />
     <state width="1876" height="514" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="339" key="GridCell.Tab.0.left" timestamp="1589548763453">
+    <state width="1877" height="338" key="GridCell.Tab.0.left" timestamp="1589712354502">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="339" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589548763453" />
+    <state width="1877" height="338" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589712354502" />
     <state width="1876" height="514" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="339" key="GridCell.Tab.0.right" timestamp="1589548763454">
+    <state width="1877" height="338" key="GridCell.Tab.0.right" timestamp="1589712354503">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="339" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589548763454" />
+    <state width="1877" height="338" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589712354503" />
     <state width="1876" height="514" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
     <state width="1877" height="454" key="GridCell.Tab.1.bottom" timestamp="1589397640032">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -740,10 +727,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="490" y="195" key="Maven.ArtifactSearchDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585200387578" />
-    <state x="673" y="242" key="RollbackChangesDialog" timestamp="1589389464568">
+    <state x="673" y="242" key="RollbackChangesDialog" timestamp="1589549848151">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="673" y="242" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589389464568" />
+    <state x="673" y="242" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589549848151" />
     <state x="673" y="251" key="RollbackChangesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585458489079" />
     <state x="440" y="110" key="SettingsEditor" timestamp="1589546533497">
       <screen x="0" y="0" width="1920" height="1040" />

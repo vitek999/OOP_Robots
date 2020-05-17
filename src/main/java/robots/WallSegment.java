@@ -26,7 +26,8 @@ public class WallSegment { // !!! Все-таки не стена, а ее ча�
         return position;
     }
 
-    private static boolean canCreateWall(@NotNull BetweenCellsPosition position) { // !!! Идею реализации метода не понял TODO
+    private static boolean canCreateWall(@NotNull BetweenCellsPosition position) {    // !!! Идею реализации метода не понял TODO
+                                                                                      // DONE: Метод проверяет, есть ли у ячеек, входящих в позицию уже установленные стены в данном направлении
         boolean result = true;
         Map<Direction, Cell> neighborCells = position.getNeighborCells();
 
