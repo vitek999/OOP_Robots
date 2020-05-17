@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Исправлены некоторые замечания">
+    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Объяснил метод canCreateWall класса WallSegment">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/robots/WallSegment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/WallSegment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/ui/FieldWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/ui/FieldWidget.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +97,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in OOP_Robots">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="robots.Main" />
       <module name="OOP_Robots" />
@@ -169,8 +169,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in OOP_Robots" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in OOP_Robots" />
         <item itemvalue="JUnit.FieldTest.test_teleportEvent_oneRobot" />
         <item itemvalue="JUnit.CellTest.test_setNeighborCell_setSelfAsNeighbor" />
         <item itemvalue="JUnit.CellTest.test_setNeighborCell_alreadyNeighborWithAnotherDirection" />
@@ -226,14 +226,7 @@
       <workItem from="1589546783900" duration="3066000" />
       <workItem from="1589611242493" duration="56000" />
       <workItem from="1589708319594" duration="181000" />
-      <workItem from="1589712309400" duration="366000" />
-    </task>
-    <task id="LOCAL-00035" summary="Added sonarlint to .gitignore">
-      <created>1587732851521</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1587732851521</updated>
+      <workItem from="1589712309400" duration="2641000" />
     </task>
     <task id="LOCAL-00036" summary="Added skip step action to view">
       <created>1587733492408</created>
@@ -571,7 +564,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589549075063</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Объяснил метод canCreateWall класса WallSegment">
+      <created>1589712933322</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1589712933322</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,7 +590,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Переименовал метод finish -&gt; abort класса Game" />
     <MESSAGE value="Переименовал метод robotsHasLowBattery -&gt; robotsHasLowCharge в классе Game" />
     <MESSAGE value="Исправил замечания события robotIsMoved в классе Game" />
     <MESSAGE value="Исправил названия статусов игры" />
@@ -615,7 +614,8 @@
     <MESSAGE value="Добавлен контроль за количеством элементов в CellWidget" />
     <MESSAGE value="Добавил проервку в addItem у BetweenCellsWidget" />
     <MESSAGE value="Исправлены некоторые замечания" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлены некоторые замечания" />
+    <MESSAGE value="Объяснил метод canCreateWall класса WallSegment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Объяснил метод canCreateWall класса WallSegment" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="198" key="#Auto_Import" timestamp="1585465326910">
@@ -679,25 +679,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="784" y="440" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587711907021" />
-    <state width="1877" height="338" key="GridCell.Tab.0.bottom" timestamp="1589712354503">
+    <state width="1877" height="117" key="GridCell.Tab.0.bottom" timestamp="1589714899726">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589712354503" />
+    <state width="1877" height="117" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589714899726" />
     <state width="1876" height="514" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="338" key="GridCell.Tab.0.center" timestamp="1589712354503">
+    <state width="1877" height="117" key="GridCell.Tab.0.center" timestamp="1589714899726">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589712354503" />
+    <state width="1877" height="117" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589714899726" />
     <state width="1876" height="514" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="338" key="GridCell.Tab.0.left" timestamp="1589712354502">
+    <state width="1877" height="117" key="GridCell.Tab.0.left" timestamp="1589714899726">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589712354502" />
+    <state width="1877" height="117" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589714899726" />
     <state width="1876" height="514" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="338" key="GridCell.Tab.0.right" timestamp="1589712354503">
+    <state width="1877" height="117" key="GridCell.Tab.0.right" timestamp="1589714899726">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589712354503" />
+    <state width="1877" height="117" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589714899726" />
     <state width="1876" height="514" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
     <state width="1877" height="454" key="GridCell.Tab.1.bottom" timestamp="1589397640032">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -737,10 +737,10 @@
     </state>
     <state x="440" y="110" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589546533497" />
     <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585232841599" />
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1589397530309">
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1589712936048">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589397530309" />
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589712936048" />
     <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585476932505" />
     <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585458461246">
       <screen x="0" y="0" width="1920" height="1080" />
