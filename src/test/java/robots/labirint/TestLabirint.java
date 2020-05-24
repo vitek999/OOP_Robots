@@ -43,11 +43,6 @@ public class TestLabirint extends Labirint {
 
     @Override
     protected void addWalls(@NotNull Field field) {
-        BetweenCellsPosition betweenCellsPosition = new BetweenCellsPosition(
-                field.getCell(new Point(2, 0)),
-                field.getCell(new Point(2, 1))
-        );
-
-        new WallSegment(betweenCellsPosition);
+        field.getCell(new Point(2, 0)).setWall(new WallSegment(),Direction.SOUTH);
     }
 }

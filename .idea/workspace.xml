@@ -19,17 +19,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Фкнцкиональное декомпозирование метода fillField класса FieldWidget.">
+    <list default="true" id="14909e8e-d3c3-4d22-a086-dd76a0e7603e" name="Default Changelist" comment="Updated diagrams">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Диаграммы (новые).asta" beforeDir="false" afterPath="$PROJECT_DIR$/Диаграммы (новые).asta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/WallSegment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/WallSegment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/robots/labirints/SmallLabirint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/robots/labirints/SmallLabirint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/CellTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/RobotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/RobotTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/WallTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/WallTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/robots/labirint/TestLabirint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/robots/labirint/TestLabirint.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CoverageViewManager">
-    <option name="myElementSize" value="341" />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="testRunner" value="GRADLE" />
@@ -47,7 +50,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="solid" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -119,7 +122,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CellTest.test_setNeighborCell_alreadyNeighborWithAnotherDirection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CellTest.test_setWall_InNeighborCellsWithSameWallSegmentAndAnotherDirection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
         <pattern>
@@ -129,13 +132,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="robots" />
       <option name="MAIN_CLASS_NAME" value="robots.CellTest" />
-      <option name="METHOD_NAME" value="test_setNeighborCell_alreadyNeighborWithAnotherDirection" />
+      <option name="METHOD_NAME" value="test_setWall_InNeighborCellsWithSameWallSegmentAndAnotherDirection" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CellTest.test_setNeighborCell_setSelfAsNeighbor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RobotTest.test_move_emptyCellInDirectionWithWallAndRobotActiveAndEnoughCharge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
         <pattern>
@@ -144,14 +147,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.CellTest" />
-      <option name="METHOD_NAME" value="test_setNeighborCell_setSelfAsNeighbor" />
+      <option name="MAIN_CLASS_NAME" value="robots.RobotTest" />
+      <option name="METHOD_NAME" value="test_move_emptyCellInDirectionWithWallAndRobotActiveAndEnoughCharge" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FieldTest.test_teleportEvent_oneRobot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="robots in OOP_Robots" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOP_Robots" />
       <extension name="coverage">
         <pattern>
@@ -160,9 +163,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="robots" />
-      <option name="MAIN_CLASS_NAME" value="robots.FieldTest" />
-      <option name="METHOD_NAME" value="test_teleportEvent_oneRobot" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -171,9 +172,9 @@
       <list>
         <item itemvalue="JUnit.All in OOP_Robots" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.FieldTest.test_teleportEvent_oneRobot" />
-        <item itemvalue="JUnit.CellTest.test_setNeighborCell_setSelfAsNeighbor" />
-        <item itemvalue="JUnit.CellTest.test_setNeighborCell_alreadyNeighborWithAnotherDirection" />
+        <item itemvalue="JUnit.RobotTest.test_move_emptyCellInDirectionWithWallAndRobotActiveAndEnoughCharge" />
+        <item itemvalue="JUnit.robots in OOP_Robots" />
+        <item itemvalue="JUnit.CellTest.test_setWall_InNeighborCellsWithSameWallSegmentAndAnotherDirection" />
       </list>
     </recent_temporary>
   </component>
@@ -229,14 +230,7 @@
       <workItem from="1589712309400" duration="5250000" />
       <workItem from="1590036015228" duration="745000" />
       <workItem from="1590221776102" duration="414000" />
-      <workItem from="1590336374753" duration="1314000" />
-    </task>
-    <task id="LOCAL-00037" summary="Make two robots are movable">
-      <created>1587734145551</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1587734145551</updated>
+      <workItem from="1590336374753" duration="4533000" />
     </task>
     <task id="LOCAL-00038" summary="MessageBox with game status">
       <created>1587816663124</created>
@@ -574,7 +568,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589715052020</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Updated diagrams">
+      <created>1590338340815</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1590338340816</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,7 +594,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Исправил замечания события robotIsMoved в классе Game" />
     <MESSAGE value="Исправил названия статусов игры" />
     <MESSAGE value="Переименовал поле с батарейков робота" />
     <MESSAGE value="Переименовал меоды получения полей класса Game" />
@@ -618,7 +618,8 @@
     <MESSAGE value="Исправлены некоторые замечания" />
     <MESSAGE value="Объяснил метод canCreateWall класса WallSegment" />
     <MESSAGE value="Фкнцкиональное декомпозирование метода fillField класса FieldWidget." />
-    <option name="LAST_COMMIT_MESSAGE" value="Фкнцкиональное декомпозирование метода fillField класса FieldWidget." />
+    <MESSAGE value="Updated diagrams" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated diagrams" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="198" key="#Auto_Import" timestamp="1585465326910">
@@ -682,45 +683,45 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="784" y="440" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587711907021" />
-    <state width="1877" height="421" key="GridCell.Tab.0.bottom" timestamp="1590037034338">
+    <state width="1877" height="421" key="GridCell.Tab.0.bottom" timestamp="1590341516464">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="421" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590037034338" />
+    <state width="1877" height="421" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590341516464" />
     <state width="1876" height="514" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="421" key="GridCell.Tab.0.center" timestamp="1590037034338">
+    <state width="1877" height="421" key="GridCell.Tab.0.center" timestamp="1590341516463">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="421" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590037034338" />
+    <state width="1877" height="421" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590341516463" />
     <state width="1876" height="514" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="421" key="GridCell.Tab.0.left" timestamp="1590037034338">
+    <state width="1877" height="421" key="GridCell.Tab.0.left" timestamp="1590341516463">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="421" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590037034338" />
+    <state width="1877" height="421" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590341516463" />
     <state width="1876" height="514" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="421" key="GridCell.Tab.0.right" timestamp="1590037034338">
+    <state width="1877" height="421" key="GridCell.Tab.0.right" timestamp="1590341516464">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="421" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590037034338" />
+    <state width="1877" height="421" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590341516464" />
     <state width="1876" height="514" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585484166512" />
-    <state width="1877" height="122" key="GridCell.Tab.1.bottom" timestamp="1589717272922">
+    <state width="1877" height="326" key="GridCell.Tab.1.bottom" timestamp="1590339862044">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="122" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589717272922" />
+    <state width="1877" height="326" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590339862044" />
     <state width="1876" height="582" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585484147965" />
-    <state width="1877" height="122" key="GridCell.Tab.1.center" timestamp="1589717272922">
+    <state width="1877" height="326" key="GridCell.Tab.1.center" timestamp="1590339862044">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="122" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589717272922" />
+    <state width="1877" height="326" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590339862044" />
     <state width="1876" height="582" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585484147965" />
-    <state width="1877" height="122" key="GridCell.Tab.1.left" timestamp="1589717272922">
+    <state width="1877" height="326" key="GridCell.Tab.1.left" timestamp="1590339862044">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="122" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589717272922" />
+    <state width="1877" height="326" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590339862044" />
     <state width="1876" height="582" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585484147965" />
-    <state width="1877" height="122" key="GridCell.Tab.1.right" timestamp="1589717272922">
+    <state width="1877" height="326" key="GridCell.Tab.1.right" timestamp="1590339862044">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="122" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589717272922" />
+    <state width="1877" height="326" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590339862044" />
     <state width="1876" height="582" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585484147965" />
     <state x="540" y="283" key="IDE.errors.dialog" timestamp="1585203502875">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -730,20 +731,20 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="490" y="195" key="Maven.ArtifactSearchDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585200387578" />
-    <state x="673" y="242" key="RollbackChangesDialog" timestamp="1589549848151">
+    <state x="673" y="242" key="RollbackChangesDialog" timestamp="1590338984547">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="673" y="242" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589549848151" />
+    <state x="673" y="242" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590338984547" />
     <state x="673" y="251" key="RollbackChangesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585458489079" />
     <state x="440" y="110" key="SettingsEditor" timestamp="1589546533497">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="110" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589546533497" />
     <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585232841599" />
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1590222181652">
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1590338418928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1590222181652" />
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1590338418928" />
     <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1585476932505" />
     <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585458461246">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -809,7 +810,7 @@
     <SUITE FILE_PATH="coverage/OOP_Robots$RobotTest.ic" NAME="RobotTest Coverage Results" MODIFIED="1585226612734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>robots.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/OOP_Robots$robots_in_OOP_Robots.ic" NAME="robots in OOP_Robots Coverage Results" MODIFIED="1585476945546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/OOP_Robots$robots_in_OOP_Robots.ic" NAME="robots in OOP_Robots Coverage Results" MODIFIED="1590341212696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>robots.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/OOP_Robots$WallTest.ic" NAME="WallTest Coverage Results" MODIFIED="1585209328596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

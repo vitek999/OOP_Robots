@@ -27,8 +27,8 @@ public class Cell {
     }
 
     public void setBattery(Battery battery) { // !!! А как же проверка, что это возможно
-                                              // DONE: Добавил статический метод c проверкой canLocateAtPosition в класс Battery.
-        if(!Battery.canLocateAtPosition(this)) throw new IllegalArgumentException();
+        // DONE: Добавил статический метод c проверкой canLocateAtPosition в класс Battery.
+        if (!Battery.canLocateAtPosition(this)) throw new IllegalArgumentException();
         this.battery = battery;
     }
 
@@ -54,9 +54,24 @@ public class Cell {
         // !!! Что будет, если переданный робот уже находится в некоторой ячейке??
         // DONE: Будет выкинуто исключение IllegalArgumentException
         boolean isPositionSetSuccess = robot.setPosition(this);
-        if(!isPositionSetSuccess) throw new IllegalArgumentException("In cell already set robot");
+        if (!isPositionSetSuccess) throw new IllegalArgumentException("In cell already set robot");
         this.robot = robot;
     }
+
+    public void setWall(@NotNull WallSegment wallSegment, @NotNull Direction direction) {
+        if (neighborWall(direction) == wallSegment) return;
+        BetweenCellsPosition position = new BetweenCellsPosition(this, direction);
+        if (!wallSegment.canSetAtPosition(position) || neighborWalls.containsKey(direction) || neighborWalls.containsValue(wallSegment)) {
+            throw new IllegalArgumentException();
+        }
+        Cell neighbor = neighborCell(direction);
+        neighborWalls.put(direction, wallSegment);
+        if (neighbor != null) {
+            neighbor.setWall(wallSegment, direction.getOppositeDirection());
+        }
+        wallSegment.setPosition(position);
+    }
+
 
     /**
      * Neighbor cells
@@ -68,21 +83,22 @@ public class Cell {
     }
 
     void setNeighbor(@NotNull Cell neighborCell, @NotNull Direction direction) { // !!! Название аргумента ячейки малоинформативно
-                                                                                 // DONE: переименовал аргумент ячейки cell -> neighborCell
+        // DONE: переименовал аргумент ячейки cell -> neighborCell
         // !!! Здесь что-то малопонятное: учесть случаи добавления той же ячейки, задание новой ячейки, если уже есть сосед и т.д.
         // DONE: Добавил проверки и тесты: добавляется ячейка, которая уже является соседом; установка соседа самого на сеья; d заданном направлении уже есть сосед.
-        if(neighborCell == this || neighborCells.containsKey(direction) || neighborCells.containsValue(neighborCell)) throw new IllegalArgumentException();
+        if (neighborCell == this || neighborCells.containsKey(direction) || neighborCells.containsValue(neighborCell))
+            throw new IllegalArgumentException();
         neighborCells.put(direction, neighborCell);
-        if(neighborCell.neighborCell(direction.getOppositeDirection()) == null) {
+        if (neighborCell.neighborCell(direction.getOppositeDirection()) == null) {
             neighborCell.setNeighbor(this, direction.getOppositeDirection());
         }
     }
 
     public Direction isNeighbor(@NotNull Cell other) { // !!! Название аргумента малоинформативно
-                                                       // DONE: Переименовал аргумент cell -> other
-        for(var i : neighborCells.entrySet()) { // !!! Может реализовать итератор соседей??? TODO
+        // DONE: Переименовал аргумент cell -> other
+        for (var i : neighborCells.entrySet()) { // !!! Может реализовать итератор соседей??? TODO
 
-            if(i.getValue().equals(other)) return i.getKey();
+            if (i.getValue().equals(other)) return i.getKey();
         }
         return null;
     }
@@ -94,10 +110,6 @@ public class Cell {
 
     public WallSegment neighborWall(@NotNull Direction direction) {
         return neighborWalls.get(direction);
-    }
-
-    void setNeighbor(@NotNull WallSegment wallSegment, @NotNull Direction direction) {
-        neighborWalls.put(direction, wallSegment);
     }
 
     @Override

@@ -10,23 +10,15 @@ public class WallSegment { // !!! Все-таки не стена, а ее ча�
 
     private BetweenCellsPosition position;
 
-    public WallSegment(@NotNull BetweenCellsPosition position) {
-        if(!canCreateWall(position)) throw new IllegalArgumentException();
-
+    void setPosition(@NotNull BetweenCellsPosition position) {
         this.position = position;
-
-        Map<Direction, Cell> neighborCells = position.getNeighborCells();
-        // !!! Ниже - это ответственность стены?? TODO
-        for (var i : neighborCells.entrySet()) { // !!! Может добавить итератор? TODO
-            i.getValue().setNeighbor(this, i.getKey().getOppositeDirection());
-        }
     }
 
     public BetweenCellsPosition getPosition() {
         return position;
     }
 
-    private static boolean canCreateWall(@NotNull BetweenCellsPosition position) {    // !!! Идею реализации метода не понял TODO
+    public boolean canSetAtPosition(@NotNull BetweenCellsPosition position) {    // !!! Идею реализации метода не понял TODO
                                                                                       // DONE: Метод проверяет, есть ли у ячеек, входящих в позицию уже установленные стены в данном направлении
         boolean result = true;
         Map<Direction, Cell> neighborCells = position.getNeighborCells();
@@ -35,7 +27,8 @@ public class WallSegment { // !!! Все-таки не стена, а ее ча�
 
         while (iterator.hasNext() && result) {
             var i = iterator.next();
-            result = i.getValue().neighborWall(i.getKey().getOppositeDirection()) == null;
+            WallSegment neighborWall = i.getValue().neighborWall(i.getKey().getOppositeDirection());
+            result = (neighborWall == null) || (neighborWall == this);
         }
 
         return result;
