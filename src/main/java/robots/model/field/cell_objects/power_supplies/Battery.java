@@ -5,7 +5,7 @@ import robots.model.field.Cell;
 
 import java.util.Objects;
 
-public class Battery extends PowerSupply {
+public class Battery extends PowerSupply implements Portable {
 
     private static final int MAX_CHARGE = 10;
 
