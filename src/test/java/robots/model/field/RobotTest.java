@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import robots.model.Direction;
 import robots.model.event.RobotActionEvent;
 import robots.model.event.RobotActionListener;
-import robots.model.field.cell_objects.Battery;
+import robots.model.field.cell_objects.power_supplies.Battery;
 import robots.model.field.cell_objects.Robot;
 import robots.model.field.between_cells_objects.WallSegment;
 

@@ -1,4 +1,4 @@
-package robots.model.field.cell_objects;
+package robots.model.field.cell_objects.power_supplies;
 
 import org.jetbrains.annotations.NotNull;
 import robots.model.field.Cell;

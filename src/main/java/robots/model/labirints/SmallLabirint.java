@@ -3,7 +3,7 @@ package robots.model.labirints;
 import org.jetbrains.annotations.NotNull;
 import robots.model.*;
 import robots.model.field.Field;
-import robots.model.field.cell_objects.Battery;
+import robots.model.field.cell_objects.power_supplies.Battery;
 import robots.model.field.cell_objects.Robot;
 import robots.model.field.between_cells_objects.WallSegment;
 

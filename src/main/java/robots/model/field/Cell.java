@@ -3,7 +3,7 @@ package robots.model.field;
 import org.jetbrains.annotations.NotNull;
 import robots.model.*;
 import robots.model.field.between_cells_objects.BetweenCellsPosition;
-import robots.model.field.cell_objects.Battery;
+import robots.model.field.cell_objects.power_supplies.Battery;
 import robots.model.field.cell_objects.Robot;
 
 import java.util.EnumMap;

@@ -1,6 +1,6 @@
 package robots.ui.cell;
 
-import robots.model.field.cell_objects.Battery;
+import robots.model.field.cell_objects.power_supplies.Battery;
 import robots.ui.utils.GameWidgetsUtils;
 import robots.ui.cell.CellWidget.Layer;
 

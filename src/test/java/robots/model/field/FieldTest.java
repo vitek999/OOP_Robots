@@ -6,12 +6,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import robots.model.Direction;
 import robots.model.Point;
-import robots.model.field.Cell;
 import robots.model.event.FieldActionEvent;
 import robots.model.event.FieldActionListener;
-import robots.model.field.ExitCell;
-import robots.model.field.Field;
-import robots.model.field.cell_objects.Battery;
+import robots.model.field.cell_objects.power_supplies.Battery;
 import robots.model.field.cell_objects.Robot;
 
 import java.util.Arrays;

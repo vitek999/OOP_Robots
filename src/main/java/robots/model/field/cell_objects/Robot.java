@@ -7,6 +7,7 @@ import robots.model.event.RobotActionEvent;
 import robots.model.event.RobotActionListener;
 import robots.model.field.Cell;
 import robots.model.field.MobileCellObject;
+import robots.model.field.cell_objects.power_supplies.Battery;
 
 import java.util.ArrayList;
 

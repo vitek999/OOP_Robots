@@ -3,7 +3,7 @@ package robots.model.field;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import robots.model.Direction;
-import robots.model.field.cell_objects.Battery;
+import robots.model.field.cell_objects.power_supplies.Battery;
 import robots.model.field.cell_objects.Robot;
 import robots.model.field.between_cells_objects.WallSegment;
 
