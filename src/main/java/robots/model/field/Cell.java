@@ -32,7 +32,7 @@ public class Cell {
 
     public void setBattery(Battery battery) { // !!! А как же проверка, что это возможно
         // DONE: Добавил статический метод c проверкой canLocateAtPosition в класс Battery.
-        if (!Battery.canLocateAtPosition(this)) throw new IllegalArgumentException();
+        if (!battery.canLocateAtPosition(this)) throw new IllegalArgumentException();
         this.battery = battery;
     }
 

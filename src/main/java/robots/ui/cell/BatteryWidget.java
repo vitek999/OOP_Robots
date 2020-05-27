@@ -16,7 +16,7 @@ public class BatteryWidget extends CellItemWidget{
 
     public BatteryWidget(Battery battery) {
         this.battery = battery;
-        setToolTipText("Заряд: " + battery.charge() + "/" + battery.maxCharge());
+        setToolTipText("Заряд: " + battery.getCharge() + "/" + battery.getMaxCharge());
     }
 
     @Override
@@ -64,11 +64,11 @@ public class BatteryWidget extends CellItemWidget{
     }
 
     private String batteryChargeText() {
-        return battery.charge() + "/" + battery.maxCharge();
+        return battery.getCharge() + "/" + battery.getMaxCharge();
     }
 
     private Color batteryChargeTextColor() {
-        return GameWidgetsUtils.chargeTextColor(battery.charge(), battery.maxCharge());
+        return GameWidgetsUtils.chargeTextColor(battery.getCharge(), battery.getMaxCharge());
     }
 
     private File getBatteryImageFile() {

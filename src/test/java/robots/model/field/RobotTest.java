@@ -225,7 +225,7 @@ class RobotTest {
         robot.changeBattery();
 
         assertNull(cell.getBattery());
-        assertEquals(newBattery.charge(), robot.getCharge());
+        assertEquals(newBattery.getCharge(), robot.getCharge());
         assertTrue(events.isEmpty());
     }
 
@@ -242,7 +242,7 @@ class RobotTest {
         robot.changeBattery();
 
         assertEquals(newBattery, cell.getBattery());
-        assertEquals(robotBattery.charge(), robot.getCharge());
+        assertEquals(robotBattery.getCharge(), robot.getCharge());
         assertTrue(events.isEmpty());
     }
 
@@ -255,7 +255,7 @@ class RobotTest {
 
         robot.changeBattery();
 
-        assertEquals(robotBattery.charge(), robot.getCharge());
+        assertEquals(robotBattery.getCharge(), robot.getCharge());
         assertTrue(events.isEmpty());
     }
 }

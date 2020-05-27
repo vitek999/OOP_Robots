@@ -5,32 +5,12 @@ import robots.model.field.Cell;
 
 import java.util.Objects;
 
-public class Battery {
+public class Battery extends PowerSupply {
 
     private static final int MAX_CHARGE = 10;
 
-    private Integer charge;
-
-    public Battery(Integer charge) {
-        this.charge = charge;
-    }
-
-    public Integer releaseCharge(int chargeAmount) {
-        if(chargeAmount > charge) return 0;
-        charge -= chargeAmount;
-        return chargeAmount;
-    }
-
-    public Integer charge() {
-        return charge;
-    }
-
-    public Integer maxCharge() {
-        return MAX_CHARGE;
-    }
-
-    public static boolean canLocateAtPosition(@NotNull Cell position) {
-        return position.getBattery() == null;
+    public Battery(int charge) {
+        super(charge, MAX_CHARGE);
     }
 
     @Override
@@ -39,6 +19,11 @@ public class Battery {
         if (o == null || getClass() != o.getClass()) return false;
         Battery battery = (Battery) o;
         return Objects.equals(charge, battery.charge);
+    }
+
+    @Override
+    public boolean canLocateAtPosition(@NotNull Cell cell) {
+        return cell.getBattery() == null;
     }
 
     @Override

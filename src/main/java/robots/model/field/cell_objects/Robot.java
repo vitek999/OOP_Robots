@@ -93,12 +93,12 @@ public class Robot extends MobileCellObject {
 
     public Integer getCharge() { // !!! Если батарейки нет??
         // DONE: Батрейка теперь есть всегда, добавил параметр в конструктор и @NotNull в setBattery
-        return innerBattery.charge();
+        return innerBattery.getCharge();
     }
 
     public Integer getMaxCharge() { // !!! Если батарейки нет??
         // DONE: Батрейка теперь есть всегда, добавил параметр в конструктор и @NotNull в setBattery
-        return innerBattery.maxCharge();
+        return innerBattery.getMaxCharge();
     }
 
     // !!! Зачем нужен метод???
@@ -115,7 +115,7 @@ public class Robot extends MobileCellObject {
             // DONE: Теперь батарейка возвращает сколько было потрачено при releaseCharge
             // и если оно не совпадает с запросом то робот может потратить весь заряд, если требуется.
             if (ignoreShortage) {
-                innerBattery.releaseCharge(innerBattery.charge());
+                innerBattery.releaseCharge(innerBattery.getCharge());
             } else {
                 result = false;
             }
