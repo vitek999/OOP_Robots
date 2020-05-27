@@ -6,33 +6,19 @@ import robots.event.RobotActionListener;
 
 import java.util.ArrayList;
 
-public class Robot {
+public class Robot extends MobileCellObject {
 
     private static final int AMOUNT_OF_CHARGE_FOR_MOVE = 1;
     private static final int AMOUNT_OF_CHARGE_FOR_SKIP_STEP = 2;
 
-    private Cell position;
-
-    private Battery innerBattery; // !!! Не понятно, о какой, батарейке идет речь, робот взаимодействует с многими батарейками
-    // DONE: Переименовал battery -> innerBattery
+    private Battery innerBattery;
     private boolean isActive;
 
     public Robot(@NotNull Battery innerBattery) {
         this.innerBattery = innerBattery;
     }
 
-    public Cell getPosition() {
-        return position;
-    }
-
-    boolean setPosition(Cell position) { // !!! Не соответсвует диаграмме
-                                         // DONE: Добавил проверку на возможность нахождения робота в ячейкеии
-        if (position != null && !canLocateAtPosition(position)) return false;
-        if ((position instanceof ExitCell) && ((ExitCell) position).getTeleportedRobots().contains(this) ) return false;
-        this.position = position;
-        return true;
-    }
-
+    @Override
     public void move(@NotNull Direction direction) {
         if (isActive) {
             Cell oldPosition = position;
@@ -47,6 +33,25 @@ public class Robot {
                 }
             }
         }
+    }
+
+    @Override
+    protected Cell canMove(@NotNull Direction direction) {
+        Cell result = null;
+
+        Cell neighborCell = position.neighborCell(direction);
+        if (neighborCell != null && canLocateAtPosition(neighborCell) && position.neighborWall(direction) == null) {
+            result = neighborCell;
+        }
+
+        return result;
+    }
+
+    @Override
+    public boolean canLocateAtPosition(@NotNull Cell newPosition) { // !!! Странное название - почему "могу оставаться"?
+        // DONE Переименовал метод canStayAtPosition -> canLocateAtPosition
+        if ((newPosition instanceof ExitCell) && (((ExitCell) newPosition).getTeleportedRobots().contains(this))) return false;
+        return newPosition.getRobot() == null;
     }
 
     public void changeBattery() {
@@ -91,17 +96,6 @@ public class Robot {
         return innerBattery.maxCharge();
     }
 
-    private Cell canMove(@NotNull Direction direction) {
-        Cell result = null;
-
-        Cell neighborCell = position.neighborCell(direction);
-        if (neighborCell != null && canLocateAtPosition(neighborCell) && position.neighborWall(direction) == null) {
-            result = neighborCell;
-        }
-
-        return result;
-    }
-
     // !!! Зачем нужен метод???
     // DONE: Удалил метод amountOfChargeForMove. Вместо него использую константу AMOUNT_OF_CHARGE_FOR_MOVE
 
@@ -125,11 +119,6 @@ public class Robot {
         return result;
     }
 
-    public static boolean canLocateAtPosition(@NotNull Cell position) { // !!! Странное название - почему "могу оставаться"?
-        // DONE Переименовал метод canStayAtPosition -> canLocateAtPosition
-        return position.getRobot() == null;
-    }
-
     // -------------------- События --------------------
     private ArrayList<RobotActionListener> robotListListener = new ArrayList<>();
 
@@ -137,7 +126,7 @@ public class Robot {
         robotListListener.add(listener);
     }
 
-    public void removeRoborActionListener(RobotActionListener listener) {
+    public void removeRobotActionListener(RobotActionListener listener) {
         robotListListener.remove(listener);
     }
 

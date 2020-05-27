@@ -78,7 +78,7 @@ class RobotTest {
 
     @Test
     public void test_canStayAtPosition_emptyCell() {
-        assertTrue(Robot.canLocateAtPosition(cell));
+        assertTrue(robot.canLocateAtPosition(cell));
         assertTrue(events.isEmpty());
     }
 
@@ -86,7 +86,7 @@ class RobotTest {
     public void test_canStayAtPosition_cellWithRobot() {
         cell.setRobot(robot);
 
-        assertFalse(Robot.canLocateAtPosition(cell));
+        assertFalse(robot.canLocateAtPosition(cell));
         assertTrue(events.isEmpty());
     }
 
@@ -94,7 +94,7 @@ class RobotTest {
     public void test_canStayAtPosition_cellWithBattery() {
         cell.setBattery(new Battery(DEFAULT_TEST_BATTERY_CHARGE));
 
-        assertTrue(Robot.canLocateAtPosition(cell));
+        assertTrue(robot.canLocateAtPosition(cell));
         assertTrue(events.isEmpty());
     }
 
