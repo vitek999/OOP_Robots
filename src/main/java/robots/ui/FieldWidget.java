@@ -1,13 +1,11 @@
 package robots.ui;
 
 import org.jetbrains.annotations.NotNull;
-import robots.*;
-import robots.Point;
-import robots.Robot;
-import robots.event.FieldActionEvent;
-import robots.event.FieldActionListener;
-import robots.event.RobotActionEvent;
-import robots.event.RobotActionListener;
+import robots.model.*;
+import robots.model.event.FieldActionEvent;
+import robots.model.event.FieldActionListener;
+import robots.model.event.RobotActionEvent;
+import robots.model.event.RobotActionListener;
 import robots.ui.block.BetweenCellsWidget;
 import robots.ui.block.WallWidget;
 import robots.ui.cell.BatteryWidget;

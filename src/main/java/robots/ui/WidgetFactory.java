@@ -1,8 +1,8 @@
 package robots.ui;
 
 import org.jetbrains.annotations.NotNull;
-import robots.*;
-import robots.Robot;
+import robots.model.*;
+import robots.model.Robot;
 import robots.ui.block.WallWidget;
 import robots.ui.cell.BatteryWidget;
 import robots.ui.cell.CellWidget;

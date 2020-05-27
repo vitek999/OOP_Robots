@@ -1,8 +1,8 @@
 package robots.ui.cell;
 
 import org.jetbrains.annotations.NotNull;
-import robots.Direction;
-import robots.Robot;
+import robots.model.Direction;
+import robots.model.Robot;
 import robots.ui.utils.GameWidgetsUtils;
 import robots.ui.utils.ImageUtils;
 import robots.ui.cell.CellWidget.Layer;

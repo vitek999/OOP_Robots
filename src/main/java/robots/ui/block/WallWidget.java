@@ -1,6 +1,6 @@
 package robots.ui.block;
 
-import robots.Orientation;
+import robots.model.Orientation;
 import robots.ui.utils.ImageUtils;
 
 import javax.imageio.ImageIO;

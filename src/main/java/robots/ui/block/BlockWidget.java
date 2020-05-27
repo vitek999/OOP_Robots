@@ -1,6 +1,6 @@
 package robots.ui.block;
 
-import robots.Orientation;
+import robots.model.Orientation;
 
 import javax.swing.*;
 import java.awt.*;

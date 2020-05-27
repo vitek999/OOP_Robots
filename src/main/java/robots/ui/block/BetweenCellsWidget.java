@@ -1,7 +1,7 @@
 package robots.ui.block;
 
 import org.jetbrains.annotations.NotNull;
-import robots.Orientation;
+import robots.model.Orientation;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,9 +1,11 @@
 package robots;
 
 import org.jetbrains.annotations.NotNull;
-import robots.event.GameActionEvent;
-import robots.event.GameActionListener;
-import robots.labirints.SmallLabirint;
+import robots.model.event.GameActionEvent;
+import robots.model.event.GameActionListener;
+import robots.model.Game;
+import robots.model.GameStatus;
+import robots.model.labirints.SmallLabirint;
 import robots.ui.FieldWidget;
 import robots.ui.WidgetFactory;
 import robots.ui.utils.GameWidgetsUtils;
@@ -27,7 +29,7 @@ public class Main {
             setVisible(true);
 
             widgetFactory = new WidgetFactory();
-            game = new robots.Game(new SmallLabirint());
+            game = new Game(new SmallLabirint());
 
             game.addGameActionListener(new GameController());
 
