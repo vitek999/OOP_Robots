@@ -2,10 +2,14 @@ package robots.ui;
 
 import org.jetbrains.annotations.NotNull;
 import robots.model.*;
+import robots.model.field.Cell;
 import robots.model.event.FieldActionEvent;
 import robots.model.event.FieldActionListener;
 import robots.model.event.RobotActionEvent;
 import robots.model.event.RobotActionListener;
+import robots.model.field.Field;
+import robots.model.field.cell_objects.Robot;
+import robots.model.field.WallSegment;
 import robots.ui.block.BetweenCellsWidget;
 import robots.ui.block.WallWidget;
 import robots.ui.cell.BatteryWidget;
@@ -59,7 +63,8 @@ public class FieldWidget extends JPanel {
 
             if(i == 0)  {
                 BetweenCellsWidget westCellWidget = new BetweenCellsWidget(Orientation.VERTICAL);
-                WallSegment wallSegment = cell.neighborWall(Direction.WEST);
+                // TODO Remove cast to (WallSegment)
+                WallSegment wallSegment = (WallSegment) cell.neighborBetweenCellObject(Direction.WEST);
                 if( wallSegment != null) {
                     WallWidget wallWidget = widgetFactory.create(wallSegment, Orientation.VERTICAL);
                     westCellWidget.setItem(wallWidget);
@@ -70,7 +75,8 @@ public class FieldWidget extends JPanel {
             row.add(cellWidget);
 
             BetweenCellsWidget eastCellWidget = new BetweenCellsWidget(Orientation.VERTICAL);
-            WallSegment eastWallSegment = cell.neighborWall(Direction.EAST);
+            // TODO: Remove cast to (WallSegment)
+            WallSegment eastWallSegment = (WallSegment) cell.neighborBetweenCellObject(Direction.EAST);
             if(eastWallSegment != null) {
                 WallWidget wallWidget = widgetFactory.create(eastWallSegment, Orientation.VERTICAL);
                 eastCellWidget.setItem(wallWidget);
@@ -91,7 +97,8 @@ public class FieldWidget extends JPanel {
             Cell cell = field.getCell(point);
 
             BetweenCellsWidget southCellWidget = new BetweenCellsWidget(Orientation.HORIZONTAL);
-            WallSegment southWallSegment = cell.neighborWall(direction);
+            // TODO: Remove cast to (WallSegment)
+            WallSegment southWallSegment = (WallSegment) cell.neighborBetweenCellObject(direction);
 
             if(southWallSegment != null) {
                 WallWidget wallWidget = widgetFactory.create(southWallSegment, Orientation.HORIZONTAL);

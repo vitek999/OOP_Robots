@@ -1,8 +1,8 @@
-package robots.model;
+package robots.model.field;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import robots.model.Battery;
+import robots.model.field.cell_objects.Battery;
 
 import static org.junit.jupiter.api.Assertions.*;
 

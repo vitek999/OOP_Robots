@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test;
 import robots.model.event.GameActionEvent;
 import robots.model.event.GameActionListener;
 import robots.model.labirint.TestLabirint;
-import robots.model.Direction;
-import robots.model.Game;
-import robots.model.GameStatus;
-import robots.model.Robot;
+import robots.model.field.cell_objects.Robot;
 import robots.utils.Pare;
 
 import java.util.ArrayList;

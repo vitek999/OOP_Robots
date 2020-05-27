@@ -1,11 +1,18 @@
-package robots.model;
+package robots.model.field;
 
 import org.jetbrains.annotations.NotNull;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import robots.model.Direction;
+import robots.model.Point;
+import robots.model.field.Cell;
 import robots.model.event.FieldActionEvent;
 import robots.model.event.FieldActionListener;
-import robots.model.*;
+import robots.model.field.ExitCell;
+import robots.model.field.Field;
+import robots.model.field.cell_objects.Battery;
+import robots.model.field.cell_objects.Robot;
 
 import java.util.Arrays;
 
@@ -39,7 +46,7 @@ public class FieldTest {
         Cell cell_1_0 = field.getCell(new Point(0, 1));
         Cell cell_1_1 = field.getCell(new Point(1, 1));
 
-        assertEquals(Direction.SOUTH, cell_0_0.isNeighbor(cell_1_0));
+        Assertions.assertEquals(Direction.SOUTH, cell_0_0.isNeighbor(cell_1_0));
         assertEquals(Direction.SOUTH, cell_0_1.isNeighbor(cell_1_1));
         assertEquals(Direction.NORTH, cell_1_1.isNeighbor(cell_0_1));
         assertEquals(Direction.NORTH, cell_1_0.isNeighbor(cell_0_0));

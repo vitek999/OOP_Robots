@@ -2,7 +2,7 @@ package robots.model.event;
 
 import org.jetbrains.annotations.NotNull;
 import robots.model.GameStatus;
-import robots.model.Robot;
+import robots.model.field.cell_objects.Robot;
 
 import java.util.EventObject;
 

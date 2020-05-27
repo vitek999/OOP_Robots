@@ -1,6 +1,10 @@
-package robots.model;
+package robots.model.field;
 
 import org.jetbrains.annotations.NotNull;
+import robots.model.*;
+import robots.model.field.between_cells_objects.BetweenCellsPosition;
+import robots.model.field.cell_objects.Battery;
+import robots.model.field.cell_objects.Robot;
 
 import java.util.EnumMap;
 import java.util.Map;
@@ -9,12 +13,12 @@ import java.util.UUID;
 
 public class Cell {
 
+    private UUID uuid = UUID.randomUUID();
+
     /**
      * Battery
      */
     private Battery battery;
-
-    private UUID uuid = UUID.randomUUID();
 
     public Battery getBattery() {
         return battery;
@@ -35,20 +39,20 @@ public class Cell {
     /**
      * Robot
      */
-    private Robot robot;
+    private MobileCellObject robot;
 
     public Robot getRobot() {
-        return robot;
+        return (Robot) robot;
     }
 
     public Robot takeRobot() {
         robot.setPosition(null);
         var tmp = robot;
         robot = null;
-        return tmp;
+        return (Robot) tmp;
     }
 
-    public void setRobot(Robot robot) {
+    public void setRobot(MobileCellObject robot) {
         // !!! Кто решает, что робот может находиться в ячейке?? - не соответсвует диаграмме 01_Расстановка на поле
         // DONE: робот решает, может ли он находиться в ячейке (см. метод Robot.setPosition)
         // !!! Что будет, если переданный робот уже находится в некоторой ячейке??
@@ -57,21 +61,6 @@ public class Cell {
         if (!isPositionSetSuccess) throw new IllegalArgumentException("In cell already set robot");
         this.robot = robot;
     }
-
-    public void setWall(@NotNull WallSegment wallSegment, @NotNull Direction direction) {
-        if (neighborWall(direction) == wallSegment) return;
-        BetweenCellsPosition position = new BetweenCellsPosition(this, direction);
-        if (!wallSegment.canSetAtPosition(position) || neighborWalls.containsKey(direction) || neighborWalls.containsValue(wallSegment)) {
-            throw new IllegalArgumentException();
-        }
-        Cell neighbor = neighborCell(direction);
-        neighborWalls.put(direction, wallSegment);
-        if (neighbor != null) {
-            neighbor.setWall(wallSegment, direction.getOppositeDirection());
-        }
-        wallSegment.setPosition(position);
-    }
-
 
     /**
      * Neighbor cells
@@ -106,10 +95,24 @@ public class Cell {
     /**
      * Neighbor walls
      */
-    private Map<Direction, WallSegment> neighborWalls = new EnumMap<>(Direction.class);
+    private Map<Direction, BetweenCellObject> neighborBetweenCellObjects = new EnumMap<>(Direction.class);
 
-    public WallSegment neighborWall(@NotNull Direction direction) {
-        return neighborWalls.get(direction);
+    public BetweenCellObject neighborBetweenCellObject(@NotNull Direction direction) {
+        return neighborBetweenCellObjects.get(direction);
+    }
+
+    public void setWall(@NotNull BetweenCellObject betweenCellObject, @NotNull Direction direction) {
+        if (neighborBetweenCellObject(direction) == betweenCellObject) return;
+        BetweenCellsPosition position = new BetweenCellsPosition(this, direction);
+        if (!betweenCellObject.canSetAtPosition(position) || neighborBetweenCellObjects.containsKey(direction) || neighborBetweenCellObjects.containsValue(betweenCellObject)) {
+            throw new IllegalArgumentException();
+        }
+        Cell neighbor = neighborCell(direction);
+        neighborBetweenCellObjects.put(direction, betweenCellObject);
+        if (neighbor != null) {
+            neighbor.setWall(betweenCellObject, direction.getOppositeDirection());
+        }
+        betweenCellObject.setPosition(position);
     }
 
     @Override
@@ -121,12 +124,12 @@ public class Cell {
                 Objects.equals(uuid, cell.uuid) &&
                 Objects.equals(robot, cell.robot) &&
                 Objects.equals(neighborCells, cell.neighborCells) &&
-                Objects.equals(neighborWalls, cell.neighborWalls);
+                Objects.equals(neighborBetweenCellObjects, cell.neighborBetweenCellObjects);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(uuid, neighborCells.size(), neighborWalls.size());
+        return Objects.hash(uuid, neighborCells.size(), neighborBetweenCellObjects.size());
     }
 
     @Override
@@ -135,7 +138,7 @@ public class Cell {
                 "battery=" + battery +
                 ", robot=" + robot +
                 ", neighborCells=" + neighborCells.size() +
-                ", neighborWalls=" + neighborWalls.size() +
+                ", neighborWalls=" + neighborBetweenCellObjects.size() +
                 '}';
     }
 }

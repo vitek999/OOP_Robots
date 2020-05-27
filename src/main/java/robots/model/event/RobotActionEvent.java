@@ -1,9 +1,9 @@
 package robots.model.event;
 
 import org.jetbrains.annotations.NotNull;
-import robots.model.Battery;
-import robots.model.Cell;
-import robots.model.Robot;
+import robots.model.field.cell_objects.Battery;
+import robots.model.field.Cell;
+import robots.model.field.cell_objects.Robot;
 
 import java.util.EventObject;
 

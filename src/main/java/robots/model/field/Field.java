@@ -1,10 +1,13 @@
-package robots.model;
+package robots.model.field;
 
 import org.jetbrains.annotations.NotNull;
+import robots.model.Direction;
+import robots.model.Point;
 import robots.model.event.ExitCellActionEvent;
 import robots.model.event.ExitCellActionListener;
 import robots.model.event.FieldActionEvent;
 import robots.model.event.FieldActionListener;
+import robots.model.field.cell_objects.Robot;
 
 import java.util.*;
 

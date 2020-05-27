@@ -1,7 +1,7 @@
 package robots.model.labirints;
 
 import org.jetbrains.annotations.NotNull;
-import robots.model.Field;
+import robots.model.field.Field;
 import robots.model.Point;
 
 public abstract class Labirint { // !!! Предполагалось, что лабиринт будет помогать строить протяженные стены

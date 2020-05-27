@@ -1,13 +1,13 @@
-package robots.model;
+package robots.model.field;
 
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import robots.model.event.ExitCellActionEvent;
 import robots.model.event.ExitCellActionListener;
-import robots.model.Battery;
-import robots.model.ExitCell;
-import robots.model.Robot;
+import robots.model.field.ExitCell;
+import robots.model.field.cell_objects.Battery;
+import robots.model.field.cell_objects.Robot;
 
 import java.util.Arrays;
 

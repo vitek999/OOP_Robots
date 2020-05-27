@@ -1,10 +1,10 @@
-package robots.model;
+package robots.model.field;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import robots.model.BetweenCellsPosition;
-import robots.model.Cell;
 import robots.model.Direction;
+import robots.model.field.between_cells_objects.BetweenCellsPosition;
+import robots.model.field.Cell;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,8 +1,12 @@
-package robots.model;
+package robots.model.field.cell_objects;
 
 import org.jetbrains.annotations.NotNull;
+import robots.model.Direction;
+import robots.model.field.ExitCell;
 import robots.model.event.RobotActionEvent;
 import robots.model.event.RobotActionListener;
+import robots.model.field.Cell;
+import robots.model.field.MobileCellObject;
 
 import java.util.ArrayList;
 
@@ -40,7 +44,7 @@ public class Robot extends MobileCellObject {
         Cell result = null;
 
         Cell neighborCell = position.neighborCell(direction);
-        if (neighborCell != null && canLocateAtPosition(neighborCell) && position.neighborWall(direction) == null) {
+        if (neighborCell != null && canLocateAtPosition(neighborCell) && position.neighborBetweenCellObject(direction) == null) {
             result = neighborCell;
         }
 
@@ -69,7 +73,7 @@ public class Robot extends MobileCellObject {
         }
     }
 
-    void setActive(boolean value) { // !!! Не соответствует диаграмме - ранее активность робота запрашивали у игры
+    public void setActive(boolean value) { // !!! Не соответствует диаграмме - ранее активность робота запрашивали у игры
         // DONE: Добавил метод на диаграммуы.
         if(getCharge() > 0 || !value) {
             isActive = value;

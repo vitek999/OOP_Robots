@@ -1,4 +1,4 @@
-package robots.model;
+package robots.model.field;
 
 import org.jetbrains.annotations.NotNull;
 

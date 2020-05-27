@@ -1,6 +1,8 @@
-package robots.model;
+package robots.model.field.between_cells_objects;
 
 import org.jetbrains.annotations.NotNull;
+import robots.model.Direction;
+import robots.model.field.Cell;
 
 import java.util.Collections;
 import java.util.EnumMap;

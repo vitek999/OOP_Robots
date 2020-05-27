@@ -1,6 +1,7 @@
-package robots.model;
+package robots.model.field.cell_objects;
 
 import org.jetbrains.annotations.NotNull;
+import robots.model.field.Cell;
 
 import java.util.Objects;
 

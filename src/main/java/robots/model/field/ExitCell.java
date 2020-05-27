@@ -1,8 +1,9 @@
-package robots.model;
+package robots.model.field;
 
 import robots.Utils.BuildConfig;
 import robots.model.event.ExitCellActionEvent;
 import robots.model.event.ExitCellActionListener;
+import robots.model.field.cell_objects.Robot;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class ExitCell extends Cell {
     }
 
     @Override
-    public void setRobot(Robot robot) {
+    public void setRobot(MobileCellObject robot) {
         // !!! Кто решает, что робот может находиться в ячейке??
         // DONE: Решает робот (см. метод Robot.setPosition()).
         super.setRobot(robot);
