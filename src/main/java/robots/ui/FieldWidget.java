@@ -9,7 +9,7 @@ import robots.model.event.RobotActionEvent;
 import robots.model.event.RobotActionListener;
 import robots.model.field.Field;
 import robots.model.field.cell_objects.Robot;
-import robots.model.field.WallSegment;
+import robots.model.field.between_cells_objects.WallSegment;
 import robots.ui.block.BetweenCellsWidget;
 import robots.ui.block.WallWidget;
 import robots.ui.cell.BatteryWidget;

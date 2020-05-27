@@ -5,7 +5,7 @@ import robots.model.*;
 import robots.model.field.Field;
 import robots.model.field.cell_objects.Battery;
 import robots.model.field.cell_objects.Robot;
-import robots.model.field.WallSegment;
+import robots.model.field.between_cells_objects.WallSegment;
 import robots.model.labirints.Labirint;
 
 public class TestLabirint extends Labirint {

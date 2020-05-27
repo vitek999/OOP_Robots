@@ -6,7 +6,7 @@ import robots.model.field.ExitCell;
 import robots.model.field.cell_objects.Battery;
 import robots.model.field.cell_objects.Robot;
 import robots.model.field.Cell;
-import robots.model.field.WallSegment;
+import robots.model.field.between_cells_objects.WallSegment;
 import robots.ui.block.WallWidget;
 import robots.ui.cell.BatteryWidget;
 import robots.ui.cell.CellWidget;

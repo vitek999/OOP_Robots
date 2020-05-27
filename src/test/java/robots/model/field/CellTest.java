@@ -3,10 +3,9 @@ package robots.model.field;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import robots.model.Direction;
-import robots.model.field.Cell;
 import robots.model.field.cell_objects.Battery;
 import robots.model.field.cell_objects.Robot;
-import robots.model.field.WallSegment;
+import robots.model.field.between_cells_objects.WallSegment;
 
 import static org.junit.jupiter.api.Assertions.*;
 

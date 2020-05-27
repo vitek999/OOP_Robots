@@ -1,13 +1,10 @@
-package robots.model.field;
+package robots.model.field.between_cells_objects;
 
-import org.jetbrains.annotations.NotNull;
-import robots.model.Direction;
-import robots.model.field.between_cells_objects.BetweenCellsPosition;
+import robots.model.field.BetweenCellObject;
 
-import java.util.Map;
 import java.util.Objects;
 
-public class WallSegment extends BetweenCellObject{ // !!! Все-таки не стена, а ее часть
+public class WallSegment extends BetweenCellObject { // !!! Все-таки не стена, а ее часть
                            // DONE: Переименовал класс Wall -> WallSegment
 
     @Override
