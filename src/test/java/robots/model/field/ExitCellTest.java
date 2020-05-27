@@ -7,6 +7,7 @@ import robots.model.event.ExitCellActionEvent;
 import robots.model.event.ExitCellActionListener;
 import robots.model.field.cell_objects.power_supplies.Battery;
 import robots.model.field.cell_objects.Robot;
+import robots.model.field.cells.ExitCell;
 
 import java.util.Arrays;
 

@@ -2,7 +2,7 @@ package robots.model;
 
 import org.jetbrains.annotations.NotNull;
 import robots.model.event.*;
-import robots.model.field.ExitCell;
+import robots.model.field.cells.ExitCell;
 import robots.model.field.Field;
 import robots.model.field.cell_objects.Robot;
 import robots.model.labirints.Labirint;

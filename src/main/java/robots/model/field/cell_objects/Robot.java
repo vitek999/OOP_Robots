@@ -2,7 +2,7 @@ package robots.model.field.cell_objects;
 
 import org.jetbrains.annotations.NotNull;
 import robots.model.Direction;
-import robots.model.field.ExitCell;
+import robots.model.field.cells.ExitCell;
 import robots.model.event.RobotActionEvent;
 import robots.model.event.RobotActionListener;
 import robots.model.field.Cell;

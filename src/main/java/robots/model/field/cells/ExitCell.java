@@ -1,8 +1,10 @@
-package robots.model.field;
+package robots.model.field.cells;
 
 import robots.Utils.BuildConfig;
 import robots.model.event.ExitCellActionEvent;
 import robots.model.event.ExitCellActionListener;
+import robots.model.field.Cell;
+import robots.model.field.MobileCellObject;
 import robots.model.field.cell_objects.Robot;
 
 import javax.swing.*;

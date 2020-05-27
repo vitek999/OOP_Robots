@@ -8,6 +8,7 @@ import robots.model.event.ExitCellActionListener;
 import robots.model.event.FieldActionEvent;
 import robots.model.event.FieldActionListener;
 import robots.model.field.cell_objects.Robot;
+import robots.model.field.cells.ExitCell;
 
 import java.util.*;
 
