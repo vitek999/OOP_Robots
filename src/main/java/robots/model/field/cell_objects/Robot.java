@@ -2,12 +2,13 @@ package robots.model.field.cell_objects;
 
 import org.jetbrains.annotations.NotNull;
 import robots.model.Direction;
+import robots.model.field.cell_objects.power_supplies.PowerSupply;
+import robots.model.field.cells.CellWithPowerSupply;
 import robots.model.field.cells.ExitCell;
 import robots.model.event.RobotActionEvent;
 import robots.model.event.RobotActionListener;
 import robots.model.field.Cell;
 import robots.model.field.MobileCellObject;
-import robots.model.field.cell_objects.power_supplies.Battery;
 
 import java.util.ArrayList;
 
@@ -16,10 +17,10 @@ public class Robot extends MobileCellObject {
     private static final int AMOUNT_OF_CHARGE_FOR_MOVE = 1;
     private static final int AMOUNT_OF_CHARGE_FOR_SKIP_STEP = 2;
 
-    private Battery innerBattery;
+    private PowerSupply innerBattery;
     private boolean isActive;
 
-    public Robot(@NotNull Battery innerBattery) {
+    public Robot(@NotNull PowerSupply innerBattery) {
         this.innerBattery = innerBattery;
     }
 
@@ -33,8 +34,8 @@ public class Robot extends MobileCellObject {
                 boolean isSpendChargeSuccess = spendBatteryCharge(AMOUNT_OF_CHARGE_FOR_MOVE, false);
                 if (isSpendChargeSuccess) {
                     fireRobotIsMoved(oldPosition, newPosition);
-                    position.takeRobot();
-                    newPosition.setRobot(this);
+                    position.takeObject(position.getMobileCellObject());
+                    newPosition.addObject(this);
                 }
             }
         }
@@ -44,8 +45,9 @@ public class Robot extends MobileCellObject {
     protected Cell canMove(@NotNull Direction direction) {
         Cell result = null;
 
-        Cell neighborCell = position.neighborCell(direction);
-        if (neighborCell != null && canLocateAtPosition(neighborCell) && position.neighborBetweenCellObject(direction) == null) {
+        Cell neighborCell = position.getNeighborCell(direction);
+        if (neighborCell != null && canLocateAtPosition(neighborCell)
+                && position.getNeighborBetweenCellObject(direction) == null) {
             result = neighborCell;
         }
 
@@ -56,13 +58,13 @@ public class Robot extends MobileCellObject {
     public boolean canLocateAtPosition(@NotNull Cell newPosition) { // !!! Странное название - почему "могу оставаться"?
         // DONE Переименовал метод canStayAtPosition -> canLocateAtPosition
         if ((newPosition instanceof ExitCell) && (((ExitCell) newPosition).getTeleportedRobots().contains(this))) return false;
-        return newPosition.getRobot() == null;
+        return newPosition.getMobileCellObject() == null;
     }
 
-    public void changeBattery() {
-        if (isActive && position.getBattery() != null) { // !!! Не соответствует диаграмме - ранее активность робота запрашивали у игры
+    public void changePowerSupply() {
+        if (isActive && (position instanceof CellWithPowerSupply) && ((CellWithPowerSupply) position).getPowerSupply() != null) { // !!! Не соответствует диаграмме - ранее активность робота запрашивали у игры
             // DONE: Исправил диаграмму смены батарейки, теперь робот не узнаёт свою актиыность у игры.
-            innerBattery = position.takeBattery();
+            innerBattery = (PowerSupply) position.takeObject(((CellWithPowerSupply) position).getPowerSupply());
             fireRobotChangeBattery(innerBattery);
         }
     }
@@ -86,7 +88,7 @@ public class Robot extends MobileCellObject {
         return isActive;
     }
 
-    public void setBattery(@NotNull Battery battery) { // !!! А как же проверка, что это возможно
+    public void setPowerSupply(@NotNull PowerSupply battery) { // !!! А как же проверка, что это возможно
         // DONE: Добавил not-null проверку, все остальные варианты аргментна допустимы
         this.innerBattery = battery;
     }
@@ -161,11 +163,11 @@ public class Robot extends MobileCellObject {
         }
     }
 
-    private void fireRobotChangeBattery(Battery changedBattery) {
+    private void fireRobotChangeBattery(PowerSupply changedPowerSupply) {
         for (RobotActionListener listener : robotListListener) {
             RobotActionEvent event = new RobotActionEvent(listener);
             event.setRobot(this);
-            event.setBattery(changedBattery);
+            event.setPowerSupply(changedPowerSupply);
             listener.robotChangedBattery(event);
         }
     }

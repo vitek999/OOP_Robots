@@ -42,7 +42,7 @@ public class ExitCellTest {
 
     @Test
     public void test_setRobot_oneRobot() {
-        exitCell.setRobot(robot);
+        exitCell.addObject(robot);
 
         int expectedCountEvents = 1;
 
@@ -54,11 +54,11 @@ public class ExitCellTest {
 
     @Test
     public void test_setRobot_setTeleportedRobot() {
-        exitCell.setRobot(robot);
+        exitCell.addObject(robot);
 
         int expectedCountEvents = 1;
 
-        assertThrows(IllegalArgumentException.class, () -> exitCell.setRobot(robot));
+        assertThrows(IllegalArgumentException.class, () -> exitCell.addObject(robot));
         assertEquals(expectedCountEvents, countEvents);
         assertNull(robot.getPosition());
         assertTrue(exitCell.getTeleportedRobots().contains(robot));
@@ -69,8 +69,8 @@ public class ExitCellTest {
     public void test_setRobot_setSeveralRobots() {
         Robot anotherRobot = new Robot(new Battery(10));
 
-        exitCell.setRobot(robot);
-        exitCell.setRobot(anotherRobot);
+        exitCell.addObject(robot);
+        exitCell.addObject(anotherRobot);
 
         int expectedCountEvents = 2;
 

@@ -118,7 +118,7 @@ public class RobotWidget extends CellItemWidget {
 
         private void changeBatteryAction(@NotNull int keyCode) {
             if(keyCode == KeyEvent.VK_G) {
-                robot.changeBattery();
+                robot.changePowerSupply();
             }
         }
 

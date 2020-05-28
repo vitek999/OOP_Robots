@@ -8,6 +8,7 @@ import robots.model.event.ExitCellActionListener;
 import robots.model.event.FieldActionEvent;
 import robots.model.event.FieldActionListener;
 import robots.model.field.cell_objects.Robot;
+import robots.model.field.cells.CellWithPowerSupply;
 import robots.model.field.cells.ExitCell;
 
 import java.util.*;
@@ -43,7 +44,7 @@ public class Field {
         for(int y = 0; y < height; ++y) {
             for(int x = 0; x < width; ++x) {
                 Point p = new Point(x, y);
-                Cell cell = p.equals(exitPoint)? new ExitCell() : new Cell();
+                Cell cell = p.equals(exitPoint)? new ExitCell() : new CellWithPowerSupply();
                 // !!! Так сложно, потому что Point ничего не умеет
                 // DONE: Упрости, добавив метод to в класс Point.
                 // !!! Почему соседей устанавливает не созданная ячейка, а её сосдеи?
@@ -70,7 +71,7 @@ public class Field {
     public List<Robot> getRobotsOnField() {
         List<Robot> robots = new ArrayList<>();
         for(var i : cells.entrySet()) { // !!! Не лучше ли организовать итератор ячеек
-            Robot robot = i.getValue().getRobot();
+            Robot robot = (Robot) i.getValue().getMobileCellObject();
             if(robot != null) robots.add(robot);
         }
         return robots;

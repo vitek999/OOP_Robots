@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import robots.model.Direction;
 import robots.model.field.between_cells_objects.BetweenCellsPosition;
 import robots.model.field.Cell;
+import robots.model.field.cells.CellWithPowerSupply;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,8 +18,8 @@ class BetweenCellsPositionTest {
 
     @BeforeEach
     public void testSetup() {
-        cell = new Cell();
-        neighborCell = new Cell();
+        cell = new CellWithPowerSupply();
+        neighborCell = new CellWithPowerSupply();
     }
 
     @Test

@@ -44,14 +44,14 @@ public class FieldTest {
         Cell cell_1_0 = field.getCell(new Point(0, 1));
         Cell cell_1_1 = field.getCell(new Point(1, 1));
 
-        Assertions.assertEquals(Direction.SOUTH, cell_0_0.isNeighbor(cell_1_0));
-        assertEquals(Direction.SOUTH, cell_0_1.isNeighbor(cell_1_1));
-        assertEquals(Direction.NORTH, cell_1_1.isNeighbor(cell_0_1));
-        assertEquals(Direction.NORTH, cell_1_0.isNeighbor(cell_0_0));
-        assertEquals(Direction.EAST, cell_0_0.isNeighbor(cell_0_1));
-        assertEquals(Direction.EAST, cell_1_0.isNeighbor(cell_1_1));
-        assertEquals(Direction.WEST, cell_0_1.isNeighbor(cell_0_0));
-        assertEquals(Direction.WEST, cell_1_1.isNeighbor(cell_1_0));
+        Assertions.assertEquals(Direction.SOUTH, cell_0_0.getNeighborDirection(cell_1_0));
+        assertEquals(Direction.SOUTH, cell_0_1.getNeighborDirection(cell_1_1));
+        assertEquals(Direction.NORTH, cell_1_1.getNeighborDirection(cell_0_1));
+        assertEquals(Direction.NORTH, cell_1_0.getNeighborDirection(cell_0_0));
+        assertEquals(Direction.EAST, cell_0_0.getNeighborDirection(cell_0_1));
+        assertEquals(Direction.EAST, cell_1_0.getNeighborDirection(cell_1_1));
+        assertEquals(Direction.WEST, cell_0_1.getNeighborDirection(cell_0_0));
+        assertEquals(Direction.WEST, cell_1_1.getNeighborDirection(cell_1_0));
         assertTrue(cell_1_1 instanceof ExitCell);
     }
 
@@ -88,7 +88,7 @@ public class FieldTest {
     @Test
     public void test_getRobotsOnField_oneRobot() {
         Robot robot = new Robot(new Battery(10));
-        field.getCell(new Point(0, 0)).setRobot(robot);
+        field.getCell(new Point(0, 0)).addObject(robot);
 
         assertTrue(field.getRobotsOnField().contains(robot));
         assertEquals(1, field.getRobotsOnField().size());
@@ -98,8 +98,8 @@ public class FieldTest {
     public void test_getRobotsOnField_severalRobots() {
         Robot robot = new Robot(new Battery(10));
         Robot anotherRobot = new Robot(new Battery(10));
-        field.getCell(new Point(0, 0)).setRobot(robot);
-        field.getCell(new Point(1, 0)).setRobot(anotherRobot);
+        field.getCell(new Point(0, 0)).addObject(robot);
+        field.getCell(new Point(1, 0)).addObject(anotherRobot);
 
         assertTrue(field.getRobotsOnField().containsAll(Arrays.asList(robot, anotherRobot)));
         assertEquals(2, field.getRobotsOnField().size());
@@ -113,7 +113,7 @@ public class FieldTest {
     @Test
     public void test_TeleportedRobots_oneRobot() {
         Robot robot = new Robot(new Battery(10));
-        field.getCell(new Point(1, 1)).setRobot(robot);
+        field.getCell(new Point(1, 1)).addObject(robot);
 
         assertTrue(field.getTeleportedRobots().contains(robot));
         assertEquals(1, field.getTeleportedRobots().size());
@@ -125,8 +125,8 @@ public class FieldTest {
         Robot anotherRobot = new Robot(new Battery(10));
         Cell exitCell =  field.getCell(new Point(1, 1));
 
-        exitCell.setRobot(robot);
-        exitCell.setRobot(anotherRobot);
+        exitCell.addObject(robot);
+        exitCell.addObject(anotherRobot);
 
         assertTrue(field.getTeleportedRobots().containsAll(Arrays.asList(robot, anotherRobot)));
         assertEquals(2, field.getTeleportedRobots().size());
@@ -137,7 +137,7 @@ public class FieldTest {
         int expectedEventCount = 1;
         Robot robot = new Robot(new Battery(10));
 
-        field.getCell(new Point(1, 1)).setRobot(robot);
+        field.getCell(new Point(1, 1)).addObject(robot);
 
         assertEquals(expectedEventCount, eventCount);
     }
@@ -148,8 +148,8 @@ public class FieldTest {
         Robot robot = new Robot(new Battery(10));
         Robot anotherRobot = new Robot(new Battery(10));
 
-        field.getCell(new Point(1, 1)).setRobot(robot);
-        field.getCell(new Point(1, 1)).setRobot(anotherRobot);
+        field.getCell(new Point(1, 1)).addObject(robot);
+        field.getCell(new Point(1, 1)).addObject(anotherRobot);
 
         assertEquals(expectedEventCount, eventCount);
     }

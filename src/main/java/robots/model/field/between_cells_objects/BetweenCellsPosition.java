@@ -14,7 +14,7 @@ public class BetweenCellsPosition {
     private Map<Direction, Cell> neighborCells = new EnumMap<>(Direction.class);
 
     public BetweenCellsPosition(@NotNull Cell cell, @NotNull Cell neighborCell) {
-        Direction neighborDirection = cell.isNeighbor(neighborCell);
+        Direction neighborDirection = cell.getNeighborDirection(neighborCell);
 
         if(neighborDirection == null) throw new IllegalArgumentException();
 
@@ -28,7 +28,7 @@ public class BetweenCellsPosition {
 
         neighborCells.put(direction.getOppositeDirection(), cell);
 
-        Cell neighborCell = cell.neighborCell(direction);
+        Cell neighborCell = cell.getNeighborCell(direction);
         if(neighborCell != null) {
             neighborCells.put(direction, neighborCell);
         }

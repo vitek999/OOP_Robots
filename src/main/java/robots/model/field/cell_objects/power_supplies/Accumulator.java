@@ -2,6 +2,7 @@ package robots.model.field.cell_objects.power_supplies;
 
 import org.jetbrains.annotations.NotNull;
 import robots.model.field.Cell;
+import robots.model.field.cells.CellWithPowerSupply;
 
 public class Accumulator extends RechargeablePowerSupply implements Portable {
 
@@ -11,6 +12,6 @@ public class Accumulator extends RechargeablePowerSupply implements Portable {
 
     @Override
     public boolean canLocateAtPosition(@NotNull Cell cell) {
-        return cell.getBattery() == null;
+        return (cell instanceof CellWithPowerSupply) && ((CellWithPowerSupply) cell).getPowerSupply() == null;
     }
 }

@@ -1,4 +1,12 @@
 package robots.model.field.cells;
 
-public class CellWithPowerSupply implements ImmutableCellWithPowerSupply{
+import robots.model.field.Cell;
+import robots.model.field.cell_objects.power_supplies.PowerSupply;
+
+public class CellWithPowerSupply extends Cell implements ImmutableCellWithPowerSupply{
+
+    @Override
+    public PowerSupply getPowerSupply() {
+        return (PowerSupply) objectList.stream().filter(i -> i instanceof PowerSupply).findFirst().orElse(null);
+    }
 }

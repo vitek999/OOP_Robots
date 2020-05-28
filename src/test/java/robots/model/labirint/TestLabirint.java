@@ -34,15 +34,15 @@ public class TestLabirint extends Labirint {
         Robot firstRobot = new Robot(new Battery(10));
         Robot secondRobot = new Robot(new Battery(10));
 
-        field.getCell(new Point(0,2)).setRobot(firstRobot);
-        field.getCell(new Point(2,0)).setRobot(secondRobot);
+        field.getCell(new Point(0,2)).addObject(firstRobot);
+        field.getCell(new Point(2,0)).addObject(secondRobot);
     }
 
     @Override
     protected void addBatteries(@NotNull Field field) {
         Battery battery = new Battery(DEFAULT_BATTERY_CHARGE);
 
-        field.getCell(new Point(1, 2)).setBattery(battery);
+        field.getCell(new Point(1, 2)).addObject(battery);
     }
 
     @Override

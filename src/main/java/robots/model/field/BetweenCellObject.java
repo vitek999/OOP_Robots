@@ -27,7 +27,7 @@ public abstract class BetweenCellObject {
 
         while (iterator.hasNext() && result) {
             var i = iterator.next();
-            BetweenCellObject neighborWall = i.getValue().neighborBetweenCellObject(i.getKey().getOppositeDirection());
+            BetweenCellObject neighborWall = i.getValue().getNeighborBetweenCellObject(i.getKey().getOppositeDirection());
             result = (neighborWall == null) || (neighborWall == this);
         }
 

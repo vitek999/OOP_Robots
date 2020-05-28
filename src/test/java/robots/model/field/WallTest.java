@@ -6,14 +6,4 @@ import robots.model.field.Cell;
 
 class WallTest {
 
-    private Cell cell;
-    private Cell neighborCell;
-    private final Direction direction = Direction.NORTH;
-
-    @BeforeEach
-    public void testSetup() {
-        cell = new Cell();
-        neighborCell = new Cell();
-    }
-
 }

@@ -1,9 +1,11 @@
 package robots.model.field.cells;
 
+import org.jetbrains.annotations.NotNull;
 import robots.Utils.BuildConfig;
 import robots.model.event.ExitCellActionEvent;
 import robots.model.event.ExitCellActionListener;
 import robots.model.field.Cell;
+import robots.model.field.CellObject;
 import robots.model.field.MobileCellObject;
 import robots.model.field.cell_objects.Robot;
 
@@ -26,10 +28,11 @@ public class ExitCell extends Cell implements ImmutableExitCell {
     }
 
     @Override
-    public void setRobot(MobileCellObject robot) {
+    public void addObject(@NotNull CellObject robot) {
         // !!! Кто решает, что робот может находиться в ячейке??
         // DONE: Решает робот (см. метод Robot.setPosition()).
-        super.setRobot(robot);
+        if(!(robot instanceof Robot)) throw new IllegalArgumentException();
+        super.addObject(robot);
         if (BuildConfig.buildType == BuildConfig.BuildType.RELEASE) {
             Timer timer = new Timer(1000, e -> teleportRobot());
             timer.setRepeats(false);
@@ -40,7 +43,7 @@ public class ExitCell extends Cell implements ImmutableExitCell {
     }
 
     private void teleportRobot() {
-        Robot robot = takeRobot();
+        Robot robot = (Robot) takeObject(getMobileCellObject());
         teleportedRobots.add(robot);
         fireRobotIsTeleported(robot);
     }

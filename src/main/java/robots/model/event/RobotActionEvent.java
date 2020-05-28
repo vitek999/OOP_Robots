@@ -1,9 +1,9 @@
 package robots.model.event;
 
 import org.jetbrains.annotations.NotNull;
-import robots.model.field.cell_objects.power_supplies.Battery;
 import robots.model.field.Cell;
 import robots.model.field.cell_objects.Robot;
+import robots.model.field.cell_objects.power_supplies.PowerSupply;
 
 import java.util.EventObject;
 
@@ -12,7 +12,7 @@ public class RobotActionEvent extends EventObject {
     private Robot robot;
     private Cell fromCell;
     private Cell toCell;
-    private Battery battery;
+    private PowerSupply powerSupply;
 
     public void setFromCell(Cell fromCell) {
         this.fromCell = fromCell;
@@ -30,12 +30,12 @@ public class RobotActionEvent extends EventObject {
         return toCell;
     }
 
-    public void setBattery(Battery battery) {
-        this.battery = battery;
+    public void setPowerSupply(@NotNull PowerSupply powerSupply) {
+        this.powerSupply = powerSupply;
     }
 
-    public Battery getBattery() {
-        return battery;
+    public PowerSupply getPowerSupply() {
+        return powerSupply;
     }
 
     public void setRobot(@NotNull Robot robot) {
