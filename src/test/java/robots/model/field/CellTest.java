@@ -160,15 +160,6 @@ class CellTest {
         assertNull(cell.getNeighborDirection(neighborCell));
     }
 
-//    @Test
-//    public void test_setNeighbor_Wall() {
-//        Direction direction = Direction.NORTH;
-//        WallSegment neighborWallSegment = new WallSegment(new BetweenCellsPosition(cell, direction));
-//
-//        assertEquals(neighborWallSegment, cell.neighborWall(direction));
-//        assertEquals(cell, neighborWallSegment.getPosition().getNeighborCells().get(direction.getOppositeDirection()));
-//    }
-
     @Test
     public void test_setWall_inOneSingleCell() {
         Direction direction = Direction.NORTH;
