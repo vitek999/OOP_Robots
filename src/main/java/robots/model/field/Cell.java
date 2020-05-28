@@ -73,6 +73,10 @@ public abstract class Cell {
      */
     private final Map<Direction, BetweenCellObject> neighborBetweenCellObjects = new EnumMap<>(Direction.class);
 
+    public Map<Direction, BetweenCellObject> getNeighborBetweenCellObjects() {
+        return Collections.unmodifiableMap(neighborBetweenCellObjects);
+    }
+
     public BetweenCellObject getNeighborBetweenCellObject(@NotNull Direction direction) {
         return neighborBetweenCellObjects.get(direction);
     }
