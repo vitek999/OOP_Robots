@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import robots.model.Direction;
 import robots.model.event.RobotActionEvent;
 import robots.model.event.RobotActionListener;
+import robots.model.field.between_cells_objects.Door;
 import robots.model.field.cell_objects.power_supplies.Accumulator;
 import robots.model.field.cell_objects.power_supplies.Battery;
 import robots.model.field.cell_objects.Robot;
@@ -334,6 +335,76 @@ class RobotTest {
 
         assertEquals(accumulatorCharge, robot.getCharge());
         assertEquals(0, windmill.getCharge());
+    }
+
+    @Test
+    public void test_performAction_withoutDoor() {
+        cell.addObject(robot);
+
+        robot.performAction();
+
+        assertEquals(DEFAULT_TEST_BATTERY_CHARGE, robot.getCharge());
+    }
+
+    @Test
+    public void test_performAction_withSingleDoorAndEnoughCharge() {
+        cell.addObject(robot);
+        Door door = new Door(false);
+        cell.setWall(door, Direction.NORTH);
+
+        robot.performAction();
+
+        int expectedRobotCharge = DEFAULT_TEST_BATTERY_CHARGE - door.actionCost();
+        assertEquals(expectedRobotCharge, robot.getCharge());
+        assertTrue(door.isOpen());
+    }
+
+    @Test
+    public void test_performAction_withSingleDoorAndNotEnoughCharge() {
+        cell.addObject(robot);
+        robot.setPowerSupply(new Battery(0));
+        Door door = new Door(false);
+        cell.setWall(door, Direction.NORTH);
+
+        robot.performAction();
+
+        int expectedRobotCharge = DEFAULT_TEST_BATTERY_CHARGE - door.actionCost();
+        assertEquals(0, robot.getCharge());
+        assertFalse(door.isOpen());
+    }
+
+    @Test
+    public void test_performAction_withSeveralDoorAndEnoughChargeForAllActions() {
+        cell.addObject(robot);
+        Door firstDoor = new Door(false);
+        Door secondDoor = new Door(false);
+        cell.setWall(firstDoor, Direction.NORTH);
+        cell.setWall(secondDoor, Direction.SOUTH);
+
+        robot.performAction();
+
+        int expectedRobotCharge = DEFAULT_TEST_BATTERY_CHARGE - (firstDoor.actionCost() + secondDoor.actionCost());
+        assertEquals(expectedRobotCharge, robot.getCharge());
+        assertTrue(firstDoor.isOpen());
+        assertTrue(secondDoor.isOpen());
+    }
+
+    @Test
+    public void test_performAction_withSeveralDoorAndEnoughChargeForOneActions() {
+        cell.addObject(robot);
+        int robotCharge = 1;
+        robot.setPowerSupply(new Battery(robotCharge));
+        Door firstDoor = new Door(false);
+        Door secondDoor = new Door(false);
+        cell.setWall(firstDoor, Direction.NORTH);
+        cell.setWall(secondDoor, Direction.SOUTH);
+
+        robot.performAction();
+
+        int expectedRobotCharge = robotCharge - firstDoor.actionCost();
+        assertEquals(expectedRobotCharge, robot.getCharge());
+        assertTrue(firstDoor.isOpen());
+        assertFalse(secondDoor.isOpen());
     }
 }
 

@@ -77,7 +77,7 @@ public class Robot extends MobileCellObject {
     }
 
     public void chargePowerSupply() {
-        if(innerBattery instanceof RechargeablePowerSupply) {
+        if(isActive && innerBattery instanceof RechargeablePowerSupply) {
             Map<Direction, Cell> neighborCells = position.getNeighborCells();
             for (Map.Entry<Direction, Cell> item : neighborCells.entrySet()) {
                 if (item.getValue() instanceof CellWithPowerSupply) {
@@ -139,14 +139,17 @@ public class Robot extends MobileCellObject {
         return result;
     }
 
-    public void performAction(@NotNull Direction direction) {
+    public void performAction() {
         if(isActive) {
-            BetweenCellObject betweenCellObject = position.getNeighborBetweenCellObject(direction);
-            if(betweenCellObject instanceof BetweenCellObjectWithAction) {
-                BetweenCellObjectWithAction betweenCellObjectWithAction = (BetweenCellObjectWithAction) betweenCellObject;
-                int actionChargeAmount = betweenCellObjectWithAction.actionCost();
-                boolean isActionDone =  spendBatteryCharge(actionChargeAmount, false);
-                if(isActionDone) betweenCellObjectWithAction.perform();
+            Map<Direction, BetweenCellObject> neighborBetweenCellObjects = position.getNeighborBetweenCellObjects();
+            for(Map.Entry<Direction, BetweenCellObject> item : neighborBetweenCellObjects.entrySet()) {
+                BetweenCellObject betweenCellObject = item.getValue();
+                if (betweenCellObject instanceof BetweenCellObjectWithAction) {
+                    BetweenCellObjectWithAction betweenCellObjectWithAction = (BetweenCellObjectWithAction) betweenCellObject;
+                    int actionChargeAmount = betweenCellObjectWithAction.actionCost();
+                    boolean isActionDone = spendBatteryCharge(actionChargeAmount, false);
+                    if (isActionDone) betweenCellObjectWithAction.perform();
+                }
             }
         }
     }
