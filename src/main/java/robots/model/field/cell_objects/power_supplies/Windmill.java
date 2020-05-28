@@ -21,7 +21,7 @@ public class Windmill extends RenewablePowerSupply {
 
     @Override
     public boolean canLocateAtPosition(@NotNull Cell cell) {
-        return (cell instanceof CellWithPowerSupply) && ((CellWithPowerSupply) cell).getPowerSupply() == null
+        return position == null && (cell instanceof CellWithPowerSupply) && ((CellWithPowerSupply) cell).getPowerSupply() == null
                 && cell.getMobileCellObject() == null;
     }
 }
