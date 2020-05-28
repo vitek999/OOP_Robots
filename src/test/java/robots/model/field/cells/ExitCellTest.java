@@ -1,4 +1,4 @@
-package robots.model.field;
+package robots.model.field.cells;
 
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
