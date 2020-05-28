@@ -6,7 +6,6 @@ import robots.model.event.ExitCellActionEvent;
 import robots.model.event.ExitCellActionListener;
 import robots.model.field.Cell;
 import robots.model.field.CellObject;
-import robots.model.field.MobileCellObject;
 import robots.model.field.cell_objects.Robot;
 
 import javax.swing.*;
@@ -15,13 +14,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-public class ExitCell extends Cell implements ImmutableExitCell {
+public class ExitCell extends Cell {
 
     private static final long SLEEP_TIME = 100L;
 
     private final List<Robot> teleportedRobots = new ArrayList<>();
 
-    @Override
     public List<Robot> getTeleportedRobots() {
         return Collections.unmodifiableList(teleportedRobots); // !!! Можно использовать неизменяемый контейнер
         // DONE: Возвращаю неизменяемый контейнер

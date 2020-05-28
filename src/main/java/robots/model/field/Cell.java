@@ -3,11 +3,10 @@ package robots.model.field;
 import org.jetbrains.annotations.NotNull;
 import robots.model.*;
 import robots.model.field.between_cells_objects.BetweenCellsPosition;
-import robots.model.field.cells.ImmutableCell;
 
 import java.util.*;
 
-public abstract class Cell implements ImmutableCell {
+public abstract class Cell {
 
     private final UUID uuid = UUID.randomUUID();
 
@@ -30,7 +29,6 @@ public abstract class Cell implements ImmutableCell {
         return cellObject;
     }
 
-    @Override
     public MobileCellObject getMobileCellObject() {
         return (MobileCellObject) objectList.stream().filter(i -> i instanceof MobileCellObject).findFirst().orElse(null);
     }
@@ -40,7 +38,6 @@ public abstract class Cell implements ImmutableCell {
      */
     private final Map<Direction, Cell> neighborCells = new EnumMap<>(Direction.class);
 
-    @Override
     public Cell getNeighborCell(@NotNull Direction direction) {
         return neighborCells.get(direction);
     }
@@ -57,7 +54,6 @@ public abstract class Cell implements ImmutableCell {
         }
     }
 
-    @Override
     public Direction getNeighborDirection(@NotNull Cell other) {
         for (var i : neighborCells.entrySet()) {
             if (i.getValue().equals(other)) return i.getKey();
@@ -70,7 +66,6 @@ public abstract class Cell implements ImmutableCell {
      */
     private final Map<Direction, BetweenCellObject> neighborBetweenCellObjects = new EnumMap<>(Direction.class);
 
-    @Override
     public BetweenCellObject getNeighborBetweenCellObject(@NotNull Direction direction) {
         return neighborBetweenCellObjects.get(direction);
     }
