@@ -41,6 +41,10 @@ public abstract class Cell {
      */
     private final Map<Direction, Cell> neighborCells = new EnumMap<>(Direction.class);
 
+    public final Map<Direction, Cell> getNeighborCells() {
+        return Collections.unmodifiableMap(neighborCells);
+    }
+
     public Cell getNeighborCell(@NotNull Direction direction) {
         return neighborCells.get(direction);
     }
