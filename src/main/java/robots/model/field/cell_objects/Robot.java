@@ -5,6 +5,7 @@ import robots.model.Direction;
 import robots.model.field.BetweenCellObject;
 import robots.model.field.between_cells_objects.BetweenCellObjectWithAction;
 import robots.model.field.cell_objects.power_supplies.PowerSupply;
+import robots.model.field.cell_objects.power_supplies.RechargeablePowerSupply;
 import robots.model.field.cells.CellWithPowerSupply;
 import robots.model.field.cells.ExitCell;
 import robots.model.event.RobotActionEvent;
@@ -13,6 +14,7 @@ import robots.model.field.Cell;
 import robots.model.field.MobileCellObject;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -71,6 +73,18 @@ public class Robot extends MobileCellObject {
             // DONE: Исправил диаграмму смены батарейки, теперь робот не узнаёт свою актиыность у игры.
             innerBattery = (PowerSupply) position.takeObject(((CellWithPowerSupply) position).getPowerSupply());
             fireRobotChangeBattery(innerBattery);
+        }
+    }
+
+    public void chargePowerSupply() {
+        if(innerBattery instanceof RechargeablePowerSupply) {
+            Map<Direction, Cell> neighborCells = position.getNeighborCells();
+            for (Map.Entry<Direction, Cell> item : neighborCells.entrySet()) {
+                if (item instanceof CellWithPowerSupply) {
+                    PowerSupply cellPowerSupply = ((CellWithPowerSupply) item).getPowerSupply();
+                    ((RechargeablePowerSupply) innerBattery).charge(cellPowerSupply);
+                }
+            }
         }
     }
 
