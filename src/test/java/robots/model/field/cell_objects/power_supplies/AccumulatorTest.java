@@ -1,10 +1,12 @@
 package robots.model.field.cell_objects.power_supplies;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import robots.model.field.Cell;
+import robots.model.field.CellTestModel;
+import robots.model.field.cells.CellWithPowerSupply;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class AccumulatorTest {
 
@@ -75,13 +77,56 @@ public class AccumulatorTest {
     }
 
     @Test
+    public void test_canLocateAtPosition_inEmptyCell() {
+        Accumulator accumulator = new Accumulator(MAX_CHARGE, MAX_CHARGE);
+        CellWithPowerSupply cellWithPowerSupply = new CellWithPowerSupply();
+
+        boolean result = accumulator.canLocateAtPosition(cellWithPowerSupply);
+
+        assertTrue(result);
+    }
+
+    @Test
+    public void test_canLocateAtPosition_inCellWithBattery() {
+        Accumulator accumulator = new Accumulator(MAX_CHARGE, MAX_CHARGE);
+        Battery anotherBattery = new Battery(10);
+        CellWithPowerSupply cellWithPowerSupply = new CellWithPowerSupply();
+        cellWithPowerSupply.addObject(anotherBattery);
+
+        boolean result = accumulator.canLocateAtPosition(cellWithPowerSupply);
+
+        assertFalse(result);
+    }
+
+    @Test
+    public void test_canLocateAtPosition_alreadyHavePosition() {
+        Accumulator accumulator = new Accumulator(MAX_CHARGE, MAX_CHARGE);
+        CellWithPowerSupply cellWithPowerSupply = new CellWithPowerSupply();
+        cellWithPowerSupply.addObject(accumulator);
+
+        boolean result = accumulator.canLocateAtPosition(cellWithPowerSupply);
+
+        assertFalse(result);
+    }
+
+    @Test
+    public void test_canLocateAtPosition_inNotCellWithPowerSupply() {
+        Accumulator accumulator = new Accumulator(MAX_CHARGE, MAX_CHARGE);
+        Cell cell = new CellTestModel();
+
+        boolean result = accumulator.canLocateAtPosition(cell);
+
+        assertFalse(result);
+    }
+
+    @Test
     public void test_charge_fromIsNotRenewableSource() {
         int accumulatorCharge = 5;
         Accumulator accumulator = new Accumulator(accumulatorCharge, MAX_CHARGE);
         Accumulator sourceAccumulator = new Accumulator(MAX_CHARGE, MAX_CHARGE);
 
         accumulator.charge(sourceAccumulator);
-        
+
         assertEquals(accumulatorCharge, accumulator.getCharge());
         assertEquals(MAX_CHARGE, sourceAccumulator.getCharge());
     }
