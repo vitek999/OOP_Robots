@@ -18,6 +18,11 @@ class BatteryTest {
     }
 
     @Test
+    public void test_crete_withNegativeCharge() {
+        assertThrows(IllegalArgumentException.class, () -> new Battery(-1));
+    }
+
+    @Test
     public void test_Battery_createAndGetCharge() {
         assertEquals(DEFAULT_TEST_BATTERY_CHARGE, battery.getCharge());
     }
