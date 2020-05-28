@@ -368,7 +368,6 @@ class RobotTest {
 
         robot.performAction();
 
-        int expectedRobotCharge = DEFAULT_TEST_BATTERY_CHARGE - door.actionCost();
         assertEquals(0, robot.getCharge());
         assertFalse(door.isOpen());
     }
