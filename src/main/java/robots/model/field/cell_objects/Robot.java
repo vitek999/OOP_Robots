@@ -2,6 +2,8 @@ package robots.model.field.cell_objects;
 
 import org.jetbrains.annotations.NotNull;
 import robots.model.Direction;
+import robots.model.field.BetweenCellObject;
+import robots.model.field.between_cells_objects.BetweenCellObjectWithAction;
 import robots.model.field.cell_objects.power_supplies.PowerSupply;
 import robots.model.field.cells.CellWithPowerSupply;
 import robots.model.field.cells.ExitCell;
@@ -103,12 +105,6 @@ public class Robot extends MobileCellObject {
         return innerBattery.getMaxCharge();
     }
 
-    // !!! Зачем нужен метод???
-    // DONE: Удалил метод amountOfChargeForMove. Вместо него использую константу AMOUNT_OF_CHARGE_FOR_MOVE
-
-    // !!! Зачем нужен метод???
-    // DONE: Удалил метод amountOfChargeForSkipStep. Вместо него использую константу AMOUNT_OF_CHARGE_FOR_SKIP_STEP
-
     private boolean spendBatteryCharge(int amountOfCharge, boolean ignoreShortage) {
         boolean result = true;
 
@@ -124,6 +120,18 @@ public class Robot extends MobileCellObject {
         }
 
         return result;
+    }
+
+    public void performAction(@NotNull Direction direction) {
+        if(isActive) {
+            BetweenCellObject betweenCellObject = position.getNeighborBetweenCellObject(direction);
+            if(betweenCellObject instanceof BetweenCellObjectWithAction) {
+                BetweenCellObjectWithAction betweenCellObjectWithAction = (BetweenCellObjectWithAction) betweenCellObject;
+                int actionChargeAmount = betweenCellObjectWithAction.actionCost();
+                boolean isActionDone =  spendBatteryCharge(actionChargeAmount, false);
+                if(isActionDone) betweenCellObjectWithAction.perform();
+            }
+        }
     }
 
     // -------------------- События --------------------
