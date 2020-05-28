@@ -6,7 +6,6 @@ import robots.model.Direction;
 import robots.model.field.cell_objects.power_supplies.Battery;
 import robots.model.field.cell_objects.Robot;
 import robots.model.field.between_cells_objects.WallSegment;
-import robots.model.field.cells.CellWithPowerSupply;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -21,7 +20,7 @@ class CellTest {
     @BeforeEach
     public void testSetup() {
 
-        cell = new CellWithPowerSupply();
+        cell = new CellTestModel();
     }
 
     @Test
@@ -71,27 +70,8 @@ class CellTest {
     }
 
     @Test
-    public void test_setBattery() {
-        Battery battery = new Battery(10);
-
-        cell.addObject(battery);
-
-        assertEquals(battery, ((CellWithPowerSupply) cell).getPowerSupply());
-    }
-
-    @Test
-    public void test_takeBattery(){
-        Battery battery = new Battery(10);
-
-        cell.addObject(battery);
-
-        assertEquals(battery, cell.takeObject(((CellWithPowerSupply) cell).getPowerSupply()));
-        assertNull(((CellWithPowerSupply) cell).getPowerSupply());
-    }
-
-    @Test
     public void test_setNeighborCell() {
-        Cell neighborCell = new CellWithPowerSupply();
+        Cell neighborCell = new CellTestModel();
         Direction direction = Direction.NORTH;
 
         cell.setNeighbor(neighborCell, direction);
@@ -103,7 +83,7 @@ class CellTest {
 
     @Test
     public void test_setNeighborCell_doubleSided() {
-        Cell neighborCell = new CellWithPowerSupply();
+        Cell neighborCell = new CellTestModel();
         Direction direction = Direction.NORTH;
 
         cell.setNeighbor(neighborCell, direction);
@@ -114,8 +94,8 @@ class CellTest {
 
     @Test
     public void test_setNeighborCell_twoTimesInOneDirection() {
-        Cell neighborCell = new CellWithPowerSupply();
-        Cell anotherCell = new CellWithPowerSupply();
+        Cell neighborCell = new CellTestModel();
+        Cell anotherCell = new CellTestModel();
         Direction direction = Direction.NORTH;
 
         cell.setNeighbor(neighborCell, direction);
@@ -126,7 +106,7 @@ class CellTest {
 
     @Test
     public void test_setNeighborCell_alreadyNeighborWithAnotherDirection() {
-        Cell neighborCell = new CellWithPowerSupply();
+        Cell neighborCell = new CellTestModel();
         Direction direction = Direction.NORTH;
         Direction anotherDirection = Direction.SOUTH;
 
@@ -146,7 +126,7 @@ class CellTest {
 
     @Test
     public void test_isNeighbor_WhenNeighborCellExists() {
-        Cell neighborCell = new CellWithPowerSupply();
+        Cell neighborCell = new CellTestModel();
         Direction direction = Direction.NORTH;
 
         cell.setNeighbor(neighborCell, direction);
@@ -155,7 +135,7 @@ class CellTest {
 
     @Test
     public void test_isNeighbor_WhenNeighborCellNotExists() {
-        Cell neighborCell = new CellWithPowerSupply();
+        Cell neighborCell = new CellTestModel();
 
         assertNull(cell.getNeighborDirection(neighborCell));
     }
@@ -196,7 +176,7 @@ class CellTest {
     @Test
     public void test_setWall_inNeighborCells() {
         Direction direction = Direction.NORTH;
-        Cell neighborCell = new CellWithPowerSupply();
+        Cell neighborCell = new CellTestModel();
         WallSegment wallSegment = new WallSegment();
         cell.setNeighbor(neighborCell, direction);
 
@@ -211,7 +191,7 @@ class CellTest {
     @Test
     public void test_setWall_InNeighborCellsWithSameDirectionAndAnotherWallSegment() {
         Direction direction = Direction.NORTH;
-        Cell neighborCell = new CellWithPowerSupply();
+        Cell neighborCell = new CellTestModel();
         cell.setNeighbor(neighborCell, direction);
         WallSegment wallSegment = new WallSegment();
         WallSegment anotherWallSegment = new WallSegment();
@@ -228,7 +208,7 @@ class CellTest {
     @Test
     public void test_setWall_InNeighborCellsWithSameWallSegmentAndAnotherDirection() {
         Direction direction = Direction.NORTH;
-        Cell neighborCell = new CellWithPowerSupply();
+        Cell neighborCell = new CellTestModel();
         cell.setNeighbor(neighborCell, direction);
         WallSegment wallSegment = new WallSegment();
         Direction anotherDirection = direction.getOppositeDirection();

@@ -22,11 +22,14 @@ public abstract class Cell {
         objectList.add(cellObject);
     }
 
-    public CellObject takeObject(@NotNull CellObject cellObject) {
-        if(!objectList.contains(cellObject)) throw new IllegalArgumentException();
-        objectList.remove(cellObject);
-        cellObject.setPosition(null);
-        return cellObject;
+    public CellObject takeObject(CellObject cellObject) {
+        CellObject result = null;
+        if(objectList.contains(cellObject)) {
+            objectList.remove(cellObject);
+            cellObject.setPosition(null);
+            result = cellObject;
+        }
+        return result;
     }
 
     public MobileCellObject getMobileCellObject() {
