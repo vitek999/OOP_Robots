@@ -80,7 +80,8 @@ public class AccumulatorTest {
         Accumulator accumulator = new Accumulator(accumulatorCharge, MAX_CHARGE);
         Accumulator sourceAccumulator = new Accumulator(MAX_CHARGE, MAX_CHARGE);
 
-        assertThrows(IllegalArgumentException.class, () -> accumulator.charge(sourceAccumulator));
+        accumulator.charge(sourceAccumulator);
+        
         assertEquals(accumulatorCharge, accumulator.getCharge());
         assertEquals(MAX_CHARGE, sourceAccumulator.getCharge());
     }
