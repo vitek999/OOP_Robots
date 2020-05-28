@@ -8,6 +8,8 @@ public abstract class PowerSupply extends CellObject {
     protected int maxCharge;
 
     public PowerSupply(int charge, int maxCharge) {
+        if(charge < 0 || maxCharge < 0 || charge > maxCharge) throw new IllegalArgumentException();
+
         this.charge = charge;
         this.maxCharge = maxCharge;
     }
