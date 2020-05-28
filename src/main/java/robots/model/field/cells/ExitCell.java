@@ -19,7 +19,7 @@ public class ExitCell extends Cell implements ImmutableExitCell {
 
     private static final long SLEEP_TIME = 100L;
 
-    private List<Robot> teleportedRobots = new ArrayList<>();
+    private final List<Robot> teleportedRobots = new ArrayList<>();
 
     @Override
     public List<Robot> getTeleportedRobots() {

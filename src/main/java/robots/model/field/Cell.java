@@ -9,7 +9,7 @@ import java.util.*;
 
 public abstract class Cell implements ImmutableCell {
 
-    private UUID uuid = UUID.randomUUID();
+    private final UUID uuid = UUID.randomUUID();
 
     /**
      * Cell objects

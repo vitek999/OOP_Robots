@@ -13,12 +13,15 @@ import robots.model.field.Cell;
 import robots.model.field.MobileCellObject;
 
 import java.util.ArrayList;
+import java.util.Objects;
+import java.util.UUID;
 
 public class Robot extends MobileCellObject {
 
     private static final int AMOUNT_OF_CHARGE_FOR_MOVE = 1;
     private static final int AMOUNT_OF_CHARGE_FOR_SKIP_STEP = 2;
 
+    private final UUID uuid = UUID.randomUUID();
     private PowerSupply innerBattery;
     private boolean isActive;
 
@@ -179,4 +182,22 @@ public class Robot extends MobileCellObject {
             listener.robotChangedBattery(event);
         }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Robot robot = (Robot) o;
+        return isActive == robot.isActive &&
+                Objects.equals(uuid, robot.uuid) &&
+                Objects.equals(innerBattery, robot.innerBattery) &&
+                Objects.equals(robotListListener, robot.robotListListener);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(uuid, innerBattery, isActive, robotListListener);
+    }
+
+
 }
