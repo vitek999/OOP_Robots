@@ -6,9 +6,11 @@ import org.junit.jupiter.api.Test;
 import robots.model.Direction;
 import robots.model.event.RobotActionEvent;
 import robots.model.event.RobotActionListener;
+import robots.model.field.cell_objects.power_supplies.Accumulator;
 import robots.model.field.cell_objects.power_supplies.Battery;
 import robots.model.field.cell_objects.Robot;
 import robots.model.field.between_cells_objects.WallSegment;
+import robots.model.field.cell_objects.power_supplies.Windmill;
 import robots.model.field.cells.CellWithPowerSupply;
 
 import java.util.ArrayList;
@@ -258,6 +260,80 @@ class RobotTest {
 
         assertEquals(robotBattery.getCharge(), robot.getCharge());
         assertTrue(events.isEmpty());
+    }
+
+    @Test
+    public void test_chargePowerSupply_chargeAccumulatorByRenewableSource() {
+        cell.addObject(robot);
+        Windmill windmill = new Windmill(DEFAULT_TEST_BATTERY_CHARGE, DEFAULT_TEST_BATTERY_CHARGE);
+        neighborCell.addObject(windmill);
+        int accumulatorCharge = 2;
+        robot.setPowerSupply(new Accumulator(accumulatorCharge, DEFAULT_TEST_BATTERY_CHARGE));
+
+        robot.chargePowerSupply();
+
+        assertEquals(DEFAULT_TEST_BATTERY_CHARGE, robot.getCharge());
+        assertEquals(2, windmill.getCharge());
+    }
+
+    @Test
+    public void test_chargePowerSupply_chargeAccumulatorByNotRenewableSource() {
+        cell.addObject(robot);
+        Accumulator accumulator = new Accumulator(DEFAULT_TEST_BATTERY_CHARGE, DEFAULT_TEST_BATTERY_CHARGE);
+        neighborCell.addObject(accumulator);
+        int accumulatorCharge = 2;
+        robot.setPowerSupply(new Accumulator(accumulatorCharge, DEFAULT_TEST_BATTERY_CHARGE));
+
+        robot.chargePowerSupply();
+
+        assertEquals(accumulatorCharge, robot.getCharge());
+        assertEquals(DEFAULT_TEST_BATTERY_CHARGE, accumulator.getCharge());
+    }
+
+    @Test
+    public void test_chargePowerSupply_neighborCellsWithoutPowerSupplies() {
+        cell.addObject(robot);
+        int accumulatorCharge = 2;
+        robot.setPowerSupply(new Accumulator(accumulatorCharge, DEFAULT_TEST_BATTERY_CHARGE));
+
+        robot.chargePowerSupply();
+
+        assertEquals(accumulatorCharge, robot.getCharge());
+    }
+
+    @Test
+    public void test_chargePowerSupply_fromSeveralPowerSupplies() {
+        cell.addObject(robot);
+        int windmillCharge = 2;
+        Windmill firstWindmill = new Windmill(windmillCharge, DEFAULT_TEST_BATTERY_CHARGE);
+        neighborCell.addObject(firstWindmill);
+        Cell secondNeighbor = new CellWithPowerSupply();
+        cell.setNeighbor(secondNeighbor, Direction.SOUTH);
+        Windmill secondWindmill = new Windmill(windmillCharge, DEFAULT_TEST_BATTERY_CHARGE);
+        secondNeighbor.addObject(secondWindmill);
+        int accumulatorCharge = 2;
+        robot.setPowerSupply(new Accumulator(accumulatorCharge, DEFAULT_TEST_BATTERY_CHARGE));
+
+        robot.chargePowerSupply();
+
+        int expectedRobotCharge = accumulatorCharge + 2*windmillCharge;
+        assertEquals(expectedRobotCharge, robot.getCharge());
+        assertEquals(0, firstWindmill.getCharge());
+        assertEquals(0, secondWindmill.getCharge());
+    }
+
+    @Test
+    public void test_chargePowerSupply_byEmptySource() {
+        cell.addObject(robot);
+        Windmill windmill = new Windmill(0, DEFAULT_TEST_BATTERY_CHARGE);
+        neighborCell.addObject(windmill);
+        int accumulatorCharge = 2;
+        robot.setPowerSupply(new Accumulator(accumulatorCharge, DEFAULT_TEST_BATTERY_CHARGE));
+
+        robot.chargePowerSupply();
+
+        assertEquals(accumulatorCharge, robot.getCharge());
+        assertEquals(0, windmill.getCharge());
     }
 }
 

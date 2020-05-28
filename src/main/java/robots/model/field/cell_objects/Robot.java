@@ -80,9 +80,9 @@ public class Robot extends MobileCellObject {
         if(innerBattery instanceof RechargeablePowerSupply) {
             Map<Direction, Cell> neighborCells = position.getNeighborCells();
             for (Map.Entry<Direction, Cell> item : neighborCells.entrySet()) {
-                if (item instanceof CellWithPowerSupply) {
-                    PowerSupply cellPowerSupply = ((CellWithPowerSupply) item).getPowerSupply();
-                    ((RechargeablePowerSupply) innerBattery).charge(cellPowerSupply);
+                if (item.getValue() instanceof CellWithPowerSupply) {
+                    PowerSupply cellPowerSupply = ((CellWithPowerSupply) item.getValue()).getPowerSupply();
+                    if(cellPowerSupply != null) ((RechargeablePowerSupply) innerBattery).charge(cellPowerSupply);
                 }
             }
         }
