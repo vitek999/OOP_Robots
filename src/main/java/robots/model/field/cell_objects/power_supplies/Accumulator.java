@@ -12,6 +12,7 @@ public class Accumulator extends RechargeablePowerSupply implements Portable {
 
     @Override
     public boolean canLocateAtPosition(@NotNull Cell cell) {
-        return (cell instanceof CellWithPowerSupply) && ((CellWithPowerSupply) cell).getPowerSupply() == null;
+        return position == null && (cell instanceof CellWithPowerSupply)
+                && ((CellWithPowerSupply) cell).getPowerSupply() == null;
     }
 }

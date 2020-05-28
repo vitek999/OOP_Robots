@@ -1,4 +1,4 @@
-package robots.model.field;
+package robots.model.field.cell_objects.power_supplies;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
