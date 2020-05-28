@@ -13,15 +13,16 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-public class ExitCell extends Cell {
+public class ExitCell extends Cell implements ImmutableExitCell {
 
     private static final long SLEEP_TIME = 100L;
 
     private List<Robot> teleportedRobots = new ArrayList<>();
 
+    @Override
     public List<Robot> getTeleportedRobots() {
         return Collections.unmodifiableList(teleportedRobots); // !!! Можно использовать неизменяемый контейнер
-                                                               // DONE: Возвращаю неизменяемый контейнер
+        // DONE: Возвращаю неизменяемый контейнер
     }
 
     @Override
