@@ -20,7 +20,7 @@ public class Field {
     private final int width;
     private final int height;
 
-    private final Cell exitCell; // !!! Нужна позиция, а не сама ячейка??
+    private final ExitCell exitCell; // !!! Нужна позиция, а не сама ячейка??
                                  // DONE: Вместо позиции выхода храню ячейку
 
     public Field(int width, int height, @NotNull Point exitPoint) {
@@ -33,7 +33,7 @@ public class Field {
         this.height = height;
 
         buildField(exitPoint);
-        this.exitCell = getCell(exitPoint);
+        this.exitCell = (ExitCell) getCell(exitPoint);
 
         // Subscribe on exit cell
         ((ExitCell) getCell(exitPoint)).addExitCellActionListener(new ExitCellObserver());
@@ -78,7 +78,7 @@ public class Field {
     }
 
     public List<Robot> getTeleportedRobots() {
-        return ((ExitCell) exitCell).getTeleportedRobots();
+        return exitCell.getTeleportedRobots();
     }
 
     @Override
