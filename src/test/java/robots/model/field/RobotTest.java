@@ -9,7 +9,6 @@ import robots.model.event.RobotActionListener;
 import robots.model.field.cell_objects.power_supplies.Battery;
 import robots.model.field.cell_objects.Robot;
 import robots.model.field.between_cells_objects.WallSegment;
-import robots.model.field.cell_objects.power_supplies.PowerSupply;
 import robots.model.field.cells.CellWithPowerSupply;
 
 import java.util.ArrayList;
@@ -21,8 +20,8 @@ class RobotTest {
 
     private enum EVENT {ROBOT_MOVED, ROBOT_SKIP_STEP}
 
-    private List<EVENT> events = new ArrayList<>();
-    private List<EVENT> expectedEvents = new ArrayList<>();
+    private final List<EVENT> events = new ArrayList<>();
+    private final List<EVENT> expectedEvents = new ArrayList<>();
 
     private class EventsListener implements RobotActionListener {
 
