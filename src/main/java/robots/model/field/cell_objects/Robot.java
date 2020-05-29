@@ -2,17 +2,19 @@ package robots.model.field.cell_objects;
 
 import org.jetbrains.annotations.NotNull;
 import robots.model.Direction;
-import robots.model.field.BetweenCellObject;
-import robots.model.field.between_cells_objects.BetweenCellObjectWithAction;
-import robots.model.field.between_cells_objects.Door;
-import robots.model.field.cell_objects.power_supplies.PowerSupply;
-import robots.model.field.cell_objects.power_supplies.RechargeablePowerSupply;
-import robots.model.field.cells.CellWithPowerSupply;
-import robots.model.field.cells.ExitCell;
 import robots.model.event.RobotActionEvent;
 import robots.model.event.RobotActionListener;
+import robots.model.field.BetweenCellObject;
 import robots.model.field.Cell;
 import robots.model.field.MobileCellObject;
+import robots.model.field.between_cells_objects.BetweenCellObjectWithAction;
+import robots.model.field.between_cells_objects.Door;
+import robots.model.field.cell_objects.power_supplies.Portable;
+import robots.model.field.cell_objects.power_supplies.PowerSupply;
+import robots.model.field.cell_objects.power_supplies.RechargeablePowerSupply;
+import robots.model.field.cell_objects.power_supplies.Windmill;
+import robots.model.field.cells.CellWithPowerSupply;
+import robots.model.field.cells.ExitCell;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -66,12 +68,16 @@ public class Robot extends MobileCellObject {
     @Override
     public boolean canLocateAtPosition(@NotNull Cell newPosition) { // !!! Странное название - почему "могу оставаться"?
         // DONE Переименовал метод canStayAtPosition -> canLocateAtPosition
+        boolean withCorrectPowerSupply = !(newPosition instanceof CellWithPowerSupply) || !(((CellWithPowerSupply) newPosition).getPowerSupply() instanceof Windmill);
+        if(!withCorrectPowerSupply) return false;
         if ((newPosition instanceof ExitCell) && (((ExitCell) newPosition).getTeleportedRobots().contains(this))) return false;
         return newPosition.getMobileCellObject() == null;
     }
 
     public void changePowerSupply() {
-        if (isActive && (position instanceof CellWithPowerSupply) && ((CellWithPowerSupply) position).getPowerSupply() != null) { // !!! Не соответствует диаграмме - ранее активность робота запрашивали у игры
+        if (isActive && (position instanceof CellWithPowerSupply)
+                && ((CellWithPowerSupply) position).getPowerSupply() != null
+                && (((CellWithPowerSupply) position).getPowerSupply() instanceof Portable)) { // !!! Не соответствует диаграмме - ранее активность робота запрашивали у игры
             // DONE: Исправил диаграмму смены батарейки, теперь робот не узнаёт свою актиыность у игры.
             innerBattery = (PowerSupply) position.takeObject(((CellWithPowerSupply) position).getPowerSupply());
             fireRobotChangeBattery(innerBattery);
@@ -79,12 +85,12 @@ public class Robot extends MobileCellObject {
     }
 
     public void chargePowerSupply() {
-        if(isActive && innerBattery instanceof RechargeablePowerSupply) {
+        if (isActive && innerBattery instanceof RechargeablePowerSupply) {
             Map<Direction, Cell> neighborCells = position.getNeighborCells();
             for (Map.Entry<Direction, Cell> item : neighborCells.entrySet()) {
                 if (item.getValue() instanceof CellWithPowerSupply) {
                     PowerSupply cellPowerSupply = ((CellWithPowerSupply) item.getValue()).getPowerSupply();
-                    if(cellPowerSupply != null) ((RechargeablePowerSupply) innerBattery).charge(cellPowerSupply);
+                    if (cellPowerSupply != null) ((RechargeablePowerSupply) innerBattery).charge(cellPowerSupply);
                 }
             }
         }
@@ -99,7 +105,7 @@ public class Robot extends MobileCellObject {
 
     public void setActive(boolean value) { // !!! Не соответствует диаграмме - ранее активность робота запрашивали у игры
         // DONE: Добавил метод на диаграммуы.
-        if(getCharge() > 0 || !value) {
+        if (getCharge() > 0 || !value) {
             isActive = value;
             fireRobotChangeActive();
         }
@@ -142,9 +148,9 @@ public class Robot extends MobileCellObject {
     }
 
     public void performAction() {
-        if(isActive) {
+        if (isActive) {
             Map<Direction, BetweenCellObject> neighborBetweenCellObjects = position.getNeighborBetweenCellObjects();
-            for(Map.Entry<Direction, BetweenCellObject> item : neighborBetweenCellObjects.entrySet()) {
+            for (Map.Entry<Direction, BetweenCellObject> item : neighborBetweenCellObjects.entrySet()) {
                 BetweenCellObject betweenCellObject = item.getValue();
                 if (betweenCellObject instanceof BetweenCellObjectWithAction) {
                     BetweenCellObjectWithAction betweenCellObjectWithAction = (BetweenCellObjectWithAction) betweenCellObject;

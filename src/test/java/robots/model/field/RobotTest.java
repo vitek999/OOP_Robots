@@ -7,11 +7,9 @@ import robots.model.Direction;
 import robots.model.event.RobotActionEvent;
 import robots.model.event.RobotActionListener;
 import robots.model.field.between_cells_objects.Door;
-import robots.model.field.cell_objects.power_supplies.Accumulator;
-import robots.model.field.cell_objects.power_supplies.Battery;
+import robots.model.field.cell_objects.power_supplies.*;
 import robots.model.field.cell_objects.Robot;
 import robots.model.field.between_cells_objects.WallSegment;
-import robots.model.field.cell_objects.power_supplies.Windmill;
 import robots.model.field.cells.CellWithPowerSupply;
 
 import java.util.ArrayList;
@@ -438,7 +436,37 @@ class RobotTest {
         assertEquals(expectedEvents, events);
     }
     // TODO: canStay в ячейке с мельницей
-    // TODO: changeBattery если она Portable
-    // TODO: changeBattery если она не Portable
+    @Test
+    public void test_canLocate_atCellWitWindmill() {
+        cell.addObject(new Windmill(DEFAULT_TEST_BATTERY_CHARGE, DEFAULT_TEST_BATTERY_CHARGE));
+
+        assertFalse(robot.canLocateAtPosition(cell));
+    }
+
+    @Test
+    public void test_changePowerSupply_isPortable() {
+        cell.addObject(robot);
+        int chargeOfPortableBattery = 5;
+        Battery portableBattery = new Battery(chargeOfPortableBattery);
+        cell.addObject(portableBattery);
+
+        robot.changePowerSupply();
+
+        assertNull(((CellWithPowerSupply)cell).getPowerSupply());
+        assertEquals(chargeOfPortableBattery, robot.getCharge());
+    }
+
+    @Test
+    public void test_changePowerSupply_isNotPortable() {
+        cell.addObject(robot);
+        int chargeOfPortableBattery = 5;
+        NotPortablePowerSupply notPortablePowerSupply = new NotPortablePowerSupply(chargeOfPortableBattery, DEFAULT_TEST_BATTERY_CHARGE);
+        cell.addObject(notPortablePowerSupply);
+
+        robot.changePowerSupply();
+
+        assertEquals(notPortablePowerSupply,((CellWithPowerSupply)cell).getPowerSupply());
+        assertEquals(DEFAULT_TEST_BATTERY_CHARGE, robot.getCharge());
+    }
 }
 
