@@ -2,11 +2,11 @@ package robots.utils;
 
 import java.util.Objects;
 
-public class Pare <K, V> {
-    private K key;
-    private V value;
+public class Pair<K, V> {
+    private final K key;
+    private final V value;
 
-    public Pare(K key, V value) {
+    public Pair(K key, V value) {
         this.key = key;
         this.value = value;
     }
@@ -23,7 +23,7 @@ public class Pare <K, V> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Pare<?, ?> pare = (Pare<?, ?>) o;
+        Pair<?, ?> pare = (Pair<?, ?>) o;
         return Objects.equals(key, pare.key) &&
                 Objects.equals(value, pare.value);
     }
