@@ -32,6 +32,7 @@ public class WidgetFactory {
     private final Map<CellObject, CellItemWidget> cellObjects = new HashMap<>();
     private final Map<BetweenCellObject, BlockWidget> betweenCellObjects = new HashMap<>();
     private final List<Color> usedColors = new ArrayList<>();
+
     public CellWidget create(@NotNull Cell cell) {
         if(cells.containsKey(cell)) return cells.get(cell);
 
@@ -59,6 +60,8 @@ public class WidgetFactory {
         return cells.get(cell);
     }
 
+    public void remove(@NotNull Cell cell) { cells.remove(cell); }
+
     public CellItemWidget create(@NotNull CellObject cellObject) {
         if(cellObjects.containsKey(cellObject)) return cellObjects.get(cellObject);
 
@@ -85,6 +88,8 @@ public class WidgetFactory {
         return cellObjects.get(cellObject);
     }
 
+    public void remove(@NotNull CellObject cellObject) { cellObjects.remove(cellObject); }
+
     public BlockWidget create(@NotNull BetweenCellObject betweenCellObject, Orientation orientation) {
         if (betweenCellObjects.containsKey(betweenCellObject)) return betweenCellObjects.get(betweenCellObject);
 
@@ -105,4 +110,6 @@ public class WidgetFactory {
     public BlockWidget getWidget(@NotNull BetweenCellObject betweenCellObject) {
         return betweenCellObjects.get(betweenCellObject);
     }
+
+    public void remove(@NotNull BetweenCellObject betweenCellObject) { betweenCellObjects.remove(betweenCellObject); }
 }

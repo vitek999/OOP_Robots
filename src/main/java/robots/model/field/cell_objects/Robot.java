@@ -208,21 +208,4 @@ public class Robot extends MobileCellObject {
         }
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Robot robot = (Robot) o;
-        return isActive == robot.isActive &&
-                Objects.equals(uuid, robot.uuid) &&
-                Objects.equals(innerBattery, robot.innerBattery) &&
-                Objects.equals(robotListListener, robot.robotListListener);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(uuid, innerBattery, isActive, robotListListener);
-    }
-
-
 }

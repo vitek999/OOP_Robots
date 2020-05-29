@@ -8,8 +8,6 @@ import java.util.*;
 
 public abstract class Cell {
 
-    private final UUID uuid = UUID.randomUUID();
-
     /**
      * Cell objects
      */
@@ -95,24 +93,5 @@ public abstract class Cell {
         betweenCellObject.setPosition(position);
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Cell cell = (Cell) o;
-        return Objects.equals(uuid, cell.uuid) &&
-                Objects.equals(objectList, cell.objectList) &&
-                Objects.equals(neighborCells, cell.neighborCells) &&
-                Objects.equals(neighborBetweenCellObjects, cell.neighborBetweenCellObjects);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(uuid, objectList, neighborCells.size(), neighborBetweenCellObjects.size());
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
-    }
 }

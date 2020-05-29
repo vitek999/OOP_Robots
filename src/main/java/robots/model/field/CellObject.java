@@ -2,6 +2,8 @@ package robots.model.field;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
+
 public abstract class CellObject {
 
     protected Cell position;
@@ -17,4 +19,5 @@ public abstract class CellObject {
     }
 
     public abstract boolean canLocateAtPosition(@NotNull Cell cell);
+
 }
