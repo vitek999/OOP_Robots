@@ -1,6 +1,9 @@
 package robots.model.field.cell_objects.power_supplies;
 
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
+import robots.model.event.WindmillActionEvent;
+import robots.model.event.WindmillActionListener;
 import robots.model.field.Cell;
 import robots.model.field.CellTestModel;
 import robots.model.field.MobileCellObject;
@@ -15,34 +18,61 @@ public class WindmillTest {
     private final static int UPDATE_CHARGE_DELTA = 2;
     private final static int MAX_CHARGE = 10;
 
+    private int eventCount = 0;
+
+    private class WindmillObserver implements WindmillActionListener {
+
+        @Override
+        public void windmillChargeIsUpdated(@NotNull WindmillActionEvent event) {
+            eventCount++;
+        }
+    }
+
     @Test
     public void test_update_deltaLessThanDifferenceBetweenChargeAndMaxCharge() {
         int windmillCharge = 5;
         Windmill windmill = new Windmill(windmillCharge, MAX_CHARGE);
+        windmill.addWindmillActionListener(new WindmillObserver());
 
         windmill.update();
 
         assertEquals(windmillCharge + UPDATE_CHARGE_DELTA, windmill.getCharge());
+        assertEquals(1, eventCount);
     }
 
     @Test
     public void test_update_deltaEqualsToDifferenceBetweenChargeAndMaxCharge() {
         int windmillCharge = MAX_CHARGE - UPDATE_CHARGE_DELTA;
         Windmill windmill = new Windmill(windmillCharge, MAX_CHARGE);
+        windmill.addWindmillActionListener(new WindmillObserver());
 
         windmill.update();
 
         assertEquals(MAX_CHARGE, windmill.getCharge());
+        assertEquals(1, eventCount);
     }
 
     @Test
     public void test_update_deltaMoreThanDifferenceBetweenChargeAndMaxCharge() {
         int windMillCharge = 9;
         Windmill windmill = new Windmill(windMillCharge, MAX_CHARGE);
+        windmill.addWindmillActionListener(new WindmillObserver());
 
         windmill.update();
 
         assertEquals(MAX_CHARGE, windmill.getCharge());
+        assertEquals(1, eventCount);
+    }
+
+    @Test
+    public void test_update_windmillIsFull() {
+        Windmill windmill = new Windmill(MAX_CHARGE, MAX_CHARGE);
+        windmill.addWindmillActionListener(new WindmillObserver());
+
+        windmill.update();
+
+        assertEquals(MAX_CHARGE, windmill.getCharge());
+        assertEquals(0, eventCount);
     }
 
     @Test
