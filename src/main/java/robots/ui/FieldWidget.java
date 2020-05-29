@@ -126,6 +126,7 @@ public class FieldWidget extends JPanel {
             CellWidget to = widgetFactory.getWidget(event.getToCell());
             from.removeItem(robotWidget);
             to.addItem(robotWidget);
+            robotWidget.requestFocus();
         }
 
         @Override
