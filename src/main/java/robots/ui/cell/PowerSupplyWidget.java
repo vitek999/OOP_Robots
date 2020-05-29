@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public abstract class PowerSupplyWidget extends CellItemWidget {
 
-    private final PowerSupply powerSupply;
+    protected final PowerSupply powerSupply;
 
     public PowerSupplyWidget(PowerSupply powerSupply) {
         this.powerSupply = powerSupply;

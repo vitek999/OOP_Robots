@@ -7,6 +7,7 @@ import robots.model.field.between_cells_objects.Door;
 import robots.model.field.cell_objects.power_supplies.Battery;
 import robots.model.field.cell_objects.Robot;
 import robots.model.field.between_cells_objects.WallSegment;
+import robots.model.field.cell_objects.power_supplies.Windmill;
 
 public class SmallLabirint extends Labirint {
 
@@ -44,6 +45,7 @@ public class SmallLabirint extends Labirint {
         Battery battery = new Battery(DEFAULT_BATTERY_CHARGE);
 
         field.getCell(new Point(1, 2)).addObject(battery);
+        field.getCell(new Point(0,0)).addObject(new Windmill(0, 10));
     }
 
     @Override

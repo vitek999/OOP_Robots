@@ -76,7 +76,7 @@ public class WidgetFactory {
         } else if(cellObject instanceof Accumulator) {
             // TODO: create accumulator widget
         } else if(cellObject instanceof Windmill) {
-            // TODO: create accumulator widget
+            createdWidget = new WindmillWidget((Windmill) cellObject);
         } else {
             throw new IllegalArgumentException();
         }
