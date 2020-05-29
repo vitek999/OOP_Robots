@@ -4,6 +4,7 @@ import org.jetbrains.annotations.NotNull;
 import robots.model.Direction;
 import robots.model.field.BetweenCellObject;
 import robots.model.field.between_cells_objects.BetweenCellObjectWithAction;
+import robots.model.field.between_cells_objects.Door;
 import robots.model.field.cell_objects.power_supplies.PowerSupply;
 import robots.model.field.cell_objects.power_supplies.RechargeablePowerSupply;
 import robots.model.field.cells.CellWithPowerSupply;
@@ -53,8 +54,9 @@ public class Robot extends MobileCellObject {
         Cell result = null;
 
         Cell neighborCell = position.getNeighborCell(direction);
-        if (neighborCell != null && canLocateAtPosition(neighborCell)
-                && position.getNeighborBetweenCellObject(direction) == null) {
+        BetweenCellObject betweenCellObject = position.getNeighborBetweenCellObject(direction);
+        if (neighborCell != null && canLocateAtPosition(neighborCell) && ((betweenCellObject instanceof Door &&
+                ((Door) betweenCellObject).isOpen()) || betweenCellObject == null)) {
             result = neighborCell;
         }
 

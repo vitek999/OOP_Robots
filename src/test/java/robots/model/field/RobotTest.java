@@ -405,5 +405,40 @@ class RobotTest {
         assertTrue(firstDoor.isOpen());
         assertFalse(secondDoor.isOpen());
     }
+
+    @Test
+    public void test_move_toDirectionWithClosedDoor() {
+        cell.addObject(robot);
+        cell.setWall(new Door(false), Direction.NORTH);
+
+        robot.move(Direction.NORTH);
+
+
+        assertEquals(robot, cell.getMobileCellObject());
+        assertEquals(cell, robot.getPosition());
+        assertNull(neighborCell.getMobileCellObject());
+        assertEquals(DEFAULT_TEST_BATTERY_CHARGE, robot.getCharge());
+        assertEquals(expectedEvents, events);
+    }
+
+    @Test
+    public void test_move_toDirectionWithOpenedDoor() {
+        cell.addObject(robot);
+        cell.setWall(new Door(true), Direction.NORTH);
+
+        robot.move(Direction.NORTH);
+
+
+        expectedEvents.add(EVENT.ROBOT_MOVED);
+
+        assertEquals(robot, neighborCell.getMobileCellObject());
+        assertEquals(neighborCell, robot.getPosition());
+        assertNull(cell.getMobileCellObject());
+        assertEquals(DEFAULT_TEST_BATTERY_CHARGE - AMOUNT_OF_CHARGE_FOR_MOVE, robot.getCharge());
+        assertEquals(expectedEvents, events);
+    }
+    // TODO: canStay в ячейке с мельницей
+    // TODO: changeBattery если она Portable
+    // TODO: changeBattery если она не Portable
 }
 
