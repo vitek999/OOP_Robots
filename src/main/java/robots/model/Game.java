@@ -85,6 +85,7 @@ public class Game {
         setStatus(status);
         if(status == GameStatus.GAME_IS_ON) {
             passMoveNextRobot();
+            gameField.updateRenewablePowerSupplies();
         } else {
             setActiveRobot(null);
         }
