@@ -14,10 +14,7 @@ import robots.model.field.between_cells_objects.WallSegment;
 import robots.ui.block.BetweenCellsWidget;
 import robots.ui.block.BlockWidget;
 import robots.ui.block.WallWidget;
-import robots.ui.cell.BatteryWidget;
-import robots.ui.cell.CellItemWidget;
-import robots.ui.cell.CellWidget;
-import robots.ui.cell.RobotWidget;
+import robots.ui.cell.*;
 
 import javax.swing.*;
 import java.util.List;
@@ -144,12 +141,20 @@ public class FieldWidget extends JPanel {
         }
 
         @Override
-        public void robotChangedBattery(@NotNull RobotActionEvent event) {
+        public void robotChangedPowerSupply(@NotNull RobotActionEvent event) {
             Robot robot = event.getRobot();
             CellWidget cellWidget = widgetFactory.getWidget(robot.getPosition());
             CellItemWidget batteryWidget = widgetFactory.getWidget(event.getPowerSupply());
             cellWidget.removeItem(batteryWidget);
             widgetFactory.remove(event.getPowerSupply());
+        }
+
+        @Override
+        public void robotChargedPowerSupply(@NotNull RobotActionEvent event) {
+            CellItemWidget powerSupplyWidget = widgetFactory.getWidget(event.getPowerSupply());
+            CellItemWidget robotWidget = widgetFactory.getWidget(event.getRobot());
+            powerSupplyWidget.repaint();
+            robotWidget.repaint();
         }
     }
 

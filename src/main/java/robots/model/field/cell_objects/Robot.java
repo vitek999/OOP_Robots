@@ -89,7 +89,10 @@ public class Robot extends MobileCellObject {
             for (Map.Entry<Direction, Cell> item : neighborCells.entrySet()) {
                 if (item.getValue() instanceof CellWithPowerSupply) {
                     PowerSupply cellPowerSupply = ((CellWithPowerSupply) item.getValue()).getPowerSupply();
-                    if (cellPowerSupply != null) ((RechargeablePowerSupply) innerPowerSupply).charge(cellPowerSupply);
+                    if (cellPowerSupply != null) {
+                        ((RechargeablePowerSupply) innerPowerSupply).charge(cellPowerSupply);
+                        fireRobotChargedPowerSupply(cellPowerSupply);
+                    }
                 }
             }
         }
@@ -207,7 +210,16 @@ public class Robot extends MobileCellObject {
             RobotActionEvent event = new RobotActionEvent(listener);
             event.setRobot(this);
             event.setPowerSupply(changedPowerSupply);
-            listener.robotChangedBattery(event);
+            listener.robotChangedPowerSupply(event);
+        }
+    }
+
+    private void fireRobotChargedPowerSupply(@NotNull PowerSupply powerSupply) {
+        for (RobotActionListener listener : robotListListener) {
+            RobotActionEvent event = new RobotActionEvent(listener);
+            event.setRobot(this);
+            event.setPowerSupply(powerSupply);
+            listener.robotChargedPowerSupply(event);
         }
     }
 

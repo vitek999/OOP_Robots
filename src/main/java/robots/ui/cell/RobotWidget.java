@@ -118,12 +118,19 @@ public class RobotWidget extends CellItemWidget {
             changeBatteryAction(keyCode);
             skipStepAction(keyCode);
             performAction(keyCode);
+            chargeBatteryAction(keyCode);
 
             repaint();
         }
 
         @Override
         public void keyReleased(KeyEvent arg0) {
+        }
+
+        private void chargeBatteryAction(int keyCode) {
+            if(keyCode == KeyEvent.VK_C) {
+                robot.chargePowerSupply();
+            }
         }
 
         private void performAction(int keyCode) {

@@ -42,7 +42,12 @@ class RobotTest {
         }
 
         @Override
-        public void robotChangedBattery(@NotNull RobotActionEvent event) {
+        public void robotChangedPowerSupply(@NotNull RobotActionEvent event) {
+            // Not implemented yet
+        }
+
+        @Override
+        public void robotChargedPowerSupply(@NotNull RobotActionEvent event) {
             // Not implemented yet
         }
     }

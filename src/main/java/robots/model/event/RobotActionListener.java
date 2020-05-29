@@ -13,6 +13,7 @@ public interface RobotActionListener extends EventListener {
     void robotActivityChanged(@NotNull RobotActionEvent event); // !!! Не понял назначение события
                                                                 // DONE: переименовал robotChangeActive в robotActivityChanged
 
-    void robotChangedBattery(@NotNull RobotActionEvent event);  // !!! Должна быть утвердительная форма
+    void robotChangedPowerSupply(@NotNull RobotActionEvent event);  // !!! Должна быть утвердительная форма
                                                                 // DONE: переименовал robotChangeBattery в robotChangedBattery
+    void robotChargedPowerSupply(@NotNull RobotActionEvent event);
 }
