@@ -8,10 +8,13 @@ import robots.model.event.ExitCellActionListener;
 import robots.model.event.FieldActionEvent;
 import robots.model.event.FieldActionListener;
 import robots.model.field.cell_objects.Robot;
+import robots.model.field.cell_objects.power_supplies.PowerSupply;
+import robots.model.field.cell_objects.power_supplies.RenewablePowerSupply;
 import robots.model.field.cells.CellWithPowerSupply;
 import robots.model.field.cells.ExitCell;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 public class Field {
 
@@ -75,6 +78,16 @@ public class Field {
             if(robot != null) robots.add(robot);
         }
         return robots;
+    }
+
+    public void updateRenewablePowerSupplies() {
+        for(Entry<Point, Cell> item : cells.entrySet()) {
+            Cell cell = item.getValue();
+            if(cell instanceof CellWithPowerSupply) {
+                PowerSupply powerSupply = ((CellWithPowerSupply) cell).getPowerSupply();
+                if(powerSupply instanceof RenewablePowerSupply) ((RenewablePowerSupply) powerSupply).update();
+            }
+        }
     }
 
     public List<Robot> getTeleportedRobots() {
