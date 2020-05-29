@@ -108,6 +108,7 @@ public class RobotWidget extends CellItemWidget {
             moveAction(keyCode);
             changeBatteryAction(keyCode);
             skipStepAction(keyCode);
+            performAction(keyCode);
 
             repaint();
         }
@@ -116,19 +117,26 @@ public class RobotWidget extends CellItemWidget {
         public void keyReleased(KeyEvent arg0) {
         }
 
-        private void changeBatteryAction(@NotNull int keyCode) {
+        private void performAction(int keyCode) {
+            if(keyCode == KeyEvent.VK_O) {
+                robot.performAction();
+                repaint();
+            }
+        }
+
+        private void changeBatteryAction(int keyCode) {
             if(keyCode == KeyEvent.VK_G) {
                 robot.changePowerSupply();
             }
         }
 
-        private void skipStepAction(@NotNull int keyCode) {
+        private void skipStepAction(int keyCode) {
             if(keyCode == KeyEvent.VK_F) {
                 robot.skipStep();
             }
         }
 
-        private void moveAction(@NotNull int keyCode){
+        private void moveAction(int keyCode){
             Direction direction = directionByKeyCode(keyCode);
             System.out.println(color + " go to " + direction);
             if(direction != null && robot.isActive()) {
@@ -136,7 +144,7 @@ public class RobotWidget extends CellItemWidget {
             }
         }
 
-        private Direction directionByKeyCode(@NotNull int keyCode) {
+        private Direction directionByKeyCode(int keyCode) {
             Direction direction = null;
             switch (keyCode) {
                 case KeyEvent.VK_W:
