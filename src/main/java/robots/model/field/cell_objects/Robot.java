@@ -18,7 +18,6 @@ import robots.model.field.cells.ExitCell;
 
 import java.util.ArrayList;
 import java.util.Map;
-import java.util.Objects;
 import java.util.UUID;
 
 public class Robot extends MobileCellObject {
@@ -27,11 +26,11 @@ public class Robot extends MobileCellObject {
     private static final int AMOUNT_OF_CHARGE_FOR_SKIP_STEP = 2;
 
     private final UUID uuid = UUID.randomUUID();
-    private PowerSupply innerBattery;
+    private PowerSupply innerPowerSupply;
     private boolean isActive;
 
     public Robot(@NotNull PowerSupply innerBattery) {
-        this.innerBattery = innerBattery;
+        this.innerPowerSupply = innerBattery;
     }
 
     @Override
@@ -79,18 +78,18 @@ public class Robot extends MobileCellObject {
                 && ((CellWithPowerSupply) position).getPowerSupply() != null
                 && (((CellWithPowerSupply) position).getPowerSupply() instanceof Portable)) { // !!! Не соответствует диаграмме - ранее активность робота запрашивали у игры
             // DONE: Исправил диаграмму смены батарейки, теперь робот не узнаёт свою актиыность у игры.
-            innerBattery = (PowerSupply) position.takeObject(((CellWithPowerSupply) position).getPowerSupply());
-            fireRobotChangeBattery(innerBattery);
+            innerPowerSupply = (PowerSupply) position.takeObject(((CellWithPowerSupply) position).getPowerSupply());
+            fireRobotChangeBattery(innerPowerSupply);
         }
     }
 
     public void chargePowerSupply() {
-        if (isActive && innerBattery instanceof RechargeablePowerSupply) {
+        if (isActive && innerPowerSupply instanceof RechargeablePowerSupply) {
             Map<Direction, Cell> neighborCells = position.getNeighborCells();
             for (Map.Entry<Direction, Cell> item : neighborCells.entrySet()) {
                 if (item.getValue() instanceof CellWithPowerSupply) {
                     PowerSupply cellPowerSupply = ((CellWithPowerSupply) item.getValue()).getPowerSupply();
-                    if (cellPowerSupply != null) ((RechargeablePowerSupply) innerBattery).charge(cellPowerSupply);
+                    if (cellPowerSupply != null) ((RechargeablePowerSupply) innerPowerSupply).charge(cellPowerSupply);
                 }
             }
         }
@@ -117,28 +116,32 @@ public class Robot extends MobileCellObject {
 
     public void setPowerSupply(@NotNull PowerSupply battery) { // !!! А как же проверка, что это возможно
         // DONE: Добавил not-null проверку, все остальные варианты аргментна допустимы
-        this.innerBattery = battery;
+        this.innerPowerSupply = battery;
     }
 
     public Integer getCharge() { // !!! Если батарейки нет??
         // DONE: Батрейка теперь есть всегда, добавил параметр в конструктор и @NotNull в setBattery
-        return innerBattery.getCharge();
+        return innerPowerSupply.getCharge();
     }
 
     public Integer getMaxCharge() { // !!! Если батарейки нет??
         // DONE: Батрейка теперь есть всегда, добавил параметр в конструктор и @NotNull в setBattery
-        return innerBattery.getMaxCharge();
+        return innerPowerSupply.getMaxCharge();
+    }
+
+    public PowerSupply getPowerSupply() {
+        return innerPowerSupply;
     }
 
     private boolean spendBatteryCharge(int amountOfCharge, boolean ignoreShortage) {
         boolean result = true;
 
-        int released = innerBattery.releaseCharge(amountOfCharge);
+        int released = innerPowerSupply.releaseCharge(amountOfCharge);
         if (released != amountOfCharge) { // !!! Не соответствует диаграмме - 02_сделать шаг. (Робот думает за батарейку)
             // DONE: Теперь батарейка возвращает сколько было потрачено при releaseCharge
             // и если оно не совпадает с запросом то робот может потратить весь заряд, если требуется.
             if (ignoreShortage) {
-                innerBattery.releaseCharge(innerBattery.getCharge());
+                innerPowerSupply.releaseCharge(innerPowerSupply.getCharge());
             } else {
                 result = false;
             }

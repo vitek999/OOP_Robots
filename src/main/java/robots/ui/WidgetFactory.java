@@ -74,7 +74,7 @@ public class WidgetFactory {
         } else if(cellObject instanceof Battery) {
             createdWidget = new BatteryWidget((Battery) cellObject);
         } else if(cellObject instanceof Accumulator) {
-            // TODO: create accumulator widget
+            createdWidget = new AccumulatorWidget((Accumulator) cellObject);// TODO: create accumulator widget
         } else if(cellObject instanceof Windmill) {
             createdWidget = new WindmillWidget((Windmill) cellObject);
         } else {

@@ -1,8 +1,8 @@
 package robots.ui.cell;
 
-import org.jetbrains.annotations.NotNull;
 import robots.model.Direction;
 import robots.model.field.cell_objects.Robot;
+import robots.model.field.cell_objects.power_supplies.Battery;
 import robots.ui.utils.GameWidgetsUtils;
 import robots.ui.utils.ImageUtils;
 import robots.ui.cell.CellWidget.Layer;
@@ -32,7 +32,7 @@ public class RobotWidget extends CellItemWidget {
     protected BufferedImage getImage() {
         BufferedImage image = null;
         try {
-            image = ImageIO.read(getRobotFileByColorAndActive(color, robot.isActive()));
+            image = ImageIO.read(getImageFile());
             image = ImageUtils.resizeImage(image, 60, 96);
             image = robotImageWithChargeText(image);
         } catch (IOException e) {
@@ -83,13 +83,22 @@ public class RobotWidget extends CellItemWidget {
         return GameWidgetsUtils.chargeTextColor(robot.getCharge(), robot.getMaxCharge());
     }
 
-    private static File getRobotFileByColorAndActive(Color robotColor, boolean active) {
+    private File getImageFile() {
         File file = null;
-        if (robotColor == Color.RED)  {
-            file = active ? new File("RRBA.png") : new File("RRB.png");
-        }
-        if (robotColor == Color.BLUE) {
-            file = active ? new File("RBBA.png") : new File("RBB.png");
+        if(robot.getPowerSupply() instanceof Battery) {
+            if (color == Color.RED) {
+                file = robot.isActive() ? new File("RRBA.png") : new File("RRB.png");
+            }
+            if (color == Color.BLUE) {
+                file = robot.isActive() ? new File("RBBA.png") : new File("RBB.png");
+            }
+        } else {
+            if (color == Color.RED) {
+                file = robot.isActive() ? new File("RRAA.png") : new File("RRA.png");
+            }
+            if (color == Color.BLUE) {
+                file = robot.isActive() ? new File("RBAA.png") : new File("RBA.png");
+            }
         }
         return file;
     }

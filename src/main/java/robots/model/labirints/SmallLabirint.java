@@ -4,6 +4,7 @@ import org.jetbrains.annotations.NotNull;
 import robots.model.*;
 import robots.model.field.Field;
 import robots.model.field.between_cells_objects.Door;
+import robots.model.field.cell_objects.power_supplies.Accumulator;
 import robots.model.field.cell_objects.power_supplies.Battery;
 import robots.model.field.cell_objects.Robot;
 import robots.model.field.between_cells_objects.WallSegment;
@@ -46,6 +47,7 @@ public class SmallLabirint extends Labirint {
 
         field.getCell(new Point(1, 2)).addObject(battery);
         field.getCell(new Point(0,0)).addObject(new Windmill(0, 10));
+        field.getCell(new Point(0, 1)).addObject(new Accumulator(10, 10));
     }
 
     @Override
