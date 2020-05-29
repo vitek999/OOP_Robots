@@ -10,6 +10,8 @@ import robots.model.event.FieldActionEvent;
 import robots.model.event.FieldActionListener;
 import robots.model.field.cell_objects.power_supplies.Battery;
 import robots.model.field.cell_objects.Robot;
+import robots.model.field.cell_objects.power_supplies.Windmill;
+import robots.model.field.cells.CellWithPowerSupply;
 import robots.model.field.cells.ExitCell;
 
 import java.util.Arrays;
@@ -152,5 +154,30 @@ public class FieldTest {
         field.getCell(new Point(1, 1)).addObject(anotherRobot);
 
         assertEquals(expectedEventCount, eventCount);
+    }
+
+    @Test
+    public void test_updateRenewablePowerSupplies_singleWindMill() {
+        field.getCell(new Point(0,0)).addObject(new Windmill(0, 10));
+        field.updateRenewablePowerSupplies();
+
+        int charge = ((CellWithPowerSupply) field.getCell(new Point(0,0))).getPowerSupply().getCharge();
+
+        int expectedCharge = 2;
+        assertEquals(expectedCharge, charge);
+    }
+
+    @Test
+    public void test_updateRenewablePowerSupplies_severalWindMill() {
+        field.getCell(new Point(0,0)).addObject(new Windmill(0, 10));
+        field.getCell(new Point(1,0)).addObject(new Windmill(0, 10));
+        field.updateRenewablePowerSupplies();
+
+        int firstWindmillCharge = ((CellWithPowerSupply) field.getCell(new Point(0,0))).getPowerSupply().getCharge();
+        int secondWindmillCharge = ((CellWithPowerSupply) field.getCell(new Point(1,0))).getPowerSupply().getCharge();
+
+        int expectedCharge = 2;
+        assertEquals(expectedCharge, firstWindmillCharge);
+        assertEquals(expectedCharge, secondWindmillCharge);
     }
 }
