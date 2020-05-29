@@ -3,6 +3,7 @@ package robots.model.labirints;
 import org.jetbrains.annotations.NotNull;
 import robots.model.*;
 import robots.model.field.Field;
+import robots.model.field.between_cells_objects.Door;
 import robots.model.field.cell_objects.power_supplies.Battery;
 import robots.model.field.cell_objects.Robot;
 import robots.model.field.between_cells_objects.WallSegment;
@@ -48,5 +49,6 @@ public class SmallLabirint extends Labirint {
     @Override
     protected void addWalls(@NotNull Field field) {
         field.getCell(new Point(2, 0)).setWall(new WallSegment(), Direction.SOUTH);
+        field.getCell(new Point(2,0)).setWall(new Door(false), Direction.WEST);
     }
 }

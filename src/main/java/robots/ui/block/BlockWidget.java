@@ -1,10 +1,14 @@
 package robots.ui.block;
 
 import robots.model.Orientation;
+import robots.ui.utils.ImageUtils;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public abstract class BlockWidget extends JPanel {
 
@@ -19,7 +23,19 @@ public abstract class BlockWidget extends JPanel {
         setPreferredSize(getDimensionByOrientation());
     }
 
-    protected abstract BufferedImage getImage();
+    private BufferedImage getImage() {
+        BufferedImage image = null;
+        try {
+            image = ImageIO.read(getImageFile());
+            Dimension dimension = getDimensionByOrientation();
+            image = ImageUtils.resizeImage(image, dimension.width, dimension.height);
+        } catch (IOException e) {
+            e.printStackTrace();    // !!! Для конечного пользователя это не лучшее решение (более дружественное сообщение для пользователя) TODO
+        }
+        return image;
+    }
+
+    protected abstract File getImageFile();
 
     @Override
     protected void paintComponent(Graphics g) {

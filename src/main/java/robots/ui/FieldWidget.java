@@ -2,6 +2,7 @@ package robots.ui;
 
 import org.jetbrains.annotations.NotNull;
 import robots.model.*;
+import robots.model.field.BetweenCellObject;
 import robots.model.field.Cell;
 import robots.model.event.FieldActionEvent;
 import robots.model.event.FieldActionListener;
@@ -65,8 +66,7 @@ public class FieldWidget extends JPanel {
 
             if(i == 0)  {
                 BetweenCellsWidget westCellWidget = new BetweenCellsWidget(Orientation.VERTICAL);
-                // TODO Remove cast to (WallSegment)
-                WallSegment wallSegment = (WallSegment) cell.getNeighborBetweenCellObject(Direction.WEST);
+                BetweenCellObject wallSegment = cell.getNeighborBetweenCellObject(Direction.WEST);
                 if( wallSegment != null) {
                     BlockWidget wallWidget = widgetFactory.create(wallSegment, Orientation.VERTICAL);
                     westCellWidget.setItem(wallWidget);
@@ -77,8 +77,7 @@ public class FieldWidget extends JPanel {
             row.add(cellWidget);
 
             BetweenCellsWidget eastCellWidget = new BetweenCellsWidget(Orientation.VERTICAL);
-            // TODO: Remove cast to (WallSegment)
-            WallSegment eastWallSegment = (WallSegment) cell.getNeighborBetweenCellObject(Direction.EAST);
+            BetweenCellObject eastWallSegment = cell.getNeighborBetweenCellObject(Direction.EAST);
             if(eastWallSegment != null) {
                 BlockWidget wallWidget = widgetFactory.create(eastWallSegment, Orientation.VERTICAL);
                 eastCellWidget.setItem(wallWidget);
@@ -99,8 +98,7 @@ public class FieldWidget extends JPanel {
             Cell cell = field.getCell(point);
 
             BetweenCellsWidget southCellWidget = new BetweenCellsWidget(Orientation.HORIZONTAL);
-            // TODO: Remove cast to (WallSegment)
-            WallSegment southWallSegment = (WallSegment) cell.getNeighborBetweenCellObject(direction);
+            BetweenCellObject southWallSegment =  cell.getNeighborBetweenCellObject(direction);
 
             if(southWallSegment != null) {
                 BlockWidget wallWidget = widgetFactory.create(southWallSegment, Orientation.HORIZONTAL);

@@ -16,19 +16,7 @@ public class WallWidget extends BlockWidget {
     }
 
     @Override
-    protected BufferedImage getImage() {
-        BufferedImage image = null;
-        try {
-            image = ImageIO.read(getImageFileByOrientation());
-            Dimension dimension = getDimensionByOrientation();
-            image = ImageUtils.resizeImage(image, dimension.width, dimension.height);
-        } catch (IOException e) {
-            e.printStackTrace();    // !!! Для конечного пользователя это не лучшее решение (более дружественное сообщение для пользователя) TODO
-        }
-        return image;
-    }
-
-    private File getImageFileByOrientation() {
+    protected File getImageFile() {
         return (orientation == Orientation.VERTICAL) ? new File("WV.png") : new File("WH.png");
     }
 }

@@ -17,6 +17,7 @@ import robots.model.field.Cell;
 import robots.model.field.between_cells_objects.WallSegment;
 import robots.ui.block.BetweenCellsWidget;
 import robots.ui.block.BlockWidget;
+import robots.ui.block.DoorWidget;
 import robots.ui.block.WallWidget;
 import robots.ui.cell.*;
 
@@ -98,7 +99,7 @@ public class WidgetFactory {
         if(betweenCellObject instanceof WallSegment) {
             createdBlockWidget = new WallWidget(orientation);
         } else if (betweenCellObject instanceof Door) {
-            // TODO create DoorWidget
+            createdBlockWidget = new DoorWidget((Door) betweenCellObject, orientation);
         } else {
             throw new IllegalArgumentException();
         }
