@@ -8,10 +8,22 @@ import robots.model.field.between_cells_objects.Door;
 
 import java.io.File;
 
+/**
+ * Виджет двери.
+ * @see Door
+ */
 public class DoorWidget extends BlockWidget implements DoorActionListener {
 
+    /**
+     * Дверь.
+     */
     private final Door door;
 
+    /**
+     * Конструтор.
+     * @param door дверь.
+     * @param orientation ориентация.
+     */
     public DoorWidget(@NotNull Door door, @NotNull Orientation orientation) {
         super(orientation);
         door.addDoorActionListener(this);

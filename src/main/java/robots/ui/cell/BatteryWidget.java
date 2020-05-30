@@ -1,15 +1,13 @@
 package robots.ui.cell;
 
 import robots.model.field.cell_objects.power_supplies.Battery;
-import robots.ui.utils.GameWidgetsUtils;
-import robots.ui.cell.CellWidget.Layer;
-
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
 
+/**
+ * Виджет батареи.
+ * @see Battery
+ */
 public class BatteryWidget extends PowerSupplyWidget{
 
     public BatteryWidget(Battery battery) {

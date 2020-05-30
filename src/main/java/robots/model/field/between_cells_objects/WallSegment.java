@@ -4,6 +4,9 @@ import robots.model.field.BetweenCellObject;
 
 import java.util.Objects;
 
+/**
+ * Сегмент стены.
+ */
 public class WallSegment extends BetweenCellObject { // !!! Все-таки не стена, а ее часть
                            // DONE: Переименовал класс Wall -> WallSegment
 

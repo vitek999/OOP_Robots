@@ -10,10 +10,8 @@ import robots.model.event.RobotActionEvent;
 import robots.model.event.RobotActionListener;
 import robots.model.field.Field;
 import robots.model.field.cell_objects.Robot;
-import robots.model.field.between_cells_objects.WallSegment;
 import robots.ui.block.BetweenCellsWidget;
 import robots.ui.block.BlockWidget;
-import robots.ui.block.WallWidget;
 import robots.ui.cell.*;
 
 import javax.swing.*;
@@ -30,7 +28,7 @@ public class FieldWidget extends JPanel {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         fillField();
         subscribeOnRobots();
-        field.addFieldlActionListener(new FieldController());
+        field.addFieldActionListener(new FieldController());
     }
 
     private void fillField() { // !!! Сделать процедурную декомпозицию

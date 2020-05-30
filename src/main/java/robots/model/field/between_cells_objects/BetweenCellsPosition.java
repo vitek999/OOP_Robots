@@ -9,10 +9,22 @@ import java.util.EnumMap;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * Класс позиции между ячейками {@link Cell}
+ */
 public class BetweenCellsPosition {
 
-    private Map<Direction, Cell> neighborCells = new EnumMap<>(Direction.class);
+    /**
+     * Сосдение ячейки.
+     */
+    private final Map<Direction, Cell> neighborCells = new EnumMap<>(Direction.class);
 
+    /**
+     * Конструтор класса позиции между ячейками.
+     * @param cell ячейка.
+     * @param neighborCell сосеняя ячейка.
+     * @throws IllegalArgumentException если ячейки не являются соседними.
+     */
     public BetweenCellsPosition(@NotNull Cell cell, @NotNull Cell neighborCell) {
         Direction neighborDirection = cell.getNeighborDirection(neighborCell);
 
@@ -24,6 +36,11 @@ public class BetweenCellsPosition {
         neighborCells.put(neighborDirection.getOppositeDirection(), cell);
     }
 
+    /**
+     * Конструтор класса позиции между ячейками.
+     * @param cell ячейка.
+     * @param direction направление.
+     */
     public BetweenCellsPosition(@NotNull Cell cell, @NotNull Direction direction) {
 
         neighborCells.put(direction.getOppositeDirection(), cell);
@@ -34,6 +51,10 @@ public class BetweenCellsPosition {
         }
     }
 
+    /**
+     * Получить сосдение ячейки {@link BetweenCellsPosition#neighborCells}.
+     * @return сосдение ячейки.
+     */
     public Map<Direction, Cell> getNeighborCells () {
         return Collections.unmodifiableMap(neighborCells); // !!! Можно возвращать неизменяемый контейнер
                                                            // DONE: Возвращаю неизменяемый контейнер unmodifiableMap

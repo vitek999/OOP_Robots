@@ -9,8 +9,16 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Виджет стены.
+ * @see robots.model.field.between_cells_objects.WallSegment
+ */
 public class WallWidget extends BlockWidget {
 
+    /**
+     * Конструктор.
+     * @param orientation ориентация.
+     */
     public WallWidget(Orientation orientation) {
         super(orientation);
     }

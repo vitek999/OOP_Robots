@@ -10,10 +10,24 @@ import robots.model.field.cell_objects.Robot;
 import robots.model.field.between_cells_objects.WallSegment;
 import robots.model.field.cell_objects.power_supplies.Windmill;
 
+/**
+ * Лабиринт маленького поля.
+ */
 public class SmallLabirint extends Labirint {
 
+    /**
+     * Высота поля.
+     */
     private static final int FIELD_HEIGHT = 3;
+
+    /**
+     * Ширина поля.
+     */
     private static final int FIELD_WIDTH = 3;
+
+    /**
+     * Стандартный заряд батарейки.
+     */
     private static final int DEFAULT_BATTERY_CHARGE = 10;
 
 
@@ -42,7 +56,7 @@ public class SmallLabirint extends Labirint {
     }
 
     @Override
-    protected void addBatteries(@NotNull Field field) {
+    protected void addPowerSupplies(@NotNull Field field) {
         Battery battery = new Battery(DEFAULT_BATTERY_CHARGE);
 
         field.getCell(new Point(1, 2)).addObject(battery);
@@ -51,8 +65,8 @@ public class SmallLabirint extends Labirint {
     }
 
     @Override
-    protected void addWalls(@NotNull Field field) {
-        field.getCell(new Point(2, 0)).setWall(new WallSegment(), Direction.SOUTH);
-        field.getCell(new Point(2,0)).setWall(new Door(false), Direction.WEST);
+    protected void addBetweenCellObjects(@NotNull Field field) {
+        field.getCell(new Point(2, 0)).setBetweenCellObject(new WallSegment(), Direction.SOUTH);
+        field.getCell(new Point(2,0)).setBetweenCellObject(new Door(false), Direction.WEST);
     }
 }

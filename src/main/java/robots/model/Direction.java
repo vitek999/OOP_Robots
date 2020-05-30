@@ -1,8 +1,32 @@
 package robots.model;
 
+/**
+ * Направления.
+ */
 public enum Direction {
-    NORTH, SOUTH, WEST, EAST;
+    /**
+     * Север.
+     */
+    NORTH,
 
+    /**
+     * Юг.
+     */
+    SOUTH,
+
+    /**
+     * Запад.
+     */
+    WEST,
+
+    /**
+     * Восток.
+     */
+    EAST;
+
+    /**
+     * Противоположное направление.
+     */
     private Direction opposite;
 
     static  {
@@ -12,6 +36,10 @@ public enum Direction {
         EAST.opposite = WEST;
     }
 
+    /**
+     * Получить противоположное направление {@link Direction#opposite}.
+     * @return противоположное направление.
+     */
     public Direction getOppositeDirection() {
         return opposite;
     }

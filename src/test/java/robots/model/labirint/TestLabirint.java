@@ -39,14 +39,14 @@ public class TestLabirint extends Labirint {
     }
 
     @Override
-    protected void addBatteries(@NotNull Field field) {
+    protected void addPowerSupplies(@NotNull Field field) {
         Battery battery = new Battery(DEFAULT_BATTERY_CHARGE);
 
         field.getCell(new Point(1, 2)).addObject(battery);
     }
 
     @Override
-    protected void addWalls(@NotNull Field field) {
-        field.getCell(new Point(2, 0)).setWall(new WallSegment(), Direction.SOUTH);
+    protected void addBetweenCellObjects(@NotNull Field field) {
+        field.getCell(new Point(2, 0)).setBetweenCellObject(new WallSegment(), Direction.SOUTH);
     }
 }

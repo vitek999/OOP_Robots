@@ -1,5 +1,16 @@
 package robots.model;
 
+/**
+ * Ориентация.
+ */
 public enum Orientation {
-    VERTICAL, HORIZONTAL
+    /**
+     * Вертикальная.
+     */
+    VERTICAL,
+
+    /**
+     * Горизонтальная.
+     */
+    HORIZONTAL
 }

@@ -6,10 +6,20 @@ import robots.model.field.cells.CellWithPowerSupply;
 
 import java.util.Objects;
 
+/**
+ * Батарейка
+ */
 public class Battery extends PowerSupply implements Portable {
 
+    /**
+     * Максимальный заряд.
+     */
     private static final int MAX_CHARGE = 10;
 
+    /**
+     * Конструтор.
+     * @param charge заряд батарейки.
+     */
     public Battery(int charge) {
         super(charge, MAX_CHARGE);
     }

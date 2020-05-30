@@ -5,14 +5,28 @@ import robots.model.field.cell_objects.power_supplies.Windmill;
 
 import java.util.EventObject;
 
+/**
+ * Объект события класса мельницы {@link Windmill}.
+ */
 public class WindmillActionEvent extends EventObject {
 
+    /**
+     * Мельница.
+     */
     private Windmill windmill;
 
+    /**
+     * Установить мельницу {@link WindmillActionEvent#windmill}.
+     * @param windmill мельница.
+     */
     public void setWindmill(@NotNull Windmill windmill) {
         this.windmill = windmill;
     }
 
+    /**
+     * Получить мельницу {@link WindmillActionEvent#windmill}.
+     * @return мельница.
+     */
     public Windmill getWindmill() {
         return windmill;
     }

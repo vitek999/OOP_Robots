@@ -4,8 +4,16 @@ import org.jetbrains.annotations.NotNull;
 import robots.model.field.Cell;
 import robots.model.field.cells.CellWithPowerSupply;
 
+/**
+ * Аккумулятор.
+ */
 public class Accumulator extends RechargeablePowerSupply implements Portable {
 
+    /**
+     * Конструктор
+     * @param charge заряд.
+     * @param maxCharge максимальный заряд.
+     */
     public Accumulator(int charge, int maxCharge) {
         super(charge, maxCharge);
     }

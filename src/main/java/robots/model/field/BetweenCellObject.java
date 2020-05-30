@@ -7,18 +7,37 @@ import robots.model.field.between_cells_objects.BetweenCellsPosition;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * Объект, располагающийся между ячейками {@link Cell}
+ */
 public abstract class BetweenCellObject {
 
+    /**
+     * Позиция ообъекта между ячейками
+     */
     protected BetweenCellsPosition position;
 
+    /**
+     * Получить позицию {@link BetweenCellObject#position}.
+     * @return позиция.
+     */
     public BetweenCellsPosition getPosition() {
         return position;
     }
 
+    /**
+     * Установить позицию {@link BetweenCellObject#position}.
+     * @param position позиция.
+     */
     void setPosition(@NotNull BetweenCellsPosition position) {
         this.position = position;
     }
 
+    /**
+     * Может ли находится объект в позиции.
+     * @param newPosition проверяемая позиция.
+     * @return может ли находится объект в позиции.
+     */
     public boolean canSetAtPosition(@NotNull BetweenCellsPosition newPosition) {
         boolean result = true;
         Map<Direction, Cell> neighborCells = newPosition.getNeighborCells();

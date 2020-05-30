@@ -36,7 +36,7 @@ public class FieldTest {
     public void testSetup() {
         eventCount = 0;
         field = new Field(2, 2, new Point(1, 1));
-        field.addFieldlActionListener(new FieldObserver());
+        field.addFieldActionListener(new FieldObserver());
     }
 
     @Test

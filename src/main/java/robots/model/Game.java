@@ -11,11 +11,29 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Игра.
+ */
 public class Game {
 
+    /**
+     * Статус игры.
+     */
     private GameStatus gameStatus;
+
+    /**
+     * Активный робот.
+     */
     private Robot activeRobot;
+
+    /**
+     * Робот-победитель.
+     */
     private Robot winner;
+
+    /**
+     * Игровое поле.
+     */
     private Field gameField;
     // !!! Зачем сильная связь???
     // DONE: Пробрасываю лабиринт через конструктор, не сохраняя в поле класса
@@ -24,12 +42,16 @@ public class Game {
         startGame(labirint);
     }
 
+    /**
+     * Старт новой игры
+     * @param labirint лабиринт, содержащий расстановку элементов на поле
+     */
     public void startGame(@NotNull Labirint labirint) {
         setStatus(GameStatus.GAME_IS_ON);
 
         buildField(labirint);
 
-        gameField.addFieldlActionListener(new FieldObserver());
+        gameField.addFieldActionListener(new FieldObserver());
 
         for(var i : gameField.getRobotsOnField()) {
             i.addRobotActionListener(new RobotObserver());
@@ -39,12 +61,19 @@ public class Game {
         passMoveNextRobot();
     }
 
+    /**
+     * Прервать игру
+     */
     public void abort() { // !!! Не корректное название - она не завершилась, она прервалась
                           // DONE: Переименовал метод finish -> abort
         setStatus(GameStatus.GAME_ABORTED);
         setActiveRobot(null);
     }
 
+    /**
+     * Получить текущий статус игры {@link Game#gameStatus}
+     * @return текующий статус игры
+     */
     public GameStatus getStatus() {
         return gameStatus;
     }
@@ -56,30 +85,54 @@ public class Game {
         }
     }
 
+    /**
+     * Получить робота-победителя.
+     * Возвращается [null], если победитель не найден.
+     * @return робот-победитель
+     */
     public Robot getWinner() {
         return winner;
     }
 
+    /**
+     * Получить активного робота {@link Game#activeRobot}.
+     * Возвращается null, если ни один робот не является активным.
+     * @return активный робот.
+     */
     public Robot getActiveRobot() {
         return activeRobot;
     }
 
+    /**
+     * Получить игровое поле {@link Game#gameField}.
+     * @return игровое поле.
+     */
     public Field getGameField() { // !!! либо везде get, либо везде без get
                                   // DONE: Переименовал, добавил к остальным методам префикс get
         return gameField;
     }
 
+    /**
+     * Получить роботов на поле.
+     * @return неизменяемый список роботов, находящихся на поле.
+     */
     public List<Robot> getRobotsOnField() {
         return Collections.unmodifiableList(gameField.getRobotsOnField()); // !!! Можно возвращать неизменяемый контейнер
                                                                            // DONE: Возвращаю неизменяемый контейнер
     }
 
+    /**
+     * Получить телепортированных роботов.
+     * @return неизменяемый список телепортированных роботов.
+     */
     public List<Robot> getTeleportedRobots() {
         return Collections.unmodifiableList(gameField.getTeleportedRobots()); // !!! Можно возвращать неизменяемый контейнер
                                                                               // DONE: Возвращаю неизменяемый контейнер
     }
 
-    // TODO не нравится название
+    /**
+     * Обновить состояние игры.
+     */
     private void updateGameState() {
         GameStatus status = determineOutcomeGame();
         setStatus(status);
@@ -91,6 +144,9 @@ public class Game {
         }
     }
 
+    /**
+     * Передать ход следующему роботу.
+     */
     private void passMoveNextRobot() {
         // !!! Не ясное условие
         // DONE: Вынес проверку на состояние игры в метод updateGameState
@@ -112,6 +168,10 @@ public class Game {
         }
     }
 
+    /**
+     * Определить исход игры.
+     * @return статус игры.
+     */
     private GameStatus determineOutcomeGame() {
         GameStatus result = GameStatus.GAME_IS_ON;
 
@@ -134,6 +194,11 @@ public class Game {
         return result;
     }
 
+    /**
+     * Имеют ли все роботы нулевой заряд.
+     * @param robots список роботов.
+     * @return true - если все роботы имеют нулевой заряд.
+     */
     private boolean robotsHasLowCharge(@NotNull List<Robot> robots) { // !!! Про батарейку знает только робот - см. название метода
                                                                       // DONE: переменовал метод robotsHasLowBattery -> robotsHasLowCharge
         boolean result = true;
@@ -145,6 +210,10 @@ public class Game {
         return result;
     }
 
+    /**
+     * Построить игровое поле.
+     * @param labirint лабиринт, содержащий расстановку элементов на поле.
+     */
     private void buildField(@NotNull Labirint labirint) {
         gameField = labirint.buildField();
     }
@@ -155,6 +224,10 @@ public class Game {
         // DONE: убрал вызов setActiveRobot(null), т.к. он был не нужен, ибо эту деятельность выпоняет passMoveNextRobot
     }
 
+    /**
+     * Задать активного робота.
+     * @param robot робот, которому становится активным.
+     */
     private void setActiveRobot(Robot robot) {
 
         if (activeRobot != null) activeRobot.setActive(false);
@@ -164,8 +237,9 @@ public class Game {
         if(robot != null ) robot.setActive(true);
     }
 
-    /** Events */
-
+    /**
+     * Класс, реализующий наблюдение за событиями {@link RobotActionListener}.
+     */
     private class RobotObserver implements RobotActionListener {
 
         @Override
@@ -200,6 +274,9 @@ public class Game {
         }
     }
 
+    /**
+     * Класс, реализующий наблюдение за событиями {@link FieldActionListener}.
+     */
     private class FieldObserver implements FieldActionListener {
 
         @Override
@@ -210,16 +287,31 @@ public class Game {
         }
     }
 
-    private ArrayList<GameActionListener> gameActionListeners = new ArrayList<>();
+    /**
+     * Список слушателей, подписанных на события игры.
+     */
+    private final ArrayList<GameActionListener> gameActionListeners = new ArrayList<>();
 
+    /**
+     * Добавить нвоого слушателя за событиями игры.
+     * @param listener слушатель.
+     */
     public void addGameActionListener(@NotNull GameActionListener listener) {
         gameActionListeners.add(listener);
     }
 
+    /**
+     * Удалить слушателя за событиями игры.
+     * @param listener слушатель.
+     */
     public void removeGameActionListener(@NotNull GameActionListener listener) {
         gameActionListeners.remove(listener);
     }
 
+    /**
+     * Оповестить сулшателей {@link Game#gameActionListeners}, что робот переместился.
+     * @param robot робот, который переместился.
+     */
     private void fireRobotIsMoved(@NotNull Robot robot) {
         for(GameActionListener listener: gameActionListeners) {
             GameActionEvent event = new GameActionEvent(listener);
@@ -228,6 +320,10 @@ public class Game {
         }
     }
 
+    /**
+     * Оповестить сулшателей {@link Game#gameActionListeners}, что робот пропустил ход.
+     * @param robot робот, который пропустил ход.
+     */
     private void fireRobotIsSkipStep(@NotNull Robot robot) {
         for(GameActionListener listener: gameActionListeners) {
             GameActionEvent event = new GameActionEvent(listener);
@@ -236,6 +332,10 @@ public class Game {
         }
     }
 
+    /**
+     * Оповестить сулшателей {@link Game#gameActionListeners}, что робот телепортировался.
+     * @param robot робот, который телепортировался.
+     */
     private void fireRobotIsTeleported(@NotNull Robot robot) {
         for(GameActionListener listener: gameActionListeners) {
             GameActionEvent event = new GameActionEvent(listener);
@@ -244,6 +344,10 @@ public class Game {
         }
     }
 
+    /**
+     * Оповестить сулшателей {@link Game#gameActionListeners}, что статус игры изменился.
+     * @param status статус игры.
+     */
     private void fireGameStatusIsChanged(@NotNull GameStatus status) {
         for(GameActionListener listener: gameActionListeners) {
             GameActionEvent event = new GameActionEvent(listener);

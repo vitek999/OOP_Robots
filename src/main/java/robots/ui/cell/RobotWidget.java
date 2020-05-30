@@ -15,11 +15,27 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Виджет робота.
+ * @see Robot
+ */
 public class RobotWidget extends CellItemWidget {
 
+    /**
+     * Робот.
+     */
     private final Robot robot;
+
+    /**
+     * Цвет.
+     */
     private final Color color;
 
+    /**
+     * Конструтор.
+     * @param robot робот.
+     * @param color цвет.
+     */
     public RobotWidget(Robot robot, Color color) {
         super();
         this.robot = robot;
@@ -46,6 +62,10 @@ public class RobotWidget extends CellItemWidget {
         return CellWidget.Layer.BOTTOM;
     }
 
+    /**
+     * Сделать вижет актиынм
+     * @param state состояние активности.
+     */
     public void setActive(boolean state) {
         setFocusable(state);
         requestFocus();
@@ -57,10 +77,19 @@ public class RobotWidget extends CellItemWidget {
         return new Dimension(60, 120);
     }
 
+    /**
+     * Получить цвет робота {@link RobotWidget#color}.
+     * @return цвет робота.
+     */
     public Color getColor() {
         return color;
     }
 
+    /**
+     * Получить изобаржение с текстом заряда.
+     * @param robotImage изображение робота.
+     * @return изобаржение с текстом заряда.
+     */
     private BufferedImage robotImageWithChargeText(BufferedImage robotImage) {
         BufferedImage img = new BufferedImage(robotImage.getWidth(), 120, BufferedImage.TYPE_INT_ARGB);
         Graphics g = img.getGraphics();
@@ -75,14 +104,26 @@ public class RobotWidget extends CellItemWidget {
         return img;
     }
 
+    /**
+     * Получить текст заряда робота.
+     * @return текст заряда робота.
+     */
     private String robotChargeText() {
         return robot.getCharge() + "/" + robot.getMaxCharge();
     }
 
+    /**
+     * Получить цвет текста заряда.
+     * @return цвет текста заряда.
+     */
     private Color robotChargeTextColor() {
         return GameWidgetsUtils.chargeTextColor(robot.getCharge(), robot.getMaxCharge());
     }
 
+    /**
+     * Получить файл изображения робота.
+     * @return файл изображения робота.
+     */
     private File getImageFile() {
         File file = null;
         if(robot.getPowerSupply() instanceof Battery) {
@@ -103,7 +144,9 @@ public class RobotWidget extends CellItemWidget {
         return file;
     }
 
-    // Внутренний класс-обработчик событий. Придает специфицеское поведение виджету
+    /**
+     * Внутренний класс-обработчик событий. Придает специфицеское поведение виджету.
+     */
     private class KeyController implements KeyListener {
 
         @Override

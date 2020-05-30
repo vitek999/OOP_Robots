@@ -6,8 +6,16 @@ import robots.model.field.cell_objects.power_supplies.PowerSupply;
 import java.awt.*;
 import java.io.File;
 
+/**
+ * Виджет аккумулятора.
+ * @see Accumulator
+ */
 public class AccumulatorWidget extends PowerSupplyWidget{
 
+    /**
+     * Конструтор.
+     * @param accumulator аккумулятор.
+     */
     public AccumulatorWidget(Accumulator accumulator) {
         super(accumulator);
     }

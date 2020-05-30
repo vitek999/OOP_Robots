@@ -18,19 +18,38 @@ import robots.model.field.cells.ExitCell;
 
 import java.util.ArrayList;
 import java.util.Map;
-import java.util.UUID;
 
+/**
+ * Робот.
+ */
 public class Robot extends MobileCellObject {
 
+    /**
+     * Количество заряда для перемещения.
+     */
     private static final int AMOUNT_OF_CHARGE_FOR_MOVE = 1;
+
+    /**
+     * Количество заряда для пропуска хода.
+     */
     private static final int AMOUNT_OF_CHARGE_FOR_SKIP_STEP = 2;
 
-    private final UUID uuid = UUID.randomUUID();
+    /**
+     * Внутренний источник питания робота.
+     */
     private PowerSupply innerPowerSupply;
+
+    /**
+     * Состояние активности робота.
+     */
     private boolean isActive;
 
-    public Robot(@NotNull PowerSupply innerBattery) {
-        this.innerPowerSupply = innerBattery;
+    /**
+     * Констрктор.
+     * @param innerPowerSupply внутренний источник питания.
+     */
+    public Robot(@NotNull PowerSupply innerPowerSupply) {
+        this.innerPowerSupply = innerPowerSupply;
     }
 
     @Override
@@ -40,7 +59,7 @@ public class Robot extends MobileCellObject {
             Cell newPosition = canMove(direction);
             if (newPosition != null) { // !!! Запах кода - использование операции с побочным эффектом в условии
                 // DONE: Вынес вызов spendBatteryCharge из условия и сохрняю резуьтат вызова в переменную isSpendChargeSuccess
-                boolean isSpendChargeSuccess = spendBatteryCharge(AMOUNT_OF_CHARGE_FOR_MOVE, false);
+                boolean isSpendChargeSuccess = spendPowerSupplyCharge(AMOUNT_OF_CHARGE_FOR_MOVE, false);
                 if (isSpendChargeSuccess) {
                     fireRobotIsMoved(oldPosition, newPosition);
                     position.takeObject(position.getMobileCellObject());
@@ -73,6 +92,9 @@ public class Robot extends MobileCellObject {
         return newPosition.getMobileCellObject() == null;
     }
 
+    /**
+     * Заменить источник питания {@link Robot#innerPowerSupply}.
+     */
     public void changePowerSupply() {
         if (isActive && (position instanceof CellWithPowerSupply)
                 && ((CellWithPowerSupply) position).getPowerSupply() != null
@@ -83,6 +105,9 @@ public class Robot extends MobileCellObject {
         }
     }
 
+    /**
+     * Зарядить источник питания {@link Robot#innerPowerSupply}.
+     */
     public void chargePowerSupply() {
         if (isActive && innerPowerSupply instanceof RechargeablePowerSupply) {
             Map<Direction, Cell> neighborCells = position.getNeighborCells();
@@ -98,13 +123,20 @@ public class Robot extends MobileCellObject {
         }
     }
 
+    /**
+     * Пропустить ход.
+     */
     public void skipStep() {
         if (isActive) {
-            spendBatteryCharge(AMOUNT_OF_CHARGE_FOR_SKIP_STEP, true);
+            spendPowerSupplyCharge(AMOUNT_OF_CHARGE_FOR_SKIP_STEP, true);
             fireRobotIsSkipStep();
         }
     }
 
+    /**
+     * Сделать робота активным {@link Robot#isActive}.
+     * @param value состояние активности.
+     */
     public void setActive(boolean value) { // !!! Не соответствует диаграмме - ранее активность робота запрашивали у игры
         // DONE: Добавил метод на диаграммуы.
         if (getCharge() > 0 || !value) {
@@ -113,30 +145,56 @@ public class Robot extends MobileCellObject {
         }
     }
 
+    /**
+     * Получить состояние активности робота {@link Robot#isActive}.
+     * @return состояние активности робота.
+     */
     public boolean isActive() {
         return isActive;
     }
 
+    /**
+     * Установить источник питания {@link Robot#innerPowerSupply}
+     * @param battery источник питания.
+     */
     public void setPowerSupply(@NotNull PowerSupply battery) { // !!! А как же проверка, что это возможно
         // DONE: Добавил not-null проверку, все остальные варианты аргментна допустимы
         this.innerPowerSupply = battery;
     }
 
+    /**
+     * Получить заряд {@link PowerSupply#getCharge()}.
+     * @return заряд.
+     */
     public Integer getCharge() { // !!! Если батарейки нет??
         // DONE: Батрейка теперь есть всегда, добавил параметр в конструктор и @NotNull в setBattery
         return innerPowerSupply.getCharge();
     }
 
+    /**
+     * Получить максимальный заряд {@link PowerSupply#getMaxCharge()}.
+     * @return максимальный заряд.
+     */
     public Integer getMaxCharge() { // !!! Если батарейки нет??
         // DONE: Батрейка теперь есть всегда, добавил параметр в конструктор и @NotNull в setBattery
         return innerPowerSupply.getMaxCharge();
     }
 
+    /**
+     * Получить источник питания {@link Robot#innerPowerSupply}.
+     * @return источник питания.
+     */
     public PowerSupply getPowerSupply() {
         return innerPowerSupply;
     }
 
-    private boolean spendBatteryCharge(int amountOfCharge, boolean ignoreShortage) {
+    /**
+     * Потратить заряд источника питания {@link Robot#innerPowerSupply}.
+     * @param amountOfCharge запрашиваемое кол-во заряда.
+     * @param ignoreShortage игнорировать ли нехватку заряда.
+     * @return отдал ли источник питания запрашиваемое кол-во заряда.
+     */
+    private boolean spendPowerSupplyCharge(int amountOfCharge, boolean ignoreShortage) {
         boolean result = true;
 
         int released = innerPowerSupply.releaseCharge(amountOfCharge);
@@ -153,6 +211,9 @@ public class Robot extends MobileCellObject {
         return result;
     }
 
+    /**
+     * Выполнить дейстиве с объектами {@link BetweenCellObjectWithAction} вокруг позиции робота {@link Robot#position}
+     */
     public void performAction() {
         if (isActive) {
             Map<Direction, BetweenCellObject> neighborBetweenCellObjects = position.getNeighborBetweenCellObjects();
@@ -161,24 +222,39 @@ public class Robot extends MobileCellObject {
                 if (betweenCellObject instanceof BetweenCellObjectWithAction) {
                     BetweenCellObjectWithAction betweenCellObjectWithAction = (BetweenCellObjectWithAction) betweenCellObject;
                     int actionChargeAmount = betweenCellObjectWithAction.actionCost();
-                    boolean isActionDone = spendBatteryCharge(actionChargeAmount, false);
+                    boolean isActionDone = spendPowerSupplyCharge(actionChargeAmount, false);
                     if (isActionDone) betweenCellObjectWithAction.perform();
                 }
             }
         }
     }
 
-    // -------------------- События --------------------
-    private ArrayList<RobotActionListener> robotListListener = new ArrayList<>();
+    /**
+     * Список слушателей, подписанных на события игры.
+     */
+    private final ArrayList<RobotActionListener> robotListListener = new ArrayList<>();
 
+    /**
+     * Добавить нвоого слушателя за событиями игры.
+     * @param listener слушатель.
+     */
     public void addRobotActionListener(RobotActionListener listener) {
         robotListListener.add(listener);
     }
 
+    /**
+     * Удалить слушателя за событиями игры.
+     * @param listener слушатель.
+     */
     public void removeRobotActionListener(RobotActionListener listener) {
         robotListListener.remove(listener);
     }
 
+    /**
+     * Оповестить сулшателей {@link Robot#robotListListener}, что робот переместился.
+     * @param oldPosition ячейка откуда переместился робот.
+     * @param newPosition ячейка куда переместился робот.
+     */
     private void fireRobotIsMoved(@NotNull Cell oldPosition, @NotNull Cell newPosition) {
         for (RobotActionListener listener : robotListListener) {
             RobotActionEvent event = new RobotActionEvent(listener);
@@ -189,6 +265,9 @@ public class Robot extends MobileCellObject {
         }
     }
 
+    /**
+     * Оповестить сулшателей {@link Robot#robotListListener}, что робот пропустил ход.
+     */
     private void fireRobotIsSkipStep() {
         for (RobotActionListener listener : robotListListener) {
             RobotActionEvent event = new RobotActionEvent(listener);
@@ -197,6 +276,9 @@ public class Robot extends MobileCellObject {
         }
     }
 
+    /**
+     * Оповестить сулшателей {@link Robot#robotListListener}, что состояние активности робота изменилось.
+     */
     private void fireRobotChangeActive() {
         for (RobotActionListener listener : robotListListener) {
             RobotActionEvent event = new RobotActionEvent(listener);
@@ -205,6 +287,10 @@ public class Robot extends MobileCellObject {
         }
     }
 
+    /**
+     * Оповестить сулшателей {@link Robot#robotListListener}, что робот сменил источник питания.
+     * @param changedPowerSupply новый источник питания.
+     */
     private void fireRobotChangeBattery(PowerSupply changedPowerSupply) {
         for (RobotActionListener listener : robotListListener) {
             RobotActionEvent event = new RobotActionEvent(listener);
@@ -214,11 +300,15 @@ public class Robot extends MobileCellObject {
         }
     }
 
-    private void fireRobotChargedPowerSupply(@NotNull PowerSupply powerSupply) {
+    /**
+     * Оповестить сулшателей {@link Robot#robotListListener}, что робот зарядил источник питания.
+     * @param sourcePowerSupply источник питания, от которого происходила зарядка.
+     */
+    private void fireRobotChargedPowerSupply(@NotNull PowerSupply sourcePowerSupply) {
         for (RobotActionListener listener : robotListListener) {
             RobotActionEvent event = new RobotActionEvent(listener);
             event.setRobot(this);
-            event.setPowerSupply(powerSupply);
+            event.setPowerSupply(sourcePowerSupply);
             listener.robotChargedPowerSupply(event);
         }
     }

@@ -5,14 +5,28 @@ import robots.model.field.between_cells_objects.Door;
 
 import java.util.EventObject;
 
+/**
+ * Объект собтыия класса двери {@link Door}.
+ */
 public class DoorActionEvent extends EventObject {
 
+    /**
+     * дверь.
+     */
     private Door door;
 
+    /**
+     * Установить дверь {@link DoorActionEvent#door}.
+     * @param door дверь.
+     */
     public void setDoor(@NotNull Door door) {
         this.door = door;
     }
 
+    /**
+     * Получить дверь {@link DoorActionEvent#door}.
+     * @return дверь.
+     */
     public Door getDoor() {
         return door;
     }

@@ -145,7 +145,7 @@ class CellTest {
         Direction direction = Direction.NORTH;
         WallSegment wallSegment = new WallSegment();
 
-        cell.setWall(wallSegment, direction);
+        cell.setBetweenCellObject(wallSegment, direction);
         assertEquals(wallSegment, cell.getNeighborBetweenCellObject(direction));
         assertEquals(cell,wallSegment.getPosition().getNeighborCells().get(direction.getOppositeDirection()));
     }
@@ -155,8 +155,8 @@ class CellTest {
         Direction direction = Direction.NORTH;
         WallSegment wallSegment = new WallSegment();
 
-        cell.setWall(wallSegment, direction);
-        assertThrows(IllegalArgumentException.class, () -> cell.setWall(wallSegment, Direction.SOUTH));
+        cell.setBetweenCellObject(wallSegment, direction);
+        assertThrows(IllegalArgumentException.class, () -> cell.setBetweenCellObject(wallSegment, Direction.SOUTH));
         assertEquals(wallSegment, cell.getNeighborBetweenCellObject(direction));
         assertEquals(cell,wallSegment.getPosition().getNeighborCells().get(direction.getOppositeDirection()));
     }
@@ -167,8 +167,8 @@ class CellTest {
         WallSegment wallSegment = new WallSegment();
         WallSegment anotherWallSegment = new WallSegment();
 
-        cell.setWall(wallSegment, direction);
-        assertThrows(IllegalArgumentException.class, () -> cell.setWall(anotherWallSegment, direction));
+        cell.setBetweenCellObject(wallSegment, direction);
+        assertThrows(IllegalArgumentException.class, () -> cell.setBetweenCellObject(anotherWallSegment, direction));
         assertEquals(wallSegment, cell.getNeighborBetweenCellObject(direction));
         assertEquals(cell,wallSegment.getPosition().getNeighborCells().get(direction.getOppositeDirection()));
     }
@@ -180,7 +180,7 @@ class CellTest {
         WallSegment wallSegment = new WallSegment();
         cell.setNeighbor(neighborCell, direction);
 
-        cell.setWall(wallSegment, direction);
+        cell.setBetweenCellObject(wallSegment, direction);
 
         assertEquals(wallSegment, cell.getNeighborBetweenCellObject(direction));
         assertEquals(wallSegment, neighborCell.getNeighborBetweenCellObject(direction.getOppositeDirection()));
@@ -196,9 +196,9 @@ class CellTest {
         WallSegment wallSegment = new WallSegment();
         WallSegment anotherWallSegment = new WallSegment();
 
-        cell.setWall(wallSegment, direction);
+        cell.setBetweenCellObject(wallSegment, direction);
 
-        assertThrows(IllegalArgumentException.class, () -> cell.setWall(anotherWallSegment, direction));
+        assertThrows(IllegalArgumentException.class, () -> cell.setBetweenCellObject(anotherWallSegment, direction));
         assertEquals(wallSegment, cell.getNeighborBetweenCellObject(direction));
         assertEquals(wallSegment, neighborCell.getNeighborBetweenCellObject(direction.getOppositeDirection()));
         assertEquals(cell,wallSegment.getPosition().getNeighborCells().get(direction.getOppositeDirection()));
@@ -213,9 +213,9 @@ class CellTest {
         WallSegment wallSegment = new WallSegment();
         Direction anotherDirection = direction.getOppositeDirection();
 
-        cell.setWall(wallSegment, direction);
+        cell.setBetweenCellObject(wallSegment, direction);
 
-        assertThrows(IllegalArgumentException.class, () -> cell.setWall(wallSegment, anotherDirection));
+        assertThrows(IllegalArgumentException.class, () -> cell.setBetweenCellObject(wallSegment, anotherDirection));
         assertEquals(wallSegment, cell.getNeighborBetweenCellObject(direction));
         assertEquals(wallSegment, neighborCell.getNeighborBetweenCellObject(direction.getOppositeDirection()));
         assertEquals(cell,wallSegment.getPosition().getNeighborCells().get(direction.getOppositeDirection()));

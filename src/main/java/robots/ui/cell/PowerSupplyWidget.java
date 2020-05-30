@@ -9,10 +9,21 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Виджет источника питания.
+ * @see PowerSupply
+ */
 public abstract class PowerSupplyWidget extends CellItemWidget {
 
+    /**
+     * Источник питания.
+     */
     protected final PowerSupply powerSupply;
 
+    /**
+     * Конструтор.
+     * @param powerSupply источник питания.
+     */
     public PowerSupplyWidget(PowerSupply powerSupply) {
         this.powerSupply = powerSupply;
         setToolTipText("Заряд: " + powerSupply.getCharge() + "/" + powerSupply.getMaxCharge());
@@ -28,34 +39,51 @@ public abstract class PowerSupplyWidget extends CellItemWidget {
         BufferedImage image = null;
         try {
             image = ImageIO.read(getImageFile());
-            image = batteryImageWithChargeText(image);
+            image = powerSupplyImageWithChargeText(image);
         } catch (IOException e) {
             e.printStackTrace();
         }
         return image;
     }
 
-    private BufferedImage batteryImageWithChargeText(BufferedImage batteryImage) {
-        BufferedImage img = new BufferedImage(batteryImage.getWidth(), 120, BufferedImage.TYPE_INT_ARGB);
+    /**
+     * Получить изображение источника питания с наложенным текстом заряда.
+     * @param powerSupplyImage изображение источник питания.
+     * @return изображение источника питания с наложенным текстом заряда.
+     */
+    private BufferedImage powerSupplyImageWithChargeText(BufferedImage powerSupplyImage) {
+        BufferedImage img = new BufferedImage(powerSupplyImage.getWidth(), 120, BufferedImage.TYPE_INT_ARGB);
         Graphics g = img.getGraphics();
-        g.drawImage(batteryImage, 0, 0, null);
+        g.drawImage(powerSupplyImage, 0, 0, null);
 
         if(cellItemState == State.DEFAULT) {
             g.setFont(new Font("Arial", Font.PLAIN, 20));
-            g.setColor(batteryChargeTextColor());
-            g.drawString(batteryChargeText(), 40, 100);
+            g.setColor(powerSupplyChargeTextColor());
+            g.drawString(powerSupplyChargeText(), 40, 100);
         }
 
         return img;
     }
 
-    private String batteryChargeText() {
+    /**
+     * Получить текст заряда источника питания.
+     * @return текст заряда источника питания.
+     */
+    private String powerSupplyChargeText() {
         return powerSupply.getCharge() + "/" + powerSupply.getMaxCharge();
     }
 
-    private Color batteryChargeTextColor() {
+    /**
+     * Получить цвет текста заряда источника питания.
+     * @return цвет текста заряда источника питания.
+     */
+    private Color powerSupplyChargeTextColor() {
         return GameWidgetsUtils.chargeTextColor(powerSupply.getCharge(), powerSupply.getMaxCharge());
     }
 
+    /**
+     * Получить файл изображения.
+     * @return файл изображения.
+     */
     protected abstract File getImageFile();
 }

@@ -4,23 +4,48 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
+/**
+ * Точка-координата на игровом поле {@link robots.model.field.Field}
+ */
 public class Point {
-    private int x;
-    private int y;
+
+    /**
+     * Координата X.
+     */
+    private final int x;
+
+    /**
+     * Координата Y.
+     */
+    private final int y;
 
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
+    /**
+     * Получить координату X {@link Point#x}.
+     * @return координта X.
+     */
     public int getX() {
         return x;
     }
 
+    /**
+     * Получить координату Y {@link Point#y}.
+     * @return координта Y.
+     */
     public int getY() {
         return y;
     }
 
+    /**
+     * Получить новую точку с заданным смещением в заданном направлении
+     * @param direction направление
+     * @param delta смещение
+     * @return новая точка с заданным смещением в заданном направлении
+     */
     public Point to(@NotNull Direction direction, int delta) {
         int newX = x;
         int newY = y;

@@ -10,19 +10,37 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Виджет препятствия, расположенного между ячейками.
+ */
 public abstract class BlockWidget extends JPanel {
 
+    /**
+     * Ориентация.
+     */
     protected final Orientation orientation;
 
+    /**
+     * Получить ориентацию {@link BlockWidget#orientation}.
+     * @return ориентация.
+     */
     public Orientation getOrientation() {
         return orientation;
     }
 
+    /**
+     * Констрктор.
+     * @param orientation ориентация.
+     */
     public BlockWidget(Orientation orientation) {
         this.orientation = orientation;
         setPreferredSize(getDimensionByOrientation());
     }
 
+    /**
+     * Получить изображение виджета.
+     * @return изображене виджета.
+     */
     private BufferedImage getImage() {
         BufferedImage image = null;
         try {
@@ -35,6 +53,10 @@ public abstract class BlockWidget extends JPanel {
         return image;
     }
 
+    /**
+     * Получить файл изображения.
+     * @return файл изображения.
+     */
     protected abstract File getImageFile();
 
     @Override
@@ -43,6 +65,10 @@ public abstract class BlockWidget extends JPanel {
         g.drawImage(getImage(), 0, 0, null);
     }
 
+    /**
+     * Получить размеры виджеты по ориентации.
+     * @return размеры виджета.
+     */
     protected Dimension getDimensionByOrientation() {
         return (orientation == Orientation.VERTICAL) ? new Dimension(5, 120) : new Dimension(125, 5);
     }

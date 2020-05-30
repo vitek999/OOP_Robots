@@ -139,7 +139,7 @@ class RobotTest {
     @Test
     public void test_move_emptyCellInDirectionWithWallAndRobotActiveAndEnoughCharge() {
         cell.addObject(robot);
-        cell.setWall(new WallSegment(), cell.getNeighborDirection(neighborCell));
+        cell.setBetweenCellObject(new WallSegment(), cell.getNeighborDirection(neighborCell));
 
         robot.setPowerSupply(new Battery(DEFAULT_TEST_BATTERY_CHARGE));
         robot.move(direction);
@@ -353,7 +353,7 @@ class RobotTest {
     public void test_performAction_withSingleDoorAndEnoughCharge() {
         cell.addObject(robot);
         Door door = new Door(false);
-        cell.setWall(door, Direction.NORTH);
+        cell.setBetweenCellObject(door, Direction.NORTH);
 
         robot.performAction();
 
@@ -367,7 +367,7 @@ class RobotTest {
         cell.addObject(robot);
         robot.setPowerSupply(new Battery(0));
         Door door = new Door(false);
-        cell.setWall(door, Direction.NORTH);
+        cell.setBetweenCellObject(door, Direction.NORTH);
 
         robot.performAction();
 
@@ -380,8 +380,8 @@ class RobotTest {
         cell.addObject(robot);
         Door firstDoor = new Door(false);
         Door secondDoor = new Door(false);
-        cell.setWall(firstDoor, Direction.NORTH);
-        cell.setWall(secondDoor, Direction.SOUTH);
+        cell.setBetweenCellObject(firstDoor, Direction.NORTH);
+        cell.setBetweenCellObject(secondDoor, Direction.SOUTH);
 
         robot.performAction();
 
@@ -398,8 +398,8 @@ class RobotTest {
         robot.setPowerSupply(new Battery(robotCharge));
         Door firstDoor = new Door(false);
         Door secondDoor = new Door(false);
-        cell.setWall(firstDoor, Direction.NORTH);
-        cell.setWall(secondDoor, Direction.SOUTH);
+        cell.setBetweenCellObject(firstDoor, Direction.NORTH);
+        cell.setBetweenCellObject(secondDoor, Direction.SOUTH);
 
         robot.performAction();
 
@@ -412,7 +412,7 @@ class RobotTest {
     @Test
     public void test_move_toDirectionWithClosedDoor() {
         cell.addObject(robot);
-        cell.setWall(new Door(false), Direction.NORTH);
+        cell.setBetweenCellObject(new Door(false), Direction.NORTH);
 
         robot.move(Direction.NORTH);
 
@@ -427,7 +427,7 @@ class RobotTest {
     @Test
     public void test_move_toDirectionWithOpenedDoor() {
         cell.addObject(robot);
-        cell.setWall(new Door(true), Direction.NORTH);
+        cell.setBetweenCellObject(new Door(true), Direction.NORTH);
 
         robot.move(Direction.NORTH);
 
@@ -440,7 +440,7 @@ class RobotTest {
         assertEquals(DEFAULT_TEST_BATTERY_CHARGE - AMOUNT_OF_CHARGE_FOR_MOVE, robot.getCharge());
         assertEquals(expectedEvents, events);
     }
-    // TODO: canStay в ячейке с мельницей
+
     @Test
     public void test_canLocate_atCellWitWindmill() {
         cell.addObject(new Windmill(DEFAULT_TEST_BATTERY_CHARGE, DEFAULT_TEST_BATTERY_CHARGE));
