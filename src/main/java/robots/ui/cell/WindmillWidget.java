@@ -4,6 +4,7 @@ import org.jetbrains.annotations.NotNull;
 import robots.model.event.WindmillActionEvent;
 import robots.model.event.WindmillActionListener;
 import robots.model.field.cell_objects.power_supplies.Windmill;
+import robots.ui.utils.ImageUtils;
 
 import java.awt.*;
 import java.io.File;
@@ -22,7 +23,7 @@ public class WindmillWidget extends PowerSupplyWidget implements WindmillActionL
 
     @Override
     protected File getImageFile() {
-        return new File("W.png");
+        return new File(ImageUtils.IMAGE_PATH + "W.png");
     }
 
     @Override

@@ -18,7 +18,7 @@ public class ExitWidget extends CellWidget{
         super.paintComponent(g);
 
         try {
-            BufferedImage image = ImageIO.read(new File("exit.png"));
+            BufferedImage image = ImageIO.read(new File(ImageUtils.IMAGE_PATH + "exit.png"));
             image = ImageUtils.resizeImage(image, 120, 120);
             g.drawImage(image, 0, 0, null);
         } catch (IOException e) {

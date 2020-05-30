@@ -25,6 +25,6 @@ public class WallWidget extends BlockWidget {
 
     @Override
     protected File getImageFile() {
-        return (orientation == Orientation.VERTICAL) ? new File("WV.png") : new File("WH.png");
+        return (orientation == Orientation.VERTICAL) ? new File(ImageUtils.IMAGE_PATH + "WV.png") : new File(ImageUtils.IMAGE_PATH + "WH.png");
     }
 }

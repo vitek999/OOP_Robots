@@ -15,5 +15,7 @@ public class ImageUtils {
         return bufferedImage;
     }
 
+    public static final String IMAGE_PATH = "resources/";
+
     public static final Color BACKGROUND_COLOR = Color.decode("#888888");
 }

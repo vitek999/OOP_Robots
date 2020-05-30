@@ -2,6 +2,7 @@ package robots.ui.cell;
 
 import robots.model.field.cell_objects.power_supplies.Accumulator;
 import robots.model.field.cell_objects.power_supplies.PowerSupply;
+import robots.ui.utils.ImageUtils;
 
 import java.awt.*;
 import java.io.File;
@@ -37,9 +38,9 @@ public class AccumulatorWidget extends PowerSupplyWidget{
     protected File getImageFile() {
         File file = null;
         if (cellItemState == State.SMALL) {
-            file = new File("AS.png");
+            file = new File(ImageUtils.IMAGE_PATH + "AS.png");
         } else if (cellItemState == State.DEFAULT) {
-            file = new File("AB.png");
+            file = new File(ImageUtils.IMAGE_PATH + "AB.png");
         }
         return file;
     }

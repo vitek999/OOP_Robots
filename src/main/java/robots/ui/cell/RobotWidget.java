@@ -128,17 +128,17 @@ public class RobotWidget extends CellItemWidget {
         File file = null;
         if(robot.getPowerSupply() instanceof Battery) {
             if (color == Color.RED) {
-                file = robot.isActive() ? new File("RRBA.png") : new File("RRB.png");
+                file = robot.isActive() ? new File(ImageUtils.IMAGE_PATH + "RRBA.png") : new File(ImageUtils.IMAGE_PATH + "RRB.png");
             }
             if (color == Color.BLUE) {
-                file = robot.isActive() ? new File("RBBA.png") : new File("RBB.png");
+                file = robot.isActive() ? new File(ImageUtils.IMAGE_PATH + "RBBA.png") : new File(ImageUtils.IMAGE_PATH + "RBB.png");
             }
         } else {
             if (color == Color.RED) {
-                file = robot.isActive() ? new File("RRAA.png") : new File("RRA.png");
+                file = robot.isActive() ? new File(ImageUtils.IMAGE_PATH + "RRAA.png") : new File(ImageUtils.IMAGE_PATH + "RRA.png");
             }
             if (color == Color.BLUE) {
-                file = robot.isActive() ? new File("RBAA.png") : new File("RBA.png");
+                file = robot.isActive() ? new File(ImageUtils.IMAGE_PATH + "RBAA.png") : new File(ImageUtils.IMAGE_PATH + "RBA.png");
             }
         }
         return file;

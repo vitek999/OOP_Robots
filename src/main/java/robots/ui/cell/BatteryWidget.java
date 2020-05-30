@@ -1,6 +1,8 @@
 package robots.ui.cell;
 
 import robots.model.field.cell_objects.power_supplies.Battery;
+import robots.ui.utils.ImageUtils;
+
 import java.awt.*;
 import java.io.File;
 
@@ -31,9 +33,9 @@ public class BatteryWidget extends PowerSupplyWidget{
     protected File getImageFile() {
         File file = null;
         if (cellItemState == State.SMALL) {
-            file = new File("BS.png");
+            file = new File(ImageUtils.IMAGE_PATH + "BS.png");
         } else if (cellItemState == State.DEFAULT) {
-            file = new File("BD.png");
+            file = new File(ImageUtils.IMAGE_PATH + "BD.png");
         }
         return file;
     }

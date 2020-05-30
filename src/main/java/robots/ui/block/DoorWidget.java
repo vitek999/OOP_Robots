@@ -5,6 +5,7 @@ import robots.model.Orientation;
 import robots.model.event.DoorActionEvent;
 import robots.model.event.DoorActionListener;
 import robots.model.field.between_cells_objects.Door;
+import robots.ui.utils.ImageUtils;
 
 import java.io.File;
 
@@ -35,9 +36,9 @@ public class DoorWidget extends BlockWidget implements DoorActionListener {
         File doorFile = null;
 
         if (door.isOpen()) {
-            doorFile = (orientation == Orientation.VERTICAL) ? new File("ODV.png") : new File("ODH.png");
+            doorFile = (orientation == Orientation.VERTICAL) ? new File(ImageUtils.IMAGE_PATH + "ODV.png") : new File(ImageUtils.IMAGE_PATH + "ODH.png");
         } else {
-            doorFile = (orientation == Orientation.VERTICAL) ? new File("CDV.png") : new File("CDH.png");
+            doorFile = (orientation == Orientation.VERTICAL) ? new File(ImageUtils.IMAGE_PATH + "CDV.png") : new File(ImageUtils.IMAGE_PATH + "CDH.png");
         }
         return doorFile;
     }
