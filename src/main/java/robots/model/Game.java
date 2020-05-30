@@ -21,10 +21,10 @@ public class Game {
     // DONE: Пробрасываю лабиринт через конструктор, не сохраняя в поле класса
 
     public Game(Labirint labirint) {
-        initGame(labirint);
+        startGame(labirint);
     }
 
-    private void initGame(@NotNull Labirint labirint) {
+    public void startGame(@NotNull Labirint labirint) {
         setStatus(GameStatus.GAME_IS_ON);
 
         buildField(labirint);
