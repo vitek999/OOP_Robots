@@ -17,7 +17,7 @@ public abstract class MobileCellObject extends CellObject {
     /**
      * Может ли объект переместиться в заданном направлении.
      * @param direction направление.
-     * @return может ли объект переместиться в заданном направлении.
+     * @return соседнюю ячейку, если объект может переместиться в заданном направлении. Иначе null.
      */
     protected abstract Cell canMove(@NotNull Direction direction);
 }

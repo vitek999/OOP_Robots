@@ -155,11 +155,11 @@ public class Robot extends MobileCellObject {
 
     /**
      * Установить источник питания {@link Robot#innerPowerSupply}
-     * @param battery источник питания.
+     * @param powerSupply источник питания.
      */
-    public void setPowerSupply(@NotNull PowerSupply battery) { // !!! А как же проверка, что это возможно
+    public void setPowerSupply(@NotNull PowerSupply powerSupply) { // !!! А как же проверка, что это возможно
         // DONE: Добавил not-null проверку, все остальные варианты аргментна допустимы
-        this.innerPowerSupply = battery;
+        this.innerPowerSupply = powerSupply;
     }
 
     /**
