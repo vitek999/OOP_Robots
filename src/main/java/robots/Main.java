@@ -14,6 +14,7 @@ import robots.ui.utils.GameWidgetsUtils;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class Main {
 
@@ -30,7 +31,21 @@ public class Main {
             setVisible(true);
             startGame();
             setResizable(false);
+
+            JMenuBar menuBar = new JMenuBar();
+            menuBar.add(createGameMenu());
+            setJMenuBar(menuBar);
+
             setDefaultCloseOperation(EXIT_ON_CLOSE);
+        }
+
+        private JMenu createGameMenu() {
+            JMenu gameMenu = new JMenu("Игра");
+            JMenuItem newGameMenuItem = new JMenuItem(new NewGameAction());
+            JMenuItem exitMenuItem = new JMenuItem(new ExitAction());
+            gameMenu.add(newGameMenuItem);
+            gameMenu.add(exitMenuItem);
+            return gameMenu;
         }
 
         private void startGame() {
@@ -45,6 +60,32 @@ public class Main {
             widgetFactory.getWidget(game.getActiveRobot()).requestFocus();
 
             pack();
+        }
+
+        private class NewGameAction extends AbstractAction {
+
+            public NewGameAction() {
+                putValue(NAME, "Новая");
+            }
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int result = JOptionPane.showConfirmDialog(GamePanel.this,
+                        "Начать новую игру?", "Новая игра",JOptionPane.YES_NO_OPTION);
+                if(result == JOptionPane.YES_OPTION) startGame();
+            }
+        }
+
+        private static class ExitAction extends AbstractAction {
+
+            public ExitAction() {
+                putValue(NAME, "Выход");
+            }
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
         }
 
         private final class GameController implements GameActionListener {
