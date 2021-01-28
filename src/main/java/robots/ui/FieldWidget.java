@@ -1,18 +1,18 @@
 package robots.ui;
 
 import org.jetbrains.annotations.NotNull;
-import robots.*;
-import robots.Point;
-import robots.Robot;
-import robots.event.FieldActionEvent;
-import robots.event.FieldActionListener;
-import robots.event.RobotActionEvent;
-import robots.event.RobotActionListener;
+import robots.model.*;
+import robots.model.field.BetweenCellObject;
+import robots.model.field.Cell;
+import robots.model.event.FieldActionEvent;
+import robots.model.event.FieldActionListener;
+import robots.model.event.RobotActionEvent;
+import robots.model.event.RobotActionListener;
+import robots.model.field.Field;
+import robots.model.field.cell_objects.Robot;
 import robots.ui.block.BetweenCellsWidget;
-import robots.ui.block.WallWidget;
-import robots.ui.cell.BatteryWidget;
-import robots.ui.cell.CellWidget;
-import robots.ui.cell.RobotWidget;
+import robots.ui.block.BlockWidget;
+import robots.ui.cell.*;
 
 import javax.swing.*;
 import java.util.List;
@@ -28,7 +28,7 @@ public class FieldWidget extends JPanel {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         fillField();
         subscribeOnRobots();
-        field.addFieldlActionListener(new FieldController());
+        field.addFieldActionListener(new FieldController());
     }
 
     private void fillField() { // !!! Сделать процедурную декомпозицию
@@ -61,9 +61,9 @@ public class FieldWidget extends JPanel {
 
             if(i == 0)  {
                 BetweenCellsWidget westCellWidget = new BetweenCellsWidget(Orientation.VERTICAL);
-                WallSegment wallSegment = cell.neighborWall(Direction.WEST);
+                BetweenCellObject wallSegment = cell.getNeighborBetweenCellObject(Direction.WEST);
                 if( wallSegment != null) {
-                    WallWidget wallWidget = widgetFactory.create(wallSegment, Orientation.VERTICAL);
+                    BlockWidget wallWidget = widgetFactory.create(wallSegment, Orientation.VERTICAL);
                     westCellWidget.setItem(wallWidget);
                 }
                 row.add(westCellWidget);
@@ -72,9 +72,9 @@ public class FieldWidget extends JPanel {
             row.add(cellWidget);
 
             BetweenCellsWidget eastCellWidget = new BetweenCellsWidget(Orientation.VERTICAL);
-            WallSegment eastWallSegment = cell.neighborWall(Direction.EAST);
+            BetweenCellObject eastWallSegment = cell.getNeighborBetweenCellObject(Direction.EAST);
             if(eastWallSegment != null) {
-                WallWidget wallWidget = widgetFactory.create(eastWallSegment, Orientation.VERTICAL);
+                BlockWidget wallWidget = widgetFactory.create(eastWallSegment, Orientation.VERTICAL);
                 eastCellWidget.setItem(wallWidget);
             }
 
@@ -93,10 +93,10 @@ public class FieldWidget extends JPanel {
             Cell cell = field.getCell(point);
 
             BetweenCellsWidget southCellWidget = new BetweenCellsWidget(Orientation.HORIZONTAL);
-            WallSegment southWallSegment = cell.neighborWall(direction);
+            BetweenCellObject southWallSegment =  cell.getNeighborBetweenCellObject(direction);
 
             if(southWallSegment != null) {
-                WallWidget wallWidget = widgetFactory.create(southWallSegment, Orientation.HORIZONTAL);
+                BlockWidget wallWidget = widgetFactory.create(southWallSegment, Orientation.HORIZONTAL);
                 southCellWidget.setItem(wallWidget);
             }
 
@@ -116,34 +116,43 @@ public class FieldWidget extends JPanel {
 
         @Override
         public void robotIsMoved(@NotNull RobotActionEvent event) {
-            RobotWidget robotWidget = widgetFactory.getWidget(event.getRobot());
+            CellItemWidget robotWidget = widgetFactory.getWidget(event.getRobot());
             CellWidget from = widgetFactory.getWidget(event.getFromCell());
             CellWidget to = widgetFactory.getWidget(event.getToCell());
             from.removeItem(robotWidget);
             to.addItem(robotWidget);
+            robotWidget.requestFocus();
         }
 
         @Override
         public void robotSkippedStep(@NotNull RobotActionEvent event) {
             Robot robot = event.getRobot();
-            RobotWidget robotWidget = widgetFactory.getWidget(robot);
+            CellItemWidget robotWidget = widgetFactory.getWidget(robot);
             robotWidget.repaint();
         }
 
         @Override
         public void robotActivityChanged(@NotNull RobotActionEvent event) {
             Robot robot = event.getRobot();
-            RobotWidget robotWidget = widgetFactory.getWidget(robot);
+            RobotWidget robotWidget = (RobotWidget) widgetFactory.getWidget(robot);
             robotWidget.setActive(robot.isActive());
         }
 
         @Override
-        public void robotChangedBattery(@NotNull RobotActionEvent event) {
+        public void robotChangedPowerSupply(@NotNull RobotActionEvent event) {
             Robot robot = event.getRobot();
             CellWidget cellWidget = widgetFactory.getWidget(robot.getPosition());
-            BatteryWidget batteryWidget = widgetFactory.getWidget(event.getBattery());
+            CellItemWidget batteryWidget = widgetFactory.getWidget(event.getPowerSupply());
             cellWidget.removeItem(batteryWidget);
-            widgetFactory.remove(event.getBattery());
+            widgetFactory.remove(event.getPowerSupply());
+        }
+
+        @Override
+        public void robotChargedPowerSupply(@NotNull RobotActionEvent event) {
+            CellItemWidget powerSupplyWidget = widgetFactory.getWidget(event.getPowerSupply());
+            CellItemWidget robotWidget = widgetFactory.getWidget(event.getRobot());
+            powerSupplyWidget.repaint();
+            robotWidget.repaint();
         }
     }
 
@@ -154,7 +163,7 @@ public class FieldWidget extends JPanel {
             Robot robot = event.getRobot();
             Cell teleport = event.getTeleport();
             CellWidget teleportWidget = widgetFactory.getWidget(teleport);
-            RobotWidget robotWidget = widgetFactory.getWidget(robot);
+            CellItemWidget robotWidget = widgetFactory.getWidget(robot);
             teleportWidget.removeItem(robotWidget);
         }
     }
